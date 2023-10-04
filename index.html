@@ -59,20 +59,20 @@
                         <div class="is-size-5 publication-authors">
                             <!-- Paper authors -->
                             <span class="author-block">
-                <sup>†</sup><a href="https://xiangyue9607.github.io/" target="_blank">Dongfu Jiang</a><sup>*</sup>,</span>
+                <sup>♦</sup><a href="https://xiangyue9607.github.io/" target="_blank">Dongfu Jiang</a><sup>*</sup>,</span>
                             <span class="author-block">
                   <sup>♣</sup><a href="https://scholar.google.com/citations?user=5PfpWbAAAAAJ&hl=en" target="_blank">Yishan Li</a><sup>*</sup>,
                             <span class="author-block">
-                    <sup>†</sup><a href="https://scholar.google.com/citations?user=qyTrq4kAAAAJ&hl=en" target="_blank">Ge Zhang</a>,
+                    <sup>♦</sup><a href="https://scholar.google.com/citations?user=qyTrq4kAAAAJ&hl=en" target="_blank">Ge Zhang</a>,
                   </span>
                             <span class="author-block">
-                    <sup>§</sup><a href="Thttps://scholar.google.com/citations?hl=en&user=OdE3MsQAAAAJ&view_op=list_works&sortby=pubdate" target="_blank">Wenhao Huang</a>,
+                    <sup>♡</sup><a href="Thttps://scholar.google.com/citations?hl=en&user=OdE3MsQAAAAJ&view_op=list_works&sortby=pubdate" target="_blank">Wenhao Huang</a>,
                   </span>
                             <span class="author-block">
-                    <sup>‡</sup><a href="https://yuchenlin.xyz/" target="_blank">Bill Yuchen Lin</a>,
+                    <sup>♠</sup><a href="https://yuchenlin.xyz/" target="_blank">Bill Yuchen Lin</a>,
                   </span>
                             <span class="author-block">
-                    <sup>†</sup><a href="https://wenhuchen.github.io/" target="_blank">Wenhu Chen</a>
+                    <sup>♦</sup><a href="https://wenhuchen.github.io/" target="_blank">Wenhu Chen</a>
                   </span>
                         </div>
 
@@ -80,10 +80,10 @@
 
                         <div class="is-size-5 publication-authors">
                             <span class="author-block">
-                    <sup>†</sup>University of Waterloo,
+                    <sup>♦</sup>University of Waterloo,
                     <sup>♣</sup>Tsinghua University, 
-                    <sup>§</sup>IN.AI,
-                    <sup>‡</sup>Allen Institute for AI,                     
+                    <sup>♡</sup>IN.AI,
+                    <sup>♠</sup>Allen Institute for AI,                     
                     <span class="eql-cntrb"><small><br><sup>*</sup>Dongfu Jiang and Yishan Li have led the project and contributed equally to this project.</small></span><br/>
                             <span class="author-block"><a href="mailto:dongfu.jiang@uwaterloo.ca">dongfu.jiang@uwaterloo.ca</a></span>,
                             <span class="author-block"><a href="mailto:liyisha19@mails.tsinghua.edu.cn">liyisha19@mails.tsinghua.edu.cn</a></span>
@@ -127,7 +127,7 @@
 
                                 <!-- ArXiv abstract Link -->
                                 <span class="link-block">
-                    <a href="https://arxiv.org/pdf/2309.05653.pdf" target="_blank"
+                    <a href="https://arxiv.org/abs/2310.00752" target="_blank"
                       class="external-link button is-normal is-rounded is-dark">
                       <span class="icon">
                         <i class="ai ai-arxiv"></i>
@@ -179,7 +179,7 @@
                     <div class="column is-four-fifths">
                         <div class="item">
                             <!-- Your image here -->
-                            <img src="static/images/metric_overview.png" alt="The perfermance of TIGERScore" />
+                            <img src="static/images/metric_overview2.png" alt="The perfermance of TIGERScore" />
                             <h2 class="subtitle">
                                 Figure 1: The upper part shows the input and output format of our metric. The lower part shows te spearman's correlation of different metrics w.r.t human ratings.
                             </h2>
@@ -257,16 +257,38 @@
             <div class="container  is-max-desktop">
                 <div class="columns is-centered has-text-centered">
                     <div class="column is-four-fifths">
-                        <h2 class="title is-3">Overall Results</h2>
+                        <h2 class="title is-3">Pipeline to construct MetricInstruct</h2>
                         <div class="item">
                             <!-- Your image here -->
-                            <img src="static/images/overall_results.png" alt="MY ALT TEXT" />
+                            <img src="static/images/pipeline.png" alt="MY ALT TEXT" />
                             <h2 class="subtitle has-text-centered">
-                                Figure 2: Overall results of 🦣MAmmoTH on the in-domain and out-of-domain datasets.
+                                Figure 2: Overall pipeline to construct MetricInstruct
                             </h2>
                             <p>
-                                Overall, we can see that MAmmoTH and MAmmoTH-Coder are able to outperform the SoTA model at different scales. In general, the performance gain for OOD datasets is more significant than IND datasets. These results show us the potential of our models as
-                                a mathematical generalist. On several datasets, MAmmoTH-Coder-34B and MAmmoTH-70B are even surpassing closed-source LLMs (see more break down results below).
+                                [todo: explain the two channel briefly]
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="hero is-small">
+        <div class="hero-body">
+            <div class="container  is-max-desktop">
+                <div class="columns is-centered has-text-centered">
+                    <div class="column is-four-fifths">
+                        <h2 class="title is-3">TIGERScore correlation analysis with human ratings</h2>
+                        <div class="item">
+                            <!-- Your image here -->
+                            <img src="static/images/main_corr.png" alt="MY ALT TEXT" />
+                            <h2 class="subtitle has-text-centered">
+                                Figure 2: The Spearman correlation results of all the baseline metrics and TIGERSCORE on the evaluation datasets. For each task, the metric with the highest correlation to
+                                average performance is highlighted in bold.
+                            </h2>
+                            <p>
+                                [todo: explain the the results briefly]
                             </p>
                         </div>
                     </div>
@@ -284,11 +306,9 @@
                         <h2 class="title is-3">Where does the gain come from?</h2>
                         <div class="item">
                             <!-- Your image here -->
-                            <img src="static/images/ablation_results.png" alt="MY ALT TEXT" />
+                            <img src="static/images/ablation_channel.svg" alt="MY ALT TEXT" />
                             <h2 class="subtitle">
-                                Figure 3: Investigation of the influence of CoT \& PoT hybrid training on the 7B Llama-2 model. Key insights include: 1) The SoTA model, utilizing dataset-specific CoT fine-tuning on GSM and MATH, displays strong performance within its domains but struggles
-                                in OOD scenarios; 2) Diverse data sources in MathInstruct enable better math generalist model; 3) Fine-tuning on the PoT subsets generally outperforms fine-tuning on the CoT subsets; 4) Hybrid training yields the best-performing
-                                model.
+                                Figure 3: nvestigation of the influence of Real-World & Synthesic mix training on the 13B model.
                             </h2>
                             <p>
                                 In order to better understand what factors contribute to the great gain of 🦣MAmmoTH over existing baselines, we set up a group of control experiments in the Figure 3. We study the following setups:
@@ -1186,11 +1206,12 @@
             <h2 class="title">Reference</h2>
             Please kindly cite our paper if you use our code, data, models or results:
             <br><br>
-            <pre><code>@article{yue2023mammoth,
-  title={MAmmoTH: Building Math Generalist Models through Hybrid Instruction Tuning},
-  author={Xiang Yue, Xingwei Qu, Ge Zhang, Yao Fu, Wenhao Huang, Huan Sun, Yu Su, Wenhu Chen},
-  journal={arXiv preprint arXiv:2309.05653},
-  year={2023}
+            <pre><code>@article{Jiang2023TIGERScoreTB,
+    title={TIGERScore: Towards Building Explainable Metric for All Text Generation Tasks},
+    author={Dongfu Jiang and Yishan Li and Ge Zhang and Wenhao Huang and Bill Yuchen Lin and Wenhu Chen},
+    year={2023},
+    journal={arXiv preprint arXiv:2310.00752},
+  }
 }</code></pre>
         </div>
     </section>
