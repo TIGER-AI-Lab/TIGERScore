@@ -1,0 +1,206 @@
+{
+    "translation": {
+        "Accuracy": [
+            "Omission of key information in the source text",
+            "Addition of information not in the source text",
+            "Change in the meaning of the source text",
+            "Untranslated portions of the source text",
+            "Misinterpretation of the source text's context",
+            "Incorrect translation of idioms or colloquialisms",
+            "Incorrect translation of cultural references",
+            "Loss of nuance or subtlety from the source text",
+            "Misrepresentation of the source text's tone",
+            "Incorrect translation of metaphors"
+        ],
+        "Fluency": [
+            "Spelling errors in the translated text",
+            "Incorrect verb tenses",
+            "Incorrect subject-verb agreement",
+            "Incorrect use of articles",
+            "Incorrect use of prepositions",
+            "Incorrect word order",
+            "Incorrect punctuation",
+            "Incorrect use of capitalization",
+            "Incorrect use of compound words",
+            "Incorrect sentence structure"
+        ],
+        "Terminology": [
+            "Incorrect translation of proper nouns",
+            "Incorrect translation of technical terms",
+            "Incorrect translation of abbreviations",
+            "Incorrect translation of acronyms",
+            "Incorrect use of industry-specific jargon",
+            "Incorrect use of locale-specific conventions (e.g., date, time formats)",
+            "Incorrect translation of units of measurement",
+            "Incorrect translation of currency",
+            "Incorrect translation of titles or formal address",
+            "Incorrect translation of legal or medical terms"
+        ],
+        "Style Matching": [
+            "Inconsistent use of formal or informal language",
+            "Lack of coherence with the user's desired style or genre",
+            "Inappropriate use of tone (e.g., using a casual tone for a formal document)",
+            "Use of outdated or archaic language",
+            "Inconsistent use of active or passive voice",
+            "Lack of consistency in sentence length or structure",
+            "Use of language that is too complex or too simple for the intended audience",
+            "Inappropriate use of humor or sarcasm",
+            "Inappropriate use of emotive language",
+            "Lack of consistency in the use of personal or impersonal language"
+        ]
+    },
+    "data2text": {
+        "Accuracy": [
+            "Change in the meaning of the source text",
+
+            "Omission of time or number in the source text",
+            "Omission of location in the source text",
+            "Omission of names in the source text",
+            "Omission of entities in the source text",
+            "Omission of events in the source text",
+
+            "Addition of time or number that is not in the source text",
+            "Addition of location that is not in the source text",
+            "Addition of names that are not in the source text",
+            "Addition of entities that are not in the source text",
+            "Addition of events that are not in the source text",
+
+            "Inaccuracy description of time or number in the source text",
+            "Inaccuracy description of location in the source text",
+            "Inaccuracy description of names in the source text",
+            "Inaccuracy description of entities in the source text",
+            "Inaccuracy description of events in the source text",
+            
+            "Omission of key information in the source text",
+            "Addition of information not in the source text",
+            "Change in the meaning of the source text",
+
+            "Misinterpretation of the source text's context",
+            "Misrepresentation of the source text's tone"
+        ],
+        "Fluency": [
+            "Spelling errors in the text",
+            "Incorrect verb tenses",
+            "Incorrect subject-verb agreement",
+            "Incorrect use of articles",
+            "Incorrect use of prepositions",
+            "Incorrect word order",
+            "Incorrect word form",
+            "Incorrect punctuation",
+            "Incorrect use of capitalization",
+            "Incorrect use of compound words",
+            "Incorrect sentence structure",
+            "Incorrect use of predicate",
+            "Incorrect use of function words",
+            "Duplicate words",
+
+            "Lack of coherence or logical flow in the output",
+            "Lack of clear transitions between sentences or paragraphs",
+            "Lack of logical progression in presenting information",
+            "Lack of coherence between the output and the source text",
+            "Lack of coherence within the output itself",
+            "Inconsistent flow of ideas",
+            "Addition of unnecessary sentences",
+            "Omission of necessary sentences",
+            "Wrong order of sentences",
+            "Incoherent sentences within the output",
+            "Incoherent sentences between the output and the source text",
+            "Duplicate sentences"
+        ],
+        "Relevance": [
+            "Omission of key information in the source text",
+            "Omission of subjects in the source text",
+            "Omission of objects in the source text",
+            "Omission of attributes in the source text",
+
+            "Addition of information that is not in the source text",
+            "Addition of subjects that are not in the source text",
+            "Addition of objects that are not in the source text",
+            "Addition of attributes that are not in the source text",
+            
+            "Excessive focus on insignificant details",
+            "Inclusion of information that is not present in the source text",
+            "Inclusion of irrelevant or unrelated information",
+            "Misrepresentation of the main ideas or key points",
+            "Overemphasizing or underemphasizing certain information",
+            "Misinterpretation of the context or tone of the source text"
+        ]
+    },
+    "summarization": {
+        "Consistency": [
+            "Change in the meaning of the source text",
+
+            "Omission of time or number in the source text",
+            "Omission of location in the source text",
+            "Omission of names in the source text",
+            "Omission of entities in the source text",
+            "Omission of events in the source text",
+
+            "Addition of time or number that is not in the source text",
+            "Addition of location that is not in the source text",
+            "Addition of names that are not in the source text",
+            "Addition of entities that are not in the source text",
+            "Addition of events that are not in the source text",
+
+            "Inaccuracy description of time or number in the source text",
+            "Inaccuracy description of location in the source text",
+            "Inaccuracy description of names in the source text",
+            "Inaccuracy description of entities in the source text",
+            "Inaccuracy description of events in the source text",
+
+            "Misinterpretation of the source text's context",
+            "Misrepresentation of the source text's tone"
+        ],
+        "Fluency": [
+            "Spelling errors in the text",
+            "Incorrect verb tenses",
+            "Incorrect subject-verb agreement",
+            "Incorrect use of articles",
+            "Incorrect use of prepositions",
+            "Incorrect word order",
+            "Incorrect word form",
+            "Incorrect punctuation",
+            "Incorrect use of capitalization",
+            "Incorrect use of compound words",
+            "Incorrect sentence structure",
+            "Incorrect use of predicate",
+            "Incorrect use of function words",
+            "Duplicate words"
+        ],
+        "Coherence": [
+            "Lack of coherence or logical flow in the summary",
+            "Lack of clear transitions between sentences or paragraphs",
+            "Lack of logical progression in presenting information",
+            "Lack of coherence between the summary and the source text",
+            "Lack of coherence within the summary itself",
+            "Inconsistent flow of ideas",
+            "Addition of unnecessary sentences",
+            "Omission of necessary sentences",
+            "Wrong order of sentences",
+            "Incoherent sentences within the summary",
+            "Incoherent sentences between the summary and the source text",
+            "Duplicate sentences"
+        ],
+        
+        "Relevance": [
+            "Omission of key information in the source text",
+            "Omission of subjects in the source text",
+            "Omission of objects in the source text",
+            "Omission of attributes in the source text",
+
+            "Addition of information that is not in the source text",
+            "Addition of subjects that are not in the source text",
+            "Addition of objects that are not in the source text",
+            "Addition of attributes that are not in the source text",
+            
+            "Excessive focus on insignificant details",
+            "Inclusion of information that is not present in the source text",
+            "Inclusion of irrelevant or unrelated information",
+            "Misrepresentation of the main ideas or key points",
+            "Overemphasizing or underemphasizing certain information",
+            "Misinterpretation of the context or tone of the source text",
+            "Plagiarism or verbatim copying from the source text",
+            "Summarizing multiple ideas or arguments into a single, confusing statement"
+        ]
+    }
+}
