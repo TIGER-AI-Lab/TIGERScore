@@ -26,7 +26,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
 
-    <title>TigerScore</title>
+    <title>TIGERScore</title>
 
     <link rel="stylesheet" href="static/css/bulma.min.css">
     <link rel="stylesheet" href="static/css/bulma-carousel.min.css">
@@ -127,7 +127,7 @@
 
                                 <!-- ArXiv abstract Link -->
                                 <span class="link-block">
-                    <a href="https://arxiv.org/pdf/2309.05653.pdf" target="_blank"
+                    <a href="https://arxiv.org/abs/2310.00752" target="_blank"
                       class="external-link button is-normal is-rounded is-dark">
                       <span class="icon">
                         <i class="ai ai-arxiv"></i>
@@ -179,68 +179,119 @@
                     <div class="column is-four-fifths">
                         <div class="item">
                             <!-- Your image here -->
-                            <img src="static/images/metric_overview.png" alt="The perfermance of TIGERScore" />
+                            <img src="static/images/metric_overview2.png" alt="The perfermance of TIGERScore" />
                             <h2 class="subtitle">
                                 Figure 1: The upper part shows the input and output format of our metric. The lower part shows te spearman's correlation of different metrics w.r.t human ratings.
                             </h2>
                         </div>
                     </div>
                 </div>
+                <p>
+                    TIGERScore is built upon three design criteria: <br/>
+                    (1) It is driven by instructions, making it easily adaptable to any text generation task. <br/>
+                    (2) The evaluation process eliminates the need for a "gold standard" or perfect example for comparison. <br/>
+                    (3) It is highly explainable, as the model can generate an error analysis that helps the user understand each identified mistake and its associated penalty.
+                </p>
             </div>
         </div>
     </section>
     <!-- End image carousel -->
-
+    
     <section class="hero">
         <div class="hero-body">
             <div class="container is-max-desktop">
                 <div class="columns is-centered">
                     <div class="column has-text-centered is-fifths-fifths">
                         <h2 class="title is-3">Our Dataset: MetricInstruct</h2>
+                        <div class="column is-fifths-fifths">
+                            <div class="item">
+                                <!-- Your image here -->
+                                <img src="static/images/pipeline.png" alt="The pipeline of MetricInstruct" />
+                                <h2 class="subtitle">
+                                    Figure 2: Overall pipeline of constructing MetricInstruct through the two-channel collection.
+                                </h2>
+                            </div>
+                        </div>
+                        <p>
+                            We present the MetricInstruct dataset, which is employed to fine-tune TIGERScore. The three underlying criteria for dataset construction are: <br/>
+                            (1) <b>Dataset diversity</b>: we choose 23 distinctive datasets as the source context to cover enough generation tasks. <br/>
+                            (2) <b>Error coverage</b>: we take system outputs generated from 50+ text generation systems to cover all types of errors and guarantee a balanced distribution. <br/>
+                            (3) <b>Quality ensurance</b>: to ensure MetricInstruct is tailored to gather in-depth error analysis, we sourced it by prompting OpenAI GPT models and then filtered through different heuristics to eliminate low-quality error analysis. <br/>
+
+                            Our system outputs come from two channels, namely real-world system outputs and synthetic outputs. The real-world system outputs are obtained from real systems, which ensures the error distribution is aligned with real-world ones.
+                        </p>
                         <div class="content has-text-justified">
-                            <table id="myTable"> 
+                            <table> 
                                 <thead>
                                     <tr>
-                                        <td>Task</td>
-                                        <td>Real-World (training set)<br/>Dataset</td>
-                                        <td>Synthetic (training set)<br/>Output Source</td>
+                                        <td >Task</td>
+                                        <td style="border-left: 1px solid #ddd;">    Real-World  <br/>Dataset</td>
+                                        <td>            <br/>Output Source</td>
+                                        <td>            <br/># Sample</td>
+                                        <td style="border-left: 1px solid #ddd;">    Synthetic   <br/>Dataset</td>
+                                        <td>            <br/>Output Source</td>
+                                        <td>            <br/># Sample</td>
                                     </tr>
                                 </thead>
                                 <tbody>
                                     <tr>
                                         <td>Summ</td>
-                                        <td>SummEval‡, XSum,<br/>Newsroom,SAMSum</td>
+                                        <td style="border-left: 1px solid #ddd;">SummEval‡, XSum,<br/>Newsroom,SAMSum</td>
                                         <td>27 Systems</td>
+                                        <td>4867</td>
+                                        <td style="border-left: 1px solid #ddd;">CNN/DM, XSum,<br/>Gigaword,SAMSum</td>
+                                        <td>GPT-4</td>
+                                        <td>400</td>
                                     </tr>
                                     <tr>
                                         <td>Trans</td>
-                                        <td>WMT‡</td>
+                                        <td style="border-left: 1px solid #ddd;">WMT‡</td>
                                         <td>18 Systems</td>
+                                        <td>5708</td>
+                                        <td style="border-left: 1px solid #ddd;">WMT</td>
+                                        <td>GPT-4</td>
+                                        <td>400</td>
                                     </tr>
                                     <tr>
                                         <td>D2T</td>
-                                        <td>WebNLG-2020‡,<br/>WikiTableText,ToTTo</td>
+                                        <td style="border-left: 1px solid #ddd;">WebNLG-2020‡,<br/>WikiTableText,ToTTo</td>
                                         <td>17 Systems</td>
+                                        <td>56147</td>
+                                        <td style="border-left: 1px solid #ddd;">WikiTableText,<br/>Dart,ToTTo</td>
+                                        <td>GPT-4</td>
+                                        <td>400</td>
                                     </tr>
                                     <tr>
                                         <td>LF-QA</td>
-                                        <td>ASQA,FeTaQA,<br/>CosmosQA,ELI5</td>
+                                        <td style="border-left: 1px solid #ddd;">ASQA,FeTaQA,<br/>CosmosQA,ELI5</td>
                                         <td>5 Systems</td>
+                                        <td>3352</td>
+                                        <td style="border-left: 1px solid #ddd;">ASQA,FeTaQA<br/>Cosmos QA,ELI5</td>
+                                        <td>GPT-4</td>
+                                        <td>1146</td>
                                     </tr>
                                     <tr>
                                         <td>MathQA</td>
-                                        <td>GSM8K</td>
+                                        <td style="border-left: 1px solid #ddd;">GSM8K</td>
                                         <td>5 Systems</td>
+                                        <td>3558</td>
+                                        <td style="border-left: 1px solid #ddd;">GSM8K,MathQA</td>
+                                        <td>GPT-4</td>
+                                        <td>200</td>
                                     </tr>
                                     <tr>
                                         <td>Instruct</td>
-                                        <td>MixInstruct‡</td>
+                                        <td style="border-left: 1px solid #ddd;">MixInstruct‡</td>
                                         <td>11 Systems</td>
+                                        <td>2248</td>
+                                        <td style="border-left: 1px solid #ddd;">LIMA,AlpacaFarm<br/>OASST1,Guanaco,Dolly</td>
+                                        <td>GPT-4</td>
+                                        <td>3750</td>
                                     </tr>
                                 </tbody>
                             </table>
                             <p>
-                                The composition of our dataset. For synthetic data, the output is generated by asking GPT-4
+                                Table 1: The composition of our training dataset. For synthetic data, the output is generated by asking GPT-4
                                 to synthesize incorrect outputs that contain a few specific types of errors. For the datasets with ‡,
                                 we take their released system outputs. For the others, we collect the system outputs on our own.
                             </p>
@@ -256,18 +307,287 @@
         <div class="hero-body">
             <div class="container  is-max-desktop">
                 <div class="columns is-centered has-text-centered">
-                    <div class="column is-four-fifths">
+                    <div class="column has-text-centered is-fifths-fifths">
                         <h2 class="title is-3">Overall Results</h2>
-                        <div class="item">
-                            <!-- Your image here -->
-                            <img src="static/images/overall_results.png" alt="MY ALT TEXT" />
-                            <h2 class="subtitle has-text-centered">
-                                Figure 2: Overall results of 🦣MAmmoTH on the in-domain and out-of-domain datasets.
-                            </h2>
+                        <div class="content has-text-justified">
                             <p>
-                                Overall, we can see that MAmmoTH and MAmmoTH-Coder are able to outperform the SoTA model at different scales. In general, the performance gain for OOD datasets is more significant than IND datasets. These results show us the potential of our models as
-                                a mathematical generalist. On several datasets, MAmmoTH-Coder-34B and MAmmoTH-70B are even surpassing closed-source LLMs (see more break down results below).
+                                Nota bene that TIGERScore significantly surpasses traditional metrics, i.e. BLUE, ROUGE, BARTScore, and BLEURT, and emerging LLM-based metrics as reference-free metrics. 
+                                Though our dataset was originally sourced from ChatGPT, our distilled model actually outperforms ChatGPT itself, which proves the effectiveness of our filtering strategy.
+                                On the unseen task of story generation, TIGERScore also demonstrates reasonable generalization capability. 
                             </p>
+                        <table> 
+                            <thead>
+                                <tr>
+                                    <td>Metrics↓Tasks→</td>
+                                    <td>Summ</td>
+                                    <td>Trans</td>
+                                    <td>D2T</td>
+                                    <td>LF-QA</td>
+                                    <td>MathQA</td>
+                                    <td>Instruct</td>
+                                    <td>StoryGen</td>
+                                    <td>AVG</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td colspan="9" style="text-align:center">Reference-based Metrics</td>
+                                </tr>
+                                <tr>
+                                    <td>BLEU</td>
+                                    <td>11.98</td>
+                                    <td>19.73</td>
+                                    <td>33.29</td>
+                                    <td>11.38</td>
+                                    <td>21.12</td>
+                                    <td><b>46.61</b></td>
+                                    <td>-1.17</td>
+                                    <td>20.42</td>
+                                </tr>
+                                <tr>
+                                    <td>ROUGE-2f</td>
+                                    <td>14.53</td>
+                                    <td>17.83</td>
+                                    <td>35.49</td>
+                                    <td>16.83</td>
+                                    <td>22.12</td>
+                                    <td>44.56</td>
+                                    <td>2.34</td>
+                                    <td>21.96</td>
+                                </tr>
+                                <tr>
+                                    <td>BERTScore</td>
+                                    <td>23.67</td>
+                                    <td>42.41</td>
+                                    <td>43.75</td>
+                                    <td>25.60</td>
+                                    <td>11.53</td>
+                                    <td>45.77</td>
+                                    <td>2.88</td>
+                                    <td>27.95</td>
+                                </tr>
+                                <tr>
+                                    <td>BLEURT</td>
+                                    <td>17.30</td>
+                                    <td>48.41</td>
+                                    <td>48.76</td>
+                                    <td>33.26</td>
+                                    <td>3.53</td>
+                                    <td>36.46</td>
+                                    <td>27.52</td>
+                                    <td>30.75</td>
+                                </tr>
+                                <tr>
+                                    <td>COMET-22</td>
+                                    <td>33.75</td>
+                                    <td><b>56.35</b></td>
+                                    <td>33.92</td>
+                                    <td>35.28</td>
+                                    <td>-5.53</td>
+                                    <td>46.13</td>
+                                    <td>39.20</td>
+                                    <td>34.16</td>
+                                </tr>
+                                <tr>
+                                    <td>BARTScore-CNN-ref</td>
+                                    <td>13.64</td>
+                                    <td>28.53</td>
+                                    <td>36.12</td>
+                                    <td>29.57</td>
+                                    <td>23.35</td>
+                                    <td>32.49</td>
+                                    <td>26.64</td>
+                                    <td>27.19</td>
+                                </tr>
+                                <tr>
+                                    <td>BARTScore-PARA-ref</td>
+                                    <td>17.18</td>
+                                    <td>33.72</td>
+                                    <td>40.79</td>
+                                    <td>28.94</td>
+                                    <td>17.27</td>
+                                    <td>34.47</td>
+                                    <td>17.43</td>
+                                    <td>27.11</td>
+                                </tr>
+                                <tr>
+                                    <td>GPTScore-ref</td>
+                                    <td>14.73</td>
+                                    <td>24.95</td>
+                                    <td>39.42</td>
+                                    <td>31.60</td>
+                                    <td>18.20</td>
+                                    <td>33.13</td>
+                                    <td>18.24</td>
+                                    <td>25.75</td>
+                                </tr>
+                                <tr>
+                                    <td>UniEval(sum)</td>
+                                    <td><b>47.52</b></td>
+                                    <td>21.90</td>
+                                    <td>38.38</td>
+                                    <td><b>41.83</b></td>
+                                    <td>19.78</td>
+                                    <td>16.02</td>
+                                    <td><b>44.46</b></td>
+                                    <td>32.84</td>
+                                </tr>
+                                <tr>
+                                    <td>ChatGPT</td>
+                                    <td>38.50</td>
+                                    <td>40.53</td>
+                                    <td>40.20</td>
+                                    <td>29.33</td>
+                                    <td><b>66.45</b></td>
+                                    <td>23.20</td>
+                                    <td>4.77</td>
+                                    <td><b>34.71</b></td>
+                                </tr>
+                                <tr>
+                                    <td colspan="9" style="text-align:center">Reference-free Metrics</td>
+                                </tr>
+                                <tr>
+                                    <td>BARTScore-CNN-src</td>
+                                    <td>35.50</td>
+                                    <td>12.83</td>
+                                    <td>34.33</td>
+                                    <td>40.96</td>
+                                    <td>1.50</td>
+                                    <td>25.43</td>
+                                    <td><b>33.48</b></td>
+                                    <td>26.29</td>
+                                </tr>
+                                <tr>
+                                    <td>BARTScore-PARA-src</td>
+                                    <td>38.68</td>
+                                    <td>9.60</td>
+                                    <td>32.26</td>
+                                    <td>26.86</td>
+                                    <td>-2.70</td>
+                                    <td>5.92</td>
+                                    <td>20.55</td>
+                                    <td>18.74</td>
+                                </tr>
+                                <tr>
+                                    <td>GPTScore-src</td>
+                                    <td>37.41</td>
+                                    <td>8.90</td>
+                                    <td>28.82</td>
+                                    <td>39.48</td>
+                                    <td>14.25</td>
+                                    <td>26.46</td>
+                                    <td>29.31</td>
+                                    <td>26.38</td>
+                                </tr>
+                                <tr>
+                                    <td>COMETKiwi</td>
+                                    <td>16.27</td>
+                                    <td><b>48.48</b></td>
+                                    <td>27.90</td>
+                                    <td>18.05</td>
+                                    <td>-11.48</td>
+                                    <td>34.86</td>
+                                    <td>18.47</td>
+                                    <td>21.79</td>
+                                </tr>
+                                <tr>
+                                    <td>TIGERScore-7b</td>
+                                    <td>39.32</td>
+                                    <td>42.27</td>
+                                    <td>38.42</td>
+                                    <td>42.04</td>
+                                    <td><b>32.07</b></td>
+                                    <td>25.53</td>
+                                    <td>32.33</td>
+                                    <td>36.00</td>
+                                </tr>
+                                <tr>
+                                    <td>TIGERScore-13b</td>
+                                    <td><b>41.98</b></td>
+                                    <td>45.20</td>
+                                    <td><b>39.05</b></td>
+                                    <td><b>45.84</b></td>
+                                    <td>31.04</td>
+                                    <td><b>43.69</b></td>
+                                    <td>17.40</td>
+                                    <td><b>37.74</b></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <p>
+                            Table 2:The Spearman correlation results of all the baseline metrics and TIGERScore on the evaluation datasets shown in Table 3. For each task, the metric with the highest correlation to average performance is highlighted in bold.
+                        </p>
+                        <table>
+                            <thead>
+                            <tr>
+                                <td>Task</td>
+                                <td>Eval Dataset</td>
+                                <td>Output Source</td>
+                                <td># Inputs</td>
+                                <td># Samples</td>
+                            </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td colspan="5" style="text-align:center"> Held-in Evaluation Dataset (test set)</td>
+                                </tr>
+                            <tr>
+                                <td>Summarization</td>
+                                <td>SummEval</td>
+                                <td>16 Systems</td>
+                                <td>100</td>
+                                <td>1600</td>
+                            </tr>
+                            <tr>
+                                <td>Translation</td>
+                                <td>WMT-22 (zh-en)</td>
+                                <td>18 Systems</td>
+                                <td>1875</td>
+                                <td>33750</td>
+                            </tr>
+                            <tr>
+                                <td>Data to Text</td>
+                                <td>WebNLG-2020</td>
+                                <td>18 Systems</td>
+                                <td>179</td>
+                                <td>2848</td>
+                            </tr>
+                            <tr>
+                                <td>Long-form QA</td>
+                                <td>ASQA, FeTaQA, CosmosQA, ELI5</td>
+                                <td>4 Systems</td>
+                                <td>400</td>
+                                <td>1600</td>
+                            </tr>
+                            <tr>
+                                <td>Math QA</td>
+                                <td>GSM8K</td>
+                                <td>2 Systems</td>
+                                <td>1319</td>
+                                <td>2638</td>
+                            </tr>
+                            <tr>
+                                <td colspan="5" style="text-align:center"> Held-out Evaluation Dataset (test set)</td>
+                            </tr>
+                            <tr>
+                                <td>Instruct</td>
+                                <td>LIMA,AlpacaEval</td>
+                                <td>9 Systems</td>
+                                <td>500</td>
+                                <td>4500</td>
+                            </tr>
+                            <tr>
+                                <td>Story Generation</td>
+                                <td>OpenMEVA (ROC)</td>
+                                <td>5 Systems</td>
+                                <td>200</td>
+                                <td>1000</td>
+                            </tr>
+                            </tbody>
+                        </table>
+                        <p>
+                            Table 3:Overview of our main evaluation datasets. "# Samples" is computed by multipling "# Inputs" with the number of outputs systems, representing the total instances that a metric need to compute.
+                        </p>
                         </div>
                     </div>
                 </div>
@@ -280,905 +600,242 @@
         <div class="hero-body">
             <div class="container  is-max-desktop">
                 <div class="columns is-centered has-text-centered">
-                    <div class="column is-four-fifths">
-                        <h2 class="title is-3">Where does the gain come from?</h2>
-                        <div class="item">
-                            <!-- Your image here -->
-                            <img src="static/images/ablation_results.png" alt="MY ALT TEXT" />
-                            <h2 class="subtitle">
-                                Figure 3: Investigation of the influence of CoT \& PoT hybrid training on the 7B Llama-2 model. Key insights include: 1) The SoTA model, utilizing dataset-specific CoT fine-tuning on GSM and MATH, displays strong performance within its domains but struggles
-                                in OOD scenarios; 2) Diverse data sources in MathInstruct enable better math generalist model; 3) Fine-tuning on the PoT subsets generally outperforms fine-tuning on the CoT subsets; 4) Hybrid training yields the best-performing
-                                model.
-                            </h2>
+                    <div class="column has-text-centered is-fifths-fifths">
+                        <h2 class="title is-3">Human Evaluation</h2>
+                        <div class="content has-text-justified">
                             <p>
-                                In order to better understand what factors contribute to the great gain of 🦣MAmmoTH over existing baselines, we set up a group of control experiments in the Figure 3. We study the following setups:
-                                <ol>
-                                    <li>🦣<b>MAmmoTH (MathInstruct - CoT):</b> This experiment aims to understand how much our curated CoT data could improve the generalization over the SoTA model WizardMath trained specifically on GSM + MATH. As can be seen,
-                                        while sacrificing accuracy on GSM + MATH by 3%, our CoT subset fine-tuning improves the overall nine-dataset accuracy from 27% to 32%. </li>
-                                    <li>🦣<b>MAmmoTH (MathInstruct - PoT):</b> This experiment aims to understand the advantage of our PoT subset. As can be observed, our PoT subset fine-tuning can significantly improve the overall accuracy from 27% to 37.5%.
-                                        This ablation reflects the importance of unlocking the program generation capabilities of our model.</li>
-                                    <li>🦣<b>MAmmoTH (MathInstruct - Hybrid):</b> We further combine CoT and PoT as the hybrid training data to achieve the best overall performance of 45.4%. This combined gain comes from two aspects:
-                                        <ul style="list-style-type: disc;">
-                                            <li>
-                                                The CoT subset can help maintain the generic language-based reasoning skills to handle scenarios where PoT cannot handle well, e.g., the multi-choice questions in AQuA, SAT, and MMLU.
-                                            </li>
-                                            <li>
-                                                The PoT subset can teach the model how to utilize Python APIs to solve complex math problems with high precision, e.g., the MATH problems requiring complex computation.
-                                            </li>
-                                        </ul>
-                                    </li>
-                                </ol>
-
-
-
-
-
-                                <!-- We put some case studies in Appendix \ref{sec:case_study} to demonstrate the respective advantages of PoT and CoT in solving different types of math problems. To summarize, we attribute our substantial gain to: 1) diverse data sources covering different math fields and complexity levels and 2) a hybrid of CoT \& PoT instruction tuning strategy.  -->
-
+                                The reasonableness of the error analysis provided by TIGERScore was assessed through a random selection of 50 error analyses from each evaluation dataset. <br/>
+                                These error analyses are then evaluated by human experts who rated them from the following perspectives: <br/>
+                                <b>Reasonableness:</b> The human experts directly pointed out which errors are problematic in error analyses, examining whether the analysis contained hallucination or illogical reasoning. <br/>
+                                <b>Comprehensiveness:</b> The human experts carefully review the source, output, and error analyses to determine if there are any additional errors unnoticed by TIGERScore.<br/>
+                                Based on human experts' analysis, they give a score on a scale of 1 to 4, specifically focused on identifying potential errors that may have been overlooked in the original analysis conducted by TIGERScore.<br/>
+                                <b>Effectiveness:</b> The revision suggestions in error analyses are evaluated by human experts, on a scale of 1 to 5, to determine their appropriateness and effectiveness in enhancing the output quantity.<br/>
+                                <b>Overall:</b> The Human experts further assign an overall score on a scale of 1 to 5 based on the reasonableness, comprehensiveness, and effectiveness of the error analysis.<br/>
                             </p>
+
+                                <table>
+                                    <thead>
+                                    <tr>
+                                        <td>Aspects  </td>
+                                        <td colspan="2" style="text-align:center;border-left: 1px solid #ddd;">Explaination Error?</td>
+                                        <td colspan="4" style="text-align:center;border-left: 1px solid #ddd;">Overlooked Errors</td>
+                                        <td colspan="5" style="text-align:center;border-left: 1px solid #ddd;">Helpful of Revision Suggestions</td>
+                                        <td colspan="5" style="text-align:center;border-left: 1px solid #ddd;">Overall Rating</td>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>Task↓ Rate→</td>
+                                        <td style="border-left: 1px solid #ddd;">Correct</td>
+                                        <td>Wrong</td>
+                                        <td style="border-left: 1px solid #ddd;">1</td>
+                                        <td>2</td>
+                                        <td>3</td>
+                                        <td>4</td>
+                                        <td style="border-left: 1px solid #ddd;">1</td>
+                                        <td>2</td>
+                                        <td>3</td>
+                                        <td>4</td>
+                                        <td>5</td>
+                                        <td style="border-left: 1px solid #ddd;">1</td>
+                                        <td>2</td>
+                                        <td>3</td>
+                                        <td>4</td>
+                                        <td>5</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Sum</td>
+                                        <td style="border-left: 1px solid #ddd;">70</td>
+                                        <td><b>35</b></td>
+                                        <td style="border-left: 1px solid #ddd;">2</td>
+                                        <td><b>17</b></td>
+                                        <td>15</td>
+                                        <td>16</td>
+                                        <td style="border-left: 1px solid #ddd;">6</td>
+                                        <td>4</td>
+                                        <td><b>19</b></td>
+                                        <td>7</td>
+                                        <td>14</td>
+                                        <td style="border-left: 1px solid #ddd;">3</td>
+                                        <td>10</td>
+                                        <td><b>17</b></td>
+                                        <td>7</td>
+                                        <td>13</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Trans</td>
+                                        <td style="border-left: 1px solid #ddd;"><b>54</b></td>
+                                        <td>25</td>
+                                        <td style="border-left: 1px solid #ddd;">3</td>
+                                        <td>8</td>
+                                        <td>17</td>
+                                        <td><b>22</b></td>
+                                        <td style="border-left: 1px solid #ddd;">2</td>
+                                        <td>7</td>
+                                        <td>17</td>
+                                        <td>6</td>
+                                        <td><b>18</b></td>
+                                        <td style="border-left: 1px solid #ddd;">3</td>
+                                        <td>6</td>
+                                        <td>15</td>
+                                        <td>9</td>
+                                        <td><b>17</b></td>
+                                    </tr>
+                                    <tr>
+                                        <td>D2T</td>
+                                        <td style="border-left: 1px solid #ddd;">19</td>
+                                        <td><b>21</b></td>
+                                        <td style="border-left: 1px solid #ddd;">1</td>
+                                        <td>8</td>
+                                        <td>10</td>
+                                        <td><b>31</b></td>
+                                        <td style="border-left: 1px solid #ddd;">11</td>
+                                        <td>8</td>
+                                        <td>9</td>
+                                        <td>3</td>
+                                        <td><b>19</b></td>
+                                        <td style="border-left: 1px solid #ddd;">11</td>
+                                        <td>10</td>
+                                        <td>4</td>
+                                        <td>7</td>
+                                        <td><b>18</b></td>
+                                    </tr>
+                                    <tr>
+                                        <td>LF-QA</td>
+                                        <td style="border-left: 1px solid #ddd;"><b>42</b></td>
+                                        <td>19</td>
+                                        <td style="border-left: 1px solid #ddd;">4</td>
+                                        <td>10</td>
+                                        <td>11</td>
+                                        <td><b>25</b></td>
+                                        <td style="border-left: 1px solid #ddd;">5</td>
+                                        <td>8</td>
+                                        <td>14</td>
+                                        <td>7</td>
+                                        <td><b>16</b></td>
+                                        <td style="border-left: 1px solid #ddd;">6</td>
+                                        <td>8</td>
+                                        <td>10</td>
+                                        <td>6</td>
+                                        <td><b>20</b></td>
+                                    </tr>
+                                    <tr>
+                                        <td>MathQA</td>
+                                        <td style="border-left: 1px solid #ddd;"><b>39</b></td>
+                                        <td>26</td>
+                                        <td style="border-left: 1px solid #ddd;">5</td>
+                                        <td>12</td>
+                                        <td>12</td>
+                                        <td><b>21</b></td>
+                                        <td style="border-left: 1px solid #ddd;">5</td>
+                                        <td>7</td>
+                                        <td><b>19</b></td>
+                                        <td>5</td>
+                                        <td>14</td>
+                                        <td style="border-left: 1px solid #ddd;">4</td>
+                                        <td>9</td>
+                                        <td>10</td>
+                                        <td>13</td>
+                                        <td><b>14</b></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Instruct</td>
+                                        <td style="border-left: 1px solid #ddd;">5</td>
+                                        <td>9</td>
+                                        <td style="border-left: 1px solid #ddd;">5</td>
+                                        <td>5</td>
+                                        <td>8</td>
+                                        <td><b>32</b></td>
+                                        <td style="border-left: 1px solid #ddd;"><b>21</b></td>
+                                        <td>3</td>
+                                        <td>5</td>
+                                        <td>2</td>
+                                        <td>19</td>
+                                        <td style="border-left: 1px solid #ddd;">9</td>
+                                        <td>4</td>
+                                        <td>3</td>
+                                        <td>7</td>
+                                        <td><b>27</b></td>
+                                    </tr>
+                                    <tr>
+                                        <td>StoryGen</td>
+                                        <td style="border-left: 1px solid #ddd;"><b>66</b></td>
+                                        <td>29</td>
+                                        <td style="border-left: 1px solid #ddd;">7</td>
+                                        <td><b>16</b></td>
+                                        <td>13</td>
+                                        <td>14</td>
+                                        <td style="border-left: 1px solid #ddd;">7</td>
+                                        <td>6</td>
+                                        <td><b>16</b></td>
+                                        <td>10</td>
+                                        <td>11</td>
+                                        <td style="border-left: 1px solid #ddd;">7</td>
+                                        <td><b>12</b></td>
+                                        <td>11</td>
+                                        <td>9</td>
+                                        <td>11</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Total</td>
+                                        <td style="border-left: 1px solid #ddd;"><b>295</b></td>
+                                        <td>164</td>
+                                        <td style="border-left: 1px solid #ddd;">27</td>
+                                        <td>76</td>
+                                        <td>86</td>
+                                        <td><b>161</b></td>
+                                        <td style="border-left: 1px solid #ddd;">57</td>
+                                        <td>43</td>
+                                        <td>99</td>
+                                        <td>40</td>
+                                        <td><b>111</b></td>
+                                        <td style="border-left: 1px solid #ddd;">43</td>
+                                        <td>59</td>
+                                        <td>70</td>
+                                        <td>58</td>
+                                        <td><b>120</b></td>
+                                    </tr>
+                                    </tbody>
+                                </table>
+                                <p>
+                                    Table 4:Human evaluation results, the first question is asked per error in error analyses, and the others are per sample. Superior performance is indicated by higher numerical values. The most-voted rate of each task for each human evaluation aspect is bolded.
+                                </p>                        
                         </div>
                     </div>
                 </div>
             </div>
         </div>
     </section>
-
-
-
-
-
 
     <section class="hero">
         <div class="hero-body">
             <div class="container is-max-desktop">
+                
                 <div class="columns is-centered">
                     <div class="column has-text-centered is-fifths-fifths">
-                        <h2 class="title is-3">Comprehensive Results: Break Down</h2>
-                        <div class="content has-text-justified">
-                            <div class="buttonGroup">
-                                <button value="ALL">All</button>
-                                <button value="CS">Closed-source</button>
-                                <button value="7B">7B Parameter</button>
-                                <button value="13_15B">13-15B Parameter</button>
-                                <button value="30_34B">30-34B Parameter</button>
-                                <button value="65_70B">65-70B Parameter</button>
-                            </div>
-                            <table>
-                                <thead>
-                                    <tr>
-                                        <th>Model</th>
-                                        <th>GSM8K</th>
-                                        <th>MATH</th>
-                                        <th>AQuA</th>
-                                        <th>NumG</th>
-                                        <th>SVAMP</th>
-                                        <th>Mathematics</th>
-                                        <th>SimulEq</th>
-                                        <th>SAT</th>
-                                        <th>MMLU</th>
-                                    </tr>
-                                    <tr>
-                                    </tr>
-                                </thead>
-                                <tbody id="tabResults">
-                                    <tr class="th">
-                                        <td id="CS" colspan="14" style="text-align: center; font-weight: bold;">Closed-source Model</td>
-                                    </tr>
-                                    <tr>
-                                    </tr>
-                                    <tr>
-                                        <td>GPT-4</td>
-                                        <td>-</td>
-                                        <td>Unknown</td>
-                                        <td>92</td>
-                                        <td>42.5</td>
-                                        <td>72.6</td>
-                                        <td>-</td>
-                                        <td>-</td>
-                                        <td>97</td>
-                                        <td>-</td>
-                                        <td>-</td>
-                                        <td>95</td>
-                                        <td>-</td>
-                                        <td>-</td>
-                                    </tr>
-                                    <tr>
-                                    </tr>
-                                    <tr>
-                                        <td>Code-Interpreter</td>
-                                        <td>-</td>
-                                        <td>Unknown</td>
-                                        <td>97</td>
-                                        <td>69.7</td>
-                                        <td>-</td>
-                                        <td>-</td>
-                                        <td>-</td>
-                                        <td>-</td>
-                                        <td>-</td>
-                                        <td>-</td>
-                                        <td>-</td>
-                                        <td>-</td>
-                                        <td>-</td>
-                                    </tr>
-                                    <tr>
-                                        <td>PaLM-2</td>
-                                        <td>-</td>
-                                        <td>Unknown</td>
-                                        <td>80.7</td>
-                                        <td>34.3</td>
-                                        <td>64.1</td>
-                                        <td>-</td>
-                                        <td>-</td>
-                                        <td>-</td>
-                                        <td>-</td>
-                                        <td>-</td>
-                                        <td>-</td>
-                                        <td>-</td>
-                                        <td>-</td>
-                                    </tr>
-                                    <tr>
-                                        <td>Claude-2</td>
-                                        <td>-</td>
-                                        <td>Unknown</td>
-                                        <td>85.2</td>
-                                        <td>32.5</td>
-                                        <td>60.9</td>
-                                        <td>-</td>
-                                        <td>-</td>
-                                        <td>-</td>
-                                        <td>-</td>
-                                        <td>-</td>
-                                        <td>-</td>
-                                        <td>-</td>
-                                        <td>-</td>
-                                    </tr>
-                                    <tr>
-                                        <td>Codex (PoT)</td>
-                                        <td>-</td>
-                                        <td>No</td>
-                                        <td>71.6</td>
-                                        <td>36.8</td>
-                                        <td>54.1</td>
-                                        <td>-</td>
-                                        <td>- </td>
-                                        <td>85.2</td>
-                                        <td>-</td>
-                                        <td>-</td>
-                                        <td>68</td>
-                                        <td>-</td>
-                                        <td>- </td>
-                                    </tr>
-                                    <tr>
-                                    </tr>
-
-                                    <tr class="th">
-                                        <td id="7B" colspan="14" style="text-align: center; font-weight: bold;">7B Parameter Model</td>
-                                    </tr>
-                                    <tr>
-                                    </tr>
-                                    <tr>
-                                        <td>Llama-1</td>
-                                        <td>-</td>
-                                        <td>No</td>
-                                        <td>10.7</td>
-                                        <td>2.9</td>
-                                        <td>22.6</td>
-                                        <td>24.7</td>
-                                        <td>15.5</td>
-                                        <td>24.5</td>
-                                        <td>6.2</td>
-                                        <td>4.6</td>
-                                        <td>22.7</td>
-                                        <td>30.6</td>
-                                        <td>17.7</td>
-                                    </tr>
-                                    <tr>
-                                    </tr>
-                                    <tr>
-                                        <td>Llama-2</td>
-                                        <td>-</td>
-                                        <td>No</td>
-                                        <td>14.6</td>
-                                        <td>2.5</td>
-                                        <td>30.3</td>
-                                        <td>29.9</td>
-                                        <td>19.3</td>
-                                        <td>34.5</td>
-                                        <td>6</td>
-                                        <td>5</td>
-                                        <td>26.8</td>
-                                        <td>29.8</td>
-                                        <td>20.4</td>
-                                    </tr>
-                                    <tr>
-                                    </tr>
-                                    <tr>
-                                        <td>Galactica-6.7B</td>
-                                        <td>GAL</td>
-                                        <td>GAL-Instruct</td>
-                                        <td>10.2</td>
-                                        <td>2.2</td>
-                                        <td>25.6</td>
-                                        <td>25.8</td>
-                                        <td>15.9</td>
-                                        <td>25.6</td>
-                                        <td>4.6</td>
-                                        <td>4.2</td>
-                                        <td>17.5</td>
-                                        <td>28</td>
-                                        <td>16</td>
-                                    </tr>
-                                    <tr>
-                                    </tr>
-                                    <tr>
-                                        <td>Code-Llama (PoT)</td>
-                                        <td>-</td>
-                                        <td>No</td>
-                                        <td>25.2</td>
-                                        <td>14.2</td>
-                                        <td>24</td>
-                                        <td>26.8</td>
-                                        <td>22.3 </td>
-                                        <td>49.4</td>
-                                        <td>21.7</td>
-                                        <td>3.5</td>
-                                        <td>28.6</td>
-                                        <td>26.9</td>
-                                        <td>26 </td>
-                                    </tr>
-                                    <tr>
-                                    </tr>
-                                    <tr>
-                                        <td>AQuA-SFT</td>
-                                        <td>Llama-2</td>
-                                        <td>AQuA</td>
-                                        <td>11.2</td>
-                                        <td>3.6</td>
-                                        <td>35.6</td>
-                                        <td>12.2</td>
-                                        <td>15.6 </td>
-                                        <td>-</td>
-                                        <td>-</td>
-                                        <td>-</td>
-                                        <td>-</td>
-                                        <td>-</td>
-                                        <td>-</td>
-                                    </tr>
-                                    <tr>
-                                        <td>Llama-1 RFT</td>
-                                        <td>Llama-1</td>
-                                        <td>GSM8K</td>
-                                        <td>46.5</td>
-                                        <td>5.2</td>
-                                        <td>18.8</td>
-                                        <td>21.1</td>
-                                        <td>22.9 </td>
-                                        <td>21.1</td>
-                                        <td>5.1</td>
-                                        <td>11</td>
-                                        <td>12.5</td>
-                                        <td>21.7</td>
-                                        <td>14.3 </td>
-                                    </tr>
-                                    <tr>
-                                    </tr>
-                                    <tr>
-                                        <td>WizardMath</td>
-                                        <td>Llama-2</td>
-                                        <td>GSM8K+MATH</td>
-                                        <td>54.9</td>
-                                        <td>10.7</td>
-                                        <td>26.3</td>
-                                        <td>36.1</td>
-                                        <td>32 </td>
-                                        <td>36.1</td>
-                                        <td>9.3</td>
-                                        <td>12.8</td>
-                                        <td>25.4</td>
-                                        <td>31.1</td>
-                                        <td>28.6 </td>
-                                    </tr>
-                                    <tr>
-                                    </tr>
-                                    <tr>
-                                        <td>MAmmoTH</td>
-                                        <td>Llama-2</td>
-                                        <td>MathInstruct</td>
-                                        <td>51.7</td>
-                                        <td>31.2</td>
-                                        <td>42.9</td>
-                                        <td>53.1</td>
-                                        <td>44.7 </td>
-                                        <td>66.7</td>
-                                        <td>44.8</td>
-                                        <td>42</td>
-                                        <td>36.4</td>
-                                        <td>38.6</td>
-                                        <td>45.7 </td>
-                                    </tr>
-                                    <tr>
-                                    </tr>
-                                    <tr>
-                                        <td>MAmmoTHc</td>
-                                        <td>Code-Llama</td>
-                                        <td>MathInstruct</td>
-                                        <td>58.8</td>
-                                        <td>35.2</td>
-                                        <td>43</td>
-                                        <td>57.1</td>
-                                        <td>48.5 </td>
-                                        <td>71.1</td>
-                                        <td>53.9</td>
-                                        <td>44.6</td>
-                                        <td>40</td>
-                                        <td>40.5</td>
-                                        <td>50.2 </td>
-                                    </tr>
-                                    <tr>
-                                    </tr>
-                                    <tr>
-                                        <td>$\Delta$</td>
-                                        <td></td>
-                                        <td></td>
-                                        <td>+4</td>
-                                        <td>+21</td>
-                                        <td>+8</td>
-                                        <td>+21</td>
-                                        <td>+16 </td>
-                                        <td>+22</td>
-                                        <td>+32</td>
-                                        <td>+32</td>
-                                        <td>+12</td>
-                                        <td>+9</td>
-                                        <td>+22 </td>
-                                    </tr>
-                                    <tr>
-                                    </tr>
-
-                                    <tr class="th">
-                                        <td id="13_15B" colspan="14" style="text-align: center; font-weight: bold;">13-15B Parameter Model</td>
-                                    </tr>
-                                    <tr>
-                                    </tr>
-                                    <tr>
-                                        <td>Llama-1</td>
-                                        <td>-</td>
-                                        <td>No</td>
-                                        <td>17.8</td>
-                                        <td>3.9</td>
-                                        <td>26</td>
-                                        <td>24.8</td>
-                                        <td>18.1 </td>
-                                        <td>34.7</td>
-                                        <td>6.9</td>
-                                        <td>5.4</td>
-                                        <td>27.7</td>
-                                        <td>30.7</td>
-                                        <td>21 </td>
-                                    </tr>
-                                    <tr>
-                                    </tr>
-                                    <tr>
-                                        <td>Llama-2</td>
-                                        <td>-</td>
-                                        <td>No</td>
-                                        <td>28.7</td>
-                                        <td>3.9</td>
-                                        <td>25.1</td>
-                                        <td>8.8</td>
-                                        <td>16.6 </td>
-                                        <td>35.1</td>
-                                        <td>11.5</td>
-                                        <td>5.8</td>
-                                        <td>32.7</td>
-                                        <td>34.4</td>
-                                        <td>23.9 </td>
-                                    </tr>
-                                    <tr>
-                                    </tr>
-                                    <tr>
-                                        <td>Code-Llama (PoT)</td>
-                                        <td>-</td>
-                                        <td>No</td>
-                                        <td>36.1</td>
-                                        <td>18.1</td>
-                                        <td>28.7</td>
-                                        <td>29.2</td>
-                                        <td>28 </td>
-                                        <td>60</td>
-                                        <td>21.3</td>
-                                        <td>3.8</td>
-                                        <td>25.9</td>
-                                        <td>27.7</td>
-                                        <td>27.7 </td>
-                                    </tr>
-                                    <tr>
-                                    </tr>
-                                    <tr>
-                                        <td>CodeT5+ (PoT)</td>
-                                        <td>-</td>
-                                        <td>No</td>
-                                        <td>12.5</td>
-                                        <td>2.4</td>
-                                        <td>20.5</td>
-                                        <td>19.4</td>
-                                        <td>13.7 </td>
-                                        <td>-</td>
-                                        <td>-</td>
-                                        <td>-</td>
-                                        <td>-</td>
-                                        <td>-</td>
-                                        <td>-</td>
-                                    </tr>
-                                    <tr>
-                                        <td>CodeGen+ (PoT)</td>
-                                        <td>-</td>
-                                        <td>No</td>
-                                        <td>12.7</td>
-                                        <td>3.4</td>
-                                        <td>24.5</td>
-                                        <td>22.5</td>
-                                        <td>15.7 </td>
-                                        <td>-</td>
-                                        <td>-</td>
-                                        <td>-</td>
-                                        <td>-</td>
-                                        <td>-</td>
-                                        <td>-</td>
-                                    </tr>
-                                    <tr>
-                                        <td>Vicuna-1.5</td>
-                                        <td>Llama-2</td>
-                                        <td>No</td>
-                                        <td>28.4</td>
-                                        <td>5.8</td>
-                                        <td>24.8</td>
-                                        <td>36.9</td>
-                                        <td>23.9 </td>
-                                        <td>55.7</td>
-                                        <td>10</td>
-                                        <td>6.6</td>
-                                        <td>34</td>
-                                        <td>34.1</td>
-                                        <td>28.1 </td>
-                                    </tr>
-                                    <tr>
-                                    </tr>
-                                    <tr>
-                                        <td>Llama-1 RFT</td>
-                                        <td>Llama-1</td>
-                                        <td>GSM8K</td>
-                                        <td>52.1</td>
-                                        <td>5.1</td>
-                                        <td>16.1</td>
-                                        <td>24.5</td>
-                                        <td>24.4 </td>
-                                        <td>46.5</td>
-                                        <td>6.7</td>
-                                        <td>10.1</td>
-                                        <td>13.2</td>
-                                        <td>21.6</td>
-                                        <td>19.6 </td>
-                                    </tr>
-                                    <tr>
-                                    </tr>
-                                    <tr>
-                                        <td>Orca-Platypus</td>
-                                        <td>Llama-2</td>
-                                        <td>Platypus</td>
-                                        <td>38.4</td>
-                                        <td>3</td>
-                                        <td>18.9</td>
-                                        <td>35.3</td>
-                                        <td>23.9 </td>
-                                        <td>56.8</td>
-                                        <td>12.6</td>
-                                        <td>7.9</td>
-                                        <td>29.5</td>
-                                        <td>41.6</td>
-                                        <td>29.7 </td>
-                                    </tr>
-                                    <tr>
-                                    </tr>
-                                    <tr>
-                                        <td>Platypus</td>
-                                        <td>Llama-2</td>
-                                        <td>Platypus</td>
-                                        <td>25.7</td>
-                                        <td>2.5</td>
-                                        <td>33.4</td>
-                                        <td>42.3</td>
-                                        <td>25.9 </td>
-                                        <td>55.4</td>
-                                        <td>11.4</td>
-                                        <td>7.4</td>
-                                        <td>36.8</td>
-                                        <td>35.5</td>
-                                        <td>29.3 </td>
-                                    </tr>
-                                    <tr>
-                                    </tr>
-                                    <tr>
-                                        <td>WizardMath</td>
-                                        <td>Llama-2</td>
-                                        <td>GSM8K+MATH</td>
-                                        <td>63.9</td>
-                                        <td>14</td>
-                                        <td>21.2</td>
-                                        <td>40.8</td>
-                                        <td>34.9 </td>
-                                        <td>51.9</td>
-                                        <td>14.1</td>
-                                        <td>14.9</td>
-                                        <td>24.5</td>
-                                        <td>32.1</td>
-                                        <td>27.5 </td>
-                                    </tr>
-                                    <tr>
-                                    </tr>
-                                    <tr>
-                                        <td>MAmmoTH</td>
-                                        <td>Llama-2</td>
-                                        <td>MathInstruct</td>
-                                        <td>61.7</td>
-                                        <td>36</td>
-                                        <td>44.8</td>
-                                        <td>59.6</td>
-                                        <td>50.5 </td>
-                                        <td>72.4</td>
-                                        <td>48.7</td>
-                                        <td>40.5</td>
-                                        <td>42.7</td>
-                                        <td>45.3</td>
-                                        <td>49.9 </td>
-                                    </tr>
-                                    <tr>
-                                    </tr>
-                                    <tr>
-                                        <td>MAmmoTHc</td>
-                                        <td>Code-Llama</td>
-                                        <td>MathInstruct</td>
-                                        <td>64.3</td>
-                                        <td>38.6</td>
-                                        <td>46.1</td>
-                                        <td>54.2</td>
-                                        <td>50.8 </td>
-                                        <td>73.2</td>
-                                        <td>60</td>
-                                        <td>44.1</td>
-                                        <td>40.9</td>
-                                        <td>45.2</td>
-                                        <td>52.6 </td>
-                                    </tr>
-                                    <tr>
-                                    </tr>
-                                    <tr>
-                                        <td>$\Delta$</td>
-                                        <td></td>
-                                        <td></td>
-                                        <td>0</td>
-                                        <td>+20</td>
-                                        <td>+13</td>
-                                        <td>+17</td>
-                                        <td>+16 </td>
-                                        <td>+13</td>
-                                        <td>+39</td>
-                                        <td>+30</td>
-                                        <td>+6</td>
-                                        <td>+4</td>
-                                        <td>+23 </td>
-                                    </tr>
-                                    <tr>
-                                    </tr>
-                                    <tr class="th">
-                                        <td id="30_34B" colspan="14" style="text-align: center; font-weight: bold;">30-34B Parameter Model</td>
-                                    </tr>
-                                    <tr>
-                                    </tr>
-                                    <tr>
-                                        <td>Llama-1</td>
-                                        <td>-</td>
-                                        <td>No</td>
-                                        <td>35.6</td>
-                                        <td>7.1</td>
-                                        <td>33.4</td>
-                                        <td>28.4</td>
-                                        <td>26.1 </td>
-                                        <td>48.8</td>
-                                        <td>12.8</td>
-                                        <td>11.2</td>
-                                        <td>33.4</td>
-                                        <td>39</td>
-                                        <td>29 </td>
-                                    </tr>
-                                    <tr>
-                                    </tr>
-                                    <tr>
-                                        <td>Code-Llama (PoT)</td>
-                                        <td>-</td>
-                                        <td>No</td>
-                                        <td>44</td>
-                                        <td>25</td>
-                                        <td>25.2</td>
-                                        <td>29.3</td>
-                                        <td>30.8 </td>
-                                        <td>69.1</td>
-                                        <td>34.5</td>
-                                        <td>6.8</td>
-                                        <td>26.8</td>
-                                        <td>21.6</td>
-                                        <td>31.7 </td>
-                                    </tr>
-                                    <tr>
-                                    </tr>
-                                    <tr>
-                                        <td>Llama-1 RFT</td>
-                                        <td>Llama-1</td>
-                                        <td>GSM8K</td>
-                                        <td>56.5</td>
-                                        <td>7.4</td>
-                                        <td>18.5</td>
-                                        <td>24.3</td>
-                                        <td>26.6 </td>
-                                        <td>55.4</td>
-                                        <td>7.6</td>
-                                        <td>12.8</td>
-                                        <td>20.4</td>
-                                        <td>37.9</td>
-                                        <td>26.8 </td>
-                                    </tr>
-                                    <tr>
-                                    </tr>
-                                    <tr>
-                                        <td>Galactica-30B</td>
-                                        <td>GAL</td>
-                                        <td>GAL-Instruct</td>
-                                        <td>41.7</td>
-                                        <td>12.7</td>
-                                        <td>28.7</td>
-                                        <td>34.7</td>
-                                        <td>29.4 </td>
-                                        <td>41.6</td>
-                                        <td>11.8</td>
-                                        <td>13.2</td>
-                                        <td>37.7</td>
-                                        <td>37.9</td>
-                                        <td>28.4 </td>
-                                    </tr>
-                                    <tr>
-                                    </tr>
-                                    <tr>
-                                        <td>Platypus</td>
-                                        <td>Llama-1</td>
-                                        <td>Platypus</td>
-                                        <td>37.8</td>
-                                        <td>10.1</td>
-                                        <td>27.9</td>
-                                        <td>40.5</td>
-                                        <td>29.1 </td>
-                                        <td>51.7</td>
-                                        <td>13.8</td>
-                                        <td>13.6</td>
-                                        <td>38.6</td>
-                                        <td>41</td>
-                                        <td>31.7 </td>
-                                    </tr>
-                                    <tr>
-                                    </tr>
-                                    <tr>
-                                        <td>Tulu</td>
-                                        <td>Llama-2</td>
-                                        <td>Tulu</td>
-                                        <td>51</td>
-                                        <td>10.8</td>
-                                        <td>25.5</td>
-                                        <td>43.4</td>
-                                        <td>32.6 </td>
-                                        <td>59</td>
-                                        <td>10.7</td>
-                                        <td>10.3</td>
-                                        <td>31.3</td>
-                                        <td>39.8</td>
-                                        <td>30.2 </td>
-                                    </tr>
-                                    <tr>
-                                    </tr>
-                                    <tr>
-                                        <td>MAmmoTHc</td>
-                                        <td>Code-Llama</td>
-                                        <td>MathInstruct</td>
-                                        <td>72.3</td>
-                                        <td>46.8</td>
-                                        <td>50.8</td>
-                                        <td>59.6</td>
-                                        <td>57.3 </td>
-                                        <td>84</td>
-                                        <td>64.7</td>
-                                        <td>50.6</td>
-                                        <td>51.8</td>
-                                        <td>50.2</td>
-                                        <td>60.3 </td>
-                                    </tr>
-                                    <tr>
-                                    </tr>
-                                    <tr>
-                                        <td>$\Delta$</td>
-                                        <td></td>
-                                        <td></td>
-                                        <td>+16</td>
-                                        <td>+22</td>
-                                        <td>+17</td>
-                                        <td>+16</td>
-                                        <td>+25 </td>
-                                        <td>+15</td>
-                                        <td>+30</td>
-                                        <td>+37</td>
-                                        <td>+13</td>
-                                        <td>+9</td>
-                                        <td>+29 </td>
-                                    </tr>
-                                    <tr>
-                                    </tr>
-                                    <tr class="th">
-                                        <td id="65_70B" colspan="14" style="text-align: center; font-weight: bold;">65-70B Parameter Model</td>
-                                    </tr>
-                                    <tr>
-                                    </tr>
-                                    <tr>
-                                        <td>Llama-1</td>
-                                        <td>-</td>
-                                        <td>No</td>
-                                        <td>50.9</td>
-                                        <td>10.6</td>
-                                        <td>35</td>
-                                        <td>50.2</td>
-                                        <td>36.6 </td>
-                                        <td>55.3</td>
-                                        <td>14.2</td>
-                                        <td>15.2</td>
-                                        <td>37.4</td>
-                                        <td>44.1</td>
-                                        <td>33.2 </td>
-                                    </tr>
-                                    <tr>
-                                    </tr>
-                                    <tr>
-                                        <td>Llama-2</td>
-                                        <td>-</td>
-                                        <td>No</td>
-                                        <td>56.8</td>
-                                        <td>13.5</td>
-                                        <td>40.9</td>
-                                        <td>50.4</td>
-                                        <td>40.4 </td>
-                                        <td>63.8</td>
-                                        <td>20.5</td>
-                                        <td>14</td>
-                                        <td>51.3</td>
-                                        <td>47.1</td>
-                                        <td>39.3 </td>
-                                    </tr>
-                                    <tr>
-                                    </tr>
-                                    <tr>
-                                        <td>Llama-2-Chat</td>
-                                        <td>Llama-2</td>
-                                        <td>No</td>
-                                        <td>54.9</td>
-                                        <td>18.6</td>
-                                        <td>37</td>
-                                        <td>51.6</td>
-                                        <td>40.5 </td>
-                                        <td>71.5</td>
-                                        <td>19.2</td>
-                                        <td>21.7</td>
-                                        <td>44.1</td>
-                                        <td>46.9</td>
-                                        <td>40.6 </td>
-                                    </tr>
-                                    <tr>
-                                    </tr>
-                                    <tr>
-                                        <td>Guanaco</td>
-                                        <td>Llama-2</td>
-                                        <td>No</td>
-                                        <td>59.2</td>
-                                        <td>4.1</td>
-                                        <td>45.2</td>
-                                        <td>53.5</td>
-                                        <td>40.5 </td>
-                                        <td>66.8</td>
-                                        <td>17.8</td>
-                                        <td>20.2</td>
-                                        <td>50</td>
-                                        <td>47.3</td>
-                                        <td>40.4 </td>
-                                    </tr>
-                                    <tr>
-                                    </tr>
-                                    <tr>
-                                        <td>WizardMath</td>
-                                        <td>Llama-2</td>
-                                        <td>GSM8K+MATH</td>
-                                        <td>81.6</td>
-                                        <td>22.7</td>
-                                        <td>20</td>
-                                        <td>48.9</td>
-                                        <td>43.3 </td>
-                                        <td>71.8</td>
-                                        <td>17.1</td>
-                                        <td>37.9</td>
-                                        <td>13.2</td>
-                                        <td>27.4</td>
-                                        <td>33.4 </td>
-                                    </tr>
-                                    <tr>
-                                    </tr>
-                                    <tr>
-                                        <td>Platypus</td>
-                                        <td>Llama-2</td>
-                                        <td>Platypus</td>
-                                        <td>70.6</td>
-                                        <td>18.6</td>
-                                        <td>51.2</td>
-                                        <td>55.4</td>
-                                        <td>48.9 </td>
-                                        <td>51.8</td>
-                                        <td>26.3</td>
-                                        <td>21.7</td>
-                                        <td>55.9</td>
-                                        <td>52.5</td>
-                                        <td>41.6 </td>
-                                    </tr>
-                                    <tr>
-                                    </tr>
-                                    <tr>
-                                        <td>MAmmoTH</td>
-                                        <td>Llama-2</td>
-                                        <td>MathInstruct</td>
-                                        <td>76.7</td>
-                                        <td>44.2</td>
-                                        <td>61.4</td>
-                                        <td>64.3</td>
-                                        <td>61.7 </td>
-                                        <td>81.7</td>
-                                        <td>55.3</td>
-                                        <td>45.3</td>
-                                        <td>58.6</td>
-                                        <td>52.3</td>
-                                        <td>58.6 </td>
-                                    </tr>
-                                    <tr>
-                                    </tr>
-                                    <tr>
-                                        <td>$\Delta$</td>
-                                        <td></td>
-                                        <td></td>
-                                        <td>-5</td>
-                                        <td>+22</td>
-                                        <td>+10</td>
-                                        <td>+9</td>
-                                        <td>+13 </td>
-                                        <td>+10</td>
-                                        <td>+29</td>
-                                        <td>+8</td>
-                                        <td>+3</td>
-                                        <td>+0</td>
-                                        <td>+17 </td>
-                                    </tr>
-                                    <tr>
-                                    </tr>
+                    <h2 class="title is-3">Two Channel Data Collection</h2>
+                    <div class="column is-fifths-fifths">
+                        
+                        <div class="item">
+                            <!-- Your image here -->
+                            <img src="static/images/channel_test.png" alt="The different perfermance among different data source" />
+                            <h2 class="subtitle">
+                                Figure 3: Investigation of the influence of Real-World & Synthesic mix training on the 13B model.
                         </div>
-                        </tbody>
-                        </table>
                     </div>
+                    <p>
+                        To investigate the significance of our two-channel data in contributing to the strong performance of TIGERScore, we conducted a series of experiments with the following setups:<br/> 
+                        <b>TIGERScore (MetricInstruct-Real-World)</b>, which aimed to assess the quality of our real-world data and evaluate how to represent real-world data. <br/>
+                        <b>TIGERScore (MetricInstruct-Synthesic)</b>, which aimed to evaluate the impact of our synthetic data in enhancing quality as the complement.<br/>
+                        <b>TIGERScore (MetricInstruct-Mix)</b>, our official model, to assess the combined effect of using both types of data during training.<br/>
+
+                        The results demonstrate that TIGERScore(MetricInstruct-Mix) outperforms other methods for most tasks, followed by TIGERScore(MetricInstruct-Real-World), indicating that the real-world channel data in MetricInstruct is effectively represented. Despite the subpar performance of TIGERScore (MetricInstruct-Synthetic), the significant improvement between TIGERScore(MetricInstruct-Mix) and TIGERScore(MetricInstruct-Real-World) suggests that synthetic data in MetricInstruct serves as a valuable supplement, enhancing the robustness of our model.
+                    </p>
                 </div>
             </div>
         </div>
         </div>
     </section>
-
-
 
     <!-- BibTex citation -->
     <section class="section" id="BibTeX">
@@ -1186,10 +843,10 @@
             <h2 class="title">Reference</h2>
             Please kindly cite our paper if you use our code, data, models or results:
             <br><br>
-            <pre><code>@article{yue2023mammoth,
-  title={MAmmoTH: Building Math Generalist Models through Hybrid Instruction Tuning},
-  author={Xiang Yue, Xingwei Qu, Ge Zhang, Yao Fu, Wenhao Huang, Huan Sun, Yu Su, Wenhu Chen},
-  journal={arXiv preprint arXiv:2309.05653},
+            <pre><code>@article{jiang2023TIGERScore,
+  title={TIGERScore: Towards Building Explainable Metric for All Text Generation Tasks},
+  author={Dongfu Jiang, Yishan Li, Ge Zhang, Wenhao Huang, Bill Yuchen Lin, Wenhu Chen},
+  journal={arXiv preprint arXiv:2310.00752},
   year={2023}
 }</code></pre>
         </div>
@@ -1215,21 +872,4 @@
     </footer>
 
 </body>
-<style>
-    .buttonGroup {
-        text-align: center;
-    }
-    
-    .buttonGroup>button {
-        padding: 15px;
-        color: white;
-        background-color: #363636;
-        border-radius: 5px;
-    }
-    
-    .buttonGroup>button:hover {
-        box-shadow: 5px;
-    }
-</style>
-
 </html>
