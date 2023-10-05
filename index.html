@@ -124,7 +124,7 @@
                                         <span>Models</span>
                                     </a>
                                 </span>
-                                
+
                                 <span class="link-block">
                                     <a href="https://huggingface.co/spaces/TIGER-Lab/TIGERScore" target="_blank"
                                         class="external-link button is-normal is-rounded is-dark">
@@ -223,15 +223,20 @@
                         </div>
                     </div>
                 </div>
-                <p>
-                    TIGERScore is built upon three design criteria: <br />
-                <p style="text-indent: 2em;"><b>(1)</b> It is driven by instructions, making it easily adaptable to any
-                    text generation task. <br /></p>
-                <p style="text-indent: 2em;"><b>(2)</b> The evaluation process eliminates the need for a "gold standard"
-                    or perfect example for comparison. <br /></p>
-                <p style="text-indent: 2em;"><b>(3)</b> It is highly explainable, as the model can generate an error
-                    analysis that helps the user understand each identified mistake and its associated penalty.</p>
-                </p>
+                <div class="column is-fifths-fifths" style="margin-left: 2em;margin-right: 4em;">
+                    <p style="margin-left: 2em;margin-right: 2em;">
+                        TIGERScore is built upon three design criteria: <br />
+                    <p style="margin-left: 2em;margin-right: 2em;"><b>(1)</b> It is driven by instructions, making it
+                        easily adaptable to any
+                        text generation task. <br /></p>
+                    <p style="margin-left: 2em;margin-right: 2em;"><b>(2)</b> The evaluation process eliminates the need
+                        for a "gold standard"
+                        or perfect example for comparison. <br /></p>
+                    <p style="margin-left: 2em;margin-right: 2em;"><b>(3)</b> It is highly explainable, as the model can
+                        generate an error
+                        analysis that helps the user understand each identified mistake and its associated penalty.</p>
+                    </p>
+                </div>
             </div>
         </div>
     </section>
@@ -253,22 +258,31 @@
                                 </h2>
                             </div>
                         </div>
-                        <p>
-                            We present the MetricInstruct dataset, which is employed to fine-tune TIGERScore. The three
-                            underlying criteria for dataset construction are: <br /></p>
-                        <p style="text-indent: 2em;"><b>(1) Dataset diversity</b>: we choose 23 distinctive datasets as
-                            the source context to cover enough generation tasks. <br /></p>
-                        <p style="text-indent: 2em;"><b>(2) Error coverage</b>: we take system outputs generated from
-                            50+ text generation systems to cover all types of errors and guarantee a balanced
-                            distribution. <br /></p>
-                        <p style="text-indent: 2em;"><b>(3) Quality ensurance</b>: to ensure MetricInstruct is tailored
-                            to gather in-depth error analysis, we sourced it by prompting OpenAI GPT models and then
-                            filtered through different heuristics to eliminate low-quality error analysis. <br />
-                            <br />
-                            Our system outputs come from two channels, namely real-world system outputs and synthetic
-                            outputs. The real-world system outputs are obtained from real systems, which ensures the
-                            error distribution is aligned with real-world ones.
-                        </p>
+                        <div class="column is-fifths-fifths" style="margin-left: 2em;margin-right: 4em;">
+                            <p>
+                                We present the MetricInstruct dataset, which is employed to fine-tune TIGERScore. The
+                                three
+                                underlying criteria for dataset construction are: <br /><br /></p>
+                            <p style="margin-left: 2em;margin-right: 2em;"><b>(1) Dataset diversity</b>: we choose 23
+                                distinctive datasets as
+                                the source context to cover enough generation tasks. <br /></p>
+                            <p style="margin-left: 2em;margin-right: 2em;"><b>(2) Error coverage</b>: we take system
+                                outputs generated from
+                                50+ text generation systems to cover all types of errors and guarantee a balanced
+                                distribution. <br /></p>
+                            <p style="margin-left: 2em;margin-right: 2em;"><b>(3) Quality ensurance</b>: to ensure
+                                MetricInstruct is tailored
+                                to gather in-depth error analysis, we sourced it by prompting OpenAI GPT models and then
+                                filtered through different heuristics to eliminate low-quality error analysis. <br />
+                                <br />
+                            </p>
+                            <p>
+                                Our system outputs come from two channels, namely real-world system outputs and
+                                synthetic
+                                outputs. The real-world system outputs are obtained from real systems, which ensures the
+                                error distribution is aligned with real-world ones.
+                            </p>
+                        </div>
                         <br /><br />
                         <div class="content has-text-justified">
                             <table>
@@ -366,7 +380,7 @@
                     <div class="column has-text-centered is-fifths-fifths">
                         <h2 class="title is-3">Overall Results</h2>
                         <div class="content has-text-justified">
-                            <p>
+                            <p style="margin-left: 2em;margin-right: 2em;">
                                 Nota bene that TIGERScore significantly surpasses traditional metrics, i.e. BLUE, ROUGE,
                                 BARTScore, and BLEURT, and emerging LLM-based metrics as reference-free metrics.
                                 Though our dataset was originally sourced from ChatGPT, our distilled model actually
@@ -670,27 +684,38 @@
                     <div class="column has-text-centered is-fifths-fifths">
                         <h2 class="title is-3">Human Evaluation</h2>
                         <div class="content has-text-justified">
-                            <p>
-                                The reasonableness of the error analysis provided by TIGERScore was assessed through a
-                                random selection of 50 error analyses from each evaluation dataset. <br /><br />
-                                These error analyses are then evaluated by human experts who rated them from the
-                                following perspectives: <br />
-                            <p style="text-indent: 2em;"><b>Reasonableness:</b> The human experts directly pointed out
-                                which errors are problematic in error analyses, examining whether the analysis contained
-                                hallucination or illogical reasoning. <br /></p>
-                            <p style="text-indent: 2em;"><b>Comprehensiveness:</b> The human experts carefully review
-                                the source, output, and error analyses to determine if there are any additional errors
-                                unnoticed by TIGERScore.
-                                Based on human experts' analysis, they give a score on a scale of 1 to 4, specifically
-                                focused on identifying potential errors that may have been overlooked in the original
-                                analysis conducted by TIGERScore.<br /></p>
-                            <p style="text-indent: 2em;"><b>Effectiveness:</b> The revision suggestions in error
-                                analyses are evaluated by human experts, on a scale of 1 to 5, to determine their
-                                appropriateness and effectiveness in enhancing the output quantity.<br /></p>
-                            <p style="text-indent: 2em;"><b>Overall:</b> The Human experts further assign an overall
-                                score on a scale of 1 to 5 based on the reasonableness, comprehensiveness, and
-                                effectiveness of the error analysis.<br /></p>
-                            </p>
+                            <div style="margin-left: 2em;margin-right: 4em;">
+                                <p>
+                                    The reasonableness of the error analysis provided by TIGERScore was assessed through
+                                    a
+                                    random selection of 50 error analyses from each evaluation dataset. <br /><br />
+                                    These error analyses are then evaluated by human experts who rated them from the
+                                    following perspectives: <br />
+                                <p style="margin-left: 2em;margin-right: 2em;"><b>Reasonableness:</b> The human experts
+                                    directly pointed out
+                                    which errors are problematic in error analyses, examining whether the analysis
+                                    contained
+                                    hallucination or illogical reasoning. <br /></p>
+                                <p style="margin-left: 2em;margin-right: 2em;"><b>Comprehensiveness:</b> The human
+                                    experts carefully review
+                                    the source, output, and error analyses to determine if there are any additional
+                                    errors
+                                    unnoticed by TIGERScore.
+                                    Based on human experts' analysis, they give a score on a scale of 1 to 4,
+                                    specifically
+                                    focused on identifying potential errors that may have been overlooked in the
+                                    original
+                                    analysis conducted by TIGERScore.<br /></p>
+                                <p style="margin-left: 2em;margin-right: 2em;"><b>Effectiveness:</b> The revision
+                                    suggestions in error
+                                    analyses are evaluated by human experts, on a scale of 1 to 5, to determine their
+                                    appropriateness and effectiveness in enhancing the output quantity.<br /></p>
+                                <p style="margin-left: 2em;margin-right: 2em;"><b>Overall:</b> The Human experts further
+                                    assign an overall
+                                    score on a scale of 1 to 5 based on the reasonableness, comprehensiveness, and
+                                    effectiveness of the error analysis.<br /></p>
+                                </p>
+                            </div>
                             <br /><br />
                             <table>
                                 <thead>
@@ -911,28 +936,37 @@
                                     the 13B model.
                             </div>
                         </div>
-                        <p>
-                            To investigate the significance of our two-channel data in contributing to the strong
-                            performance of TIGERScore, we conducted a series of experiments with the following
-                            setups:<br />
-                        <p style="text-indent: 2em;"><b>TIGERScore (MetricInstruct-Real-World)</b>, which aimed to
-                            assess the quality of our real-world data and evaluate how to represent real-world data.
-                            <br /></p>
-                        <p style="text-indent: 2em;"><b>TIGERScore (MetricInstruct-Synthesic)</b>, which aimed to
-                            evaluate the impact of our synthetic data in enhancing quality as the complement.<br /></p>
-                        <p style="text-indent: 2em;"><b>TIGERScore (MetricInstruct-Mix)</b>, our official model, to
-                            assess the combined effect of using both types of data during training.<br /></p>
-                        <br />
-                        <p>
-                            The results demonstrate that TIGERScore(MetricInstruct-Mix) outperforms other methods for
-                            most tasks, followed by TIGERScore(MetricInstruct-Real-World), indicating that the
-                            real-world channel data in MetricInstruct is effectively represented. Despite the subpar
-                            performance of TIGERScore (MetricInstruct-Synthetic), the significant improvement between
-                            TIGERScore(MetricInstruct-Mix) and TIGERScore(MetricInstruct-Real-World) suggests that
-                            synthetic data in MetricInstruct serves as a valuable supplement, enhancing the robustness
-                            of our model.
-                        </p>
-                        </p>
+                        <div style="margin-left: 2em;margin-right: 4em;">
+                            <p>
+                                To investigate the significance of our two-channel data in contributing to the strong
+                                performance of TIGERScore, we conducted a series of experiments with the following
+                                setups:<br /><br />
+                            <p style="margin-left: 2em;margin-right: 2em;"><b>TIGERScore
+                                    (MetricInstruct-Real-World)</b>, which aimed to
+                                assess the quality of our real-world data and evaluate how to represent real-world data.
+                                <br />
+                            </p>
+                            <p style="margin-left: 2em;margin-right: 2em;"><b>TIGERScore (MetricInstruct-Synthesic)</b>,
+                                which aimed to
+                                evaluate the impact of our synthetic data in enhancing quality as the complement.<br />
+                            </p>
+                            <p style="margin-left: 2em;margin-right: 2em;"><b>TIGERScore (MetricInstruct-Mix)</b>, our
+                                official model, to
+                                assess the combined effect of using both types of data during training.<br /></p>
+                            <br />
+                            <p>
+                                The results demonstrate that TIGERScore(MetricInstruct-Mix) outperforms other methods
+                                for
+                                most tasks, followed by TIGERScore(MetricInstruct-Real-World), indicating that the
+                                real-world channel data in MetricInstruct is effectively represented. Despite the subpar
+                                performance of TIGERScore (MetricInstruct-Synthetic), the significant improvement
+                                between
+                                TIGERScore(MetricInstruct-Mix) and TIGERScore(MetricInstruct-Real-World) suggests that
+                                synthetic data in MetricInstruct serves as a valuable supplement, enhancing the
+                                robustness
+                                of our model.
+                            </p>
+                        </div>
                     </div>
                 </div>
             </div>
