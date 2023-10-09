@@ -1,5 +1,5 @@
-transformers==4.33.2
-datasets==2.10.0
+transformers>=4.33.2
+datasets>=2.10.0
 torch
 accelerate
 wget
@@ -31,4 +31,6 @@ bs4
 py7zr
 sacrebleu
 gdown
+accelerate
+bitsandbytes
 git+https://github.com/google-research/mt-metrics-eval.git

@@ -1,0 +1,3 @@
+[submodule "hf_space/TIGERScore"]
+	path = hf_space/TIGERScore
+	url = https://huggingface.co/spaces/TIGER-Lab/TIGERScore
