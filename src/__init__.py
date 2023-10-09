@@ -1,1 +1,0 @@
-from tigerscore.scorer.tigerscore import TIGERScore
