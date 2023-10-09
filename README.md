@@ -33,15 +33,54 @@ Our dataset and models are all available at Huggingface.
 
 ## **Introduction**
 We present 🐯 TIGERScore, a **T**rained metric that follows **I**nstruction **G**uidance to perform **E**xplainable, and **R**eference-free evaluation over a wide spectrum of text generation tasks. Different from other automatic evaluation methods that only provide arcane scores, TIGERScore is guided by the natural language instruction to provide error analysis to pinpoint the mistakes in the generated text.
-## **Installation**
+## **Usage**
 
-Clone this repository and install the required packages:
+### Installation
 
+To directly use tigerscore pipeline, you first need to install it as python package. 
 ```bash
-git clone https://github.com/TIGER-AI-Lab/TIGERSCORE.git
-cd TIGERSCORE
-pip install -r requirements.txt
+# create enronments
+conda create -n tigerscore python=3.9
+conda activate tigerscore package
+# install torch cuda toolkits
+conda install pytorch pytorch-cuda=11.8 -c pytorch -c nvidia
+# install tigerscore python package
+pip install git+https://github.com/TIGER-AI-Lab/TIGERScore.git
 ```
+Please do check if your `torch.cuda.is_available()` is `True` for your local machine.
+### GPU running
+After installation, you are good to score the text generations with the following exmaple python code (see in [`tigerscore_example_usage.ipynb`](./tigerscore_example_usage.ipynb) for more use cases) :
+```python
+# gpu device setup
+import os
+os.environ["CUDA_VISIBLE_DEVICES"] = "0"
+# set up scorer
+from tigerscore import TIGERScorer
+scorer = TIGERScorer(model_size="7b", quantized=False) # set quantized=False to use bfloat16 version on gpu deviced
+# scorer = TIGERScorer(model_size="7b", quantized=True) # set quantized=True to use 4-bit version on either gpu or cpu.
+# load the dataset
+from datasets import load_dataset
+dataset = load_dataset("TIGER-Lab/MetricInstruct")
+num_few_examples = 10
+tasks = dataset["train_mix"]['task'][0:num_few_examples]
+insts = dataset["train_mix"]['instruction'][0:num_few_examples]
+input_contexts = dataset["train_mix"]['input_context'][0:num_few_examples]
+hypo_output = dataset["train_mix"]['hypo_output'][0:num_few_examples]
+# scoring
+results = scorer.score(tasks, insts, input_contexts, hypo_output, batch_size=8)
+scores = [result["score"] for result in results] 
+print(scores) # List of float scores
+print(results[0]) # associated explanation texts
+``` 
+The device used to automatically set through huggingface `device_map="auto"` option.
+
+### CPU running and Quantization
+By setting the initialization parameter `quanitzed=True`, the model is set to be load in 4-bit version with hugging face `load_in_4bit=True` option. 
+
+To run it on cpu, please first set `CUDA_VISIBLE_DEVICES=""` to disable GPU. Then set `quanitzed=True` when initializing the scorer. Then with the same code above. You are good to go with tigerscore.
+
+Please note that though using quantization would decrease the memory requirement by a large margin, the inference speed might be slower than using the original bfloat16 version. It depends on you to make an trade-off.
+
 
 ## **Training and Inference**
 
