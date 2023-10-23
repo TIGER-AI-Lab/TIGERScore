@@ -1,0 +1,906 @@
+[
+    {
+        "id": "wmt_zh_en_12176",
+        "instruction": "Translate the text below from Chinese to English.",
+        "input": "文章说，美国国务卿蓬佩奥１４日称“为实现朝鲜半岛无核化，关键是履行对朝制裁 ” ， 强调美国继续履行联合国制裁决议的立场不变。",
+        "output": "The article said that Pompeo, the United States Secretary of State, indicated on September 14 that \"the key to achieve the denuclearization of the Korean Peninsula was to impose the sanctions on North Korea\" to emphasize that the United States would keep its position on implementing the UN resolution to impose sanctions.",
+        "candidates": [
+            {
+                "model": "online-Y.0",
+                "decoding_method": "greedy",
+                "text": "The article said that the US Secretary of State Pompeo said on the 14th that “the key to realizing the denuclearization of the Korean peninsula is to implement sanctions against North Korea”, stressing that the US continues to implement the United Nations sanctions resolution position unchanged.",
+                "scores": {
+                    "bleu": 17.927884247147997,
+                    "chrf": 0.5634424991989818,
+                    "bleurt": 0.47116443514823914,
+                    "prism": -1.5410898,
+                    "comet": 0.5338408946990967,
+                    "bert_score": 0.94913113,
+                    "bart_score": -3.033746600151062,
+                    "bart_score_cnn": -2.4573742151260376,
+                    "bart_score_para": -1.8203935027122498,
+                    "bart_score_para_en_Such as": -1.8148820996284485,
+                    "bart_score_para_de_Such as": -2.047485649585724
+                }
+            },
+            {
+                "model": "online-A.0",
+                "decoding_method": "greedy",
+                "text": "The article said that the United States Secretary of State Ponta Pompeo 14th said that \"in order to achieve the denuclearization of the Korean peninsula, the key is to meet the sanctions against the DPRK,\" stressing that the United States continue to implement the United Nations sanctions resolution position unchanged.",
+                "scores": {
+                    "bleu": 31.513435121778425,
+                    "chrf": 0.6284043588894409,
+                    "bleurt": 0.12078449130058289,
+                    "prism": -1.8552294,
+                    "comet": 0.04140770435333252,
+                    "bert_score": 0.93563443,
+                    "bart_score": -3.169955611228943,
+                    "bart_score_cnn": -2.469087243080139,
+                    "bart_score_para": -2.2563953399658203,
+                    "bart_score_para_en_Such as": -2.247393846511841,
+                    "bart_score_para_de_Such as": -2.455695152282715
+                }
+            },
+            {
+                "model": "online-X.0",
+                "decoding_method": "greedy",
+                "text": "The article says U.S. Secretary of state apeng said on the 14th that \" to achieve denuclearization of the Korean Peninsula, the key to the implementation of sanctions against the dprk stressed that the position of the United States continues to comply with United nations sanctions resolutions.",
+                "scores": {
+                    "bleu": 15.090628017129752,
+                    "chrf": 0.5564876100671289,
+                    "bleurt": 0.06640107184648514,
+                    "prism": -2.5165696,
+                    "comet": -0.2511257529258728,
+                    "bert_score": 0.9099953,
+                    "bart_score": -3.9143216609954834,
+                    "bart_score_cnn": -2.8236801624298096,
+                    "bart_score_para": -2.6083303689956665,
+                    "bart_score_para_en_Such as": -2.61227810382843,
+                    "bart_score_para_de_Such as": -2.7997350692749023
+                }
+            },
+            {
+                "model": "MSRA.MASS.6996",
+                "decoding_method": "greedy",
+                "text": "The article said that US Secretary of State Pompeo said on the 14th that \"in order to realize the denuclearization of the Korean Peninsula, the key is to implement sanctions against the DPRK,\" emphasizing that the United States continues to implement the UN sanctions resolution. The position remains unchanged.",
+                "scores": {
+                    "bleu": 23.54018196956381,
+                    "chrf": 0.5958520972360573,
+                    "bleurt": 0.37518078088760376,
+                    "prism": -1.5383618,
+                    "comet": 0.2718667984008789,
+                    "bert_score": 0.9455475,
+                    "bart_score": -2.9354023933410645,
+                    "bart_score_cnn": -2.2662413120269775,
+                    "bart_score_para": -1.8713744282722473,
+                    "bart_score_para_en_Such as": -1.892285406589508,
+                    "bart_score_para_de_Such as": -2.09428608417511
+                }
+            },
+            {
+                "model": "Apprentice-c.6706",
+                "decoding_method": "greedy",
+                "text": "According to the article , Secretary of State , Secretary of State , &quot; The key to the denuclearization of the Korean peninsula is to carry out sanctions &quot; , stressing that the United States has continued to follow the United Nations sanctions resolution .",
+                "scores": {
+                    "bleu": 17.615535659202592,
+                    "chrf": 0.47804687279408853,
+                    "bleurt": -0.11577370762825012,
+                    "prism": -2.4303575,
+                    "comet": -0.06174107640981674,
+                    "bert_score": 0.8872854,
+                    "bart_score": -4.35007119178772,
+                    "bart_score_cnn": -3.1695252656936646,
+                    "bart_score_para": -2.8707542419433594,
+                    "bart_score_para_en_Such as": -2.8515347242355347,
+                    "bart_score_para_de_Such as": -3.1140825748443604
+                }
+            },
+            {
+                "model": "online-B.0",
+                "decoding_method": "greedy",
+                "text": "The article said that US Secretary of State Pompeo said on the 14th that \"the key to the denuclearization of the Korean Peninsula is to fulfil sanctions against the DPRK\" and stressed that the United States will continue to implement the UN sanctions resolution.",
+                "scores": {
+                    "bleu": 26.953902784633783,
+                    "chrf": 0.5524941922293622,
+                    "bleurt": 0.3782135248184204,
+                    "prism": -1.4246677,
+                    "comet": 0.182779461145401,
+                    "bert_score": 0.95228547,
+                    "bart_score": -3.0335023403167725,
+                    "bart_score_cnn": -2.0870525240898132,
+                    "bart_score_para": -1.6586809158325195,
+                    "bart_score_para_en_Such as": -1.643867313861847,
+                    "bart_score_para_de_Such as": -1.9134536385536194
+                }
+            },
+            {
+                "model": "BTRANS-ensemble.6992",
+                "decoding_method": "greedy",
+                "text": "The article said that on June 14, US Secretary of State Pompeo said that \"in order to achieve the denuclearization of the Korean peninsula, the key is the implementation of sanctions against the Democratic People's Republic of Korea,\" stressing that the position of the United States to continue to implement the United Nations sanctions resolution remains unchanged.",
+                "scores": {
+                    "bleu": 20.486050329056237,
+                    "chrf": 0.5931701066914314,
+                    "bleurt": 0.388679176568985,
+                    "prism": -1.595295,
+                    "comet": 0.424564003944397,
+                    "bert_score": 0.94537246,
+                    "bart_score": -2.991536021232605,
+                    "bart_score_cnn": -2.2042473554611206,
+                    "bart_score_para": -1.8660625219345093,
+                    "bart_score_para_en_Such as": -1.8550143241882324,
+                    "bart_score_para_de_Such as": -2.076493978500366
+                }
+            },
+            {
+                "model": "MSRA.MASS.6942",
+                "decoding_method": "greedy",
+                "text": "The article said that US Secretary of State Pompeo said on the 14th that \"in order to realize the denuclearization of the Korean Peninsula, the key is to fulfill the sanctions against the DPRK,\" emphasizing that the US position of continuing to implement the UN sanctions resolution remains unchanged.",
+                "scores": {
+                    "bleu": 20.30985721515926,
+                    "chrf": 0.5588678826165845,
+                    "bleurt": 0.33839482069015503,
+                    "prism": -1.5286407,
+                    "comet": 0.19361340999603271,
+                    "bert_score": 0.94816166,
+                    "bart_score": -3.131764054298401,
+                    "bart_score_cnn": -2.2819358110427856,
+                    "bart_score_para": -1.9184734225273132,
+                    "bart_score_para_en_Such as": -1.9054812788963318,
+                    "bart_score_para_de_Such as": -2.1363757848739624
+                }
+            },
+            {
+                "model": "Baidu-system.6940",
+                "decoding_method": "greedy",
+                "text": "The article said that US Secretary of State Pompeo said on Thursday that \"in order to realize the denuclearization of the Korean Peninsula, the key is to implement the sanctions against the DPRK,\" stressing that the US position of continuing to implement the UN sanctions resolution remains unchanged.",
+                "scores": {
+                    "bleu": 20.29613478058531,
+                    "chrf": 0.5508812901206025,
+                    "bleurt": 0.3485763967037201,
+                    "prism": -1.7017832,
+                    "comet": 0.21074405312538147,
+                    "bert_score": 0.9478276,
+                    "bart_score": -3.083654046058655,
+                    "bart_score_cnn": -2.2622941732406616,
+                    "bart_score_para": -1.920205295085907,
+                    "bart_score_para_en_Such as": -1.9073309898376465,
+                    "bart_score_para_de_Such as": -2.140802264213562
+                }
+            }
+        ]
+    },
+    {
+        "id": "wmt_zh_en_3965",
+        "instruction": "Translate the text below from Chinese to English.",
+        "input": "稍早前王毅在纽约会见美国前国务卿基辛格时表示，中美合作就会双赢，对抗必然双输。",
+        "output": "Earlier, when Wang Yi met with Kissinger, the former U.S. Secretary of State, in New York, he said that China-U.S. cooperation would be win-win and the confrontation would be necessarily lose-lose.",
+        "candidates": [
+            {
+                "model": "BTRANS.6825",
+                "decoding_method": "greedy",
+                "text": "Earlier, in a meeting with former US Secretary of State Henry Kissinger in New York, Wang Yi said that China-US cooperation would be win-win and confrontation was bound to lose.",
+                "scores": {
+                    "bleu": 20.713584342804904,
+                    "chrf": 0.6176152063013004,
+                    "bleurt": 0.5985811948776245,
+                    "prism": -1.0188761,
+                    "comet": 0.1405572146177292,
+                    "bert_score": 0.9563355,
+                    "bart_score": -2.903074026107788,
+                    "bart_score_cnn": -1.5329116582870483,
+                    "bart_score_para": -1.3085548281669617,
+                    "bart_score_para_en_Such as": -1.283723533153534,
+                    "bart_score_para_de_Such as": -1.6945226192474365
+                }
+            },
+            {
+                "model": "KSAI-system.6927",
+                "decoding_method": "greedy",
+                "text": "Earlier, when Wang Yi met with former U.S. Secretary of State Henry Kissinger in New York, he said that Sino-U.S. cooperation will win-win, and confrontation will inevitably lose both.",
+                "scores": {
+                    "bleu": 50.6988285974425,
+                    "chrf": 0.6723979845021496,
+                    "bleurt": 0.5954770445823669,
+                    "prism": -1.0134717,
+                    "comet": 0.4232633709907532,
+                    "bert_score": 0.96106744,
+                    "bart_score": -2.7598187923431396,
+                    "bart_score_cnn": -1.6082541346549988,
+                    "bart_score_para": -1.321960687637329,
+                    "bart_score_para_en_Such as": -1.304310142993927,
+                    "bart_score_para_de_Such as": -1.6475545763969421
+                }
+            },
+            {
+                "model": "Baidu-system.6940",
+                "decoding_method": "greedy",
+                "text": "Earlier, when Wang Yi met with former US Secretary of State Henry Kissinger in New York, he said that China-US cooperation will win-win and confrontation will inevitably lose.",
+                "scores": {
+                    "bleu": 31.73818265509173,
+                    "chrf": 0.6656697635451545,
+                    "bleurt": 0.6193958520889282,
+                    "prism": -0.968701,
+                    "comet": 0.11391976475715637,
+                    "bert_score": 0.9615267,
+                    "bart_score": -2.829481363296509,
+                    "bart_score_cnn": -1.6271398663520813,
+                    "bart_score_para": -1.270733892917633,
+                    "bart_score_para_en_Such as": -1.2474839091300964,
+                    "bart_score_para_de_Such as": -1.650333821773529
+                }
+            },
+            {
+                "model": "BTRANS-ensemble.6992",
+                "decoding_method": "greedy",
+                "text": "Earlier, in a meeting with former US Secretary of State Henry Kissinger in New York, Wang Yi said that China-US cooperation would be win-win, and confrontation would inevitably lose.",
+                "scores": {
+                    "bleu": 18.259554357749902,
+                    "chrf": 0.6325871522513853,
+                    "bleurt": 0.6414267420768738,
+                    "prism": -1.0288019,
+                    "comet": 0.16086843609809875,
+                    "bert_score": 0.96065146,
+                    "bart_score": -2.9302315711975098,
+                    "bart_score_cnn": -1.553867518901825,
+                    "bart_score_para": -1.2735409140586853,
+                    "bart_score_para_en_Such as": -1.24825781583786,
+                    "bart_score_para_de_Such as": -1.6603694558143616
+                }
+            },
+            {
+                "model": "Apprentice-c.6706",
+                "decoding_method": "greedy",
+                "text": "Earlier in New York , when he met with former Secretary of State Kissinger Kissinger , he said it would win win-win .",
+                "scores": {
+                    "bleu": 10.705043575900016,
+                    "chrf": 0.38816366283642,
+                    "bleurt": -0.5418137907981873,
+                    "prism": -2.1384768,
+                    "comet": -0.4514175355434418,
+                    "bert_score": 0.90866977,
+                    "bart_score": -4.651071548461914,
+                    "bart_score_cnn": -2.9335687160491943,
+                    "bart_score_para": -2.880416750907898,
+                    "bart_score_para_en_Such as": -2.858878493309021,
+                    "bart_score_para_de_Such as": -3.215929388999939
+                }
+            },
+            {
+                "model": "online-Y.0",
+                "decoding_method": "greedy",
+                "text": "Earlier when Wang Yi met with former US Secretary of State Kissinger in New York earlier, he said that Sino-US cooperation will win-win and confrontation will inevitably lose.",
+                "scores": {
+                    "bleu": 20.537805631651473,
+                    "chrf": 0.5989446018578894,
+                    "bleurt": 0.5385364890098572,
+                    "prism": -1.0491807,
+                    "comet": 0.007159113883972168,
+                    "bert_score": 0.9516418,
+                    "bart_score": -3.4347903728485107,
+                    "bart_score_cnn": -1.993156373500824,
+                    "bart_score_para": -1.4902679920196533,
+                    "bart_score_para_en_Such as": -1.469341218471527,
+                    "bart_score_para_de_Such as": -1.8430273532867432
+                }
+            },
+            {
+                "model": "NEU.6832",
+                "decoding_method": "greedy",
+                "text": "Earlier, Wang Yi said during a meeting with former U.S. Secretary of State Henry Kissinger in New York that China-U.S. cooperation would be win-win and that confrontation would inevitably be lost.",
+                "scores": {
+                    "bleu": 46.06966662631352,
+                    "chrf": 0.6753586591417241,
+                    "bleurt": 0.6433939933776855,
+                    "prism": -0.98675495,
+                    "comet": 0.3596561849117279,
+                    "bert_score": 0.96218145,
+                    "bart_score": -2.5396114587783813,
+                    "bart_score_cnn": -1.394710123538971,
+                    "bart_score_para": -1.1599685549736023,
+                    "bart_score_para_en_Such as": -1.1401525139808655,
+                    "bart_score_para_de_Such as": -1.512833595275879
+                }
+            },
+            {
+                "model": "online-B.0",
+                "decoding_method": "greedy",
+                "text": "Earlier, when Wang Yi met with former US Secretary of State Kissinger in New York, he said that Sino-US cooperation would be a win-win situation.",
+                "scores": {
+                    "bleu": 31.742752679967232,
+                    "chrf": 0.5762265832782061,
+                    "bleurt": 0.44028007984161377,
+                    "prism": -0.9765613,
+                    "comet": 0.04076864570379257,
+                    "bert_score": 0.95191264,
+                    "bart_score": -2.797307848930359,
+                    "bart_score_cnn": -1.467035710811615,
+                    "bart_score_para": -1.3738030195236206,
+                    "bart_score_para_en_Such as": -1.3629973530769348,
+                    "bart_score_para_de_Such as": -1.7763298153877258
+                }
+            },
+            {
+                "model": "UEDIN.6530",
+                "decoding_method": "greedy",
+                "text": "Earlier, during a meeting with former US Secretary of State Henry Kissinger in New York, Wang said that China-US cooperation would be a win-win, and that confrontation would inevitably be a win-lose.",
+                "scores": {
+                    "bleu": 13.804692458090223,
+                    "chrf": 0.6024418887838818,
+                    "bleurt": 0.6178473234176636,
+                    "prism": -1.0924463,
+                    "comet": 0.38283899426460266,
+                    "bert_score": 0.9607414,
+                    "bart_score": -3.120447516441345,
+                    "bart_score_cnn": -1.47424978017807,
+                    "bart_score_para": -1.3326085805892944,
+                    "bart_score_para_en_Such as": -1.3288286924362183,
+                    "bart_score_para_de_Such as": -1.6924654245376587
+                }
+            },
+            {
+                "model": "online-X.0",
+                "decoding_method": "greedy",
+                "text": "When Wang yi met us former secretary of state kissinger in New York, a little earlier, the sino-American cooperation would win a win-win against the inevitable double loss.",
+                "scores": {
+                    "bleu": 8.325466482723886,
+                    "chrf": 0.4330605876096783,
+                    "bleurt": 0.16151168942451477,
+                    "prism": -2.442049,
+                    "comet": -0.6778942346572876,
+                    "bert_score": 0.8908447,
+                    "bart_score": -4.4647685289382935,
+                    "bart_score_cnn": -3.059111475944519,
+                    "bart_score_para": -2.5846617221832275,
+                    "bart_score_para_en_Such as": -2.577230393886566,
+                    "bart_score_para_de_Such as": -2.8293607234954834
+                }
+            },
+            {
+                "model": "online-A.0",
+                "decoding_method": "greedy",
+                "text": "Earlier, when Wang Yi met with former US Secretary of State Henry Kissinger in New York, he said that Sino-US cooperation would be win-win and that confrontation would inevitably double lose.",
+                "scores": {
+                    "bleu": 39.833482877535936,
+                    "chrf": 0.6989779109471983,
+                    "bleurt": 0.5041506290435791,
+                    "prism": -1.0207937,
+                    "comet": 0.3378322720527649,
+                    "bert_score": 0.95913184,
+                    "bart_score": -2.44643235206604,
+                    "bart_score_cnn": -1.569657564163208,
+                    "bart_score_para": -1.3678616285324097,
+                    "bart_score_para_en_Such as": -1.3590337038040161,
+                    "bart_score_para_de_Such as": -1.728042185306549
+                }
+            },
+            {
+                "model": "MSRA.MASS.6996",
+                "decoding_method": "greedy",
+                "text": "Earlier, when Wang Yi met with former US Secretary of State Kissinger in New York, he said that Sino-US cooperation will win a win-win situation and confrontation will inevitably lose.",
+                "scores": {
+                    "bleu": 31.712086767963005,
+                    "chrf": 0.6196025707353442,
+                    "bleurt": 0.5294032692909241,
+                    "prism": -0.98369896,
+                    "comet": 0.05077829957008362,
+                    "bert_score": 0.9555838,
+                    "bart_score": -3.2403229475021362,
+                    "bart_score_cnn": -1.793116569519043,
+                    "bart_score_para": -1.3821092247962952,
+                    "bart_score_para_en_Such as": -1.3579095005989075,
+                    "bart_score_para_de_Such as": -1.7364934086799622
+                }
+            },
+            {
+                "model": "NICT.6814",
+                "decoding_method": "greedy",
+                "text": "When Wang Yi met with former US Secretary of State Kizinger in New York a little earlier, he said that the Sino-US cooperation would be a win-win, and the confrontation would inevitably be a double loss.",
+                "scores": {
+                    "bleu": 25.261510875622694,
+                    "chrf": 0.6197486771311186,
+                    "bleurt": 0.5424209237098694,
+                    "prism": -1.2600538,
+                    "comet": 0.047513753175735474,
+                    "bert_score": 0.9423476,
+                    "bart_score": -3.500666379928589,
+                    "bart_score_cnn": -1.9307473301887512,
+                    "bart_score_para": -1.5141478180885315,
+                    "bart_score_para_en_Such as": -1.5120248198509216,
+                    "bart_score_para_de_Such as": -1.797430157661438
+                }
+            },
+            {
+                "model": "online-G.0",
+                "decoding_method": "greedy",
+                "text": "Earlier, when Wang Yi met with former US Secretary of State Henry Kissinger in New York, he said that cooperation between China and the United States would be a win-win, and confrontation would be a double loser.",
+                "scores": {
+                    "bleu": 37.295006480622035,
+                    "chrf": 0.6639873717191498,
+                    "bleurt": 0.6077752709388733,
+                    "prism": -1.0456235,
+                    "comet": 0.4826083481311798,
+                    "bert_score": 0.96114284,
+                    "bart_score": -2.5075844526290894,
+                    "bart_score_cnn": -1.4370974898338318,
+                    "bart_score_para": -1.2203024625778198,
+                    "bart_score_para_en_Such as": -1.213689148426056,
+                    "bart_score_para_de_Such as": -1.5641738772392273
+                }
+            }
+        ]
+    },
+    {
+        "id": "wmt_zh_en_9489",
+        "instruction": "Translate the text below from Chinese to English.",
+        "input": "三峡蓄水后，库区通航条件得到了改善，促进了长江航运的快速发展。",
+        "output": "After water storing of the Three Gorges, the navigation condition of the reservoir area was improved, accelerating the rapid development of shipping in Yangtze River.",
+        "candidates": [
+            {
+                "model": "NEU.6832",
+                "decoding_method": "greedy",
+                "text": "After the Three Gorges Reservoir, the navigation conditions in the reservoir area have been improved, promoting the rapid development of Yangtze River shipping.",
+                "scores": {
+                    "bleu": 22.055917042925852,
+                    "chrf": 0.6882080104407579,
+                    "bleurt": 0.46849900484085083,
+                    "prism": -1.4568964,
+                    "comet": 0.2784169614315033,
+                    "bert_score": 0.9573398,
+                    "bart_score": -3.1159623861312866,
+                    "bart_score_cnn": -1.8302510380744934,
+                    "bart_score_para": -1.444073498249054,
+                    "bart_score_para_en_Such as": -1.4364202618598938,
+                    "bart_score_para_de_Such as": -1.9200406074523926
+                }
+            },
+            {
+                "model": "Baidu-system.6940",
+                "decoding_method": "greedy",
+                "text": "After the water storage of the Three Gorges, the navigation conditions in the reservoir area have been improved, which has promoted the rapid development of shipping on the Yangtze River.",
+                "scores": {
+                    "bleu": 38.102710380494415,
+                    "chrf": 0.7450186153487002,
+                    "bleurt": 0.7293955087661743,
+                    "prism": -0.95976436,
+                    "comet": 0.5782819986343384,
+                    "bert_score": 0.9769302,
+                    "bart_score": -2.419734001159668,
+                    "bart_score_cnn": -1.4742844104766846,
+                    "bart_score_para": -1.0871928930282593,
+                    "bart_score_para_en_Such as": -1.0803107917308807,
+                    "bart_score_para_de_Such as": -1.5766406655311584
+                }
+            },
+            {
+                "model": "Apprentice-c.6706",
+                "decoding_method": "greedy",
+                "text": "After the Three Gorges Water Reservation , the flight conditions have improved , promoting the rapid development of the Yangtze River .",
+                "scores": {
+                    "bleu": 18.706590995220708,
+                    "chrf": 0.5444701082208177,
+                    "bleurt": -0.3652055561542511,
+                    "prism": -2.6205564,
+                    "comet": -0.02674655243754387,
+                    "bert_score": 0.918821,
+                    "bart_score": -4.873748779296875,
+                    "bart_score_cnn": -3.080371618270874,
+                    "bart_score_para": -2.7069621086120605,
+                    "bart_score_para_en_Such as": -2.713039755821228,
+                    "bart_score_para_de_Such as": -3.060375690460205
+                }
+            },
+            {
+                "model": "online-B.0",
+                "decoding_method": "greedy",
+                "text": "After the Three Gorges water storage, the navigation conditions in the reservoir area have been improved, which has promoted the rapid development of the Yangtze River shipping.",
+                "scores": {
+                    "bleu": 21.165728489682767,
+                    "chrf": 0.700180816578453,
+                    "bleurt": 0.6208049058914185,
+                    "prism": -1.1952634,
+                    "comet": 0.41842368245124817,
+                    "bert_score": 0.96805733,
+                    "bart_score": -3.0017930269241333,
+                    "bart_score_cnn": -1.7073459029197693,
+                    "bart_score_para": -1.1998783946037292,
+                    "bart_score_para_en_Such as": -1.1967113018035889,
+                    "bart_score_para_de_Such as": -1.69594407081604
+                }
+            },
+            {
+                "model": "UEDIN.6530",
+                "decoding_method": "greedy",
+                "text": "After the storage of water in the Three Gorges, the navigation conditions in the reservoir area have been improved, and the rapid development of the Yangtze River shipping has been promoted.",
+                "scores": {
+                    "bleu": 29.44972018039,
+                    "chrf": 0.7053542223237599,
+                    "bleurt": 0.4525977671146393,
+                    "prism": -1.1595864,
+                    "comet": 0.34850460290908813,
+                    "bert_score": 0.96441954,
+                    "bart_score": -2.9936535358428955,
+                    "bart_score_cnn": -1.5820948481559753,
+                    "bart_score_para": -1.168135792016983,
+                    "bart_score_para_en_Such as": -1.163088172674179,
+                    "bart_score_para_de_Such as": -1.6402122378349304
+                }
+            },
+            {
+                "model": "NICT.6814",
+                "decoding_method": "greedy",
+                "text": "After the storage of water in the Three Gorge, the shipping conditions in the reservoir area have been improved, and the rapid development of shipping in the Yangtze River has been promoted.",
+                "scores": {
+                    "bleu": 22.91517033562054,
+                    "chrf": 0.6336768837770594,
+                    "bleurt": 0.3938848674297333,
+                    "prism": -1.1618683,
+                    "comet": 0.2948720455169678,
+                    "bert_score": 0.9534924,
+                    "bart_score": -3.4995301961898804,
+                    "bart_score_cnn": -2.029282569885254,
+                    "bart_score_para": -1.3950989246368408,
+                    "bart_score_para_en_Such as": -1.390007197856903,
+                    "bart_score_para_de_Such as": -1.8626033067703247
+                }
+            },
+            {
+                "model": "MSRA.MASS.6942",
+                "decoding_method": "greedy",
+                "text": "After the Three Gorges water storage, the navigation conditions in the reservoir area have been improved, which promotes the rapid development of the Yangtze River shipping.",
+                "scores": {
+                    "bleu": 21.93664451144313,
+                    "chrf": 0.7008241401792642,
+                    "bleurt": 0.6081254482269287,
+                    "prism": -1.1899747,
+                    "comet": 0.4281473755836487,
+                    "bert_score": 0.9676998,
+                    "bart_score": -3.077467441558838,
+                    "bart_score_cnn": -1.7387469410896301,
+                    "bart_score_para": -1.2300735116004944,
+                    "bart_score_para_en_Such as": -1.228772759437561,
+                    "bart_score_para_de_Such as": -1.7296006679534912
+                }
+            },
+            {
+                "model": "online-A.0",
+                "decoding_method": "greedy",
+                "text": "After the Three Gorges water storage, the navigation conditions in the reservoir area have been improved, which has promoted the rapid development of the Yangtze River shipping.",
+                "scores": {
+                    "bleu": 21.165728489682767,
+                    "chrf": 0.700180816578453,
+                    "bleurt": 0.6208049058914185,
+                    "prism": -1.1952634,
+                    "comet": 0.41842368245124817,
+                    "bert_score": 0.96805733,
+                    "bart_score": -3.0017930269241333,
+                    "bart_score_cnn": -1.7073459029197693,
+                    "bart_score_para": -1.1998783946037292,
+                    "bart_score_para_en_Such as": -1.1967113018035889,
+                    "bart_score_para_de_Such as": -1.6959442496299744
+                }
+            },
+            {
+                "model": "online-G.0",
+                "decoding_method": "greedy",
+                "text": "After the storage of water in the Three Gorges, the navigation conditions in the reservoir area have been improved, and the rapid development of shipping in the Yangtze River has been promoted.",
+                "scores": {
+                    "bleu": 34.297280709487325,
+                    "chrf": 0.7244800002652757,
+                    "bleurt": 0.4604233205318451,
+                    "prism": -1.0107169,
+                    "comet": 0.39205509424209595,
+                    "bert_score": 0.96810347,
+                    "bart_score": -2.9151151180267334,
+                    "bart_score_cnn": -1.473094403743744,
+                    "bart_score_para": -1.0921496450901031,
+                    "bart_score_para_en_Such as": -1.0893926322460175,
+                    "bart_score_para_de_Such as": -1.5640904307365417
+                }
+            }
+        ]
+    },
+    {
+        "id": "wmt_zh_en_10517",
+        "instruction": "Translate the text below from Chinese to English.",
+        "input": "“我认为这对所有相关人员来说是最好的可能结果 ， ” Tigress Financial Partners的Ivan Feinseth说，Feinseth给予特斯拉“中性”评级，并称SEC的处罚对于马斯克而言是“从轻责罚 ” 。",
+        "output": "\"I think it is the best possible result for all relevant staff,\" Ivan Feinseth from Tigress Financial Partners said. Feinseth gave a \"neutral\" evaluation to Tesla and said that the punishment of SEC was a \"lighter punishment\" to Musk.",
+        "candidates": [
+            {
+                "model": "online-B.0",
+                "decoding_method": "greedy",
+                "text": "“I think this is the best possible outcome for all involved,” Ivan Feinseth of Tigress Financial Partners said. Feinseth gave Tesla a “neutral” rating and said the SEC’s penalty was “for Light punishment\".",
+                "scores": {
+                    "bleu": 23.66516012414666,
+                    "chrf": 0.5527041115399735,
+                    "bleurt": 0.3399732708930969,
+                    "prism": -1.4766369,
+                    "comet": 0.3114990293979645,
+                    "bert_score": 0.9438923,
+                    "bart_score": -3.630369186401367,
+                    "bart_score_cnn": -1.9879563450813293,
+                    "bart_score_para": -1.7484976053237915,
+                    "bart_score_para_en_Such as": -1.76393324136734,
+                    "bart_score_para_de_Such as": -1.9606432914733887
+                }
+            },
+            {
+                "model": "online-A.0",
+                "decoding_method": "greedy",
+                "text": "\"I think it's the best possible outcome for all those involved,\" said Ivan Feinseth of Tigress Financial Partners, Feinseth gave Tesla a \"neutral\" rating and said the SEC penalty was a \"lighter punishment\" for musk.",
+                "scores": {
+                    "bleu": 29.631133488969425,
+                    "chrf": 0.5996152054505208,
+                    "bleurt": 0.533540666103363,
+                    "prism": -0.94527686,
+                    "comet": 0.011503130197525024,
+                    "bert_score": 0.95563936,
+                    "bart_score": -3.014261245727539,
+                    "bart_score_cnn": -1.8266141414642334,
+                    "bart_score_para": -1.4137209057807922,
+                    "bart_score_para_en_Such as": -1.3970645070075989,
+                    "bart_score_para_de_Such as": -1.6971415281295776
+                }
+            },
+            {
+                "model": "KSAI-system.6927",
+                "decoding_method": "greedy",
+                "text": "\"I think this is the best possible outcome for everyone involved,\" said Ivan Feinseth of Tigress Financial Partners, who gave Tesla a \"neutral\" rating and called the SEC's penalty a \"light punishment\" for Musk.",
+                "scores": {
+                    "bleu": 18.749301496340095,
+                    "chrf": 0.5043285294939478,
+                    "bleurt": 0.47503727674484253,
+                    "prism": -1.077674,
+                    "comet": 0.5762059688568115,
+                    "bert_score": 0.9483556,
+                    "bart_score": -3.1973735094070435,
+                    "bart_score_cnn": -1.8918185234069824,
+                    "bart_score_para": -1.3223054707050323,
+                    "bart_score_para_en_Such as": -1.3299687802791595,
+                    "bart_score_para_de_Such as": -1.625954508781433
+                }
+            },
+            {
+                "model": "BTRANS.6825",
+                "decoding_method": "greedy",
+                "text": "\"I think it's the best possible outcome for all involved,\" said Ivan Feinseth of Tigress Financial Partners, who gave Tesla a \"neutral\" rating and called the SEC penalty a \"light penalty\" for Musk.",
+                "scores": {
+                    "bleu": 18.749961602978964,
+                    "chrf": 0.4700133408334523,
+                    "bleurt": 0.3926542401313782,
+                    "prism": -1.1221993,
+                    "comet": 0.37374237179756165,
+                    "bert_score": 0.9496664,
+                    "bart_score": -3.346998929977417,
+                    "bart_score_cnn": -1.9470952153205872,
+                    "bart_score_para": -1.3262486457824707,
+                    "bart_score_para_en_Such as": -1.330945372581482,
+                    "bart_score_para_de_Such as": -1.6306625604629517
+                }
+            },
+            {
+                "model": "BTRANS-ensemble.6992",
+                "decoding_method": "greedy",
+                "text": "\"I think it's the best possible outcome for all involved,\" said Ivan Feinseth of Tigress Financial Partners, who gave Tesla a \"neutral\" rating and called the SEC penalty a \"light penalty\" for Musk.",
+                "scores": {
+                    "bleu": 18.749961602978964,
+                    "chrf": 0.4700133408334523,
+                    "bleurt": 0.3926542401313782,
+                    "prism": -1.1221993,
+                    "comet": 0.37391334772109985,
+                    "bert_score": 0.9496664,
+                    "bart_score": -3.346998929977417,
+                    "bart_score_cnn": -1.9470952153205872,
+                    "bart_score_para": -1.3262486457824707,
+                    "bart_score_para_en_Such as": -1.3309449553489685,
+                    "bart_score_para_de_Such as": -1.630662739276886
+                }
+            },
+            {
+                "model": "MSRA.MASS.6996",
+                "decoding_method": "greedy",
+                "text": "\"I think this is the best possible result for all relevant personnel,\" said Ivan Feinseth of Tigres Financial Partners. Feinseth gave Tesla a \"neutral\" rating and said the SEC's punishment was \"lenient\" for Musk.",
+                "scores": {
+                    "bleu": 30.842964624671566,
+                    "chrf": 0.6166281746956667,
+                    "bleurt": 0.5532687902450562,
+                    "prism": -1.020742,
+                    "comet": 0.35829997062683105,
+                    "bert_score": 0.9659907,
+                    "bart_score": -3.4185574054718018,
+                    "bart_score_cnn": -1.778203308582306,
+                    "bart_score_para": -1.3358161449432373,
+                    "bart_score_para_en_Such as": -1.3380147218704224,
+                    "bart_score_para_de_Such as": -1.6390530467033386
+                }
+            },
+            {
+                "model": "online-G.0",
+                "decoding_method": "greedy",
+                "text": "” I think this is the best possible outcome for all those involved, \"said Tigress Financial Partners' Ivan Feinseth, who gave Tesla a“neutral”rating to Feinseth, adding that the SEC's penalties were“lighter punishment ” for Musk.",
+                "scores": {
+                    "bleu": 11.040030577290588,
+                    "chrf": 0.5286337242512058,
+                    "bleurt": 0.4033714234828949,
+                    "prism": -1.6083167,
+                    "comet": 0.4662732779979706,
+                    "bert_score": 0.9243472,
+                    "bart_score": -4.099360346794128,
+                    "bart_score_cnn": -2.279828429222107,
+                    "bart_score_para": -2.0025893449783325,
+                    "bart_score_para_en_Such as": -2.0051040649414062,
+                    "bart_score_para_de_Such as": -2.195161759853363
+                }
+            },
+            {
+                "model": "Baidu-system.6940",
+                "decoding_method": "greedy",
+                "text": "\"I think this is the best possible outcome for all concerned,\" said Ivan Feinseth of Tigress Financial Partners, who gave Tesla a \"neutral\" rating and called the SEC penalty a \"light punishment\" for Musk.",
+                "scores": {
+                    "bleu": 19.145381965057474,
+                    "chrf": 0.5076263600985566,
+                    "bleurt": 0.3948725163936615,
+                    "prism": -1.1786207,
+                    "comet": 0.5598026514053345,
+                    "bert_score": 0.949449,
+                    "bart_score": -3.225324273109436,
+                    "bart_score_cnn": -1.8835124373435974,
+                    "bart_score_para": -1.3485082983970642,
+                    "bart_score_para_en_Such as": -1.355378270149231,
+                    "bart_score_para_de_Such as": -1.6656885743141174
+                }
+            }
+        ]
+    },
+    {
+        "id": "wmt_zh_en_19096",
+        "instruction": "Translate the text below from Chinese to English.",
+        "input": "中新网11月5日电 综合报道，美国中期选举投票已进入倒计时。",
+        "output": "Report on November 5 of China News A round-up report: the U.S. midterm election starts counting down.",
+        "candidates": [
+            {
+                "model": "KSAI-system.6927",
+                "decoding_method": "greedy",
+                "text": "On November 5, CNN reported comprehensively that the U.S. mid-term election vote has entered the countdown.",
+                "scores": {
+                    "bleu": 19.853697583516826,
+                    "chrf": 0.4432201924121183,
+                    "bleurt": -0.2072220891714096,
+                    "prism": -2.767448,
+                    "comet": 0.3704410791397095,
+                    "bert_score": 0.8941677,
+                    "bart_score": -5.139908313751221,
+                    "bart_score_cnn": -3.479093909263611,
+                    "bart_score_para": -3.0059421062469482,
+                    "bart_score_para_en_Such as": -2.995287775993347,
+                    "bart_score_para_de_Such as": -3.3461694717407227
+                }
+            },
+            {
+                "model": "BTRANS.6825",
+                "decoding_method": "greedy",
+                "text": "On November 5, the China New Network reported that the vote in the US mid-term election has entered the countdown.",
+                "scores": {
+                    "bleu": 4.546308713404575,
+                    "chrf": 0.4339312071388809,
+                    "bleurt": -0.13107174634933472,
+                    "prism": -2.5008898,
+                    "comet": 0.2270524501800537,
+                    "bert_score": 0.8971113,
+                    "bart_score": -5.499719619750977,
+                    "bart_score_cnn": -3.2690149545669556,
+                    "bart_score_para": -2.8781319856643677,
+                    "bart_score_para_en_Such as": -2.853493809700012,
+                    "bart_score_para_de_Such as": -3.2504217624664307
+                }
+            },
+            {
+                "model": "Baidu-system.6940",
+                "decoding_method": "greedy",
+                "text": "According to a comprehensive report on November 5, the voting in the US mid-term election has entered the countdown.",
+                "scores": {
+                    "bleu": 7.966635941511396,
+                    "chrf": 0.4465555022314817,
+                    "bleurt": -0.24240951240062714,
+                    "prism": -2.678524,
+                    "comet": 0.1485843062400818,
+                    "bert_score": 0.8912958,
+                    "bart_score": -5.0983452796936035,
+                    "bart_score_cnn": -3.219476342201233,
+                    "bart_score_para": -2.95247220993042,
+                    "bart_score_para_en_Such as": -2.935516119003296,
+                    "bart_score_para_de_Such as": -3.2953479290008545
+                }
+            },
+            {
+                "model": "BTRANS-ensemble.6992",
+                "decoding_method": "greedy",
+                "text": "On November 5, the China New Network reported that the vote in the US mid-term election has entered the countdown.",
+                "scores": {
+                    "bleu": 4.546308713404575,
+                    "chrf": 0.4339312071388809,
+                    "bleurt": -0.13107174634933472,
+                    "prism": -2.5008898,
+                    "comet": 0.22641193866729736,
+                    "bert_score": 0.89711124,
+                    "bart_score": -5.499721527099609,
+                    "bart_score_cnn": -3.2690162658691406,
+                    "bart_score_para": -2.8781315088272095,
+                    "bart_score_para_en_Such as": -2.853492498397827,
+                    "bart_score_para_de_Such as": -3.250422477722168
+                }
+            },
+            {
+                "model": "online-Y.0",
+                "decoding_method": "greedy",
+                "text": "Chinanews.com, November 5, a comprehensive report that the United States mid-term election polls have entered the countdown.",
+                "scores": {
+                    "bleu": 4.724932626401583,
+                    "chrf": 0.4032164818326639,
+                    "bleurt": -0.16272275149822235,
+                    "prism": -2.662318,
+                    "comet": 0.25773149728775024,
+                    "bert_score": 0.88951373,
+                    "bart_score": -5.02263879776001,
+                    "bart_score_cnn": -3.7618069648742676,
+                    "bart_score_para": -3.0006511211395264,
+                    "bart_score_para_en_Such as": -2.987444758415222,
+                    "bart_score_para_de_Such as": -3.2434078454971313
+                }
+            },
+            {
+                "model": "NICT.6814",
+                "decoding_method": "greedy",
+                "text": "According to a comprehensive report by CNN.com on November 5, the voting in the mid-term elections in the United States has entered a reverse period.",
+                "scores": {
+                    "bleu": 5.919720809373671,
+                    "chrf": 0.37738008902779685,
+                    "bleurt": 0.17001141607761383,
+                    "prism": -2.9730244,
+                    "comet": -0.07038956135511398,
+                    "bert_score": 0.8797693,
+                    "bart_score": -5.679013252258301,
+                    "bart_score_cnn": -3.4264371395111084,
+                    "bart_score_para": -3.3149017095565796,
+                    "bart_score_para_en_Such as": -3.311087489128113,
+                    "bart_score_para_de_Such as": -3.61770761013031
+                }
+            },
+            {
+                "model": "MSRA.MASS.6996",
+                "decoding_method": "greedy",
+                "text": "Chinanews.com reported on November 5th that the US mid-term election vote has entered the countdown.",
+                "scores": {
+                    "bleu": 4.526601509693065,
+                    "chrf": 0.42501373690919464,
+                    "bleurt": -0.18538948893547058,
+                    "prism": -2.5553207,
+                    "comet": 0.3727085590362549,
+                    "bert_score": 0.8835229,
+                    "bart_score": -5.221731901168823,
+                    "bart_score_cnn": -3.4501816034317017,
+                    "bart_score_para": -3.122146487236023,
+                    "bart_score_para_en_Such as": -3.084577441215515,
+                    "bart_score_para_de_Such as": -3.333194136619568
+                }
+            },
+            {
+                "model": "MSRA.MASS.6942",
+                "decoding_method": "greedy",
+                "text": "BEIJING, Nov. 5 Xinhua comprehensive reports, the United States midterm election voting has entered the countdown.",
+                "scores": {
+                    "bleu": 4.559945078234504,
+                    "chrf": 0.36504667029275506,
+                    "bleurt": -0.19537131488323212,
+                    "prism": -2.9081929,
+                    "comet": 0.03860447555780411,
+                    "bert_score": 0.8656733,
+                    "bart_score": -5.668816328048706,
+                    "bart_score_cnn": -3.9182647466659546,
+                    "bart_score_para": -3.4050101041793823,
+                    "bart_score_para_en_Such as": -3.3987207412719727,
+                    "bart_score_para_de_Such as": -3.7851966619491577
+                }
+            }
+        ]
+    }
+]
