@@ -94,39 +94,38 @@ DATASETS_CONFIG = {
         }
     },
     "data2text": {
-        # Table 2 text, facts
-        # "dart":{
-        #     "split_info": {
-        #         "train": f"train[:{NUM_TRAIN_EXAMPLES}]",
-        #         "validation": f"validation[:{NUM_VAL_EXAMPLES}]",
-        #         "test": f"test[:{NUM_TEST_EXAMPLES}]",
-        #     },
-        #     "input_key": "tripleset",
-        #     "output_key": "annotations",
-        #     "instruction": "Generate a description for the following tuples.",
-        # },
-        # "totto":{
-        #     "split_info": {
-        #         "train": f"train[:{NUM_TRAIN_EXAMPLES}]",
-        #         "validation": f"validation[:{NUM_VAL_EXAMPLES}]",
-        #         "test": f"test[:{NUM_TEST_EXAMPLES}]",
-        #     },
-        #     "input_key": "tripleset",
-        #     # The input is complex, see the python file for more details
-        #     "output_key": "sentence_annotations",
-        #     "instruction": "Generate a description for the following table.",
-        # },
-        # "kasnerz/wikitabletext":{
-        #     "split_info": {
-        #         "train": f"train[:{NUM_TRAIN_EXAMPLES}]",
-        #         "validation": f"validation[:{NUM_VAL_EXAMPLES}]",
-        #         "test": f"test[:{NUM_TEST_EXAMPLES}]",
-        #     },
-        #     "input_key": "table",
-        #     # The input is complex, see the python file for more details
-        #     "output_key": "reference",
-        #     "instruction": "Generate a description for the following table.",            
-        # },
+        "dart":{
+            "split_info": {
+                "train": f"train[:{NUM_TRAIN_EXAMPLES}]",
+                "validation": f"validation[:{NUM_VAL_EXAMPLES}]",
+                "test": f"test[:{NUM_TEST_EXAMPLES}]",
+            },
+            "input_key": "tripleset",
+            "output_key": "annotations",
+            "instruction": "Generate a description for the following tuples.",
+        },
+        "totto":{
+            "split_info": {
+                "train": f"train[:{NUM_TRAIN_EXAMPLES}]",
+                "validation": f"validation[:{NUM_VAL_EXAMPLES}]",
+                "test": f"test[:{NUM_TEST_EXAMPLES}]",
+            },
+            "input_key": "tripleset",
+            # The input is complex, see the python file for more details
+            "output_key": "sentence_annotations",
+            "instruction": "Generate a description for the following table.",
+        },
+        "kasnerz/wikitabletext":{
+            "split_info": {
+                "train": f"train[:{NUM_TRAIN_EXAMPLES}]",
+                "validation": f"validation[:{NUM_VAL_EXAMPLES}]",
+                "test": f"test[:{NUM_TEST_EXAMPLES}]",
+            },
+            "input_key": "table",
+            # The input is complex, see the python file for more details
+            "output_key": "reference",
+            "instruction": "Generate a description for the following table.",            
+        },
         "web_nlg:release_v2.1":{
             "split_info": {
                 "train": f"train[:{NUM_TRAIN_EXAMPLES}]",

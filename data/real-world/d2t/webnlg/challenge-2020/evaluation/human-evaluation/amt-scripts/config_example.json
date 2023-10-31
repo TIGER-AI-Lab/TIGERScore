@@ -1,0 +1,11 @@
+{
+    "qual_image_link": "https://raw.githubusercontent.com/user/triples/main/qual_inputs/triples/",
+    "qual_text_basepath": "/home/user/webnlg/amt/rdf_triples/qual_inputs/",
+    "qual_table_basepath": "/home/user/webnlg/amt/rdf_triples/qual_inputs/triples/",
+    "image_link": "https://raw.githubusercontent.com/user/rdf_triples/main/inputs/triples/",
+    "text_basepath": "/home/user/webnlg/amt/rdf_triples/inputs/amt_input_texts/",
+    "table_basepath": "/home/user/webnlg/amt/rdf_triples/inputs/triples/",
+    "template_directories": ["hit_templates"],
+    "aws_access_id": "",
+    "aws_access_key": ""
+}

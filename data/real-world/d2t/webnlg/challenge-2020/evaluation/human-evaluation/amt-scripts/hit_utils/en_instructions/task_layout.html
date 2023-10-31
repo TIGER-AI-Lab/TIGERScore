@@ -1,0 +1,410 @@
+<!-- You must include this JavaScript file -->
+<script src="https://assets.crowd.aws/crowd-html-elements.js"></script>
+
+<!-- For the full list of available Crowd HTML Elements and their input/output documentation,
+      please refer to https://docs.aws.amazon.com/sagemaker/latest/dg/sms-ui-template-reference.html -->
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<style>
+    
+    #wrapper {
+  max-width: 100vw;
+  max-height: 100vh;
+  overflow: scroll;
+  padding-top: 1em;
+  padding-bottom: 1em;
+  border: 1px solid #32CD32;
+}
+
+    
+body {font-family: Arial, Helvetica, sans-serif;}
+
+/* The Modal (background) */
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  padding-top: 100px; /* Location of the box */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+
+/* Modal Content */
+.modal-content {
+  background-color: #fefefe;
+  margin: auto;
+  padding: 20px;
+  border: 1px solid #888;
+  width: 80%;
+}
+
+/* The Close Button */
+.close {
+  color: #aaaaaa;
+  float: right;
+  font-size: 60px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: #000;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.block {
+  display: block;
+  width: 100%;
+  border: none;
+  background-color: #A0A0A0;
+  color: white;
+  padding: 14px 28px;
+  font-size: 16px;
+  cursor: pointer;
+  text-align: center;
+}
+
+.block:hover {
+  background-color: #ddd;
+  color: black;
+}
+</style>
+
+
+<style type="text/css">
+.tg  {border-collapse:collapse;border-spacing:0;}
+.tg td{border-color:black;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;
+  overflow:hidden;padding:10px 5px;word-break:normal;}
+.tg th{border-color:black;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;
+  font-weight:normal;overflow:hidden;padding:10px 5px;word-break:normal;}
+.tg .tg-0pky{border-color:inherit;text-align:left;vertical-align:top}
+.tg .tg-0lax{text-align:left;vertical-align:top}
+    
+.center {
+  margin: 0;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+}
+    
+</style>
+
+
+
+<p><b> Please (i) follow the instructions, (ii) be honest and fair in your judgements, (iii) try to be as correct as possible in your conclusions. For example, the text would generally get a score higher than 0 for Correctness if at least some objects in it are introduced correctly. Similarly, the text would not be rated with 100 for Correctness if at least one object is not introduced correctly. </b></p>
+        
+    <b>Task Instructions</b><br>
+        You are given a piece of data and a text that describes data. <br>
+        Below you will find statements that relate to the text. <br>
+        Please rate each of these statements by moving the slider along the scale
+        where 0 stands for ‘I do not agree’, 100 stands for ‘I fully agree’. <br>
+
+  <p><b>To learn more about the task, its details and examples, click on 'View Detailed Instructions' below!</b></p>
+
+<button id="myBtn" class="block">View Detailed Instructions</button>
+
+<!-- The Modal -->
+<div id="myModal" class="modal">
+
+  <!-- Modal content -->
+  <div class="modal-content">
+    <span class="close">&times;</span>
+
+    <p>You are required to judge the text based on how much does it correspond
+    to the information conveyed by the data across several criteria:</p>
+      <ol>
+          <li><b>data coverage</b>: does the text cover all predicates which are found in the data?</li>
+          <li><b>relevance</b>: does the text mention only predicates from the data?</li>
+          <li><b>correctness</b>: does the text describe predicates with correct objects and does it introduce the subject correctly?</li>
+          <li><b>text structure and grammaticality</b>: is the text grammatical and well-structured?</li>
+          <li><b>fluency</b>: is the text fluent and coherent, does it form a good narrative / a coherent story?</li>
+      </ol>
+        <p>You could enter any feedback you have for us, for example,
+        if some questions were not easy to answer, in the corresponding feedback field (right after the survey).</p>
+        
+        <hr>
+        <br>
+        
+          <b> Example Data: </b>
+        
+            <table class="tg" style="undefined;table-layout: fixed; width: 348px">
+            <colgroup>
+            <col style="width: 64px">
+            <col style="width: 145px">
+            <col style="width: 138.5px">
+            </colgroup>
+            <thead>
+              <tr>
+                <th class="tg-o5sn"><span style="font-weight:bold">Subject</span></th>
+                <th class="tg-o5sn"><span style="font-weight:bold">Predicate</span></th>
+                <th class="tg-o5sn"><span style="font-weight:bold">Object</span></th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td class="tg-o5sn">Trane</td>
+                <td class="tg-o5sn">Founding Date</td>
+                <td class="tg-o5sn">1913-01-01</td>
+              </tr>
+              <tr>
+                <td class="tg-o5sn">Trane</td>
+                <td class="tg-o5sn">Location</td>
+                <td class="tg-o5sn">Ireland</td>
+              </tr>
+              <tr>
+                <td class="tg-o5sn">Trane<br></td>
+                <td class="tg-o5sn">Founding Place</td>
+                <td class="tg-o5sn">La Crosse, Wisconsin</td>
+              </tr>
+              <tr>
+                <td class="tg-o5sn">Trane</td>
+                <td class="tg-o5sn">Number of Employees</td>
+                <td class="tg-o5sn">29000</td>
+              </tr>
+            </tbody>
+            </table>
+        
+        </p>
+        <br>
+
+      <hr>
+        
+        <p> <b> How much do you agree with each of the statements below? </b> </p>
+        <hr>
+
+
+        <br> <br>
+        <b> 1. Data Coverage </b><br>
+        --- The text contains all predicates from the data and does not miss any predicates shown in the data.<br>
+        <br>
+        
+        <b> Example with higher rating: </b> <i>Trane</i>, which was founded in <i>January 1st 1913</i>
+        in <i>La Crosse, Wisconsin</i>, is based in <i>Ireland</i>.
+        It has <i>29 000 employees</i>.<br>
+        <b> Why? </b> All predicates from the data are mentioned in the text.<br>
+        
+        <br>
+        
+        <b> Example with lower rating: </b> Trane, which was founded in January 1st 1913
+        in La Crosse, Wisconsin, is based in Ireland.<br>
+        <b> Why? </b> The text does not mention <i>Number of Employees</i> predicate from the data.<br>
+        
+        <hr>
+        <br> <br>
+        
+        
+        
+        <b> 2. Relevance </b><br>
+        --- The text contains only known/relevant predicates, which are found in the data.
+        The text does not contain any unknown/irrelevant/unrecognizable predicates.<br>
+        <br>
+        
+        <b> Example with higher rating: </b> Trane was founded in <i>January 1st 1913 in La Crosse, Wisconsin</i>.
+        It has <i>29, 000 employees</i>.<br>
+        <b> Why? </b> The text contains only such predicates, which are found in the data.<br>
+        <br>
+    
+        <b> Example with lower rating: </b> Trane, which was founded in January 1st 1913 in La Crosse, Wisconsin, is based in Ireland.
+        <i>It is a famous company</i>.<br>
+        <b> Why? </b> The text contains predicate which mentions something like Notoriety,
+        which is not found in the data, therefore, it is an irrelevant predicate.<br>        
+        <hr>
+        <br> <br>
+        
+        
+        
+        <b> 3. Correctness </b><br>
+        --- When describing information about relevant predicates (those, which are in both data and text), the text depicts them with correct/proper objects. Also, the text correctly introduces the Subject.<br>
+        <br>
+ 
+        <b> Example with higher rating: </b> <i>Trane</i> was founded in <i>January 1st 1913</i>
+        in <i>La Crosse, Wisconsin</i>.
+        It has <i>29 000 employees</i>.<br>
+        
+        <b> Why? </b> The text describes predicates, which are present in the data, with correct objects.
+        Subject is introduced properly.<br>
+        <br>
+
+        <b> Example with lower rating: </b> Trane, which was founded in January 1st 1913
+        in La Crosse, Wisconsin, is based in <i>Sweden</i>.
+        It has 29 000 employees.<br>
+        <b> Why? </b> It incorrectly introduces object for the mentioned Location predicate.<br>
+        <br>
+        
+        <b> Example with lower rating: </b> <i>Coup</i>, which was founded in January 1st 1913
+        in La Crosse, Wisconsin, is based in Ireland.
+        It has 29 000 employees.<br>
+        <b> Why? </b> It incorrectly introduces the Subject.<br>     
+        <hr>
+              <br><br>
+              
+              
+              
+        <b> 4. Text Structure </b><br>
+        --- The text is written in good English language, i.e. it is free from grammatical errors
+        and well-structured.
+        <br>
+        <br>
+ 
+        <b> Example with higher rating: </b> Trane was founded in January 1st 1913
+        in La Crosse, Wisconsin.
+        It has 29 000 employees.<br>
+        <b> Why positive? </b> The text is grammatically correct and well-structured.<br>
+        <br>
+
+        <b> Example with lower rating: </b> Trane, which was founded in January 1st 1913
+        in La Crosse, Wisconsin.
+        It has 29 000 employees.<br>
+        <b> Why? </b> The text is partly non-grammatical; the first sentence violates rules for clauses in English. <br>
+        <hr>
+        <br><br>
+        
+        
+        
+        <b> 5. Fluency </b><br>
+        --- The text sounds logically correct and forms a coherent whole. There are no parts of the text you would change to make it sound better. The text forms a nice narrative.
+        <br>
+        <br>
+ 
+        <b> Example with higher rating: </b> Trane, which was founded in January 1st 1913
+        in La Crosse, Wisconsin, has 29 000 employees.<br>
+        <b> Why? </b> The sentences are well-connected and form a nice narrative.<br>
+        <br>
+
+        <b> Example with lower rating: </b> Trane was founded in January 1st 1913. Trane was
+        founded in La Crosse, Wisconsin. Trane was founded in Wisconsin
+        and has 29 000 employees.<br>
+        <b> Why? </b> The text has unnatural repetitions (repeating the subject
+        several times and repeating information which has been already introduced).
+        One would (i) replace repetitions of subject with the pronoun,
+        (ii) remove repetitions about Wisconsin, (iii) connect sentences and form a single one.<br>
+        <hr>
+        <br><br>    
+        <span style="display:block; height: 40px;"></span>
+        </p>
+    
+  </div>
+
+</div>
+
+<script>
+// Get the modal
+var modal = document.getElementById("myModal");
+
+// Get the button that opens the modal
+var btn = document.getElementById("myBtn");
+
+// Get the <span> element that closes the modal
+var span = document.getElementsByClassName("close")[0];
+
+// When the user clicks the button, open the modal 
+btn.onclick = function() {
+  modal.style.display = "block";
+}
+
+// When the user clicks on <span> (x), close the modal
+span.onclick = function() {
+  modal.style.display = "none";
+}
+
+// When the user clicks anywhere outside of the modal, close it
+window.onclick = function(event) {
+  if (event.target == modal) {
+    modal.style.display = "none";
+  }
+}
+</script>
+      
+<style type="text/css">
+.tg  {border-collapse:collapse;border-spacing:0;}
+.tg td{border-color:black;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;
+  overflow:hidden;padding:10px 5px;word-break:normal;}
+.tg th{border-color:black;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;
+  font-weight:normal;overflow:hidden;padding:10px 5px;word-break:normal;}
+.tg .tg-o5sn{border-color:inherit;font-size:13px;text-align:left;vertical-align:middle}
+</style>
+
+
+
+<!-- You must include crowd-form so that your task submits answers to MTurk -->
+<crowd-form answer-format="flatten-objects">
+    
+    <br> <br>
+
+    <p style="color:blue"> <b> DATA </b> </p> <br>
+    <img src="${Data}" style="width:100%" />
+
+    <br> <br>
+
+    <p style="color:blue"> <b> DESCRIPTION </b> </p>
+    <div id="wrapper"> <strong> ${Description} </strong> </div>
+
+    <hr>
+    <p style="color:red" align="center"><b> How well do you agree with the following statements? </b></p>
+    <hr>
+
+    <div>
+         <p align="center"><b> Data Coverage: The text contains all predicates from the data and does not miss any predicates shown in the data. </b></p>
+    </div>
+
+    <div>
+  <p align="center"><crowd-slider  name="DataCoverage_${Task}_${SubmissionId}_${SampleId}_${TripletSize}" min="0" max="100" step="1" pin="true" required></crowd-slider></p>
+  </div>
+
+  <hr>
+
+  <div>
+       <p align="center"><b> Relevance: The text contains only known/relevant predicates, which are found in the data.
+        The text does not contain any unknown/irrelevant/unrecognizable predicates.</b> </p>
+  </div>
+
+  <div>
+<p align="center"><crowd-slider  name="Relevance_${Task}_${SubmissionId}_${SampleId}_${TripletSize}" min="0" max="100" step="1" pin="true" required></crowd-slider></p>
+</div>
+<hr>
+
+<div>
+     <p align="center"><b> Correctness:
+     When describing information about relevant predicates (those, which are in both data and text), the text depicts them with correct/proper objects. Also, the text correctly introduces the Subject. </b> </p>
+</div>
+
+<div>
+<p align="center"><crowd-slider  name="Correctness_${Task}_${SubmissionId}_${SampleId}_${TripletSize}" min="0" max="100" step="1" pin="true" required></crowd-slider></p>
+</div>
+
+<hr>
+
+<div>
+     <p align="center"><b> Text Structure: The text is written in good English language, i.e. it is free from grammatical errors
+        and well-structured.</b></p>
+</div>
+
+<div>
+<p align="center"><crowd-slider  name="TextStructure_${Task}_${SubmissionId}_${SampleId}_${TripletSize}" min="0" max="100" step="1" pin="true" required></crowd-slider></p>
+</div>
+
+<hr>
+    
+<div>
+     <p align="center"><b> Fluency: The text sounds logically correct and forms a coherent whole. There are no parts of the text you would change to make it sound better. The text forms a nice narrative.</b> </p>
+</div>
+
+<div>
+<p align="center"><crowd-slider  name="Fluency_${Task}_${SubmissionId}_${SampleId}_${TripletSize}" min="0" max="100" step="1" pin="true" required></crowd-slider></p>
+</div>
+
+  <div>
+    <p>Write you feedback in the field below if you have any (not necessary):</p>
+    <crowd-text-area name="feedback" rows="5" placeholder="Your feedback here..."></crowd-text-area>
+  </div>
+
+</crowd-form>

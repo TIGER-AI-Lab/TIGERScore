@@ -1,0 +1,9 @@
+[submodule "evaluation/automatic-evaluation/text-to-triples"]
+	path = evaluation/automatic-evaluation/text-to-triples
+	url = https://github.com/WebNLG/WebNLG-Text-to-triples
+[submodule "evaluation/automatic-evaluation/triples-to-text"]
+	path = evaluation/automatic-evaluation/triples-to-text
+	url = https://github.com/WebNLG/GenerationEval
+[submodule "evaluation/human-evaluation/amt-scripts/scripts/corpus-reader"]
+	path = evaluation/human-evaluation/amt-scripts/scripts/corpus-reader
+	url = https://gitlab.com/webnlg/corpus-reader

@@ -1,0 +1,1 @@
+cp ../../../../raw_datasets/din0s/asqa/train_data.json train_data.json

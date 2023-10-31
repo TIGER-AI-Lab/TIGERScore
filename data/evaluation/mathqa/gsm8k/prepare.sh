@@ -1,0 +1,1 @@
+cp ../../../../raw_datasets/gsm8k/main/test_data.json test_data.json

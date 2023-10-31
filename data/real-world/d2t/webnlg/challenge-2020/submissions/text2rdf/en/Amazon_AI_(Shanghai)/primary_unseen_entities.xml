@@ -1,0 +1,3461 @@
+<?xml version="1.0" ?>
+<benchmark>
+  <entries>
+    <entry eid="Id3">
+      <generatedtripleset>
+        <gtriple>Ciudad_Ayala | governmentType | Council-manager_government</gtriple>
+        <gtriple>Ciudad_Ayala | isPartOf | Morelos</gtriple>
+        <gtriple>Ciudad_Ayala | leaderTitle | &quot;City Manager&quot;</gtriple>
+        <gtriple>Ciudad_Ayala | populationDensity | 1604.0</gtriple>
+        <gtriple>Ciudad_Ayala | populationMetro | 1777539</gtriple>
+        <gtriple>Ciudad_Ayala | type | City</gtriple>
+        <gtriple>Ciudad_Ayala | utcOffset | −6</gtriple>
+      </generatedtripleset>
+    </entry>
+    <entry eid="Id6">
+      <generatedtripleset>
+        <gtriple>Israel | longName | &quot;State of Israel&quot;</gtriple>
+        <gtriple>Liselotte_Grschebina | birthPlace | Karlsruhe</gtriple>
+        <gtriple>Liselotte_Grschebina | deathPlace | Israel</gtriple>
+        <gtriple>Liselotte_Grschebina | nationality | Israel</gtriple>
+      </generatedtripleset>
+    </entry>
+    <entry eid="Id28">
+      <generatedtripleset>
+        <gtriple>Nie_Haisheng | birthDate | 1964-10-13</gtriple>
+        <gtriple>Nie_Haisheng | birthPlace | Hubei</gtriple>
+        <gtriple>Nie_Haisheng | birthPlace | Zaoyang</gtriple>
+        <gtriple>Nie_Haisheng | nationality | People's_Republic_of_China</gtriple>
+        <gtriple>Nie_Haisheng | occupation | Fighter_pilot</gtriple>
+        <gtriple>Zaoyang | isPartOf | Hubei</gtriple>
+      </generatedtripleset>
+    </entry>
+    <entry eid="Id32">
+      <generatedtripleset>
+        <gtriple>Bedford_Aerodrome | icaoLocationIdentifier | EGBF</gtriple>
+        <gtriple>Bedford_Aerodrome | operatingOrganisation | MotorSport_Vision</gtriple>
+        <gtriple>MotorSport_Vision | foundingYear | 2004</gtriple>
+      </generatedtripleset>
+    </entry>
+    <entry eid="Id56">
+      <generatedtripleset>
+        <gtriple>Nie_Haisheng | mission | Shenzhou_10</gtriple>
+        <gtriple>Nie_Haisheng | mission | Shenzhou_6</gtriple>
+        <gtriple>Nie_Haisheng | nationality | People's_Republic_of_China</gtriple>
+        <gtriple>Nie_Haisheng | occupation | Fighter_pilot</gtriple>
+      </generatedtripleset>
+    </entry>
+    <entry eid="Id63">
+      <generatedtripleset>
+        <gtriple>Ciudad_Ayala | country | Mexico</gtriple>
+        <gtriple>Ciudad_Ayala | leaderTitle | &quot;City Manager&quot;</gtriple>
+        <gtriple>Ciudad_Ayala | populationDensity | 1604.0</gtriple>
+        <gtriple>Ciudad_Ayala | populationMetro | 1777539</gtriple>
+        <gtriple>Ciudad_Ayala | type | City</gtriple>
+        <gtriple>Ciudad_Ayala | utcOffset | −6</gtriple>
+      </generatedtripleset>
+    </entry>
+    <entry eid="Id69">
+      <generatedtripleset>
+        <gtriple>1147_Stavropolis | absoluteMagnitude | 11.5</gtriple>
+        <gtriple>1147_Stavropolis | apoapsis | 418476000000.0</gtriple>
+        <gtriple>1147_Stavropolis | discoverer | Grigory_Neujmin</gtriple>
+        <gtriple>1147_Stavropolis | orbitalPeriod | 1249.6</gtriple>
+        <gtriple>1147_Stavropolis | rotationPeriod | 20378.5</gtriple>
+      </generatedtripleset>
+    </entry>
+    <entry eid="Id73">
+      <generatedtripleset>
+        <gtriple>Liselotte_Grschebina | deathPlace | Israel</gtriple>
+        <gtriple>Liselotte_Grschebina | nationality | Israel</gtriple>
+      </generatedtripleset>
+    </entry>
+    <entry eid="Id74">
+      <generatedtripleset>
+        <gtriple>Liselotte_Grschebina | professionalField | Photographer</gtriple>
+        <gtriple>Liselotte_Grschebina | training | School_of_Applied_Arts_in_Stuttgart</gtriple>
+      </generatedtripleset>
+    </entry>
+    <entry eid="Id75">
+      <generatedtripleset>
+        <gtriple>Ciudad_Ayala | isPartOf | Morelos</gtriple>
+        <gtriple>Ciudad_Ayala | leaderTitle | &quot;City Manager&quot;</gtriple>
+        <gtriple>Ciudad_Ayala | populationDensity | 1604.0</gtriple>
+        <gtriple>Ciudad_Ayala | populationMetro | 1777539</gtriple>
+        <gtriple>Ciudad_Ayala | timeZone | Pacific_Standard_Time_Zone</gtriple>
+        <gtriple>Ciudad_Ayala | type | City</gtriple>
+        <gtriple>Ciudad_Ayala | utcOffset | −6</gtriple>
+      </generatedtripleset>
+    </entry>
+    <entry eid="Id77">
+      <generatedtripleset>
+        <gtriple>Detroit | isPartOf | Michigan</gtriple>
+        <gtriple>Pontiac_Rageous | assembly | Detroit</gtriple>
+        <gtriple>Pontiac_Rageous | assembly | Michigan</gtriple>
+        <gtriple>Pontiac_Rageous | manufacturer | Pontiac</gtriple>
+        <gtriple>Pontiac_Rageous | productionEndYear | 1997</gtriple>
+        <gtriple>Pontiac_Rageous | productionStartYear | 1997</gtriple>
+      </generatedtripleset>
+    </entry>
+    <entry eid="Id86">
+      <generatedtripleset>
+        <gtriple>University_of_Burgundy | country | France</gtriple>
+      </generatedtripleset>
+    </entry>
+    <entry eid="Id90">
+      <generatedtripleset>
+        <gtriple>Piotr_Hallmann | birthPlace | Gdynia,_Poland</gtriple>
+        <gtriple>Piotr_Hallmann | weight | 70.308</gtriple>
+      </generatedtripleset>
+    </entry>
+    <entry eid="Id94">
+      <generatedtripleset>
+        <gtriple>1147_Stavropolis | discoverer | Grigory_Neujmin</gtriple>
+        <gtriple>1147_Stavropolis | orbitalPeriod | 1249.6</gtriple>
+        <gtriple>Grigory_Neujmin | birthPlace | Tbilisi</gtriple>
+      </generatedtripleset>
+    </entry>
+    <entry eid="Id108">
+      <generatedtripleset>
+        <gtriple>Bedford_Aerodrome | cityServed | Bedford_Autodrome</gtriple>
+        <gtriple>Bedford_Aerodrome | elevationAboveTheSeaLevel | 83.2104</gtriple>
+        <gtriple>Bedford_Aerodrome | operatingOrganisation | MotorSport_Vision</gtriple>
+        <gtriple>Bedford_Aerodrome | runwayLength | 1095.0</gtriple>
+      </generatedtripleset>
+    </entry>
+    <entry eid="Id112">
+      <generatedtripleset>
+        <gtriple>Detroit | isPartOf | Michigan</gtriple>
+        <gtriple>Pontiac_Rageous | assembly | Detroit</gtriple>
+        <gtriple>Pontiac_Rageous | assembly | Michigan</gtriple>
+        <gtriple>Pontiac_Rageous | manufacturer | Pontiac</gtriple>
+        <gtriple>Pontiac_Rageous | productionEndYear | 1997</gtriple>
+        <gtriple>Pontiac_Rageous | productionStartYear | 1997</gtriple>
+      </generatedtripleset>
+    </entry>
+    <entry eid="Id113">
+      <generatedtripleset>
+        <gtriple>Ciudad_Ayala | leader | Juan_Nolasco</gtriple>
+        <gtriple>Ciudad_Ayala | timeZone | Pacific_Standard_Time_Zone</gtriple>
+      </generatedtripleset>
+    </entry>
+    <entry eid="Id116">
+      <generatedtripleset>
+        <gtriple>Liselotte_Grschebina | training | School_of_Applied_Arts_in_Stuttgart</gtriple>
+      </generatedtripleset>
+    </entry>
+    <entry eid="Id120">
+      <generatedtripleset>
+        <gtriple>1147_Stavropolis | epoch | 31_July_2016_(JD2457600.5)</gtriple>
+        <gtriple>1147_Stavropolis | rotationPeriod | 20378.5</gtriple>
+      </generatedtripleset>
+    </entry>
+    <entry eid="Id126">
+      <generatedtripleset>
+        <gtriple>University_of_Burgundy | campus | Dijon</gtriple>
+        <gtriple>University_of_Burgundy | city | Dijon</gtriple>
+        <gtriple>University_of_Burgundy | numberOfDoctoralStudents | 1299</gtriple>
+        <gtriple>University_of_Burgundy | numberOfPostgraduateStudents | 9400</gtriple>
+        <gtriple>University_of_Burgundy | numberOfStudents | 27400</gtriple>
+        <gtriple>University_of_Burgundy | numberOfUndergraduateStudents | 16800</gtriple>
+        <gtriple>University_of_Burgundy | staff | 2900</gtriple>
+      </generatedtripleset>
+    </entry>
+    <entry eid="Id128">
+      <generatedtripleset>
+        <gtriple>Nie_Haisheng | birthPlace | Zaoyang</gtriple>
+        <gtriple>Nie_Haisheng | mission | Shenzhou_10</gtriple>
+      </generatedtripleset>
+    </entry>
+    <entry eid="Id131">
+      <generatedtripleset>
+        <gtriple>University_of_Burgundy | campus | Dijon</gtriple>
+        <gtriple>University_of_Burgundy | city | Dijon</gtriple>
+        <gtriple>University_of_Burgundy | numberOfPostgraduateStudents | 9400</gtriple>
+      </generatedtripleset>
+    </entry>
+    <entry eid="Id135">
+      <generatedtripleset>
+        <gtriple>Ciudad_Ayala | country | Mexico</gtriple>
+        <gtriple>Ciudad_Ayala | elevationAboveTheSeaLevel | 1147.0</gtriple>
+        <gtriple>Ciudad_Ayala | isPartOf | Morelos</gtriple>
+        <gtriple>Ciudad_Ayala | leaderTitle | &quot;City Manager&quot;</gtriple>
+        <gtriple>Ciudad_Ayala | populationDensity | 1604.0</gtriple>
+        <gtriple>Ciudad_Ayala | timeZone | Pacific_Daylight_Time</gtriple>
+        <gtriple>Ciudad_Ayala | type | City</gtriple>
+        <gtriple>Ciudad_Ayala | utcOffset | −6</gtriple>
+        <gtriple>Morelos | country | Mexico</gtriple>
+      </generatedtripleset>
+    </entry>
+    <entry eid="Id141">
+      <generatedtripleset>
+        <gtriple>Ciudad_Ayala | country | Mexico</gtriple>
+        <gtriple>Ciudad_Ayala | elevationAboveTheSeaLevel | 1147.0</gtriple>
+        <gtriple>Ciudad_Ayala | isPartOf | Morelos</gtriple>
+        <gtriple>Ciudad_Ayala | leaderTitle | &quot;City Manager&quot;</gtriple>
+        <gtriple>Ciudad_Ayala | populationDensity | 1604.0</gtriple>
+        <gtriple>Ciudad_Ayala | timeZone | Pacific_Standard_Time_Zone</gtriple>
+        <gtriple>Ciudad_Ayala | type | City</gtriple>
+        <gtriple>Ciudad_Ayala | utcOffset | −6</gtriple>
+        <gtriple>Morelos | country | Mexico</gtriple>
+      </generatedtripleset>
+    </entry>
+    <entry eid="Id145">
+      <generatedtripleset>
+        <gtriple>German_Empire | foundingDate | 1871-01-01</gtriple>
+        <gtriple>Liselotte_Grschebina | birthPlace | German_Empire</gtriple>
+      </generatedtripleset>
+    </entry>
+    <entry eid="Id149">
+      <generatedtripleset>
+        <gtriple>Ciudad_Ayala | governmentType | Council-manager_government</gtriple>
+        <gtriple>Ciudad_Ayala | leaderTitle | &quot;City Manager&quot;</gtriple>
+        <gtriple>Ciudad_Ayala | timeZone | Pacific_Standard_Time_Zone</gtriple>
+        <gtriple>Ciudad_Ayala | type | City</gtriple>
+      </generatedtripleset>
+    </entry>
+    <entry eid="Id153">
+      <generatedtripleset>
+        <gtriple>1147_Stavropolis | absoluteMagnitude | 11.5</gtriple>
+        <gtriple>1147_Stavropolis | apoapsis | 418476000000.0</gtriple>
+        <gtriple>1147_Stavropolis | discoverer | Grigory_Neujmin</gtriple>
+        <gtriple>1147_Stavropolis | orbitalPeriod | 1249.6</gtriple>
+      </generatedtripleset>
+    </entry>
+    <entry eid="Id155">
+      <generatedtripleset>
+        <gtriple>Dijon | country | France</gtriple>
+        <gtriple>University_of_Burgundy | campus | Dijon</gtriple>
+        <gtriple>University_of_Burgundy | city | Dijon</gtriple>
+        <gtriple>University_of_Burgundy | country | France</gtriple>
+      </generatedtripleset>
+    </entry>
+    <entry eid="Id167">
+      <generatedtripleset>
+        <gtriple>1147_Stavropolis | apoapsis | 418476000000.0</gtriple>
+        <gtriple>1147_Stavropolis | epoch | 31_July_2016_(JD2457600.5)</gtriple>
+        <gtriple>1147_Stavropolis | periapsis | 260855000000.0</gtriple>
+      </generatedtripleset>
+    </entry>
+    <entry eid="Id173">
+      <generatedtripleset>
+        <gtriple>Bedford_Aerodrome | cityServed | Bedford_Autodrome</gtriple>
+        <gtriple>Bedford_Aerodrome | operatingOrganisation | MotorSport_Vision</gtriple>
+        <gtriple>Bedford_Aerodrome | runwayLength | 1095.0</gtriple>
+      </generatedtripleset>
+    </entry>
+    <entry eid="Id174">
+      <generatedtripleset>
+        <gtriple>Karlsruhe | elevationAboveTheSeaLevel | 115.0</gtriple>
+        <gtriple>Liselotte_Grschebina | birthPlace | Karlsruhe</gtriple>
+        <gtriple>Liselotte_Grschebina | deathPlace | Israel</gtriple>
+        <gtriple>Liselotte_Grschebina | nationality | Israel</gtriple>
+        <gtriple>Liselotte_Grschebina | training | School_of_Applied_Arts_in_Stuttgart</gtriple>
+      </generatedtripleset>
+    </entry>
+    <entry eid="Id178">
+      <generatedtripleset>
+        <gtriple>Ciudad_Ayala | populationDensity | 1604.0</gtriple>
+        <gtriple>Ciudad_Ayala | type | City</gtriple>
+        <gtriple>Ciudad_Ayala | utcOffset | −6</gtriple>
+      </generatedtripleset>
+    </entry>
+    <entry eid="Id183">
+      <generatedtripleset>
+        <gtriple>The_Fellowship_of_the_Ring | author | J._R._R._Tolkien</gtriple>
+        <gtriple>The_Fellowship_of_the_Ring | followedBy | The_Two_Towers</gtriple>
+        <gtriple>The_Fellowship_of_the_Ring | precededBy | The_Hobbit</gtriple>
+        <gtriple>The_Fellowship_of_the_Ring | publisher | George_Allen_&amp;_Unwin</gtriple>
+        <gtriple>The_Two_Towers | author | J._R._R._Tolkien</gtriple>
+        <gtriple>The_Two_Towers | precededBy | The_Fellowship_of_the_Ring</gtriple>
+        <gtriple>The_Two_Towers | publisher | George_Allen_&amp;_Unwin</gtriple>
+        <gtriple>The_Hobbit | author | J._R._R._Tolkien</gtriple>
+        <gtriple>The_Hobbit | publisher | George_Allen_&amp;_Unwin</gtriple>
+      </generatedtripleset>
+    </entry>
+    <entry eid="Id185">
+      <generatedtripleset>
+        <gtriple>Bedford_Aerodrome | location | Thurleigh</gtriple>
+        <gtriple>Thurleigh | areaCode | 01234</gtriple>
+      </generatedtripleset>
+    </entry>
+    <entry eid="Id186">
+      <generatedtripleset>
+        <gtriple>1147_Stavropolis | periapsis | 260855000000.0</gtriple>
+        <gtriple>1147_Stavropolis | rotationPeriod | 20378.5</gtriple>
+      </generatedtripleset>
+    </entry>
+    <entry eid="Id191">
+      <generatedtripleset>
+        <gtriple>Ciudad_Ayala | country | Mexico</gtriple>
+        <gtriple>Ciudad_Ayala | elevationAboveTheSeaLevel | 1147.0</gtriple>
+        <gtriple>Ciudad_Ayala | isPartOf | Morelos</gtriple>
+        <gtriple>Ciudad_Ayala | leaderTitle | Governator</gtriple>
+        <gtriple>Ciudad_Ayala | type | City</gtriple>
+        <gtriple>Ciudad_Ayala | utcOffset | −6</gtriple>
+        <gtriple>Morelos | country | Mexico</gtriple>
+      </generatedtripleset>
+    </entry>
+    <entry eid="Id197">
+      <generatedtripleset>
+        <gtriple>1147_Stavropolis | absoluteMagnitude | 11.5</gtriple>
+        <gtriple>1147_Stavropolis | apoapsis | 418476000000.0</gtriple>
+        <gtriple>1147_Stavropolis | epoch | 31_July_2016_(JD2457600.5)</gtriple>
+        <gtriple>1147_Stavropolis | orbitalPeriod | 1249.6</gtriple>
+        <gtriple>1147_Stavropolis | periapsis | 260855000000.0</gtriple>
+        <gtriple>1147_Stavropolis | rotationPeriod | 20378.5</gtriple>
+      </generatedtripleset>
+    </entry>
+    <entry eid="Id208">
+      <generatedtripleset>
+        <gtriple>Pontiac_Rageous | bodyStyle | Coupe</gtriple>
+        <gtriple>Pontiac_Rageous | manufacturer | Pontiac</gtriple>
+        <gtriple>Pontiac_Rageous | productionEndYear | 1997</gtriple>
+        <gtriple>Pontiac_Rageous | productionStartYear | 1997</gtriple>
+      </generatedtripleset>
+    </entry>
+    <entry eid="Id214">
+      <generatedtripleset>
+        <gtriple>University_of_Burgundy | campus | Dijon</gtriple>
+        <gtriple>University_of_Burgundy | city | Dijon</gtriple>
+        <gtriple>University_of_Burgundy | numberOfUndergraduateStudents | 16800</gtriple>
+      </generatedtripleset>
+    </entry>
+    <entry eid="Id220">
+      <generatedtripleset>
+        <gtriple>Liselotte_Grschebina | deathPlace | Israel</gtriple>
+        <gtriple>Liselotte_Grschebina | nationality | Israel</gtriple>
+      </generatedtripleset>
+    </entry>
+    <entry eid="Id221">
+      <generatedtripleset>
+        <gtriple>Bedford_Aerodrome | cityServed | Bedford_Autodrome</gtriple>
+        <gtriple>Bedford_Aerodrome | elevationAboveTheSeaLevel | 83.2104</gtriple>
+        <gtriple>Bedford_Aerodrome | runwayLength | 1095.0</gtriple>
+        <gtriple>Bedford_Aerodrome | runwayName | &quot;08/26&quot;</gtriple>
+        <gtriple>Bedford_Aerodrome | runwaySurfaceType | Concrete</gtriple>
+      </generatedtripleset>
+    </entry>
+    <entry eid="Id225">
+      <generatedtripleset>
+        <gtriple>Nie_Haisheng | mission | Shenzhou_6</gtriple>
+        <gtriple>Nie_Haisheng | nationality | People's_Republic_of_China</gtriple>
+      </generatedtripleset>
+    </entry>
+    <entry eid="Id235">
+      <generatedtripleset>
+        <gtriple>Bedford_Aerodrome | cityServed | Bedford_Autodrome</gtriple>
+        <gtriple>Bedford_Aerodrome | elevationAboveTheSeaLevel | 83.2104</gtriple>
+        <gtriple>Bedford_Aerodrome | operatingOrganisation | MotorSport_Vision</gtriple>
+        <gtriple>Bedford_Aerodrome | runwayLength | 1095.0</gtriple>
+      </generatedtripleset>
+    </entry>
+    <entry eid="Id238">
+      <generatedtripleset>
+        <gtriple>1147_Stavropolis | epoch | 31_July_2016_(JD2457600.5)</gtriple>
+        <gtriple>1147_Stavropolis | orbitalPeriod | 1249.6</gtriple>
+      </generatedtripleset>
+    </entry>
+    <entry eid="Id239">
+      <generatedtripleset>
+        <gtriple>University_of_Burgundy | numberOfStudents | 27400</gtriple>
+        <gtriple>University_of_Burgundy | numberOfUndergraduateStudents | 16800</gtriple>
+      </generatedtripleset>
+    </entry>
+    <entry eid="Id240">
+      <generatedtripleset>
+        <gtriple>Pontiac_Rageous | assembly | Michigan</gtriple>
+        <gtriple>Pontiac_Rageous | manufacturer | Pontiac</gtriple>
+        <gtriple>Pontiac_Rageous | productionEndYear | 1997</gtriple>
+        <gtriple>Pontiac_Rageous | productionStartYear | 1997</gtriple>
+      </generatedtripleset>
+    </entry>
+    <entry eid="Id242">
+      <generatedtripleset>
+        <gtriple>Ciudad_Ayala | country | Mexico</gtriple>
+        <gtriple>Ciudad_Ayala | elevationAboveTheSeaLevel | 1147.0</gtriple>
+        <gtriple>Ciudad_Ayala | isPartOf | Morelos</gtriple>
+        <gtriple>Morelos | country | Mexico</gtriple>
+      </generatedtripleset>
+    </entry>
+    <entry eid="Id245">
+      <generatedtripleset>
+        <gtriple>Gdynia,_Poland | foundingDate | 1926-02-10</gtriple>
+        <gtriple>Piotr_Hallmann | birthPlace | Gdynia,_Poland</gtriple>
+        <gtriple>Piotr_Hallmann | weight | 70.308</gtriple>
+      </generatedtripleset>
+    </entry>
+    <entry eid="Id251">
+      <generatedtripleset>
+        <gtriple>Detroit | isPartOf | Michigan</gtriple>
+        <gtriple>Pontiac_Rageous | assembly | Detroit</gtriple>
+        <gtriple>Pontiac_Rageous | assembly | Michigan</gtriple>
+        <gtriple>Pontiac_Rageous | bodyStyle | Coupe</gtriple>
+        <gtriple>Pontiac_Rageous | manufacturer | Pontiac</gtriple>
+      </generatedtripleset>
+    </entry>
+    <entry eid="Id260">
+      <generatedtripleset>
+        <gtriple>Liselotte_Grschebina | birthDate | 1908-05-02</gtriple>
+        <gtriple>Liselotte_Grschebina | birthPlace | Karlsruhe</gtriple>
+      </generatedtripleset>
+    </entry>
+    <entry eid="Id263">
+      <generatedtripleset>
+        <gtriple>Nie_Haisheng | mission | Shenzhou_10</gtriple>
+      </generatedtripleset>
+    </entry>
+    <entry eid="Id276">
+      <generatedtripleset>
+        <gtriple>German_Empire | foundingDate | 1871-01-01</gtriple>
+        <gtriple>Liselotte_Grschebina | birthPlace | German_Empire</gtriple>
+      </generatedtripleset>
+    </entry>
+    <entry eid="Id279">
+      <generatedtripleset>
+        <gtriple>1147_Stavropolis | apoapsis | 418476000000.0</gtriple>
+        <gtriple>1147_Stavropolis | discoverer | Grigory_Neujmin</gtriple>
+        <gtriple>1147_Stavropolis | orbitalPeriod | 1249.6</gtriple>
+      </generatedtripleset>
+    </entry>
+    <entry eid="Id283">
+      <generatedtripleset>
+        <gtriple>Liselotte_Grschebina | birthPlace | Karlsruhe</gtriple>
+        <gtriple>Liselotte_Grschebina | deathPlace | Israel</gtriple>
+        <gtriple>Liselotte_Grschebina | nationality | Israel</gtriple>
+      </generatedtripleset>
+    </entry>
+    <entry eid="Id286">
+      <generatedtripleset>
+        <gtriple>1147_Stavropolis | absoluteMagnitude | 11.5</gtriple>
+        <gtriple>1147_Stavropolis | orbitalPeriod | 1249.6</gtriple>
+      </generatedtripleset>
+    </entry>
+    <entry eid="Id289">
+      <generatedtripleset>
+        <gtriple>Ciudad_Ayala | leaderTitle | &quot;City Manager&quot;</gtriple>
+        <gtriple>Ciudad_Ayala | timeZone | Pacific_Standard_Time_Zone</gtriple>
+        <gtriple>Ciudad_Ayala | type | City</gtriple>
+      </generatedtripleset>
+    </entry>
+    <entry eid="Id293">
+      <generatedtripleset>
+        <gtriple>Liselotte_Grschebina | birthPlace | Karlsruhe</gtriple>
+      </generatedtripleset>
+    </entry>
+    <entry eid="Id306">
+      <generatedtripleset>
+        <gtriple>Bedford_Aerodrome | operatingOrganisation | MotorSport_Vision</gtriple>
+        <gtriple>Bedford_Aerodrome | runwaySurfaceType | Concrete</gtriple>
+        <gtriple>MotorSport_Vision | foundingYear | 2004</gtriple>
+      </generatedtripleset>
+    </entry>
+    <entry eid="Id308">
+      <generatedtripleset>
+        <gtriple>University_of_Burgundy | campus | Dijon</gtriple>
+        <gtriple>University_of_Burgundy | city | Dijon</gtriple>
+      </generatedtripleset>
+    </entry>
+    <entry eid="Id311">
+      <generatedtripleset>
+        <gtriple>The_Fellowship_of_the_Ring | author | J._R._R._Tolkien</gtriple>
+        <gtriple>The_Fellowship_of_the_Ring | literaryGenre | Fantasy_(genre)</gtriple>
+        <gtriple>The_Fellowship_of_the_Ring | precededBy | The_Hobbit</gtriple>
+        <gtriple>The_Hobbit | releaseDate | 1937-09-21</gtriple>
+        <gtriple>The_Hobbit | author | J._R._R._Tolkien</gtriple>
+      </generatedtripleset>
+    </entry>
+    <entry eid="Id316">
+      <generatedtripleset>
+        <gtriple>Israel | longName | &quot;State of Israel&quot;</gtriple>
+        <gtriple>Liselotte_Grschebina | deathPlace | Israel</gtriple>
+        <gtriple>Liselotte_Grschebina | nationality | Israel</gtriple>
+        <gtriple>Liselotte_Grschebina | training | School_of_Applied_Arts_in_Stuttgart</gtriple>
+      </generatedtripleset>
+    </entry>
+    <entry eid="Id323">
+      <generatedtripleset>
+        <gtriple>Israel | longName | &quot;State of Israel&quot;</gtriple>
+        <gtriple>Israel | populationDensity | 387.63</gtriple>
+        <gtriple>Liselotte_Grschebina | birthPlace | German_Empire</gtriple>
+        <gtriple>Liselotte_Grschebina | deathPlace | Israel</gtriple>
+        <gtriple>Liselotte_Grschebina | nationality | Israel</gtriple>
+      </generatedtripleset>
+    </entry>
+    <entry eid="Id330">
+      <generatedtripleset>
+        <gtriple>Bedford_Aerodrome | cityServed | Bedford_Autodrome</gtriple>
+        <gtriple>Bedford_Aerodrome | icaoLocationIdentifier | EGBF</gtriple>
+        <gtriple>Bedford_Aerodrome | location | Thurleigh</gtriple>
+      </generatedtripleset>
+    </entry>
+    <entry eid="Id338">
+      <generatedtripleset>
+        <gtriple>Ciudad_Ayala | governmentType | Council-manager_government</gtriple>
+        <gtriple>Ciudad_Ayala | leaderTitle | &quot;City Manager&quot;</gtriple>
+        <gtriple>Ciudad_Ayala | timeZone | Pacific_Standard_Time_Zone</gtriple>
+        <gtriple>Ciudad_Ayala | type | City</gtriple>
+      </generatedtripleset>
+    </entry>
+    <entry eid="Id339">
+      <generatedtripleset>
+        <gtriple>1147_Stavropolis | discoverer | Grigory_Neujmin</gtriple>
+        <gtriple>1147_Stavropolis | orbitalPeriod | 1249.6</gtriple>
+      </generatedtripleset>
+    </entry>
+    <entry eid="Id340">
+      <generatedtripleset>
+        <gtriple>Israel | language | Modern_Hebrew</gtriple>
+        <gtriple>Israel | officialLanguage | Modern_Hebrew</gtriple>
+        <gtriple>Liselotte_Grschebina | birthPlace | German_Empire</gtriple>
+        <gtriple>Liselotte_Grschebina | deathPlace | Israel</gtriple>
+        <gtriple>Liselotte_Grschebina | nationality | Israel</gtriple>
+      </generatedtripleset>
+    </entry>
+    <entry eid="Id347">
+      <generatedtripleset>
+        <gtriple>Israel | longName | &quot;State of Israel&quot;</gtriple>
+        <gtriple>Karlsruhe | areaTotal | 173.46</gtriple>
+        <gtriple>Liselotte_Grschebina | birthPlace | Karlsruhe</gtriple>
+        <gtriple>Liselotte_Grschebina | deathPlace | Israel</gtriple>
+        <gtriple>Liselotte_Grschebina | nationality | Israel</gtriple>
+        <gtriple>Liselotte_Grschebina | training | School_of_Applied_Arts_in_Stuttgart</gtriple>
+      </generatedtripleset>
+    </entry>
+    <entry eid="Id350">
+      <generatedtripleset>
+        <gtriple>Liselotte_Grschebina | birthPlace | Karlsruhe</gtriple>
+        <gtriple>Liselotte_Grschebina | deathPlace | Israel</gtriple>
+        <gtriple>Liselotte_Grschebina | nationality | Israel</gtriple>
+      </generatedtripleset>
+    </entry>
+    <entry eid="Id353">
+      <generatedtripleset>
+        <gtriple>Dijon | country | France</gtriple>
+        <gtriple>University_of_Burgundy | campus | Dijon</gtriple>
+        <gtriple>University_of_Burgundy | city | Dijon</gtriple>
+        <gtriple>University_of_Burgundy | country | France</gtriple>
+        <gtriple>University_of_Burgundy | numberOfPostgraduateStudents | 9400</gtriple>
+        <gtriple>University_of_Burgundy | numberOfUndergraduateStudents | 16800</gtriple>
+      </generatedtripleset>
+    </entry>
+    <entry eid="Id354">
+      <generatedtripleset>
+        <gtriple>Ciudad_Ayala | leaderTitle | &quot;City Manager&quot;</gtriple>
+        <gtriple>Ciudad_Ayala | populationDensity | 1604.0</gtriple>
+        <gtriple>Ciudad_Ayala | type | City</gtriple>
+        <gtriple>Ciudad_Ayala | utcOffset | −6</gtriple>
+      </generatedtripleset>
+    </entry>
+    <entry eid="Id356">
+      <generatedtripleset>
+        <gtriple>Ciudad_Ayala | leaderTitle | &quot;City Manager&quot;</gtriple>
+        <gtriple>Ciudad_Ayala | populationDensity | 1604.0</gtriple>
+        <gtriple>Ciudad_Ayala | populationMetro | 1777539</gtriple>
+        <gtriple>Ciudad_Ayala | type | City</gtriple>
+        <gtriple>Ciudad_Ayala | utcOffset | −6</gtriple>
+      </generatedtripleset>
+    </entry>
+    <entry eid="Id358">
+      <generatedtripleset>
+        <gtriple>Ciudad_Ayala | leader | Juan_Nolasco</gtriple>
+        <gtriple>Ciudad_Ayala | timeZone | Pacific_Standard_Time_Zone</gtriple>
+      </generatedtripleset>
+    </entry>
+    <entry eid="Id362">
+      <generatedtripleset>
+        <gtriple>Detroit | isPartOf | Michigan</gtriple>
+        <gtriple>Pontiac_Rageous | assembly | Detroit</gtriple>
+        <gtriple>Pontiac_Rageous | assembly | Michigan</gtriple>
+        <gtriple>Pontiac_Rageous | manufacturer | Pontiac</gtriple>
+        <gtriple>Pontiac_Rageous | productionEndYear | 1997</gtriple>
+        <gtriple>Pontiac_Rageous | productionStartYear | 1997</gtriple>
+      </generatedtripleset>
+    </entry>
+    <entry eid="Id369">
+      <generatedtripleset>
+        <gtriple>Israel | longName | &quot;State of Israel&quot;</gtriple>
+        <gtriple>Israel | populationDensity | 387.63</gtriple>
+        <gtriple>Liselotte_Grschebina | deathPlace | Israel</gtriple>
+        <gtriple>Liselotte_Grschebina | deathPlace | Petah_Tikva</gtriple>
+        <gtriple>Liselotte_Grschebina | nationality | Israel</gtriple>
+        <gtriple>Petah_Tikva | country | Israel</gtriple>
+      </generatedtripleset>
+    </entry>
+    <entry eid="Id373">
+      <generatedtripleset>
+        <gtriple>Nie_Haisheng | birthPlace | Zaoyang</gtriple>
+        <gtriple>Nie_Haisheng | nationality | People's_Republic_of_China</gtriple>
+        <gtriple>Nie_Haisheng | occupation | Fighter_pilot</gtriple>
+      </generatedtripleset>
+    </entry>
+    <entry eid="Id374">
+      <generatedtripleset>
+        <gtriple>Israel | language | Modern_Hebrew</gtriple>
+        <gtriple>Israel | officialLanguage | Modern_Hebrew</gtriple>
+        <gtriple>Liselotte_Grschebina | birthPlace | German_Empire</gtriple>
+        <gtriple>Liselotte_Grschebina | deathPlace | Israel</gtriple>
+        <gtriple>Liselotte_Grschebina | nationality | Israel</gtriple>
+      </generatedtripleset>
+    </entry>
+    <entry eid="Id378">
+      <generatedtripleset>
+        <gtriple>Detroit | isPartOf | Michigan</gtriple>
+        <gtriple>Pontiac_Rageous | assembly | Detroit</gtriple>
+        <gtriple>Pontiac_Rageous | assembly | Michigan</gtriple>
+        <gtriple>Pontiac_Rageous | manufacturer | Pontiac</gtriple>
+      </generatedtripleset>
+    </entry>
+    <entry eid="Id382">
+      <generatedtripleset>
+        <gtriple>1147_Stavropolis | absoluteMagnitude | 11.5</gtriple>
+        <gtriple>1147_Stavropolis | discoverer | Grigory_Neujmin</gtriple>
+        <gtriple>1147_Stavropolis | orbitalPeriod | 1249.6</gtriple>
+        <gtriple>1147_Stavropolis | periapsis | 260855000000.0</gtriple>
+        <gtriple>Grigory_Neujmin | birthPlace | Tbilisi</gtriple>
+      </generatedtripleset>
+    </entry>
+    <entry eid="Id385">
+      <generatedtripleset>
+        <gtriple>Ciudad_Ayala | country | Mexico</gtriple>
+        <gtriple>Ciudad_Ayala | isPartOf | Morelos</gtriple>
+        <gtriple>Morelos | country | Mexico</gtriple>
+      </generatedtripleset>
+    </entry>
+    <entry eid="Id403">
+      <generatedtripleset>
+        <gtriple>Nie_Haisheng | mission | Shenzhou_6</gtriple>
+        <gtriple>Nie_Haisheng | occupation | Fighter_pilot</gtriple>
+      </generatedtripleset>
+    </entry>
+    <entry eid="Id410">
+      <generatedtripleset>
+        <gtriple>1147_Stavropolis | orbitalPeriod | 1249.6</gtriple>
+        <gtriple>1147_Stavropolis | periapsis | 260855000000.0</gtriple>
+      </generatedtripleset>
+    </entry>
+    <entry eid="Id412">
+      <generatedtripleset>
+        <gtriple>Gdynia,_Poland | foundingDate | 1926-02-10</gtriple>
+        <gtriple>Gdynia,_Poland | leaderTitle | Mayor</gtriple>
+        <gtriple>Piotr_Hallmann | birthPlace | Gdynia,_Poland</gtriple>
+      </generatedtripleset>
+    </entry>
+    <entry eid="Id413">
+      <generatedtripleset>
+        <gtriple>German_Empire | anthem | Die_Wacht_am_Rhein</gtriple>
+        <gtriple>Liselotte_Grschebina | birthPlace | German_Empire</gtriple>
+        <gtriple>Liselotte_Grschebina | deathPlace | Petah_Tikva</gtriple>
+      </generatedtripleset>
+    </entry>
+    <entry eid="Id414">
+      <generatedtripleset>
+        <gtriple>Bedford_Aerodrome | elevationAboveTheSeaLevel | 83.2104</gtriple>
+        <gtriple>Bedford_Aerodrome | runwaySurfaceType | Concrete</gtriple>
+      </generatedtripleset>
+    </entry>
+    <entry eid="Id417">
+      <generatedtripleset>
+        <gtriple>Israel | populationDensity | 387.63</gtriple>
+        <gtriple>Liselotte_Grschebina | birthPlace | German_Empire</gtriple>
+        <gtriple>Liselotte_Grschebina | deathPlace | Israel</gtriple>
+        <gtriple>Liselotte_Grschebina | nationality | Israel</gtriple>
+      </generatedtripleset>
+    </entry>
+    <entry eid="Id423">
+      <generatedtripleset>
+        <gtriple>Ciudad_Ayala | leaderTitle | &quot;City Manager&quot;</gtriple>
+        <gtriple>Ciudad_Ayala | populationDensity | 1604.0</gtriple>
+        <gtriple>Ciudad_Ayala | type | City</gtriple>
+        <gtriple>Ciudad_Ayala | utcOffset | −6</gtriple>
+      </generatedtripleset>
+    </entry>
+    <entry eid="Id424">
+      <generatedtripleset>
+        <gtriple>Ciudad_Ayala | leaderTitle | &quot;City Manager&quot;</gtriple>
+        <gtriple>Ciudad_Ayala | timeZone | Pacific_Standard_Time_Zone</gtriple>
+        <gtriple>Ciudad_Ayala | type | City</gtriple>
+      </generatedtripleset>
+    </entry>
+    <entry eid="Id425">
+      <generatedtripleset>
+        <gtriple>Nie_Haisheng | mission | Shenzhou_10</gtriple>
+        <gtriple>Nie_Haisheng | occupation | Fighter_pilot</gtriple>
+      </generatedtripleset>
+    </entry>
+    <entry eid="Id432">
+      <generatedtripleset>
+        <gtriple>Dijon | country | France</gtriple>
+        <gtriple>University_of_Burgundy | campus | Dijon</gtriple>
+        <gtriple>University_of_Burgundy | city | Dijon</gtriple>
+        <gtriple>University_of_Burgundy | country | France</gtriple>
+        <gtriple>University_of_Burgundy | numberOfDoctoralStudents | 1299</gtriple>
+        <gtriple>University_of_Burgundy | numberOfStudents | 27400</gtriple>
+        <gtriple>University_of_Burgundy | numberOfUndergraduateStudents | 16800</gtriple>
+        <gtriple>University_of_Burgundy | staff | 2900</gtriple>
+      </generatedtripleset>
+    </entry>
+    <entry eid="Id435">
+      <generatedtripleset>
+        <gtriple>University_of_Burgundy | campus | Dijon</gtriple>
+        <gtriple>University_of_Burgundy | city | Dijon</gtriple>
+        <gtriple>University_of_Burgundy | numberOfDoctoralStudents | 1299</gtriple>
+        <gtriple>University_of_Burgundy | numberOfUndergraduateStudents | 16800</gtriple>
+      </generatedtripleset>
+    </entry>
+    <entry eid="Id436">
+      <generatedtripleset>
+        <gtriple>The_Fellowship_of_the_Ring | followedBy | The_Two_Towers</gtriple>
+        <gtriple>The_Fellowship_of_the_Ring | publisher | George_Allen_&amp;_Unwin</gtriple>
+        <gtriple>The_Two_Towers | precededBy | The_Fellowship_of_the_Ring</gtriple>
+        <gtriple>The_Two_Towers | publisher | George_Allen_&amp;_Unwin</gtriple>
+      </generatedtripleset>
+    </entry>
+    <entry eid="Id449">
+      <generatedtripleset>
+        <gtriple>Bedford_Aerodrome | cityServed | Bedford_Autodrome</gtriple>
+        <gtriple>Bedford_Aerodrome | icaoLocationIdentifier | EGBF</gtriple>
+        <gtriple>Bedford_Aerodrome | location | Thurleigh</gtriple>
+        <gtriple>Bedford_Aerodrome | operatingOrganisation | MotorSport_Vision</gtriple>
+        <gtriple>Bedford_Aerodrome | runwayLength | 1095.0</gtriple>
+        <gtriple>Bedford_Aerodrome | runwayName | &quot;08/26&quot;</gtriple>
+        <gtriple>Bedford_Aerodrome | runwaySurfaceType | Concrete</gtriple>
+        <gtriple>MotorSport_Vision | foundingYear | 2004</gtriple>
+      </generatedtripleset>
+    </entry>
+    <entry eid="Id451">
+      <generatedtripleset>
+        <gtriple>Ciudad_Ayala | elevationAboveTheSeaLevel | 1147.0</gtriple>
+        <gtriple>Ciudad_Ayala | governmentType | Council-manager_government</gtriple>
+        <gtriple>Ciudad_Ayala | leader | Juan_Nolasco</gtriple>
+        <gtriple>Ciudad_Ayala | type | City</gtriple>
+      </generatedtripleset>
+    </entry>
+    <entry eid="Id452">
+      <generatedtripleset>
+        <gtriple>Israel | longName | &quot;State of Israel&quot;</gtriple>
+        <gtriple>Israel | populationDensity | 387.63</gtriple>
+        <gtriple>Liselotte_Grschebina | birthPlace | German_Empire</gtriple>
+        <gtriple>Liselotte_Grschebina | deathPlace | Israel</gtriple>
+        <gtriple>Liselotte_Grschebina | nationality | Israel</gtriple>
+      </generatedtripleset>
+    </entry>
+    <entry eid="Id453">
+      <generatedtripleset>
+        <gtriple>The_Fellowship_of_the_Ring | publisher | George_Allen_&amp;_Unwin</gtriple>
+      </generatedtripleset>
+    </entry>
+    <entry eid="Id456">
+      <generatedtripleset>
+        <gtriple>1147_Stavropolis | absoluteMagnitude | 11.5</gtriple>
+        <gtriple>1147_Stavropolis | apoapsis | 418476000000.0</gtriple>
+        <gtriple>1147_Stavropolis | discoverer | Grigory_Neujmin</gtriple>
+        <gtriple>1147_Stavropolis | orbitalPeriod | 1249.6</gtriple>
+        <gtriple>1147_Stavropolis | rotationPeriod | 20378.5</gtriple>
+      </generatedtripleset>
+    </entry>
+    <entry eid="Id457">
+      <generatedtripleset>
+        <gtriple>1147_Stavropolis | apoapsis | 418476000000.0</gtriple>
+        <gtriple>1147_Stavropolis | epoch | 31_July_2016_(JD2457600.5)</gtriple>
+        <gtriple>1147_Stavropolis | orbitalPeriod | 1249.6</gtriple>
+        <gtriple>1147_Stavropolis | periapsis | 260855000000.0</gtriple>
+      </generatedtripleset>
+    </entry>
+    <entry eid="Id460">
+      <generatedtripleset>
+        <gtriple>University_of_Burgundy | campus | Dijon</gtriple>
+        <gtriple>University_of_Burgundy | city | Dijon</gtriple>
+        <gtriple>University_of_Burgundy | numberOfDoctoralStudents | 1299</gtriple>
+        <gtriple>University_of_Burgundy | numberOfPostgraduateStudents | 9400</gtriple>
+        <gtriple>University_of_Burgundy | numberOfStudents | 27400</gtriple>
+        <gtriple>University_of_Burgundy | numberOfUndergraduateStudents | 16800</gtriple>
+        <gtriple>University_of_Burgundy | staff | 2900</gtriple>
+      </generatedtripleset>
+    </entry>
+    <entry eid="Id472">
+      <generatedtripleset>
+        <gtriple>Bedford_Aerodrome | cityServed | Bedford_Autodrome</gtriple>
+        <gtriple>Bedford_Aerodrome | elevationAboveTheSeaLevel | 83.2104</gtriple>
+        <gtriple>Bedford_Aerodrome | operatingOrganisation | MotorSport_Vision</gtriple>
+        <gtriple>Bedford_Aerodrome | runwayLength | 1095.0</gtriple>
+      </generatedtripleset>
+    </entry>
+    <entry eid="Id477">
+      <generatedtripleset>
+        <gtriple>Liselotte_Grschebina | deathPlace | Israel</gtriple>
+        <gtriple>Liselotte_Grschebina | nationality | Israel</gtriple>
+      </generatedtripleset>
+    </entry>
+    <entry eid="Id479">
+      <generatedtripleset>
+        <gtriple>Ciudad_Ayala | country | Mexico</gtriple>
+        <gtriple>Ciudad_Ayala | elevationAboveTheSeaLevel | 1147.0</gtriple>
+        <gtriple>Ciudad_Ayala | isPartOf | Morelos</gtriple>
+        <gtriple>Ciudad_Ayala | leaderTitle | Governator</gtriple>
+        <gtriple>Ciudad_Ayala | type | City</gtriple>
+        <gtriple>Ciudad_Ayala | utcOffset | −6</gtriple>
+        <gtriple>Morelos | country | Mexico</gtriple>
+      </generatedtripleset>
+    </entry>
+    <entry eid="Id480">
+      <generatedtripleset>
+        <gtriple>Ciudad_Ayala | country | Mexico</gtriple>
+        <gtriple>Ciudad_Ayala | elevationAboveTheSeaLevel | 1147.0</gtriple>
+        <gtriple>Ciudad_Ayala | isPartOf | Morelos</gtriple>
+        <gtriple>Ciudad_Ayala | type | City</gtriple>
+        <gtriple>Morelos | country | Mexico</gtriple>
+      </generatedtripleset>
+    </entry>
+    <entry eid="Id481">
+      <generatedtripleset>
+        <gtriple>1147_Stavropolis | apoapsis | 418476000000.0</gtriple>
+        <gtriple>1147_Stavropolis | orbitalPeriod | 1249.6</gtriple>
+      </generatedtripleset>
+    </entry>
+    <entry eid="Id487">
+      <generatedtripleset>
+        <gtriple>Pontiac_Rageous | bodyStyle | Coupe</gtriple>
+        <gtriple>Pontiac_Rageous | manufacturer | Pontiac</gtriple>
+        <gtriple>Pontiac_Rageous | productionEndYear | 1997</gtriple>
+        <gtriple>Pontiac_Rageous | productionStartYear | 1997</gtriple>
+      </generatedtripleset>
+    </entry>
+    <entry eid="Id490">
+      <generatedtripleset>
+        <gtriple>Ciudad_Ayala | elevationAboveTheSeaLevel | 1147.0</gtriple>
+      </generatedtripleset>
+    </entry>
+    <entry eid="Id491">
+      <generatedtripleset>
+        <gtriple>Liselotte_Grschebina | professionalField | Photographer</gtriple>
+      </generatedtripleset>
+    </entry>
+    <entry eid="Id503">
+      <generatedtripleset>
+        <gtriple>Ciudad_Ayala | type | City</gtriple>
+        <gtriple>Ciudad_Ayala | utcOffset | −6</gtriple>
+      </generatedtripleset>
+    </entry>
+    <entry eid="Id505">
+      <generatedtripleset>
+        <gtriple>Israel | populationDensity | 387.63</gtriple>
+        <gtriple>Liselotte_Grschebina | birthPlace | German_Empire</gtriple>
+        <gtriple>Liselotte_Grschebina | deathPlace | Israel</gtriple>
+        <gtriple>Liselotte_Grschebina | nationality | Israel</gtriple>
+      </generatedtripleset>
+    </entry>
+    <entry eid="Id520">
+      <generatedtripleset>
+        <gtriple>Israel | ethnicGroup | Arab_citizens_of_Israel</gtriple>
+        <gtriple>Israel | longName | &quot;State of Israel&quot;</gtriple>
+        <gtriple>Liselotte_Grschebina | birthPlace | Karlsruhe</gtriple>
+        <gtriple>Liselotte_Grschebina | deathPlace | Israel</gtriple>
+        <gtriple>Liselotte_Grschebina | nationality | Israel</gtriple>
+      </generatedtripleset>
+    </entry>
+    <entry eid="Id521">
+      <generatedtripleset>
+        <gtriple>Liselotte_Grschebina | deathPlace | Israel</gtriple>
+        <gtriple>Liselotte_Grschebina | nationality | Israel</gtriple>
+      </generatedtripleset>
+    </entry>
+    <entry eid="Id523">
+      <generatedtripleset>
+        <gtriple>Ciudad_Ayala | isPartOf | Morelos</gtriple>
+        <gtriple>Ciudad_Ayala | leader | Juan_Nolasco</gtriple>
+        <gtriple>Morelos | leader | Graco_Ramírez</gtriple>
+      </generatedtripleset>
+    </entry>
+    <entry eid="Id525">
+      <generatedtripleset>
+        <gtriple>University_of_Burgundy | campus | Dijon</gtriple>
+        <gtriple>University_of_Burgundy | city | Dijon</gtriple>
+        <gtriple>University_of_Burgundy | staff | 2900</gtriple>
+      </generatedtripleset>
+    </entry>
+    <entry eid="Id535">
+      <generatedtripleset>
+        <gtriple>Bedford_Aerodrome | cityServed | Bedford_Autodrome</gtriple>
+        <gtriple>Bedford_Aerodrome | elevationAboveTheSeaLevel | 83.2104</gtriple>
+        <gtriple>Bedford_Aerodrome | runwayName | &quot;08/26&quot;</gtriple>
+        <gtriple>Bedford_Aerodrome | runwaySurfaceType | Concrete</gtriple>
+      </generatedtripleset>
+    </entry>
+    <entry eid="Id541">
+      <generatedtripleset>
+        <gtriple>1147_Stavropolis | apoapsis | 418476000000.0</gtriple>
+        <gtriple>1147_Stavropolis | discoverer | Grigory_Neujmin</gtriple>
+        <gtriple>1147_Stavropolis | orbitalPeriod | 1249.6</gtriple>
+        <gtriple>1147_Stavropolis | rotationPeriod | 20378.5</gtriple>
+      </generatedtripleset>
+    </entry>
+    <entry eid="Id542">
+      <generatedtripleset>
+        <gtriple>Ciudad_Ayala | country | Mexico</gtriple>
+        <gtriple>Ciudad_Ayala | elevationAboveTheSeaLevel | 1147.0</gtriple>
+        <gtriple>Ciudad_Ayala | isPartOf | Morelos</gtriple>
+        <gtriple>Morelos | country | Mexico</gtriple>
+      </generatedtripleset>
+    </entry>
+    <entry eid="Id544">
+      <generatedtripleset>
+        <gtriple>1147_Stavropolis | apoapsis | 418476000000.0</gtriple>
+        <gtriple>1147_Stavropolis | discoverer | Grigory_Neujmin</gtriple>
+        <gtriple>1147_Stavropolis | orbitalPeriod | 1249.6</gtriple>
+      </generatedtripleset>
+    </entry>
+    <entry eid="Id559">
+      <generatedtripleset>
+        <gtriple>The_Fellowship_of_the_Ring | followedBy | The_Two_Towers</gtriple>
+        <gtriple>The_Fellowship_of_the_Ring | publisher | George_Allen_&amp;_Unwin</gtriple>
+        <gtriple>The_Two_Towers | precededBy | The_Fellowship_of_the_Ring</gtriple>
+        <gtriple>The_Two_Towers | publisher | George_Allen_&amp;_Unwin</gtriple>
+      </generatedtripleset>
+    </entry>
+    <entry eid="Id566">
+      <generatedtripleset>
+        <gtriple>University_of_Burgundy | campus | Dijon</gtriple>
+        <gtriple>University_of_Burgundy | city | Dijon</gtriple>
+        <gtriple>University_of_Burgundy | numberOfStudents | 27400</gtriple>
+        <gtriple>University_of_Burgundy | numberOfUndergraduateStudents | 16800</gtriple>
+        <gtriple>University_of_Burgundy | staff | 2900</gtriple>
+      </generatedtripleset>
+    </entry>
+    <entry eid="Id569">
+      <generatedtripleset>
+        <gtriple>Israel | longName | &quot;State of Israel&quot;</gtriple>
+        <gtriple>Liselotte_Grschebina | deathPlace | Israel</gtriple>
+        <gtriple>Liselotte_Grschebina | nationality | Israel</gtriple>
+        <gtriple>Liselotte_Grschebina | training | School_of_Applied_Arts_in_Stuttgart</gtriple>
+      </generatedtripleset>
+    </entry>
+    <entry eid="Id577">
+      <generatedtripleset>
+        <gtriple>1147_Stavropolis | apoapsis | 418476000000.0</gtriple>
+        <gtriple>1147_Stavropolis | discoverer | Grigory_Neujmin</gtriple>
+        <gtriple>1147_Stavropolis | orbitalPeriod | 1249.6</gtriple>
+      </generatedtripleset>
+    </entry>
+    <entry eid="Id583">
+      <generatedtripleset>
+        <gtriple>Liselotte_Grschebina | deathPlace | Petah_Tikva</gtriple>
+        <gtriple>Liselotte_Grschebina | training | School_of_Applied_Arts_in_Stuttgart</gtriple>
+      </generatedtripleset>
+    </entry>
+    <entry eid="Id586">
+      <generatedtripleset>
+        <gtriple>German_Empire | foundingDate | 1871-01-01</gtriple>
+        <gtriple>Liselotte_Grschebina | birthPlace | German_Empire</gtriple>
+      </generatedtripleset>
+    </entry>
+    <entry eid="Id589">
+      <generatedtripleset>
+        <gtriple>Pontiac_Rageous | bodyStyle | Coupe</gtriple>
+        <gtriple>Pontiac_Rageous | manufacturer | Pontiac</gtriple>
+      </generatedtripleset>
+    </entry>
+    <entry eid="Id592">
+      <generatedtripleset>
+        <gtriple>The_Fellowship_of_the_Ring | publisher | George_Allen_&amp;_Unwin</gtriple>
+      </generatedtripleset>
+    </entry>
+    <entry eid="Id593">
+      <generatedtripleset>
+        <gtriple>Bedford_Aerodrome | location | Thurleigh</gtriple>
+        <gtriple>Thurleigh | areaCode | 01234</gtriple>
+      </generatedtripleset>
+    </entry>
+    <entry eid="Id597">
+      <generatedtripleset>
+        <gtriple>Nie_Haisheng | mission | Shenzhou_10</gtriple>
+        <gtriple>Nie_Haisheng | mission | Shenzhou_6</gtriple>
+        <gtriple>Nie_Haisheng | nationality | People's_Republic_of_China</gtriple>
+      </generatedtripleset>
+    </entry>
+    <entry eid="Id598">
+      <generatedtripleset>
+        <gtriple>Israel | longName | &quot;State of Israel&quot;</gtriple>
+        <gtriple>Israel | populationDensity | 387.63</gtriple>
+        <gtriple>Liselotte_Grschebina | birthPlace | German_Empire</gtriple>
+        <gtriple>Liselotte_Grschebina | deathPlace | Israel</gtriple>
+        <gtriple>Liselotte_Grschebina | nationality | Israel</gtriple>
+      </generatedtripleset>
+    </entry>
+    <entry eid="Id601">
+      <generatedtripleset>
+        <gtriple>Piotr_Hallmann | height | 175.26</gtriple>
+        <gtriple>Piotr_Hallmann | weight | 70.308</gtriple>
+      </generatedtripleset>
+    </entry>
+    <entry eid="Id602">
+      <generatedtripleset>
+        <gtriple>Nie_Haisheng | birthPlace | Zaoyang</gtriple>
+        <gtriple>Nie_Haisheng | nationality | People's_Republic_of_China</gtriple>
+        <gtriple>Nie_Haisheng | occupation | Fighter_pilot</gtriple>
+      </generatedtripleset>
+    </entry>
+    <entry eid="Id605">
+      <generatedtripleset>
+        <gtriple>University_of_Burgundy | campus | Dijon</gtriple>
+        <gtriple>University_of_Burgundy | city | Dijon</gtriple>
+        <gtriple>University_of_Burgundy | numberOfStudents | 27400</gtriple>
+        <gtriple>University_of_Burgundy | numberOfUndergraduateStudents | 16800</gtriple>
+        <gtriple>University_of_Burgundy | staff | 2900</gtriple>
+      </generatedtripleset>
+    </entry>
+    <entry eid="Id611">
+      <generatedtripleset>
+        <gtriple>Liselotte_Grschebina | training | School_of_Applied_Arts_in_Stuttgart</gtriple>
+      </generatedtripleset>
+    </entry>
+    <entry eid="Id621">
+      <generatedtripleset>
+        <gtriple>Nie_Haisheng | birthPlace | Zaoyang</gtriple>
+        <gtriple>Nie_Haisheng | mission | Shenzhou_10</gtriple>
+      </generatedtripleset>
+    </entry>
+    <entry eid="Id626">
+      <generatedtripleset>
+        <gtriple>The_Fellowship_of_the_Ring | author | J._R._R._Tolkien</gtriple>
+        <gtriple>The_Fellowship_of_the_Ring | followedBy | The_Two_Towers</gtriple>
+        <gtriple>The_Fellowship_of_the_Ring | precededBy | The_Hobbit</gtriple>
+        <gtriple>The_Fellowship_of_the_Ring | publisher | George_Allen_&amp;_Unwin</gtriple>
+        <gtriple>The_Two_Towers | author | J._R._R._Tolkien</gtriple>
+        <gtriple>The_Two_Towers | precededBy | The_Fellowship_of_the_Ring</gtriple>
+        <gtriple>The_Two_Towers | publisher | George_Allen_&amp;_Unwin</gtriple>
+        <gtriple>The_Hobbit | author | J._R._R._Tolkien</gtriple>
+        <gtriple>The_Hobbit | publisher | George_Allen_&amp;_Unwin</gtriple>
+      </generatedtripleset>
+    </entry>
+    <entry eid="Id627">
+      <generatedtripleset>
+        <gtriple>University_of_Burgundy | campus | Dijon</gtriple>
+        <gtriple>University_of_Burgundy | city | Dijon</gtriple>
+        <gtriple>University_of_Burgundy | numberOfStudents | 27400</gtriple>
+        <gtriple>University_of_Burgundy | numberOfUndergraduateStudents | 16800</gtriple>
+        <gtriple>University_of_Burgundy | staff | 2900</gtriple>
+      </generatedtripleset>
+    </entry>
+    <entry eid="Id630">
+      <generatedtripleset>
+        <gtriple>Bedford_Aerodrome | cityServed | Bedford_Autodrome</gtriple>
+        <gtriple>Bedford_Aerodrome | elevationAboveTheSeaLevel | 83.2104</gtriple>
+        <gtriple>Bedford_Aerodrome | runwayLength | 1095.0</gtriple>
+        <gtriple>Bedford_Aerodrome | runwayName | &quot;08/26&quot;</gtriple>
+        <gtriple>Bedford_Aerodrome | runwaySurfaceType | Concrete</gtriple>
+      </generatedtripleset>
+    </entry>
+    <entry eid="Id631">
+      <generatedtripleset>
+        <gtriple>Bedford_Aerodrome | icaoLocationIdentifier | EGBF</gtriple>
+        <gtriple>Bedford_Aerodrome | operatingOrganisation | MotorSport_Vision</gtriple>
+        <gtriple>MotorSport_Vision | foundingYear | 2004</gtriple>
+      </generatedtripleset>
+    </entry>
+    <entry eid="Id633">
+      <generatedtripleset>
+        <gtriple>Liselotte_Grschebina | birthPlace | German_Empire</gtriple>
+      </generatedtripleset>
+    </entry>
+    <entry eid="Id636">
+      <generatedtripleset>
+        <gtriple>Bedford_Aerodrome | location | Thurleigh</gtriple>
+        <gtriple>Thurleigh | areaCode | 01234</gtriple>
+      </generatedtripleset>
+    </entry>
+    <entry eid="Id639">
+      <generatedtripleset>
+        <gtriple>Ciudad_Ayala | isPartOf | Morelos</gtriple>
+        <gtriple>Ciudad_Ayala | leaderTitle | Governator</gtriple>
+        <gtriple>Ciudad_Ayala | populationDensity | 1604.0</gtriple>
+        <gtriple>Ciudad_Ayala | timeZone | Pacific_Daylight_Time</gtriple>
+        <gtriple>Ciudad_Ayala | type | City</gtriple>
+        <gtriple>Ciudad_Ayala | utcOffset | −6</gtriple>
+      </generatedtripleset>
+    </entry>
+    <entry eid="Id641">
+      <generatedtripleset>
+        <gtriple>Nie_Haisheng | mission | Shenzhou_10</gtriple>
+        <gtriple>Nie_Haisheng | occupation | Fighter_pilot</gtriple>
+      </generatedtripleset>
+    </entry>
+    <entry eid="Id645">
+      <generatedtripleset>
+        <gtriple>Ciudad_Ayala | country | Mexico</gtriple>
+        <gtriple>Ciudad_Ayala | governmentType | Council-manager_government</gtriple>
+        <gtriple>Ciudad_Ayala | isPartOf | Morelos</gtriple>
+        <gtriple>Ciudad_Ayala | leaderTitle | &quot;City Manager&quot;</gtriple>
+        <gtriple>Ciudad_Ayala | type | City</gtriple>
+        <gtriple>Ciudad_Ayala | utcOffset | −6</gtriple>
+        <gtriple>Morelos | country | Mexico</gtriple>
+      </generatedtripleset>
+    </entry>
+    <entry eid="Id649">
+      <generatedtripleset>
+        <gtriple>1147_Stavropolis | apoapsis | 418476000000.0</gtriple>
+        <gtriple>1147_Stavropolis | orbitalPeriod | 1249.6</gtriple>
+        <gtriple>1147_Stavropolis | periapsis | 260855000000.0</gtriple>
+        <gtriple>1147_Stavropolis | rotationPeriod | 20378.5</gtriple>
+      </generatedtripleset>
+    </entry>
+    <entry eid="Id660">
+      <generatedtripleset>
+        <gtriple>Nie_Haisheng | mission | Shenzhou_10</gtriple>
+        <gtriple>Nie_Haisheng | mission | Shenzhou_6</gtriple>
+        <gtriple>Nie_Haisheng | nationality | People's_Republic_of_China</gtriple>
+        <gtriple>Nie_Haisheng | occupation | Fighter_pilot</gtriple>
+      </generatedtripleset>
+    </entry>
+    <entry eid="Id666">
+      <generatedtripleset>
+        <gtriple>Liselotte_Grschebina | professionalField | Photographer</gtriple>
+        <gtriple>Liselotte_Grschebina | training | School_of_Applied_Arts_in_Stuttgart</gtriple>
+      </generatedtripleset>
+    </entry>
+    <entry eid="Id667">
+      <generatedtripleset>
+        <gtriple>Dijon | country | France</gtriple>
+        <gtriple>University_of_Burgundy | campus | Dijon</gtriple>
+        <gtriple>University_of_Burgundy | city | Dijon</gtriple>
+        <gtriple>University_of_Burgundy | country | France</gtriple>
+        <gtriple>University_of_Burgundy | numberOfPostgraduateStudents | 9400</gtriple>
+        <gtriple>University_of_Burgundy | numberOfUndergraduateStudents | 16800</gtriple>
+      </generatedtripleset>
+    </entry>
+    <entry eid="Id674">
+      <generatedtripleset>
+        <gtriple>Ciudad_Ayala | isPartOf | Morelos</gtriple>
+        <gtriple>Ciudad_Ayala | populationDensity | 1604.0</gtriple>
+        <gtriple>Ciudad_Ayala | utcOffset | −6</gtriple>
+      </generatedtripleset>
+    </entry>
+    <entry eid="Id680">
+      <generatedtripleset>
+        <gtriple>Ciudad_Ayala | elevationAboveTheSeaLevel | 1147.0</gtriple>
+        <gtriple>Ciudad_Ayala | leaderTitle | Governator</gtriple>
+        <gtriple>Ciudad_Ayala | populationDensity | 1604.0</gtriple>
+        <gtriple>Ciudad_Ayala | timeZone | Pacific_Daylight_Time</gtriple>
+        <gtriple>Ciudad_Ayala | utcOffset | −6</gtriple>
+      </generatedtripleset>
+    </entry>
+    <entry eid="Id684">
+      <generatedtripleset>
+        <gtriple>Dijon | country | France</gtriple>
+        <gtriple>University_of_Burgundy | campus | Dijon</gtriple>
+        <gtriple>University_of_Burgundy | city | Dijon</gtriple>
+        <gtriple>University_of_Burgundy | country | France</gtriple>
+        <gtriple>University_of_Burgundy | numberOfDoctoralStudents | 1299</gtriple>
+        <gtriple>University_of_Burgundy | numberOfStudents | 27400</gtriple>
+        <gtriple>University_of_Burgundy | numberOfUndergraduateStudents | 16800</gtriple>
+        <gtriple>University_of_Burgundy | staff | 2900</gtriple>
+      </generatedtripleset>
+    </entry>
+    <entry eid="Id686">
+      <generatedtripleset>
+        <gtriple>Bedford_Aerodrome | operatingOrganisation | MotorSport_Vision</gtriple>
+        <gtriple>Bedford_Aerodrome | runwaySurfaceType | Concrete</gtriple>
+        <gtriple>MotorSport_Vision | foundingYear | 2004</gtriple>
+      </generatedtripleset>
+    </entry>
+    <entry eid="Id693">
+      <generatedtripleset>
+        <gtriple>Nie_Haisheng | mission | Shenzhou_6</gtriple>
+        <gtriple>Nie_Haisheng | occupation | Fighter_pilot</gtriple>
+      </generatedtripleset>
+    </entry>
+    <entry eid="Id702">
+      <generatedtripleset>
+        <gtriple>Dijon | country | France</gtriple>
+        <gtriple>University_of_Burgundy | campus | Dijon</gtriple>
+        <gtriple>University_of_Burgundy | city | Dijon</gtriple>
+        <gtriple>University_of_Burgundy | country | France</gtriple>
+      </generatedtripleset>
+    </entry>
+    <entry eid="Id706">
+      <generatedtripleset>
+        <gtriple>Ciudad_Ayala | country | Mexico</gtriple>
+        <gtriple>Ciudad_Ayala | isPartOf | Morelos</gtriple>
+        <gtriple>Ciudad_Ayala | type | City</gtriple>
+        <gtriple>Ciudad_Ayala | utcOffset | −6</gtriple>
+        <gtriple>Morelos | country | Mexico</gtriple>
+      </generatedtripleset>
+    </entry>
+    <entry eid="Id710">
+      <generatedtripleset>
+        <gtriple>Pontiac_Rageous | bodyStyle | Coupe</gtriple>
+        <gtriple>Pontiac_Rageous | manufacturer | Pontiac</gtriple>
+        <gtriple>Pontiac_Rageous | productionEndYear | 1997</gtriple>
+        <gtriple>Pontiac_Rageous | productionStartYear | 1997</gtriple>
+      </generatedtripleset>
+    </entry>
+    <entry eid="Id713">
+      <generatedtripleset>
+        <gtriple>Ciudad_Ayala | leaderTitle | &quot;City Manager&quot;</gtriple>
+        <gtriple>Ciudad_Ayala | populationDensity | 1604.0</gtriple>
+        <gtriple>Ciudad_Ayala | populationMetro | 1777539</gtriple>
+        <gtriple>Ciudad_Ayala | type | City</gtriple>
+        <gtriple>Ciudad_Ayala | utcOffset | −6</gtriple>
+      </generatedtripleset>
+    </entry>
+    <entry eid="Id717">
+      <generatedtripleset>
+        <gtriple>The_Fellowship_of_the_Ring | author | J._R._R._Tolkien</gtriple>
+      </generatedtripleset>
+    </entry>
+    <entry eid="Id721">
+      <generatedtripleset>
+        <gtriple>Karlsruhe | elevationAboveTheSeaLevel | 115.0</gtriple>
+        <gtriple>Liselotte_Grschebina | birthPlace | Karlsruhe</gtriple>
+        <gtriple>Liselotte_Grschebina | deathPlace | Petah_Tikva</gtriple>
+        <gtriple>Liselotte_Grschebina | professionalField | Photographer</gtriple>
+      </generatedtripleset>
+    </entry>
+    <entry eid="Id723">
+      <generatedtripleset>
+        <gtriple>Ciudad_Ayala | timeZone | Pacific_Daylight_Time</gtriple>
+        <gtriple>Ciudad_Ayala | type | City</gtriple>
+        <gtriple>Ciudad_Ayala | utcOffset | −6</gtriple>
+      </generatedtripleset>
+    </entry>
+    <entry eid="Id730">
+      <generatedtripleset>
+        <gtriple>Detroit | isPartOf | Michigan</gtriple>
+        <gtriple>Pontiac_Rageous | assembly | Detroit</gtriple>
+        <gtriple>Pontiac_Rageous | assembly | Michigan</gtriple>
+        <gtriple>Pontiac_Rageous | manufacturer | Pontiac</gtriple>
+      </generatedtripleset>
+    </entry>
+    <entry eid="Id735">
+      <generatedtripleset>
+        <gtriple>1147_Stavropolis | rotationPeriod | 20378.5</gtriple>
+      </generatedtripleset>
+    </entry>
+    <entry eid="Id738">
+      <generatedtripleset>
+        <gtriple>The_Fellowship_of_the_Ring | precededBy | The_Hobbit</gtriple>
+      </generatedtripleset>
+    </entry>
+    <entry eid="Id739">
+      <generatedtripleset>
+        <gtriple>Ciudad_Ayala | isPartOf | Morelos</gtriple>
+        <gtriple>Ciudad_Ayala | leader | Juan_Nolasco</gtriple>
+        <gtriple>Morelos | leader | Graco_Ramírez</gtriple>
+      </generatedtripleset>
+    </entry>
+    <entry eid="Id746">
+      <generatedtripleset>
+        <gtriple>1147_Stavropolis | apoapsis | 418476000000.0</gtriple>
+        <gtriple>1147_Stavropolis | epoch | 31_July_2016_(JD2457600.5)</gtriple>
+        <gtriple>1147_Stavropolis | periapsis | 260855000000.0</gtriple>
+        <gtriple>1147_Stavropolis | rotationPeriod | 20378.5</gtriple>
+      </generatedtripleset>
+    </entry>
+    <entry eid="Id755">
+      <generatedtripleset>
+        <gtriple>1147_Stavropolis | apoapsis | 418476000000.0</gtriple>
+        <gtriple>1147_Stavropolis | orbitalPeriod | 1249.6</gtriple>
+      </generatedtripleset>
+    </entry>
+    <entry eid="Id762">
+      <generatedtripleset>
+        <gtriple>German_Empire | foundingDate | 1871-01-01</gtriple>
+        <gtriple>Liselotte_Grschebina | birthPlace | German_Empire</gtriple>
+      </generatedtripleset>
+    </entry>
+    <entry eid="Id775">
+      <generatedtripleset>
+        <gtriple>Nie_Haisheng | birthPlace | Hubei</gtriple>
+        <gtriple>Nie_Haisheng | birthPlace | Zaoyang</gtriple>
+        <gtriple>Nie_Haisheng | occupation | Fighter_pilot</gtriple>
+        <gtriple>Zaoyang | isPartOf | Hubei</gtriple>
+      </generatedtripleset>
+    </entry>
+    <entry eid="Id777">
+      <generatedtripleset>
+        <gtriple>Nie_Haisheng | birthDate | 1964-10-13</gtriple>
+        <gtriple>Nie_Haisheng | birthPlace | Hubei</gtriple>
+        <gtriple>Nie_Haisheng | birthPlace | Zaoyang</gtriple>
+        <gtriple>Nie_Haisheng | nationality | People's_Republic_of_China</gtriple>
+        <gtriple>Nie_Haisheng | occupation | Fighter_pilot</gtriple>
+        <gtriple>Zaoyang | isPartOf | Hubei</gtriple>
+      </generatedtripleset>
+    </entry>
+    <entry eid="Id778">
+      <generatedtripleset>
+        <gtriple>Karlsruhe | elevationAboveTheSeaLevel | 115.0</gtriple>
+        <gtriple>Liselotte_Grschebina | birthPlace | Karlsruhe</gtriple>
+        <gtriple>Liselotte_Grschebina | deathPlace | Petah_Tikva</gtriple>
+        <gtriple>Liselotte_Grschebina | professionalField | Photographer</gtriple>
+      </generatedtripleset>
+    </entry>
+    <entry eid="Id781">
+      <generatedtripleset>
+        <gtriple>University_of_Burgundy | numberOfDoctoralStudents | 1299</gtriple>
+        <gtriple>University_of_Burgundy | numberOfStudents | 27400</gtriple>
+      </generatedtripleset>
+    </entry>
+    <entry eid="Id792">
+      <generatedtripleset>
+        <gtriple>Bedford_Aerodrome | cityServed | Bedford_Autodrome</gtriple>
+        <gtriple>Bedford_Aerodrome | elevationAboveTheSeaLevel | 83.2104</gtriple>
+        <gtriple>Bedford_Aerodrome | runwayLength | 1095.0</gtriple>
+      </generatedtripleset>
+    </entry>
+    <entry eid="Id796">
+      <generatedtripleset>
+        <gtriple>The_Fellowship_of_the_Ring | author | J._R._R._Tolkien</gtriple>
+        <gtriple>The_Fellowship_of_the_Ring | followedBy | The_Two_Towers</gtriple>
+        <gtriple>The_Two_Towers | author | J._R._R._Tolkien</gtriple>
+        <gtriple>The_Two_Towers | precededBy | The_Fellowship_of_the_Ring</gtriple>
+      </generatedtripleset>
+    </entry>
+    <entry eid="Id799">
+      <generatedtripleset>
+        <gtriple>1147_Stavropolis | orbitalPeriod | 1249.6</gtriple>
+        <gtriple>1147_Stavropolis | periapsis | 260855000000.0</gtriple>
+      </generatedtripleset>
+    </entry>
+    <entry eid="Id800">
+      <generatedtripleset>
+        <gtriple>Liselotte_Grschebina | deathPlace | Petah_Tikva</gtriple>
+        <gtriple>Liselotte_Grschebina | training | School_of_Applied_Arts_in_Stuttgart</gtriple>
+      </generatedtripleset>
+    </entry>
+    <entry eid="Id801">
+      <generatedtripleset>
+        <gtriple>Liselotte_Grschebina | deathPlace | Petah_Tikva</gtriple>
+        <gtriple>Liselotte_Grschebina | training | School_of_Applied_Arts_in_Stuttgart</gtriple>
+      </generatedtripleset>
+    </entry>
+    <entry eid="Id806">
+      <generatedtripleset>
+        <gtriple>Ciudad_Ayala | elevationAboveTheSeaLevel | 1147.0</gtriple>
+        <gtriple>Ciudad_Ayala | leaderTitle | Governator</gtriple>
+        <gtriple>Ciudad_Ayala | populationDensity | 1604.0</gtriple>
+        <gtriple>Ciudad_Ayala | timeZone | Pacific_Daylight_Time</gtriple>
+        <gtriple>Ciudad_Ayala | type | City</gtriple>
+        <gtriple>Ciudad_Ayala | utcOffset | −6</gtriple>
+      </generatedtripleset>
+    </entry>
+    <entry eid="Id813">
+      <generatedtripleset>
+        <gtriple>1147_Stavropolis | absoluteMagnitude | 11.5</gtriple>
+        <gtriple>1147_Stavropolis | apoapsis | 418476000000.0</gtriple>
+        <gtriple>1147_Stavropolis | discoverer | Grigory_Neujmin</gtriple>
+        <gtriple>1147_Stavropolis | orbitalPeriod | 1249.6</gtriple>
+      </generatedtripleset>
+    </entry>
+    <entry eid="Id814">
+      <generatedtripleset>
+        <gtriple>University_of_Burgundy | campus | Dijon</gtriple>
+        <gtriple>University_of_Burgundy | city | Dijon</gtriple>
+        <gtriple>University_of_Burgundy | staff | 2900</gtriple>
+      </generatedtripleset>
+    </entry>
+    <entry eid="Id823">
+      <generatedtripleset>
+        <gtriple>1147_Stavropolis | apoapsis | 418476000000.0</gtriple>
+        <gtriple>1147_Stavropolis | epoch | 31_July_2016_(JD2457600.5)</gtriple>
+        <gtriple>1147_Stavropolis | periapsis | 260855000000.0</gtriple>
+        <gtriple>1147_Stavropolis | rotationPeriod | 20378.5</gtriple>
+      </generatedtripleset>
+    </entry>
+    <entry eid="Id827">
+      <generatedtripleset>
+        <gtriple>Ciudad_Ayala | leaderTitle | &quot;City Manager&quot;</gtriple>
+        <gtriple>Ciudad_Ayala | populationDensity | 1604.0</gtriple>
+        <gtriple>Ciudad_Ayala | populationMetro | 1777539</gtriple>
+        <gtriple>Ciudad_Ayala | timeZone | Pacific_Standard_Time_Zone</gtriple>
+        <gtriple>Ciudad_Ayala | type | City</gtriple>
+        <gtriple>Ciudad_Ayala | utcOffset | −6</gtriple>
+      </generatedtripleset>
+    </entry>
+    <entry eid="Id828">
+      <generatedtripleset>
+        <gtriple>Karlsruhe | elevationAboveTheSeaLevel | 115.0</gtriple>
+        <gtriple>Liselotte_Grschebina | birthPlace | Karlsruhe</gtriple>
+        <gtriple>Liselotte_Grschebina | deathPlace | Israel</gtriple>
+        <gtriple>Liselotte_Grschebina | nationality | Israel</gtriple>
+      </generatedtripleset>
+    </entry>
+    <entry eid="Id832">
+      <generatedtripleset>
+        <gtriple>None | None | None</gtriple>
+      </generatedtripleset>
+    </entry>
+    <entry eid="Id840">
+      <generatedtripleset>
+        <gtriple>Ciudad_Ayala | leaderTitle | &quot;City Manager&quot;</gtriple>
+        <gtriple>Ciudad_Ayala | populationDensity | 1604.0</gtriple>
+        <gtriple>Ciudad_Ayala | populationMetro | 1777539</gtriple>
+        <gtriple>Ciudad_Ayala | type | City</gtriple>
+        <gtriple>Ciudad_Ayala | utcOffset | −6</gtriple>
+      </generatedtripleset>
+    </entry>
+    <entry eid="Id842">
+      <generatedtripleset>
+        <gtriple>The_Fellowship_of_the_Ring | author | J._R._R._Tolkien</gtriple>
+        <gtriple>The_Fellowship_of_the_Ring | literaryGenre | Fantasy_(genre)</gtriple>
+        <gtriple>The_Fellowship_of_the_Ring | precededBy | The_Hobbit</gtriple>
+        <gtriple>The_Hobbit | releaseDate | 1937-09-21</gtriple>
+        <gtriple>The_Hobbit | author | J._R._R._Tolkien</gtriple>
+      </generatedtripleset>
+    </entry>
+    <entry eid="Id848">
+      <generatedtripleset>
+        <gtriple>University_of_Burgundy | campus | Dijon</gtriple>
+        <gtriple>University_of_Burgundy | city | Dijon</gtriple>
+        <gtriple>University_of_Burgundy | numberOfDoctoralStudents | 1299</gtriple>
+        <gtriple>University_of_Burgundy | numberOfUndergraduateStudents | 16800</gtriple>
+      </generatedtripleset>
+    </entry>
+    <entry eid="Id850">
+      <generatedtripleset>
+        <gtriple>Bedford_Aerodrome | operatingOrganisation | MotorSport_Vision</gtriple>
+        <gtriple>MotorSport_Vision | city | Kent</gtriple>
+      </generatedtripleset>
+    </entry>
+    <entry eid="Id861">
+      <generatedtripleset>
+        <gtriple>Ciudad_Ayala | timeZone | Pacific_Daylight_Time</gtriple>
+        <gtriple>Ciudad_Ayala | timeZone | Pacific_Standard_Time_Zone</gtriple>
+      </generatedtripleset>
+    </entry>
+    <entry eid="Id863">
+      <generatedtripleset>
+        <gtriple>Nie_Haisheng | mission | Shenzhou_6</gtriple>
+      </generatedtripleset>
+    </entry>
+    <entry eid="Id871">
+      <generatedtripleset>
+        <gtriple>Ciudad_Ayala | populationDensity | 1604.0</gtriple>
+        <gtriple>Ciudad_Ayala | type | City</gtriple>
+        <gtriple>Ciudad_Ayala | utcOffset | −6</gtriple>
+      </generatedtripleset>
+    </entry>
+    <entry eid="Id880">
+      <generatedtripleset>
+        <gtriple>University_of_Burgundy | numberOfDoctoralStudents | 1299</gtriple>
+        <gtriple>University_of_Burgundy | numberOfUndergraduateStudents | 16800</gtriple>
+        <gtriple>University_of_Burgundy | staff | 2900</gtriple>
+      </generatedtripleset>
+    </entry>
+    <entry eid="Id891">
+      <generatedtripleset>
+        <gtriple>1147_Stavropolis | apoapsis | 418476000000.0</gtriple>
+        <gtriple>1147_Stavropolis | epoch | 31_July_2016_(JD2457600.5)</gtriple>
+        <gtriple>1147_Stavropolis | orbitalPeriod | 1249.6</gtriple>
+      </generatedtripleset>
+    </entry>
+    <entry eid="Id895">
+      <generatedtripleset>
+        <gtriple>Israel | longName | &quot;State of Israel&quot;</gtriple>
+        <gtriple>Liselotte_Grschebina | deathDate | 1994-06-14</gtriple>
+        <gtriple>Liselotte_Grschebina | deathPlace | Israel</gtriple>
+        <gtriple>Liselotte_Grschebina | nationality | Israel</gtriple>
+      </generatedtripleset>
+    </entry>
+    <entry eid="Id896">
+      <generatedtripleset>
+        <gtriple>Bedford_Aerodrome | cityServed | Bedford_Autodrome</gtriple>
+        <gtriple>Bedford_Aerodrome | location | Thurleigh</gtriple>
+        <gtriple>Bedford_Aerodrome | operatingOrganisation | MotorSport_Vision</gtriple>
+        <gtriple>Bedford_Aerodrome | runwayLength | 1095.0</gtriple>
+        <gtriple>Bedford_Aerodrome | runwayName | &quot;08/26&quot;</gtriple>
+      </generatedtripleset>
+    </entry>
+    <entry eid="Id899">
+      <generatedtripleset>
+        <gtriple>Israel | longName | &quot;State of Israel&quot;</gtriple>
+        <gtriple>Israel | populationDensity | 387.63</gtriple>
+        <gtriple>Liselotte_Grschebina | deathPlace | Israel</gtriple>
+        <gtriple>Liselotte_Grschebina | deathPlace | Petah_Tikva</gtriple>
+        <gtriple>Liselotte_Grschebina | nationality | Israel</gtriple>
+        <gtriple>Petah_Tikva | country | Israel</gtriple>
+      </generatedtripleset>
+    </entry>
+    <entry eid="Id907">
+      <generatedtripleset>
+        <gtriple>Dijon | country | France</gtriple>
+        <gtriple>University_of_Burgundy | campus | Dijon</gtriple>
+        <gtriple>University_of_Burgundy | city | Dijon</gtriple>
+        <gtriple>University_of_Burgundy | country | France</gtriple>
+        <gtriple>University_of_Burgundy | numberOfPostgraduateStudents | 9400</gtriple>
+        <gtriple>University_of_Burgundy | numberOfUndergraduateStudents | 16800</gtriple>
+      </generatedtripleset>
+    </entry>
+    <entry eid="Id914">
+      <generatedtripleset>
+        <gtriple>Bedford_Aerodrome | cityServed | Bedford_Autodrome</gtriple>
+        <gtriple>Bedford_Aerodrome | runwayName | &quot;08/26&quot;</gtriple>
+        <gtriple>Bedford_Aerodrome | runwaySurfaceType | Concrete</gtriple>
+      </generatedtripleset>
+    </entry>
+    <entry eid="Id918">
+      <generatedtripleset>
+        <gtriple>University_of_Burgundy | campus | Dijon</gtriple>
+        <gtriple>University_of_Burgundy | city | Dijon</gtriple>
+        <gtriple>University_of_Burgundy | numberOfUndergraduateStudents | 16800</gtriple>
+      </generatedtripleset>
+    </entry>
+    <entry eid="Id926">
+      <generatedtripleset>
+        <gtriple>Ciudad_Ayala | leaderTitle | &quot;City Manager&quot;</gtriple>
+        <gtriple>Ciudad_Ayala | populationDensity | 1604.0</gtriple>
+        <gtriple>Ciudad_Ayala | type | City</gtriple>
+        <gtriple>Ciudad_Ayala | utcOffset | −6</gtriple>
+      </generatedtripleset>
+    </entry>
+    <entry eid="Id930">
+      <generatedtripleset>
+        <gtriple>Bedford_Aerodrome | elevationAboveTheSeaLevel | 83.2104</gtriple>
+        <gtriple>Bedford_Aerodrome | runwaySurfaceType | Concrete</gtriple>
+      </generatedtripleset>
+    </entry>
+    <entry eid="Id931">
+      <generatedtripleset>
+        <gtriple>Dijon | country | France</gtriple>
+        <gtriple>University_of_Burgundy | campus | Dijon</gtriple>
+        <gtriple>University_of_Burgundy | city | Dijon</gtriple>
+        <gtriple>University_of_Burgundy | country | France</gtriple>
+        <gtriple>University_of_Burgundy | numberOfPostgraduateStudents | 9400</gtriple>
+        <gtriple>University_of_Burgundy | staff | 2900</gtriple>
+      </generatedtripleset>
+    </entry>
+    <entry eid="Id935">
+      <generatedtripleset>
+        <gtriple>The_Fellowship_of_the_Ring | precededBy | The_Hobbit</gtriple>
+      </generatedtripleset>
+    </entry>
+    <entry eid="Id936">
+      <generatedtripleset>
+        <gtriple>Pontiac_Rageous | manufacturer | Pontiac</gtriple>
+      </generatedtripleset>
+    </entry>
+    <entry eid="Id941">
+      <generatedtripleset>
+        <gtriple>Detroit | isPartOf | Michigan</gtriple>
+        <gtriple>Pontiac_Rageous | assembly | Detroit</gtriple>
+        <gtriple>Pontiac_Rageous | assembly | Michigan</gtriple>
+        <gtriple>Pontiac_Rageous | manufacturer | Pontiac</gtriple>
+        <gtriple>Pontiac_Rageous | productionEndYear | 1997</gtriple>
+        <gtriple>Pontiac_Rageous | productionStartYear | 1997</gtriple>
+      </generatedtripleset>
+    </entry>
+    <entry eid="Id944">
+      <generatedtripleset>
+        <gtriple>Ciudad_Ayala | country | Mexico</gtriple>
+        <gtriple>Ciudad_Ayala | isPartOf | Morelos</gtriple>
+        <gtriple>Ciudad_Ayala | leaderTitle | &quot;City Manager&quot;</gtriple>
+        <gtriple>Ciudad_Ayala | type | City</gtriple>
+        <gtriple>Ciudad_Ayala | utcOffset | −6</gtriple>
+        <gtriple>Morelos | country | Mexico</gtriple>
+      </generatedtripleset>
+    </entry>
+    <entry eid="Id948">
+      <generatedtripleset>
+        <gtriple>Karlsruhe | elevationAboveTheSeaLevel | 115.0</gtriple>
+        <gtriple>Liselotte_Grschebina | birthPlace | Karlsruhe</gtriple>
+        <gtriple>Liselotte_Grschebina | deathPlace | Petah_Tikva</gtriple>
+        <gtriple>Liselotte_Grschebina | professionalField | Photographer</gtriple>
+      </generatedtripleset>
+    </entry>
+    <entry eid="Id950">
+      <generatedtripleset>
+        <gtriple>Nie_Haisheng | mission | Shenzhou_10</gtriple>
+        <gtriple>Nie_Haisheng | mission | Shenzhou_6</gtriple>
+        <gtriple>Nie_Haisheng | occupation | Fighter_pilot</gtriple>
+      </generatedtripleset>
+    </entry>
+    <entry eid="Id952">
+      <generatedtripleset>
+        <gtriple>Ciudad_Ayala | timeZone | Pacific_Daylight_Time</gtriple>
+        <gtriple>Ciudad_Ayala | type | City</gtriple>
+        <gtriple>Ciudad_Ayala | utcOffset | −6</gtriple>
+      </generatedtripleset>
+    </entry>
+    <entry eid="Id955">
+      <generatedtripleset>
+        <gtriple>Ciudad_Ayala | leader | Juan_Nolasco</gtriple>
+        <gtriple>Ciudad_Ayala | timeZone | Pacific_Standard_Time_Zone</gtriple>
+      </generatedtripleset>
+    </entry>
+    <entry eid="Id960">
+      <generatedtripleset>
+        <gtriple>Detroit | isPartOf | Michigan</gtriple>
+        <gtriple>Pontiac_Rageous | assembly | Detroit</gtriple>
+        <gtriple>Pontiac_Rageous | assembly | Michigan</gtriple>
+        <gtriple>Pontiac_Rageous | manufacturer | Pontiac</gtriple>
+        <gtriple>Pontiac_Rageous | productionEndYear | 1997</gtriple>
+        <gtriple>Pontiac_Rageous | productionStartYear | 1997</gtriple>
+      </generatedtripleset>
+    </entry>
+    <entry eid="Id961">
+      <generatedtripleset>
+        <gtriple>University_of_Burgundy | campus | Dijon</gtriple>
+        <gtriple>University_of_Burgundy | city | Dijon</gtriple>
+        <gtriple>University_of_Burgundy | numberOfPostgraduateStudents | 9400</gtriple>
+      </generatedtripleset>
+    </entry>
+    <entry eid="Id974">
+      <generatedtripleset>
+        <gtriple>Ciudad_Ayala | populationDensity | 1604.0</gtriple>
+        <gtriple>Ciudad_Ayala | type | City</gtriple>
+        <gtriple>Ciudad_Ayala | utcOffset | −6</gtriple>
+      </generatedtripleset>
+    </entry>
+    <entry eid="Id981">
+      <generatedtripleset>
+        <gtriple>1147_Stavropolis | absoluteMagnitude | 11.5</gtriple>
+        <gtriple>1147_Stavropolis | orbitalPeriod | 1249.6</gtriple>
+      </generatedtripleset>
+    </entry>
+    <entry eid="Id987">
+      <generatedtripleset>
+        <gtriple>Detroit | isPartOf | Michigan</gtriple>
+        <gtriple>Pontiac_Rageous | assembly | Detroit</gtriple>
+        <gtriple>Pontiac_Rageous | assembly | Michigan</gtriple>
+        <gtriple>Pontiac_Rageous | bodyStyle | Coupe</gtriple>
+        <gtriple>Pontiac_Rageous | manufacturer | Pontiac</gtriple>
+        <gtriple>Pontiac_Rageous | productionEndYear | 1997</gtriple>
+        <gtriple>Pontiac_Rageous | productionStartYear | 1997</gtriple>
+      </generatedtripleset>
+    </entry>
+    <entry eid="Id993">
+      <generatedtripleset>
+        <gtriple>University_of_Burgundy | campus | Dijon</gtriple>
+        <gtriple>University_of_Burgundy | city | Dijon</gtriple>
+        <gtriple>University_of_Burgundy | numberOfDoctoralStudents | 1299</gtriple>
+        <gtriple>University_of_Burgundy | numberOfUndergraduateStudents | 16800</gtriple>
+      </generatedtripleset>
+    </entry>
+    <entry eid="Id996">
+      <generatedtripleset>
+        <gtriple>Dijon | postalCode | 21000</gtriple>
+        <gtriple>University_of_Burgundy | campus | Dijon</gtriple>
+        <gtriple>University_of_Burgundy | city | Dijon</gtriple>
+        <gtriple>University_of_Burgundy | numberOfPostgraduateStudents | 9400</gtriple>
+        <gtriple>University_of_Burgundy | numberOfUndergraduateStudents | 16800</gtriple>
+        <gtriple>University_of_Burgundy | staff | 2900</gtriple>
+      </generatedtripleset>
+    </entry>
+    <entry eid="Id1005">
+      <generatedtripleset>
+        <gtriple>1147_Stavropolis | apoapsis | 418476000000.0</gtriple>
+        <gtriple>1147_Stavropolis | rotationPeriod | 20378.5</gtriple>
+      </generatedtripleset>
+    </entry>
+    <entry eid="Id1006">
+      <generatedtripleset>
+        <gtriple>Ciudad_Ayala | country | Mexico</gtriple>
+        <gtriple>Ciudad_Ayala | elevationAboveTheSeaLevel | 1147.0</gtriple>
+        <gtriple>Ciudad_Ayala | isPartOf | Morelos</gtriple>
+        <gtriple>Ciudad_Ayala | leaderTitle | Governator</gtriple>
+        <gtriple>Ciudad_Ayala | type | City</gtriple>
+        <gtriple>Ciudad_Ayala | utcOffset | −6</gtriple>
+        <gtriple>Morelos | country | Mexico</gtriple>
+      </generatedtripleset>
+    </entry>
+    <entry eid="Id1016">
+      <generatedtripleset>
+        <gtriple>Ciudad_Ayala | governmentType | Council-manager_government</gtriple>
+        <gtriple>Ciudad_Ayala | leaderTitle | &quot;City Manager&quot;</gtriple>
+        <gtriple>Ciudad_Ayala | populationDensity | 1604.0</gtriple>
+        <gtriple>Ciudad_Ayala | type | City</gtriple>
+        <gtriple>Ciudad_Ayala | utcOffset | −6</gtriple>
+      </generatedtripleset>
+    </entry>
+    <entry eid="Id1018">
+      <generatedtripleset>
+        <gtriple>Ciudad_Ayala | elevationAboveTheSeaLevel | 1147.0</gtriple>
+        <gtriple>Ciudad_Ayala | governmentType | Council-manager_government</gtriple>
+        <gtriple>Ciudad_Ayala | leader | Juan_Nolasco</gtriple>
+        <gtriple>Ciudad_Ayala | type | City</gtriple>
+      </generatedtripleset>
+    </entry>
+    <entry eid="Id1019">
+      <generatedtripleset>
+        <gtriple>Ciudad_Ayala | isPartOf | Morelos</gtriple>
+        <gtriple>Ciudad_Ayala | leaderTitle | Governator</gtriple>
+        <gtriple>Ciudad_Ayala | populationDensity | 1604.0</gtriple>
+        <gtriple>Ciudad_Ayala | type | City</gtriple>
+        <gtriple>Ciudad_Ayala | utcOffset | −6</gtriple>
+      </generatedtripleset>
+    </entry>
+    <entry eid="Id1022">
+      <generatedtripleset>
+        <gtriple>1147_Stavropolis | discoverer | Grigory_Neujmin</gtriple>
+        <gtriple>1147_Stavropolis | orbitalPeriod | 1249.6</gtriple>
+      </generatedtripleset>
+    </entry>
+    <entry eid="Id1027">
+      <generatedtripleset>
+        <gtriple>Piotr_Hallmann | birthPlace | Gdynia,_Poland</gtriple>
+      </generatedtripleset>
+    </entry>
+    <entry eid="Id1037">
+      <generatedtripleset>
+        <gtriple>Pontiac_Rageous | bodyStyle | Coupe</gtriple>
+        <gtriple>Pontiac_Rageous | manufacturer | Pontiac</gtriple>
+      </generatedtripleset>
+    </entry>
+    <entry eid="Id1039">
+      <generatedtripleset>
+        <gtriple>University_of_Burgundy | campus | Dijon</gtriple>
+        <gtriple>University_of_Burgundy | city | Dijon</gtriple>
+        <gtriple>University_of_Burgundy | numberOfUndergraduateStudents | 16800</gtriple>
+      </generatedtripleset>
+    </entry>
+    <entry eid="Id1046">
+      <generatedtripleset>
+        <gtriple>Ciudad_Ayala | isPartOf | Morelos</gtriple>
+        <gtriple>Ciudad_Ayala | leaderTitle | Governator</gtriple>
+        <gtriple>Ciudad_Ayala | populationDensity | 1604.0</gtriple>
+        <gtriple>Ciudad_Ayala | timeZone | Pacific_Daylight_Time</gtriple>
+        <gtriple>Ciudad_Ayala | type | City</gtriple>
+        <gtriple>Ciudad_Ayala | utcOffset | −6</gtriple>
+      </generatedtripleset>
+    </entry>
+    <entry eid="Id1047">
+      <generatedtripleset>
+        <gtriple>1147_Stavropolis | absoluteMagnitude | 11.5</gtriple>
+        <gtriple>1147_Stavropolis | apoapsis | 418476000000.0</gtriple>
+        <gtriple>1147_Stavropolis | discoverer | Grigory_Neujmin</gtriple>
+        <gtriple>1147_Stavropolis | orbitalPeriod | 1249.6</gtriple>
+      </generatedtripleset>
+    </entry>
+    <entry eid="Id1050">
+      <generatedtripleset>
+        <gtriple>The_Fellowship_of_the_Ring | author | J._R._R._Tolkien</gtriple>
+        <gtriple>The_Fellowship_of_the_Ring | literaryGenre | Fantasy_(genre)</gtriple>
+      </generatedtripleset>
+    </entry>
+    <entry eid="Id1054">
+      <generatedtripleset>
+        <gtriple>The_Fellowship_of_the_Ring | followedBy | The_Two_Towers</gtriple>
+        <gtriple>The_Fellowship_of_the_Ring | literaryGenre | Fantasy_(genre)</gtriple>
+        <gtriple>The_Fellowship_of_the_Ring | publisher | George_Allen_&amp;_Unwin</gtriple>
+        <gtriple>The_Two_Towers | precededBy | The_Fellowship_of_the_Ring</gtriple>
+        <gtriple>The_Two_Towers | publisher | George_Allen_&amp;_Unwin</gtriple>
+      </generatedtripleset>
+    </entry>
+    <entry eid="Id1056">
+      <generatedtripleset>
+        <gtriple>Liselotte_Grschebina | deathPlace | Israel</gtriple>
+        <gtriple>Liselotte_Grschebina | nationality | Israel</gtriple>
+      </generatedtripleset>
+    </entry>
+    <entry eid="Id1058">
+      <generatedtripleset>
+        <gtriple>German_Empire | foundingDate | 1871-01-01</gtriple>
+        <gtriple>Israel | longName | &quot;State of Israel&quot;</gtriple>
+        <gtriple>Karlsruhe | country | Germany</gtriple>
+        <gtriple>Liselotte_Grschebina | birthPlace | German_Empire</gtriple>
+        <gtriple>Liselotte_Grschebina | birthPlace | Karlsruhe</gtriple>
+        <gtriple>Liselotte_Grschebina | deathDate | 1994-06-14</gtriple>
+        <gtriple>Liselotte_Grschebina | deathPlace | Israel</gtriple>
+        <gtriple>Liselotte_Grschebina | nationality | Israel</gtriple>
+        <gtriple>Liselotte_Grschebina | training | School_of_Applied_Arts_in_Stuttgart</gtriple>
+      </generatedtripleset>
+    </entry>
+    <entry eid="Id1064">
+      <generatedtripleset>
+        <gtriple>German_Empire | anthem | Die_Wacht_am_Rhein</gtriple>
+        <gtriple>Liselotte_Grschebina | birthPlace | German_Empire</gtriple>
+        <gtriple>Liselotte_Grschebina | deathPlace | Petah_Tikva</gtriple>
+      </generatedtripleset>
+    </entry>
+    <entry eid="Id1068">
+      <generatedtripleset>
+        <gtriple>None | None | None</gtriple>
+      </generatedtripleset>
+    </entry>
+    <entry eid="Id1070">
+      <generatedtripleset>
+        <gtriple>University_of_Burgundy | campus | Dijon</gtriple>
+        <gtriple>University_of_Burgundy | city | Dijon</gtriple>
+        <gtriple>University_of_Burgundy | numberOfStudents | 27400</gtriple>
+        <gtriple>University_of_Burgundy | numberOfUndergraduateStudents | 16800</gtriple>
+        <gtriple>University_of_Burgundy | staff | 2900</gtriple>
+      </generatedtripleset>
+    </entry>
+    <entry eid="Id1075">
+      <generatedtripleset>
+        <gtriple>Detroit | isPartOf | Michigan</gtriple>
+        <gtriple>Pontiac_Rageous | assembly | Detroit</gtriple>
+        <gtriple>Pontiac_Rageous | assembly | Michigan</gtriple>
+        <gtriple>Pontiac_Rageous | manufacturer | Pontiac</gtriple>
+      </generatedtripleset>
+    </entry>
+    <entry eid="Id1077">
+      <generatedtripleset>
+        <gtriple>Liselotte_Grschebina | professionalField | Photographer</gtriple>
+        <gtriple>Liselotte_Grschebina | training | School_of_Applied_Arts_in_Stuttgart</gtriple>
+      </generatedtripleset>
+    </entry>
+    <entry eid="Id1087">
+      <generatedtripleset>
+        <gtriple>The_Fellowship_of_the_Ring | author | J._R._R._Tolkien</gtriple>
+        <gtriple>The_Fellowship_of_the_Ring | followedBy | The_Two_Towers</gtriple>
+        <gtriple>The_Fellowship_of_the_Ring | precededBy | The_Hobbit</gtriple>
+        <gtriple>The_Fellowship_of_the_Ring | publisher | George_Allen_&amp;_Unwin</gtriple>
+        <gtriple>The_Two_Towers | author | J._R._R._Tolkien</gtriple>
+        <gtriple>The_Two_Towers | precededBy | The_Fellowship_of_the_Ring</gtriple>
+        <gtriple>The_Two_Towers | publisher | George_Allen_&amp;_Unwin</gtriple>
+        <gtriple>The_Hobbit | author | J._R._R._Tolkien</gtriple>
+        <gtriple>The_Hobbit | publisher | George_Allen_&amp;_Unwin</gtriple>
+      </generatedtripleset>
+    </entry>
+    <entry eid="Id1089">
+      <generatedtripleset>
+        <gtriple>The_Fellowship_of_the_Ring | precededBy | The_Hobbit</gtriple>
+      </generatedtripleset>
+    </entry>
+    <entry eid="Id1101">
+      <generatedtripleset>
+        <gtriple>Israel | longName | &quot;State of Israel&quot;</gtriple>
+        <gtriple>Liselotte_Grschebina | deathPlace | Israel</gtriple>
+        <gtriple>Liselotte_Grschebina | nationality | Israel</gtriple>
+        <gtriple>Liselotte_Grschebina | professionalField | Photographer</gtriple>
+        <gtriple>Liselotte_Grschebina | training | School_of_Applied_Arts_in_Stuttgart</gtriple>
+      </generatedtripleset>
+    </entry>
+    <entry eid="Id1103">
+      <generatedtripleset>
+        <gtriple>None | None | None</gtriple>
+      </generatedtripleset>
+    </entry>
+    <entry eid="Id1112">
+      <generatedtripleset>
+        <gtriple>Bedford_Aerodrome | icaoLocationIdentifier | EGBF</gtriple>
+        <gtriple>Bedford_Aerodrome | operatingOrganisation | MotorSport_Vision</gtriple>
+        <gtriple>MotorSport_Vision | foundingYear | 2004</gtriple>
+      </generatedtripleset>
+    </entry>
+    <entry eid="Id1116">
+      <generatedtripleset>
+        <gtriple>Bedford_Aerodrome | cityServed | Bedford_Autodrome</gtriple>
+        <gtriple>Bedford_Aerodrome | icaoLocationIdentifier | EGBF</gtriple>
+        <gtriple>Bedford_Aerodrome | location | Thurleigh</gtriple>
+      </generatedtripleset>
+    </entry>
+    <entry eid="Id1122">
+      <generatedtripleset>
+        <gtriple>1147_Stavropolis | epoch | 31_July_2016_(JD2457600.5)</gtriple>
+        <gtriple>1147_Stavropolis | periapsis | 260855000000.0</gtriple>
+        <gtriple>1147_Stavropolis | rotationPeriod | 20378.5</gtriple>
+      </generatedtripleset>
+    </entry>
+    <entry eid="Id1125">
+      <generatedtripleset>
+        <gtriple>University_of_Burgundy | numberOfStudents | 27400</gtriple>
+        <gtriple>University_of_Burgundy | numberOfUndergraduateStudents | 16800</gtriple>
+        <gtriple>University_of_Burgundy | staff | 2900</gtriple>
+      </generatedtripleset>
+    </entry>
+    <entry eid="Id1132">
+      <generatedtripleset>
+        <gtriple>Israel | longName | &quot;State of Israel&quot;</gtriple>
+        <gtriple>Liselotte_Grschebina | birthPlace | Karlsruhe</gtriple>
+        <gtriple>Liselotte_Grschebina | deathPlace | Israel</gtriple>
+        <gtriple>Liselotte_Grschebina | nationality | Israel</gtriple>
+      </generatedtripleset>
+    </entry>
+    <entry eid="Id1142">
+      <generatedtripleset>
+        <gtriple>Ciudad_Ayala | leader | Juan_Nolasco</gtriple>
+        <gtriple>Ciudad_Ayala | populationDensity | 1604.0</gtriple>
+        <gtriple>Ciudad_Ayala | timeZone | Pacific_Daylight_Time</gtriple>
+        <gtriple>Ciudad_Ayala | timeZone | Pacific_Standard_Time_Zone</gtriple>
+        <gtriple>Ciudad_Ayala | utcOffset | −6</gtriple>
+      </generatedtripleset>
+    </entry>
+    <entry eid="Id1145">
+      <generatedtripleset>
+        <gtriple>1147_Stavropolis | epoch | 31_July_2016_(JD2457600.5)</gtriple>
+      </generatedtripleset>
+    </entry>
+    <entry eid="Id1146">
+      <generatedtripleset>
+        <gtriple>Israel | ethnicGroup | Arab_citizens_of_Israel</gtriple>
+        <gtriple>Israel | longName | &quot;State of Israel&quot;</gtriple>
+        <gtriple>Liselotte_Grschebina | deathPlace | Israel</gtriple>
+        <gtriple>Liselotte_Grschebina | nationality | Israel</gtriple>
+      </generatedtripleset>
+    </entry>
+    <entry eid="Id1148">
+      <generatedtripleset>
+        <gtriple>Detroit | isPartOf | Michigan</gtriple>
+        <gtriple>Pontiac_Rageous | assembly | Detroit</gtriple>
+        <gtriple>Pontiac_Rageous | assembly | Michigan</gtriple>
+        <gtriple>Pontiac_Rageous | manufacturer | Pontiac</gtriple>
+      </generatedtripleset>
+    </entry>
+    <entry eid="Id1151">
+      <generatedtripleset>
+        <gtriple>Detroit | isPartOf | Michigan</gtriple>
+        <gtriple>Pontiac_Rageous | assembly | Detroit</gtriple>
+        <gtriple>Pontiac_Rageous | assembly | Michigan</gtriple>
+        <gtriple>Pontiac_Rageous | bodyStyle | Coupe</gtriple>
+        <gtriple>Pontiac_Rageous | manufacturer | Pontiac</gtriple>
+        <gtriple>Pontiac_Rageous | productionEndYear | 1997</gtriple>
+        <gtriple>Pontiac_Rageous | productionStartYear | 1997</gtriple>
+      </generatedtripleset>
+    </entry>
+    <entry eid="Id1164">
+      <generatedtripleset>
+        <gtriple>Nie_Haisheng | mission | Shenzhou_6</gtriple>
+        <gtriple>Nie_Haisheng | occupation | Fighter_pilot</gtriple>
+      </generatedtripleset>
+    </entry>
+    <entry eid="Id1175">
+      <generatedtripleset>
+        <gtriple>Nie_Haisheng | mission | Shenzhou_10</gtriple>
+        <gtriple>Nie_Haisheng | mission | Shenzhou_6</gtriple>
+        <gtriple>Nie_Haisheng | occupation | Fighter_pilot</gtriple>
+      </generatedtripleset>
+    </entry>
+    <entry eid="Id1178">
+      <generatedtripleset>
+        <gtriple>The_Fellowship_of_the_Ring | author | J._R._R._Tolkien</gtriple>
+        <gtriple>The_Fellowship_of_the_Ring | literaryGenre | Fantasy_(genre)</gtriple>
+      </generatedtripleset>
+    </entry>
+    <entry eid="Id1184">
+      <generatedtripleset>
+        <gtriple>Pontiac_Rageous | bodyStyle | Coupe</gtriple>
+        <gtriple>Pontiac_Rageous | manufacturer | Pontiac</gtriple>
+      </generatedtripleset>
+    </entry>
+    <entry eid="Id1188">
+      <generatedtripleset>
+        <gtriple>Karlsruhe | country | Germany</gtriple>
+        <gtriple>Liselotte_Grschebina | birthPlace | German_Empire</gtriple>
+        <gtriple>Liselotte_Grschebina | birthPlace | Karlsruhe</gtriple>
+        <gtriple>Liselotte_Grschebina | deathPlace | Israel</gtriple>
+        <gtriple>Liselotte_Grschebina | nationality | Israel</gtriple>
+        <gtriple>Liselotte_Grschebina | professionalField | Photographer</gtriple>
+        <gtriple>Liselotte_Grschebina | training | School_of_Applied_Arts_in_Stuttgart</gtriple>
+      </generatedtripleset>
+    </entry>
+    <entry eid="Id1193">
+      <generatedtripleset>
+        <gtriple>Bedford_Aerodrome | cityServed | Bedford_Autodrome</gtriple>
+        <gtriple>Bedford_Aerodrome | operatingOrganisation | MotorSport_Vision</gtriple>
+      </generatedtripleset>
+    </entry>
+    <entry eid="Id1196">
+      <generatedtripleset>
+        <gtriple>University_of_Burgundy | numberOfDoctoralStudents | 1299</gtriple>
+        <gtriple>University_of_Burgundy | numberOfStudents | 27400</gtriple>
+      </generatedtripleset>
+    </entry>
+    <entry eid="Id1199">
+      <generatedtripleset>
+        <gtriple>Ciudad_Ayala | country | Mexico</gtriple>
+        <gtriple>Ciudad_Ayala | isPartOf | Morelos</gtriple>
+        <gtriple>Ciudad_Ayala | type | City</gtriple>
+        <gtriple>Ciudad_Ayala | utcOffset | −6</gtriple>
+        <gtriple>Morelos | country | Mexico</gtriple>
+      </generatedtripleset>
+    </entry>
+    <entry eid="Id1200">
+      <generatedtripleset>
+        <gtriple>The_Fellowship_of_the_Ring | author | J._R._R._Tolkien</gtriple>
+      </generatedtripleset>
+    </entry>
+    <entry eid="Id1206">
+      <generatedtripleset>
+        <gtriple>Dijon | postalCode | 21000</gtriple>
+        <gtriple>University_of_Burgundy | campus | Dijon</gtriple>
+        <gtriple>University_of_Burgundy | city | Dijon</gtriple>
+        <gtriple>University_of_Burgundy | numberOfPostgraduateStudents | 9400</gtriple>
+        <gtriple>University_of_Burgundy | numberOfUndergraduateStudents | 16800</gtriple>
+        <gtriple>University_of_Burgundy | staff | 2900</gtriple>
+      </generatedtripleset>
+    </entry>
+    <entry eid="Id1220">
+      <generatedtripleset>
+        <gtriple>Nie_Haisheng | mission | Shenzhou_10</gtriple>
+        <gtriple>Nie_Haisheng | mission | Shenzhou_6</gtriple>
+        <gtriple>Nie_Haisheng | occupation | Fighter_pilot</gtriple>
+      </generatedtripleset>
+    </entry>
+    <entry eid="Id1221">
+      <generatedtripleset>
+        <gtriple>German_Empire | foundingDate | 1871-01-01</gtriple>
+        <gtriple>Israel | longName | &quot;State of Israel&quot;</gtriple>
+        <gtriple>Karlsruhe | country | Germany</gtriple>
+        <gtriple>Liselotte_Grschebina | birthPlace | German_Empire</gtriple>
+        <gtriple>Liselotte_Grschebina | birthPlace | Karlsruhe</gtriple>
+        <gtriple>Liselotte_Grschebina | deathDate | 1994-06-14</gtriple>
+        <gtriple>Liselotte_Grschebina | deathPlace | Israel</gtriple>
+        <gtriple>Liselotte_Grschebina | nationality | Israel</gtriple>
+        <gtriple>Liselotte_Grschebina | training | School_of_Applied_Arts_in_Stuttgart</gtriple>
+      </generatedtripleset>
+    </entry>
+    <entry eid="Id1227">
+      <generatedtripleset>
+        <gtriple>Nie_Haisheng | birthDate | 1964-10-13</gtriple>
+        <gtriple>Nie_Haisheng | mission | Shenzhou_10</gtriple>
+        <gtriple>Nie_Haisheng | mission | Shenzhou_6</gtriple>
+      </generatedtripleset>
+    </entry>
+    <entry eid="Id1240">
+      <generatedtripleset>
+        <gtriple>Israel | longName | &quot;State of Israel&quot;</gtriple>
+        <gtriple>Liselotte_Grschebina | deathPlace | Israel</gtriple>
+        <gtriple>Liselotte_Grschebina | nationality | Israel</gtriple>
+      </generatedtripleset>
+    </entry>
+    <entry eid="Id1241">
+      <generatedtripleset>
+        <gtriple>Israel | longName | &quot;State of Israel&quot;</gtriple>
+        <gtriple>Israel | populationDensity | 387.63</gtriple>
+        <gtriple>Liselotte_Grschebina | birthPlace | German_Empire</gtriple>
+        <gtriple>Liselotte_Grschebina | deathPlace | Israel</gtriple>
+        <gtriple>Liselotte_Grschebina | deathPlace | Petah_Tikva</gtriple>
+        <gtriple>Liselotte_Grschebina | nationality | Israel</gtriple>
+        <gtriple>Petah_Tikva | country | Israel</gtriple>
+      </generatedtripleset>
+    </entry>
+    <entry eid="Id1247">
+      <generatedtripleset>
+        <gtriple>Liselotte_Grschebina | birthPlace | Karlsruhe</gtriple>
+        <gtriple>Liselotte_Grschebina | deathPlace | Israel</gtriple>
+        <gtriple>Liselotte_Grschebina | nationality | Israel</gtriple>
+      </generatedtripleset>
+    </entry>
+    <entry eid="Id1252">
+      <generatedtripleset>
+        <gtriple>Ciudad_Ayala | elevationAboveTheSeaLevel | 1147.0</gtriple>
+        <gtriple>Ciudad_Ayala | leaderTitle | Governator</gtriple>
+        <gtriple>Ciudad_Ayala | populationDensity | 1604.0</gtriple>
+        <gtriple>Ciudad_Ayala | utcOffset | −6</gtriple>
+      </generatedtripleset>
+    </entry>
+    <entry eid="Id1254">
+      <generatedtripleset>
+        <gtriple>Ciudad_Ayala | leaderTitle | &quot;City Manager&quot;</gtriple>
+        <gtriple>Ciudad_Ayala | populationDensity | 1604.0</gtriple>
+        <gtriple>Ciudad_Ayala | populationMetro | 1777539</gtriple>
+        <gtriple>Ciudad_Ayala | type | City</gtriple>
+        <gtriple>Ciudad_Ayala | utcOffset | −6</gtriple>
+      </generatedtripleset>
+    </entry>
+    <entry eid="Id1255">
+      <generatedtripleset>
+        <gtriple>Detroit | isPartOf | Michigan</gtriple>
+        <gtriple>Pontiac_Rageous | assembly | Detroit</gtriple>
+        <gtriple>Pontiac_Rageous | assembly | Michigan</gtriple>
+        <gtriple>Pontiac_Rageous | manufacturer | Pontiac</gtriple>
+      </generatedtripleset>
+    </entry>
+    <entry eid="Id1257">
+      <generatedtripleset>
+        <gtriple>Ciudad_Ayala | timeZone | Pacific_Standard_Time_Zone</gtriple>
+        <gtriple>Ciudad_Ayala | type | City</gtriple>
+      </generatedtripleset>
+    </entry>
+    <entry eid="Id1259">
+      <generatedtripleset>
+        <gtriple>Ciudad_Ayala | governmentType | Council-manager_government</gtriple>
+        <gtriple>Ciudad_Ayala | leaderTitle | &quot;City Manager&quot;</gtriple>
+        <gtriple>Ciudad_Ayala | populationDensity | 1604.0</gtriple>
+        <gtriple>Ciudad_Ayala | timeZone | Pacific_Standard_Time_Zone</gtriple>
+        <gtriple>Ciudad_Ayala | type | City</gtriple>
+        <gtriple>Ciudad_Ayala | utcOffset | −6</gtriple>
+      </generatedtripleset>
+    </entry>
+    <entry eid="Id1262">
+      <generatedtripleset>
+        <gtriple>Ciudad_Ayala | elevationAboveTheSeaLevel | 1147.0</gtriple>
+        <gtriple>Ciudad_Ayala | leaderTitle | Governator</gtriple>
+        <gtriple>Ciudad_Ayala | type | City</gtriple>
+      </generatedtripleset>
+    </entry>
+    <entry eid="Id1265">
+      <generatedtripleset>
+        <gtriple>University_of_Burgundy | campus | Dijon</gtriple>
+        <gtriple>University_of_Burgundy | city | Dijon</gtriple>
+        <gtriple>University_of_Burgundy | numberOfDoctoralStudents | 1299</gtriple>
+        <gtriple>University_of_Burgundy | numberOfPostgraduateStudents | 9400</gtriple>
+        <gtriple>University_of_Burgundy | numberOfStudents | 27400</gtriple>
+        <gtriple>University_of_Burgundy | numberOfUndergraduateStudents | 16800</gtriple>
+        <gtriple>University_of_Burgundy | staff | 2900</gtriple>
+      </generatedtripleset>
+    </entry>
+    <entry eid="Id1270">
+      <generatedtripleset>
+        <gtriple>German_Empire | foundingDate | 1871-01-01</gtriple>
+        <gtriple>Liselotte_Grschebina | birthPlace | German_Empire</gtriple>
+        <gtriple>Liselotte_Grschebina | deathPlace | Israel</gtriple>
+        <gtriple>Liselotte_Grschebina | nationality | Israel</gtriple>
+      </generatedtripleset>
+    </entry>
+    <entry eid="Id1273">
+      <generatedtripleset>
+        <gtriple>Bedford_Aerodrome | cityServed | Bedford_Autodrome</gtriple>
+        <gtriple>Bedford_Aerodrome | runwayName | &quot;08/26&quot;</gtriple>
+        <gtriple>Bedford_Aerodrome | runwaySurfaceType | Concrete</gtriple>
+      </generatedtripleset>
+    </entry>
+    <entry eid="Id1276">
+      <generatedtripleset>
+        <gtriple>1147_Stavropolis | absoluteMagnitude | 11.5</gtriple>
+        <gtriple>1147_Stavropolis | apoapsis | 418476000000.0</gtriple>
+        <gtriple>1147_Stavropolis | discoverer | Grigory_Neujmin</gtriple>
+        <gtriple>1147_Stavropolis | epoch | 31_July_2016_(JD2457600.5)</gtriple>
+        <gtriple>1147_Stavropolis | orbitalPeriod | 1249.6</gtriple>
+        <gtriple>1147_Stavropolis | rotationPeriod | 20378.5</gtriple>
+      </generatedtripleset>
+    </entry>
+    <entry eid="Id1288">
+      <generatedtripleset>
+        <gtriple>Detroit | isPartOf | Michigan</gtriple>
+        <gtriple>Pontiac_Rageous | assembly | Detroit</gtriple>
+        <gtriple>Pontiac_Rageous | assembly | Michigan</gtriple>
+        <gtriple>Pontiac_Rageous | manufacturer | Pontiac</gtriple>
+        <gtriple>Pontiac_Rageous | productionEndYear | 1997</gtriple>
+        <gtriple>Pontiac_Rageous | productionStartYear | 1997</gtriple>
+      </generatedtripleset>
+    </entry>
+    <entry eid="Id1296">
+      <generatedtripleset>
+        <gtriple>University_of_Burgundy | numberOfStudents | 27400</gtriple>
+        <gtriple>University_of_Burgundy | numberOfUndergraduateStudents | 16800</gtriple>
+      </generatedtripleset>
+    </entry>
+    <entry eid="Id1310">
+      <generatedtripleset>
+        <gtriple>Bedford_Aerodrome | cityServed | Bedford_Autodrome</gtriple>
+        <gtriple>Bedford_Aerodrome | elevationAboveTheSeaLevel | 83.2104</gtriple>
+        <gtriple>Bedford_Aerodrome | runwayLength | 1095.0</gtriple>
+      </generatedtripleset>
+    </entry>
+    <entry eid="Id1314">
+      <generatedtripleset>
+        <gtriple>Pontiac_Rageous | bodyStyle | Coupe</gtriple>
+        <gtriple>Pontiac_Rageous | manufacturer | Pontiac</gtriple>
+      </generatedtripleset>
+    </entry>
+    <entry eid="Id1325">
+      <generatedtripleset>
+        <gtriple>Detroit | isPartOf | Michigan</gtriple>
+        <gtriple>Pontiac_Rageous | assembly | Detroit</gtriple>
+        <gtriple>Pontiac_Rageous | assembly | Michigan</gtriple>
+        <gtriple>Pontiac_Rageous | manufacturer | Pontiac</gtriple>
+        <gtriple>Pontiac_Rageous | productionEndYear | 1997</gtriple>
+        <gtriple>Pontiac_Rageous | productionStartYear | 1997</gtriple>
+      </generatedtripleset>
+    </entry>
+    <entry eid="Id1329">
+      <generatedtripleset>
+        <gtriple>Nie_Haisheng | mission | Shenzhou_10</gtriple>
+        <gtriple>Nie_Haisheng | mission | Shenzhou_6</gtriple>
+      </generatedtripleset>
+    </entry>
+    <entry eid="Id1338">
+      <generatedtripleset>
+        <gtriple>Ciudad_Ayala | leaderTitle | &quot;City Manager&quot;</gtriple>
+        <gtriple>Ciudad_Ayala | type | City</gtriple>
+      </generatedtripleset>
+    </entry>
+    <entry eid="Id1342">
+      <generatedtripleset>
+        <gtriple>Ciudad_Ayala | elevationAboveTheSeaLevel | 1147.0</gtriple>
+      </generatedtripleset>
+    </entry>
+    <entry eid="Id1343">
+      <generatedtripleset>
+        <gtriple>Nie_Haisheng | birthPlace | Zaoyang</gtriple>
+        <gtriple>Nie_Haisheng | mission | Shenzhou_10</gtriple>
+        <gtriple>Nie_Haisheng | nationality | People's_Republic_of_China</gtriple>
+        <gtriple>Nie_Haisheng | occupation | Fighter_pilot</gtriple>
+      </generatedtripleset>
+    </entry>
+    <entry eid="Id1366">
+      <generatedtripleset>
+        <gtriple>Gdynia,_Poland | timeZone | Central_European_Time</gtriple>
+        <gtriple>Piotr_Hallmann | birthPlace | Gdynia,_Poland</gtriple>
+        <gtriple>Piotr_Hallmann | weight | 70.308</gtriple>
+      </generatedtripleset>
+    </entry>
+    <entry eid="Id1371">
+      <generatedtripleset>
+        <gtriple>Ciudad_Ayala | country | Mexico</gtriple>
+        <gtriple>Ciudad_Ayala | governmentType | Council-manager_government</gtriple>
+        <gtriple>Ciudad_Ayala | leaderTitle | &quot;City Manager&quot;</gtriple>
+        <gtriple>Ciudad_Ayala | populationDensity | 1604.0</gtriple>
+        <gtriple>Ciudad_Ayala | populationMetro | 1777539</gtriple>
+        <gtriple>Ciudad_Ayala | type | City</gtriple>
+        <gtriple>Ciudad_Ayala | utcOffset | −6</gtriple>
+      </generatedtripleset>
+    </entry>
+    <entry eid="Id1373">
+      <generatedtripleset>
+        <gtriple>1147_Stavropolis | absoluteMagnitude | 11.5</gtriple>
+        <gtriple>1147_Stavropolis | apoapsis | 418476000000.0</gtriple>
+        <gtriple>1147_Stavropolis | discoverer | Grigory_Neujmin</gtriple>
+      </generatedtripleset>
+    </entry>
+    <entry eid="Id1376">
+      <generatedtripleset>
+        <gtriple>Ciudad_Ayala | elevationAboveTheSeaLevel | 1147.0</gtriple>
+        <gtriple>Ciudad_Ayala | isPartOf | Morelos</gtriple>
+        <gtriple>Ciudad_Ayala | leaderTitle | Governator</gtriple>
+        <gtriple>Ciudad_Ayala | populationDensity | 1604.0</gtriple>
+        <gtriple>Ciudad_Ayala | type | City</gtriple>
+        <gtriple>Ciudad_Ayala | utcOffset | −6</gtriple>
+      </generatedtripleset>
+    </entry>
+    <entry eid="Id1382">
+      <generatedtripleset>
+        <gtriple>Liselotte_Grschebina | training | School_of_Applied_Arts_in_Stuttgart</gtriple>
+      </generatedtripleset>
+    </entry>
+    <entry eid="Id1383">
+      <generatedtripleset>
+        <gtriple>Pontiac_Rageous | manufacturer | Pontiac</gtriple>
+        <gtriple>Pontiac_Rageous | productionEndYear | 1997</gtriple>
+        <gtriple>Pontiac_Rageous | productionStartYear | 1997</gtriple>
+      </generatedtripleset>
+    </entry>
+    <entry eid="Id1385">
+      <generatedtripleset>
+        <gtriple>Ciudad_Ayala | isPartOf | Morelos</gtriple>
+        <gtriple>Ciudad_Ayala | populationDensity | 1604.0</gtriple>
+        <gtriple>Ciudad_Ayala | type | City</gtriple>
+        <gtriple>Ciudad_Ayala | utcOffset | −6</gtriple>
+      </generatedtripleset>
+    </entry>
+    <entry eid="Id1386">
+      <generatedtripleset>
+        <gtriple>Gdynia,_Poland | foundingDate | 1926-02-10</gtriple>
+        <gtriple>Piotr_Hallmann | birthPlace | Gdynia,_Poland</gtriple>
+      </generatedtripleset>
+    </entry>
+    <entry eid="Id1399">
+      <generatedtripleset>
+        <gtriple>Nie_Haisheng | birthPlace | Hubei</gtriple>
+        <gtriple>Nie_Haisheng | birthPlace | Zaoyang</gtriple>
+        <gtriple>Nie_Haisheng | mission | Shenzhou_10</gtriple>
+        <gtriple>Nie_Haisheng | mission | Shenzhou_6</gtriple>
+        <gtriple>Nie_Haisheng | occupation | Fighter_pilot</gtriple>
+        <gtriple>Zaoyang | isPartOf | Hubei</gtriple>
+      </generatedtripleset>
+    </entry>
+    <entry eid="Id1404">
+      <generatedtripleset>
+        <gtriple>1147_Stavropolis | epoch | 31_July_2016_(JD2457600.5)</gtriple>
+      </generatedtripleset>
+    </entry>
+    <entry eid="Id1407">
+      <generatedtripleset>
+        <gtriple>Nie_Haisheng | mission | Shenzhou_10</gtriple>
+        <gtriple>Nie_Haisheng | mission | Shenzhou_6</gtriple>
+      </generatedtripleset>
+    </entry>
+    <entry eid="Id1408">
+      <generatedtripleset>
+        <gtriple>Liselotte_Grschebina | professionalField | Photographer</gtriple>
+      </generatedtripleset>
+    </entry>
+    <entry eid="Id1409">
+      <generatedtripleset>
+        <gtriple>Ciudad_Ayala | isPartOf | Morelos</gtriple>
+        <gtriple>Ciudad_Ayala | populationDensity | 1604.0</gtriple>
+        <gtriple>Ciudad_Ayala | utcOffset | −6</gtriple>
+      </generatedtripleset>
+    </entry>
+    <entry eid="Id1416">
+      <generatedtripleset>
+        <gtriple>University_of_Burgundy | campus | Dijon</gtriple>
+        <gtriple>University_of_Burgundy | city | Dijon</gtriple>
+        <gtriple>University_of_Burgundy | numberOfStudents | 27400</gtriple>
+        <gtriple>University_of_Burgundy | numberOfUndergraduateStudents | 16800</gtriple>
+        <gtriple>University_of_Burgundy | staff | 2900</gtriple>
+      </generatedtripleset>
+    </entry>
+    <entry eid="Id1417">
+      <generatedtripleset>
+        <gtriple>Liselotte_Grschebina | birthDate | 1908-05-02</gtriple>
+        <gtriple>Liselotte_Grschebina | professionalField | Photographer</gtriple>
+        <gtriple>Liselotte_Grschebina | training | School_of_Applied_Arts_in_Stuttgart</gtriple>
+      </generatedtripleset>
+    </entry>
+    <entry eid="Id1419">
+      <generatedtripleset>
+        <gtriple>University_of_Burgundy | campus | Dijon</gtriple>
+        <gtriple>University_of_Burgundy | city | Dijon</gtriple>
+        <gtriple>University_of_Burgundy | staff | 2900</gtriple>
+      </generatedtripleset>
+    </entry>
+    <entry eid="Id1420">
+      <generatedtripleset>
+        <gtriple>Nie_Haisheng | occupation | Fighter_pilot</gtriple>
+      </generatedtripleset>
+    </entry>
+    <entry eid="Id1422">
+      <generatedtripleset>
+        <gtriple>Ciudad_Ayala | leaderTitle | &quot;City Manager&quot;</gtriple>
+        <gtriple>Ciudad_Ayala | populationDensity | 1604.0</gtriple>
+        <gtriple>Ciudad_Ayala | populationMetro | 1777539</gtriple>
+        <gtriple>Ciudad_Ayala | timeZone | Pacific_Standard_Time_Zone</gtriple>
+        <gtriple>Ciudad_Ayala | type | City</gtriple>
+        <gtriple>Ciudad_Ayala | utcOffset | −6</gtriple>
+      </generatedtripleset>
+    </entry>
+    <entry eid="Id1426">
+      <generatedtripleset>
+        <gtriple>1147_Stavropolis | absoluteMagnitude | 11.5</gtriple>
+        <gtriple>1147_Stavropolis | apoapsis | 418476000000.0</gtriple>
+        <gtriple>1147_Stavropolis | epoch | 31_July_2016_(JD2457600.5)</gtriple>
+        <gtriple>1147_Stavropolis | orbitalPeriod | 1249.6</gtriple>
+        <gtriple>1147_Stavropolis | rotationPeriod | 20378.5</gtriple>
+      </generatedtripleset>
+    </entry>
+    <entry eid="Id1429">
+      <generatedtripleset>
+        <gtriple>Gdynia,_Poland | foundingDate | 1926-02-10</gtriple>
+        <gtriple>Gdynia,_Poland | leaderTitle | Mayor</gtriple>
+        <gtriple>Piotr_Hallmann | birthPlace | Gdynia,_Poland</gtriple>
+      </generatedtripleset>
+    </entry>
+    <entry eid="Id1432">
+      <generatedtripleset>
+        <gtriple>Ciudad_Ayala | country | Mexico</gtriple>
+        <gtriple>Ciudad_Ayala | leaderTitle | Governator</gtriple>
+      </generatedtripleset>
+    </entry>
+    <entry eid="Id1434">
+      <generatedtripleset>
+        <gtriple>Piotr_Hallmann | birthPlace | Gdynia,_Poland</gtriple>
+        <gtriple>Piotr_Hallmann | height | 175.26</gtriple>
+        <gtriple>Piotr_Hallmann | weight | 70.308</gtriple>
+      </generatedtripleset>
+    </entry>
+    <entry eid="Id1435">
+      <generatedtripleset>
+        <gtriple>1147_Stavropolis | rotationPeriod | 20378.5</gtriple>
+      </generatedtripleset>
+    </entry>
+    <entry eid="Id1437">
+      <generatedtripleset>
+        <gtriple>1147_Stavropolis | absoluteMagnitude | 11.5</gtriple>
+        <gtriple>1147_Stavropolis | apoapsis | 418476000000.0</gtriple>
+        <gtriple>1147_Stavropolis | discoverer | Grigory_Neujmin</gtriple>
+      </generatedtripleset>
+    </entry>
+    <entry eid="Id1438">
+      <generatedtripleset>
+        <gtriple>Bedford_Aerodrome | elevationAboveTheSeaLevel | 83.2104</gtriple>
+        <gtriple>Bedford_Aerodrome | runwayName | &quot;08/26&quot;</gtriple>
+      </generatedtripleset>
+    </entry>
+    <entry eid="Id1442">
+      <generatedtripleset>
+        <gtriple>Liselotte_Grschebina | birthPlace | Karlsruhe</gtriple>
+      </generatedtripleset>
+    </entry>
+    <entry eid="Id1443">
+      <generatedtripleset>
+        <gtriple>Bedford_Aerodrome | elevationAboveTheSeaLevel | 83.2104</gtriple>
+        <gtriple>Bedford_Aerodrome | runwaySurfaceType | Concrete</gtriple>
+      </generatedtripleset>
+    </entry>
+    <entry eid="Id1446">
+      <generatedtripleset>
+        <gtriple>Liselotte_Grschebina | professionalField | Photographer</gtriple>
+      </generatedtripleset>
+    </entry>
+    <entry eid="Id1456">
+      <generatedtripleset>
+        <gtriple>Detroit | isPartOf | Michigan</gtriple>
+        <gtriple>Pontiac_Rageous | assembly | Detroit</gtriple>
+        <gtriple>Pontiac_Rageous | assembly | Michigan</gtriple>
+        <gtriple>Pontiac_Rageous | bodyStyle | Coupe</gtriple>
+        <gtriple>Pontiac_Rageous | manufacturer | Pontiac</gtriple>
+      </generatedtripleset>
+    </entry>
+    <entry eid="Id1459">
+      <generatedtripleset>
+        <gtriple>Bedford_Aerodrome | cityServed | Bedford_Autodrome</gtriple>
+        <gtriple>Bedford_Aerodrome | location | Thurleigh</gtriple>
+        <gtriple>Bedford_Aerodrome | operatingOrganisation | MotorSport_Vision</gtriple>
+        <gtriple>Bedford_Aerodrome | runwayLength | 1095.0</gtriple>
+        <gtriple>Bedford_Aerodrome | runwayName | &quot;08/26&quot;</gtriple>
+      </generatedtripleset>
+    </entry>
+    <entry eid="Id1464">
+      <generatedtripleset>
+        <gtriple>Nie_Haisheng | birthPlace | Hubei</gtriple>
+        <gtriple>Nie_Haisheng | birthPlace | Zaoyang</gtriple>
+        <gtriple>Zaoyang | isPartOf | Hubei</gtriple>
+      </generatedtripleset>
+    </entry>
+    <entry eid="Id1468">
+      <generatedtripleset>
+        <gtriple>Bedford_Aerodrome | elevationAboveTheSeaLevel | 83.2104</gtriple>
+        <gtriple>Bedford_Aerodrome | runwayName | &quot;08/26&quot;</gtriple>
+      </generatedtripleset>
+    </entry>
+    <entry eid="Id1471">
+      <generatedtripleset>
+        <gtriple>Bedford_Aerodrome | cityServed | Bedford_Autodrome</gtriple>
+        <gtriple>Bedford_Aerodrome | elevationAboveTheSeaLevel | 83.2104</gtriple>
+        <gtriple>Bedford_Aerodrome | runwayLength | 1095.0</gtriple>
+      </generatedtripleset>
+    </entry>
+    <entry eid="Id1473">
+      <generatedtripleset>
+        <gtriple>The_Fellowship_of_the_Ring | followedBy | The_Two_Towers</gtriple>
+        <gtriple>The_Fellowship_of_the_Ring | publisher | George_Allen_&amp;_Unwin</gtriple>
+        <gtriple>The_Two_Towers | precededBy | The_Fellowship_of_the_Ring</gtriple>
+        <gtriple>The_Two_Towers | publisher | George_Allen_&amp;_Unwin</gtriple>
+      </generatedtripleset>
+    </entry>
+    <entry eid="Id1478">
+      <generatedtripleset>
+        <gtriple>Nie_Haisheng | mission | Shenzhou_10</gtriple>
+        <gtriple>Nie_Haisheng | mission | Shenzhou_6</gtriple>
+        <gtriple>Nie_Haisheng | occupation | Fighter_pilot</gtriple>
+      </generatedtripleset>
+    </entry>
+    <entry eid="Id1479">
+      <generatedtripleset>
+        <gtriple>1147_Stavropolis | absoluteMagnitude | 11.5</gtriple>
+        <gtriple>1147_Stavropolis | apoapsis | 418476000000.0</gtriple>
+        <gtriple>1147_Stavropolis | discoverer | Grigory_Neujmin</gtriple>
+        <gtriple>1147_Stavropolis | orbitalPeriod | 1249.6</gtriple>
+        <gtriple>1147_Stavropolis | rotationPeriod | 20378.5</gtriple>
+      </generatedtripleset>
+    </entry>
+    <entry eid="Id1495">
+      <generatedtripleset>
+        <gtriple>Piotr_Hallmann | birthPlace | Gdynia,_Poland</gtriple>
+        <gtriple>Piotr_Hallmann | height | 175.26</gtriple>
+        <gtriple>Piotr_Hallmann | weight | 70.308</gtriple>
+      </generatedtripleset>
+    </entry>
+    <entry eid="Id1501">
+      <generatedtripleset>
+        <gtriple>1147_Stavropolis | absoluteMagnitude | 11.5</gtriple>
+        <gtriple>1147_Stavropolis | orbitalPeriod | 1249.6</gtriple>
+      </generatedtripleset>
+    </entry>
+    <entry eid="Id1504">
+      <generatedtripleset>
+        <gtriple>Liselotte_Grschebina | professionalField | Photographer</gtriple>
+        <gtriple>Liselotte_Grschebina | training | School_of_Applied_Arts_in_Stuttgart</gtriple>
+      </generatedtripleset>
+    </entry>
+    <entry eid="Id1512">
+      <generatedtripleset>
+        <gtriple>Pontiac_Rageous | assembly | Michigan</gtriple>
+        <gtriple>Pontiac_Rageous | manufacturer | Pontiac</gtriple>
+        <gtriple>Pontiac_Rageous | productionEndYear | 1997</gtriple>
+        <gtriple>Pontiac_Rageous | productionStartYear | 1997</gtriple>
+      </generatedtripleset>
+    </entry>
+    <entry eid="Id1516">
+      <generatedtripleset>
+        <gtriple>German_Empire | anthem | Die_Wacht_am_Rhein</gtriple>
+        <gtriple>Liselotte_Grschebina | birthPlace | German_Empire</gtriple>
+        <gtriple>Liselotte_Grschebina | deathPlace | Petah_Tikva</gtriple>
+      </generatedtripleset>
+    </entry>
+    <entry eid="Id1521">
+      <generatedtripleset>
+        <gtriple>Bedford_Aerodrome | location | Thurleigh</gtriple>
+        <gtriple>Bedford_Aerodrome | operatingOrganisation | MotorSport_Vision</gtriple>
+      </generatedtripleset>
+    </entry>
+    <entry eid="Id1527">
+      <generatedtripleset>
+        <gtriple>Gdynia,_Poland | leaderTitle | Mayor</gtriple>
+        <gtriple>Piotr_Hallmann | birthPlace | Gdynia,_Poland</gtriple>
+      </generatedtripleset>
+    </entry>
+    <entry eid="Id1550">
+      <generatedtripleset>
+        <gtriple>Liselotte_Grschebina | birthPlace | German_Empire</gtriple>
+        <gtriple>Liselotte_Grschebina | training | School_of_Applied_Arts_in_Stuttgart</gtriple>
+      </generatedtripleset>
+    </entry>
+    <entry eid="Id1556">
+      <generatedtripleset>
+        <gtriple>1147_Stavropolis | orbitalPeriod | 1249.6</gtriple>
+        <gtriple>1147_Stavropolis | periapsis | 260855000000.0</gtriple>
+      </generatedtripleset>
+    </entry>
+    <entry eid="Id1558">
+      <generatedtripleset>
+        <gtriple>The_Fellowship_of_the_Ring | author | J._R._R._Tolkien</gtriple>
+        <gtriple>The_Fellowship_of_the_Ring | literaryGenre | Fantasy_(genre)</gtriple>
+        <gtriple>The_Fellowship_of_the_Ring | precededBy | The_Hobbit</gtriple>
+        <gtriple>The_Hobbit | releaseDate | 1937-09-21</gtriple>
+        <gtriple>The_Hobbit | author | J._R._R._Tolkien</gtriple>
+      </generatedtripleset>
+    </entry>
+    <entry eid="Id1560">
+      <generatedtripleset>
+        <gtriple>Ciudad_Ayala | timeZone | Pacific_Daylight_Time</gtriple>
+        <gtriple>Ciudad_Ayala | timeZone | Pacific_Standard_Time_Zone</gtriple>
+      </generatedtripleset>
+    </entry>
+    <entry eid="Id1561">
+      <generatedtripleset>
+        <gtriple>Gdynia,_Poland | leaderTitle | Mayor</gtriple>
+        <gtriple>Piotr_Hallmann | birthPlace | Gdynia,_Poland</gtriple>
+        <gtriple>Piotr_Hallmann | height | 175.26</gtriple>
+      </generatedtripleset>
+    </entry>
+    <entry eid="Id1564">
+      <generatedtripleset>
+        <gtriple>Pontiac_Rageous | bodyStyle | Coupe</gtriple>
+        <gtriple>Pontiac_Rageous | manufacturer | Pontiac</gtriple>
+        <gtriple>Pontiac_Rageous | productionEndYear | 1997</gtriple>
+        <gtriple>Pontiac_Rageous | productionStartYear | 1997</gtriple>
+      </generatedtripleset>
+    </entry>
+    <entry eid="Id1570">
+      <generatedtripleset>
+        <gtriple>Ciudad_Ayala | elevationAboveTheSeaLevel | 1147.0</gtriple>
+      </generatedtripleset>
+    </entry>
+    <entry eid="Id1578">
+      <generatedtripleset>
+        <gtriple>Bedford_Aerodrome | cityServed | Bedford_Autodrome</gtriple>
+        <gtriple>Bedford_Aerodrome | operatingOrganisation | MotorSport_Vision</gtriple>
+        <gtriple>Bedford_Aerodrome | runwayLength | 1095.0</gtriple>
+      </generatedtripleset>
+    </entry>
+    <entry eid="Id1588">
+      <generatedtripleset>
+        <gtriple>Ciudad_Ayala | country | Mexico</gtriple>
+        <gtriple>Ciudad_Ayala | type | City</gtriple>
+      </generatedtripleset>
+    </entry>
+    <entry eid="Id1589">
+      <generatedtripleset>
+        <gtriple>University_of_Burgundy | campus | Dijon</gtriple>
+        <gtriple>University_of_Burgundy | city | Dijon</gtriple>
+        <gtriple>University_of_Burgundy | numberOfDoctoralStudents | 1299</gtriple>
+        <gtriple>University_of_Burgundy | numberOfPostgraduateStudents | 9400</gtriple>
+        <gtriple>University_of_Burgundy | numberOfStudents | 27400</gtriple>
+        <gtriple>University_of_Burgundy | numberOfUndergraduateStudents | 16800</gtriple>
+        <gtriple>University_of_Burgundy | staff | 2900</gtriple>
+      </generatedtripleset>
+    </entry>
+    <entry eid="Id1593">
+      <generatedtripleset>
+        <gtriple>1147_Stavropolis | apoapsis | 418476000000.0</gtriple>
+        <gtriple>1147_Stavropolis | orbitalPeriod | 1249.6</gtriple>
+        <gtriple>1147_Stavropolis | periapsis | 260855000000.0</gtriple>
+      </generatedtripleset>
+    </entry>
+    <entry eid="Id1601">
+      <generatedtripleset>
+        <gtriple>University_of_Burgundy | country | France</gtriple>
+      </generatedtripleset>
+    </entry>
+    <entry eid="Id1602">
+      <generatedtripleset>
+        <gtriple>Bedford_Aerodrome | cityServed | Bedford_Autodrome</gtriple>
+        <gtriple>Bedford_Aerodrome | icaoLocationIdentifier | EGBF</gtriple>
+        <gtriple>Bedford_Aerodrome | location | Thurleigh</gtriple>
+        <gtriple>Bedford_Aerodrome | operatingOrganisation | MotorSport_Vision</gtriple>
+        <gtriple>Bedford_Aerodrome | runwayLength | 1095.0</gtriple>
+        <gtriple>Bedford_Aerodrome | runwayName | &quot;08/26&quot;</gtriple>
+        <gtriple>Bedford_Aerodrome | runwaySurfaceType | Concrete</gtriple>
+      </generatedtripleset>
+    </entry>
+    <entry eid="Id1621">
+      <generatedtripleset>
+        <gtriple>Ciudad_Ayala | leaderTitle | &quot;City Manager&quot;</gtriple>
+        <gtriple>Ciudad_Ayala | timeZone | Pacific_Standard_Time_Zone</gtriple>
+        <gtriple>Ciudad_Ayala | type | City</gtriple>
+      </generatedtripleset>
+    </entry>
+    <entry eid="Id1623">
+      <generatedtripleset>
+        <gtriple>Israel | longName | &quot;State of Israel&quot;</gtriple>
+        <gtriple>Israel | populationDensity | 387.63</gtriple>
+        <gtriple>Liselotte_Grschebina | deathPlace | Israel</gtriple>
+        <gtriple>Liselotte_Grschebina | nationality | Israel</gtriple>
+      </generatedtripleset>
+    </entry>
+    <entry eid="Id1633">
+      <generatedtripleset>
+        <gtriple>Liselotte_Grschebina | birthPlace | German_Empire</gtriple>
+        <gtriple>Liselotte_Grschebina | training | School_of_Applied_Arts_in_Stuttgart</gtriple>
+      </generatedtripleset>
+    </entry>
+    <entry eid="Id1636">
+      <generatedtripleset>
+        <gtriple>Nie_Haisheng | mission | Shenzhou_10</gtriple>
+        <gtriple>Nie_Haisheng | mission | Shenzhou_6</gtriple>
+        <gtriple>Nie_Haisheng | nationality | People's_Republic_of_China</gtriple>
+        <gtriple>Nie_Haisheng | occupation | Fighter_pilot</gtriple>
+      </generatedtripleset>
+    </entry>
+    <entry eid="Id1652">
+      <generatedtripleset>
+        <gtriple>University_of_Burgundy | numberOfDoctoralStudents | 1299</gtriple>
+        <gtriple>University_of_Burgundy | numberOfUndergraduateStudents | 16800</gtriple>
+        <gtriple>University_of_Burgundy | staff | 2900</gtriple>
+      </generatedtripleset>
+    </entry>
+    <entry eid="Id1660">
+      <generatedtripleset>
+        <gtriple>Pontiac_Rageous | manufacturer | Pontiac</gtriple>
+        <gtriple>Pontiac_Rageous | productionEndYear | 1997</gtriple>
+        <gtriple>Pontiac_Rageous | productionStartYear | 1997</gtriple>
+      </generatedtripleset>
+    </entry>
+    <entry eid="Id1664">
+      <generatedtripleset>
+        <gtriple>Bedford_Aerodrome | elevationAboveTheSeaLevel | 83.2104</gtriple>
+        <gtriple>Bedford_Aerodrome | runwayName | &quot;08/26&quot;</gtriple>
+      </generatedtripleset>
+    </entry>
+    <entry eid="Id1672">
+      <generatedtripleset>
+        <gtriple>Karlsruhe | elevationAboveTheSeaLevel | 115.0</gtriple>
+        <gtriple>Liselotte_Grschebina | birthPlace | German_Empire</gtriple>
+        <gtriple>Liselotte_Grschebina | birthPlace | Karlsruhe</gtriple>
+        <gtriple>Liselotte_Grschebina | deathPlace | Israel</gtriple>
+        <gtriple>Liselotte_Grschebina | nationality | Israel</gtriple>
+      </generatedtripleset>
+    </entry>
+    <entry eid="Id1675">
+      <generatedtripleset>
+        <gtriple>1147_Stavropolis | apoapsis | 418476000000.0</gtriple>
+        <gtriple>1147_Stavropolis | periapsis | 260855000000.0</gtriple>
+      </generatedtripleset>
+    </entry>
+    <entry eid="Id1679">
+      <generatedtripleset>
+        <gtriple>Ciudad_Ayala | isPartOf | Morelos</gtriple>
+        <gtriple>Ciudad_Ayala | leaderTitle | &quot;City Manager&quot;</gtriple>
+        <gtriple>Ciudad_Ayala | populationDensity | 1604.0</gtriple>
+        <gtriple>Ciudad_Ayala | populationMetro | 1777539</gtriple>
+        <gtriple>Ciudad_Ayala | type | City</gtriple>
+        <gtriple>Ciudad_Ayala | utcOffset | −6</gtriple>
+      </generatedtripleset>
+    </entry>
+    <entry eid="Id1684">
+      <generatedtripleset>
+        <gtriple>Pontiac_Rageous | bodyStyle | Coupe</gtriple>
+        <gtriple>Pontiac_Rageous | manufacturer | Pontiac</gtriple>
+        <gtriple>Pontiac_Rageous | productionEndYear | 1997</gtriple>
+        <gtriple>Pontiac_Rageous | productionStartYear | 1997</gtriple>
+      </generatedtripleset>
+    </entry>
+    <entry eid="Id1686">
+      <generatedtripleset>
+        <gtriple>Ciudad_Ayala | leader | Juan_Nolasco</gtriple>
+        <gtriple>Ciudad_Ayala | populationDensity | 1604.0</gtriple>
+        <gtriple>Ciudad_Ayala | timeZone | Pacific_Standard_Time_Zone</gtriple>
+        <gtriple>Ciudad_Ayala | type | City</gtriple>
+        <gtriple>Ciudad_Ayala | utcOffset | −6</gtriple>
+      </generatedtripleset>
+    </entry>
+    <entry eid="Id1691">
+      <generatedtripleset>
+        <gtriple>Ciudad_Ayala | country | Mexico</gtriple>
+      </generatedtripleset>
+    </entry>
+    <entry eid="Id1693">
+      <generatedtripleset>
+        <gtriple>The_Fellowship_of_the_Ring | author | J._R._R._Tolkien</gtriple>
+        <gtriple>The_Fellowship_of_the_Ring | literaryGenre | Fantasy_(genre)</gtriple>
+      </generatedtripleset>
+    </entry>
+    <entry eid="Id1696">
+      <generatedtripleset>
+        <gtriple>Liselotte_Grschebina | birthPlace | German_Empire</gtriple>
+        <gtriple>Liselotte_Grschebina | training | School_of_Applied_Arts_in_Stuttgart</gtriple>
+      </generatedtripleset>
+    </entry>
+    <entry eid="Id1698">
+      <generatedtripleset>
+        <gtriple>Nie_Haisheng | mission | Shenzhou_10</gtriple>
+        <gtriple>Nie_Haisheng | mission | Shenzhou_6</gtriple>
+        <gtriple>Nie_Haisheng | occupation | Fighter_pilot</gtriple>
+      </generatedtripleset>
+    </entry>
+    <entry eid="Id1699">
+      <generatedtripleset>
+        <gtriple>Ciudad_Ayala | elevationAboveTheSeaLevel | 1147.0</gtriple>
+        <gtriple>Ciudad_Ayala | isPartOf | Morelos</gtriple>
+        <gtriple>Ciudad_Ayala | leaderTitle | Governator</gtriple>
+        <gtriple>Ciudad_Ayala | populationDensity | 1604.0</gtriple>
+        <gtriple>Ciudad_Ayala | utcOffset | −6</gtriple>
+      </generatedtripleset>
+    </entry>
+    <entry eid="Id1701">
+      <generatedtripleset>
+        <gtriple>The_Fellowship_of_the_Ring | precededBy | The_Hobbit</gtriple>
+      </generatedtripleset>
+    </entry>
+    <entry eid="Id1706">
+      <generatedtripleset>
+        <gtriple>1147_Stavropolis | absoluteMagnitude | 11.5</gtriple>
+        <gtriple>1147_Stavropolis | apoapsis | 418476000000.0</gtriple>
+        <gtriple>1147_Stavropolis | discoverer | Grigory_Neujmin</gtriple>
+        <gtriple>1147_Stavropolis | orbitalPeriod | 1249.6</gtriple>
+      </generatedtripleset>
+    </entry>
+    <entry eid="Id1708">
+      <generatedtripleset>
+        <gtriple>The_Fellowship_of_the_Ring | publisher | George_Allen_&amp;_Unwin</gtriple>
+      </generatedtripleset>
+    </entry>
+    <entry eid="Id1712">
+      <generatedtripleset>
+        <gtriple>University_of_Burgundy | numberOfDoctoralStudents | 1299</gtriple>
+        <gtriple>University_of_Burgundy | numberOfUndergraduateStudents | 16800</gtriple>
+        <gtriple>University_of_Burgundy | staff | 2900</gtriple>
+      </generatedtripleset>
+    </entry>
+    <entry eid="Id1713">
+      <generatedtripleset>
+        <gtriple>1147_Stavropolis | discoverer | Grigory_Neujmin</gtriple>
+        <gtriple>1147_Stavropolis | orbitalPeriod | 1249.6</gtriple>
+      </generatedtripleset>
+    </entry>
+    <entry eid="Id1715">
+      <generatedtripleset>
+        <gtriple>Piotr_Hallmann | height | 175.26</gtriple>
+        <gtriple>Piotr_Hallmann | weight | 70.308</gtriple>
+      </generatedtripleset>
+    </entry>
+    <entry eid="Id1719">
+      <generatedtripleset>
+        <gtriple>Bedford_Aerodrome | cityServed | Bedford_Autodrome</gtriple>
+        <gtriple>Bedford_Aerodrome | operatingOrganisation | MotorSport_Vision</gtriple>
+        <gtriple>Bedford_Aerodrome | runwayLength | 1095.0</gtriple>
+      </generatedtripleset>
+    </entry>
+    <entry eid="Id1726">
+      <generatedtripleset>
+        <gtriple>University_of_Burgundy | campus | Dijon</gtriple>
+        <gtriple>University_of_Burgundy | city | Dijon</gtriple>
+        <gtriple>University_of_Burgundy | numberOfDoctoralStudents | 1299</gtriple>
+        <gtriple>University_of_Burgundy | numberOfPostgraduateStudents | 9400</gtriple>
+        <gtriple>University_of_Burgundy | numberOfStudents | 27400</gtriple>
+        <gtriple>University_of_Burgundy | numberOfUndergraduateStudents | 16800</gtriple>
+        <gtriple>University_of_Burgundy | staff | 2900</gtriple>
+      </generatedtripleset>
+    </entry>
+    <entry eid="Id1740">
+      <generatedtripleset>
+        <gtriple>Nie_Haisheng | birthPlace | Hubei</gtriple>
+        <gtriple>Nie_Haisheng | birthPlace | Zaoyang</gtriple>
+        <gtriple>Zaoyang | isPartOf | Hubei</gtriple>
+      </generatedtripleset>
+    </entry>
+    <entry eid="Id1741">
+      <generatedtripleset>
+        <gtriple>Ciudad_Ayala | elevationAboveTheSeaLevel | 1147.0</gtriple>
+        <gtriple>Ciudad_Ayala | isPartOf | Morelos</gtriple>
+        <gtriple>Ciudad_Ayala | leaderTitle | Governator</gtriple>
+        <gtriple>Ciudad_Ayala | populationDensity | 1604.0</gtriple>
+        <gtriple>Ciudad_Ayala | utcOffset | −6</gtriple>
+      </generatedtripleset>
+    </entry>
+    <entry eid="Id1748">
+      <generatedtripleset>
+        <gtriple>Ciudad_Ayala | leader | Juan_Nolasco</gtriple>
+        <gtriple>Ciudad_Ayala | populationDensity | 1604.0</gtriple>
+        <gtriple>Ciudad_Ayala | timeZone | Pacific_Standard_Time_Zone</gtriple>
+        <gtriple>Ciudad_Ayala | utcOffset | −6</gtriple>
+      </generatedtripleset>
+    </entry>
+    <entry eid="Id1753">
+      <generatedtripleset>
+        <gtriple>University_of_Burgundy | numberOfStudents | 27400</gtriple>
+        <gtriple>University_of_Burgundy | numberOfUndergraduateStudents | 16800</gtriple>
+        <gtriple>University_of_Burgundy | staff | 2900</gtriple>
+      </generatedtripleset>
+    </entry>
+    <entry eid="Id1755">
+      <generatedtripleset>
+        <gtriple>Gdynia,_Poland | leaderTitle | Mayor</gtriple>
+        <gtriple>Piotr_Hallmann | birthPlace | Gdynia,_Poland</gtriple>
+      </generatedtripleset>
+    </entry>
+    <entry eid="Id1758">
+      <generatedtripleset>
+        <gtriple>1147_Stavropolis | apoapsis | 418476000000.0</gtriple>
+        <gtriple>1147_Stavropolis | epoch | 31_July_2016_(JD2457600.5)</gtriple>
+      </generatedtripleset>
+    </entry>
+    <entry eid="Id1768">
+      <generatedtripleset>
+        <gtriple>University_of_Burgundy | country | France</gtriple>
+      </generatedtripleset>
+    </entry>
+    <entry eid="Id1769">
+      <generatedtripleset>
+        <gtriple>1147_Stavropolis | apoapsis | 418476000000.0</gtriple>
+        <gtriple>1147_Stavropolis | orbitalPeriod | 1249.6</gtriple>
+      </generatedtripleset>
+    </entry>
+    <entry eid="Id1773">
+      <generatedtripleset>
+        <gtriple>Karlsruhe | country | Germany</gtriple>
+        <gtriple>Liselotte_Grschebina | birthPlace | German_Empire</gtriple>
+        <gtriple>Liselotte_Grschebina | birthPlace | Karlsruhe</gtriple>
+        <gtriple>Liselotte_Grschebina | deathPlace | Israel</gtriple>
+        <gtriple>Liselotte_Grschebina | nationality | Israel</gtriple>
+        <gtriple>Liselotte_Grschebina | professionalField | Photographer</gtriple>
+        <gtriple>Liselotte_Grschebina | training | School_of_Applied_Arts_in_Stuttgart</gtriple>
+      </generatedtripleset>
+    </entry>
+    <entry eid="Id1792">
+      <generatedtripleset>
+        <gtriple>Liselotte_Grschebina | deathPlace | Israel</gtriple>
+        <gtriple>Liselotte_Grschebina | nationality | Israel</gtriple>
+      </generatedtripleset>
+    </entry>
+    <entry eid="Id1803">
+      <generatedtripleset>
+        <gtriple>Nie_Haisheng | mission | Shenzhou_10</gtriple>
+      </generatedtripleset>
+    </entry>
+    <entry eid="Id1806">
+      <generatedtripleset>
+        <gtriple>Dijon | country | France</gtriple>
+        <gtriple>University_of_Burgundy | campus | Dijon</gtriple>
+        <gtriple>University_of_Burgundy | city | Dijon</gtriple>
+        <gtriple>University_of_Burgundy | country | France</gtriple>
+      </generatedtripleset>
+    </entry>
+    <entry eid="Id1814">
+      <generatedtripleset>
+        <gtriple>Detroit | isPartOf | Michigan</gtriple>
+        <gtriple>Pontiac_Rageous | assembly | Detroit</gtriple>
+        <gtriple>Pontiac_Rageous | assembly | Michigan</gtriple>
+        <gtriple>Pontiac_Rageous | manufacturer | Pontiac</gtriple>
+      </generatedtripleset>
+    </entry>
+    <entry eid="Id1819">
+      <generatedtripleset>
+        <gtriple>Dijon | country | France</gtriple>
+        <gtriple>University_of_Burgundy | campus | Dijon</gtriple>
+        <gtriple>University_of_Burgundy | city | Dijon</gtriple>
+        <gtriple>University_of_Burgundy | country | France</gtriple>
+        <gtriple>University_of_Burgundy | numberOfDoctoralStudents | 1299</gtriple>
+        <gtriple>University_of_Burgundy | numberOfStudents | 27400</gtriple>
+        <gtriple>University_of_Burgundy | numberOfUndergraduateStudents | 16800</gtriple>
+        <gtriple>University_of_Burgundy | staff | 2900</gtriple>
+      </generatedtripleset>
+    </entry>
+    <entry eid="Id1820">
+      <generatedtripleset>
+        <gtriple>Nie_Haisheng | mission | Shenzhou_10</gtriple>
+      </generatedtripleset>
+    </entry>
+    <entry eid="Id1824">
+      <generatedtripleset>
+        <gtriple>1147_Stavropolis | absoluteMagnitude | 11.5</gtriple>
+        <gtriple>1147_Stavropolis | apoapsis | 418476000000.0</gtriple>
+        <gtriple>1147_Stavropolis | discoverer | Grigory_Neujmin</gtriple>
+        <gtriple>1147_Stavropolis | orbitalPeriod | 1249.6</gtriple>
+        <gtriple>1147_Stavropolis | rotationPeriod | 20378.5</gtriple>
+      </generatedtripleset>
+    </entry>
+    <entry eid="Id1826">
+      <generatedtripleset>
+        <gtriple>Bedford_Aerodrome | cityServed | Bedford_Autodrome</gtriple>
+        <gtriple>Bedford_Aerodrome | operatingOrganisation | MotorSport_Vision</gtriple>
+      </generatedtripleset>
+    </entry>
+    <entry eid="Id1828">
+      <generatedtripleset>
+        <gtriple>Ciudad_Ayala | country | Mexico</gtriple>
+      </generatedtripleset>
+    </entry>
+    <entry eid="Id1836">
+      <generatedtripleset>
+        <gtriple>Israel | longName | &quot;State of Israel&quot;</gtriple>
+        <gtriple>Liselotte_Grschebina | deathPlace | Israel</gtriple>
+        <gtriple>Liselotte_Grschebina | nationality | Israel</gtriple>
+      </generatedtripleset>
+    </entry>
+    <entry eid="Id1840">
+      <generatedtripleset>
+        <gtriple>Detroit | isPartOf | Michigan</gtriple>
+        <gtriple>Pontiac_Rageous | assembly | Detroit</gtriple>
+        <gtriple>Pontiac_Rageous | assembly | Michigan</gtriple>
+        <gtriple>Pontiac_Rageous | manufacturer | Pontiac</gtriple>
+        <gtriple>Pontiac_Rageous | productionEndYear | 1997</gtriple>
+        <gtriple>Pontiac_Rageous | productionStartYear | 1997</gtriple>
+      </generatedtripleset>
+    </entry>
+    <entry eid="Id1841">
+      <generatedtripleset>
+        <gtriple>Detroit | isPartOf | Michigan</gtriple>
+        <gtriple>Pontiac_Rageous | assembly | Detroit</gtriple>
+        <gtriple>Pontiac_Rageous | assembly | Michigan</gtriple>
+        <gtriple>Pontiac_Rageous | manufacturer | Pontiac</gtriple>
+        <gtriple>Pontiac_Rageous | productionEndYear | 1997</gtriple>
+        <gtriple>Pontiac_Rageous | productionStartYear | 1997</gtriple>
+      </generatedtripleset>
+    </entry>
+    <entry eid="Id1845">
+      <generatedtripleset>
+        <gtriple>Liselotte_Grschebina | deathPlace | Israel</gtriple>
+        <gtriple>Liselotte_Grschebina | nationality | Israel</gtriple>
+      </generatedtripleset>
+    </entry>
+    <entry eid="Id1846">
+      <generatedtripleset>
+        <gtriple>Gdynia,_Poland | timeZone | Central_European_Time</gtriple>
+        <gtriple>Piotr_Hallmann | birthPlace | Gdynia,_Poland</gtriple>
+      </generatedtripleset>
+    </entry>
+    <entry eid="Id1852">
+      <generatedtripleset>
+        <gtriple>Piotr_Hallmann | birthPlace | Gdynia,_Poland</gtriple>
+        <gtriple>Piotr_Hallmann | height | 175.26</gtriple>
+        <gtriple>Piotr_Hallmann | weight | 70.308</gtriple>
+      </generatedtripleset>
+    </entry>
+    <entry eid="Id1855">
+      <generatedtripleset>
+        <gtriple>Karlsruhe | country | Germany</gtriple>
+        <gtriple>Liselotte_Grschebina | birthPlace | German_Empire</gtriple>
+        <gtriple>Liselotte_Grschebina | birthPlace | Karlsruhe</gtriple>
+        <gtriple>Liselotte_Grschebina | deathPlace | Israel</gtriple>
+        <gtriple>Liselotte_Grschebina | nationality | Israel</gtriple>
+        <gtriple>Liselotte_Grschebina | professionalField | Photographer</gtriple>
+        <gtriple>Liselotte_Grschebina | training | School_of_Applied_Arts_in_Stuttgart</gtriple>
+      </generatedtripleset>
+    </entry>
+    <entry eid="Id1860">
+      <generatedtripleset>
+        <gtriple>The_Fellowship_of_the_Ring | followedBy | The_Two_Towers</gtriple>
+        <gtriple>The_Two_Towers | precededBy | The_Fellowship_of_the_Ring</gtriple>
+      </generatedtripleset>
+    </entry>
+    <entry eid="Id1867">
+      <generatedtripleset>
+        <gtriple>Nie_Haisheng | occupation | Fighter_pilot</gtriple>
+      </generatedtripleset>
+    </entry>
+    <entry eid="Id1873">
+      <generatedtripleset>
+        <gtriple>1147_Stavropolis | absoluteMagnitude | 11.5</gtriple>
+        <gtriple>1147_Stavropolis | apoapsis | 418476000000.0</gtriple>
+        <gtriple>1147_Stavropolis | epoch | 31_July_2016_(JD2457600.5)</gtriple>
+        <gtriple>1147_Stavropolis | orbitalPeriod | 1249.6</gtriple>
+        <gtriple>1147_Stavropolis | periapsis | 260855000000.0</gtriple>
+        <gtriple>1147_Stavropolis | rotationPeriod | 20378.5</gtriple>
+      </generatedtripleset>
+    </entry>
+    <entry eid="Id1875">
+      <generatedtripleset>
+        <gtriple>Piotr_Hallmann | birthPlace | Gdynia,_Poland</gtriple>
+      </generatedtripleset>
+    </entry>
+    <entry eid="Id1876">
+      <generatedtripleset>
+        <gtriple>Ciudad_Ayala | leaderTitle | &quot;City Manager&quot;</gtriple>
+        <gtriple>Ciudad_Ayala | populationDensity | 1604.0</gtriple>
+        <gtriple>Ciudad_Ayala | type | City</gtriple>
+        <gtriple>Ciudad_Ayala | utcOffset | −6</gtriple>
+      </generatedtripleset>
+    </entry>
+    <entry eid="Id1880">
+      <generatedtripleset>
+        <gtriple>1147_Stavropolis | rotationPeriod | 20378.5</gtriple>
+      </generatedtripleset>
+    </entry>
+    <entry eid="Id1883">
+      <generatedtripleset>
+        <gtriple>The_Fellowship_of_the_Ring | author | J._R._R._Tolkien</gtriple>
+        <gtriple>The_Fellowship_of_the_Ring | followedBy | The_Two_Towers</gtriple>
+        <gtriple>The_Fellowship_of_the_Ring | literaryGenre | Fantasy_(genre)</gtriple>
+        <gtriple>The_Two_Towers | author | J._R._R._Tolkien</gtriple>
+        <gtriple>The_Two_Towers | precededBy | The_Fellowship_of_the_Ring</gtriple>
+      </generatedtripleset>
+    </entry>
+    <entry eid="Id1885">
+      <generatedtripleset>
+        <gtriple>1147_Stavropolis | apoapsis | 418476000000.0</gtriple>
+        <gtriple>1147_Stavropolis | discoverer | Grigory_Neujmin</gtriple>
+        <gtriple>1147_Stavropolis | orbitalPeriod | 1249.6</gtriple>
+        <gtriple>1147_Stavropolis | rotationPeriod | 20378.5</gtriple>
+      </generatedtripleset>
+    </entry>
+    <entry eid="Id1889">
+      <generatedtripleset>
+        <gtriple>Bedford_Aerodrome | operatingOrganisation | MotorSport_Vision</gtriple>
+        <gtriple>Bedford_Aerodrome | runwaySurfaceType | Concrete</gtriple>
+        <gtriple>MotorSport_Vision | foundingYear | 2004</gtriple>
+      </generatedtripleset>
+    </entry>
+    <entry eid="Id1890">
+      <generatedtripleset>
+        <gtriple>Ciudad_Ayala | country | Mexico</gtriple>
+        <gtriple>Ciudad_Ayala | governmentType | Council-manager_government</gtriple>
+        <gtriple>Ciudad_Ayala | leaderTitle | &quot;City Manager&quot;</gtriple>
+        <gtriple>Ciudad_Ayala | populationDensity | 1604.0</gtriple>
+        <gtriple>Ciudad_Ayala | populationMetro | 1777539</gtriple>
+        <gtriple>Ciudad_Ayala | timeZone | Pacific_Standard_Time_Zone</gtriple>
+        <gtriple>Ciudad_Ayala | type | City</gtriple>
+        <gtriple>Ciudad_Ayala | utcOffset | −6</gtriple>
+      </generatedtripleset>
+    </entry>
+    <entry eid="Id1898">
+      <generatedtripleset>
+        <gtriple>Piotr_Hallmann | height | 175.26</gtriple>
+        <gtriple>Piotr_Hallmann | weight | 70.308</gtriple>
+      </generatedtripleset>
+    </entry>
+    <entry eid="Id1899">
+      <generatedtripleset>
+        <gtriple>Nie_Haisheng | birthDate | 1964-10-13</gtriple>
+        <gtriple>Nie_Haisheng | birthPlace | Hubei</gtriple>
+        <gtriple>Nie_Haisheng | birthPlace | Zaoyang</gtriple>
+        <gtriple>Nie_Haisheng | nationality | People's_Republic_of_China</gtriple>
+        <gtriple>Nie_Haisheng | occupation | Fighter_pilot</gtriple>
+        <gtriple>Zaoyang | isPartOf | Hubei</gtriple>
+      </generatedtripleset>
+    </entry>
+    <entry eid="Id1908">
+      <generatedtripleset>
+        <gtriple>Ciudad_Ayala | isPartOf | Morelos</gtriple>
+        <gtriple>Ciudad_Ayala | leaderTitle | &quot;City Manager&quot;</gtriple>
+        <gtriple>Ciudad_Ayala | populationDensity | 1604.0</gtriple>
+        <gtriple>Ciudad_Ayala | populationMetro | 1777539</gtriple>
+        <gtriple>Ciudad_Ayala | type | City</gtriple>
+        <gtriple>Ciudad_Ayala | utcOffset | −6</gtriple>
+      </generatedtripleset>
+    </entry>
+    <entry eid="Id1915">
+      <generatedtripleset>
+        <gtriple>The_Fellowship_of_the_Ring | precededBy | The_Hobbit</gtriple>
+      </generatedtripleset>
+    </entry>
+    <entry eid="Id1919">
+      <generatedtripleset>
+        <gtriple>German_Empire | foundingDate | 1871-01-01</gtriple>
+        <gtriple>Liselotte_Grschebina | birthPlace | German_Empire</gtriple>
+      </generatedtripleset>
+    </entry>
+    <entry eid="Id1922">
+      <generatedtripleset>
+        <gtriple>Ciudad_Ayala | elevationAboveTheSeaLevel | 1147.0</gtriple>
+        <gtriple>Ciudad_Ayala | governmentType | Council-manager_government</gtriple>
+        <gtriple>Ciudad_Ayala | leader | Juan_Nolasco</gtriple>
+        <gtriple>Ciudad_Ayala | type | City</gtriple>
+      </generatedtripleset>
+    </entry>
+    <entry eid="Id1932">
+      <generatedtripleset>
+        <gtriple>Israel | language | Modern_Hebrew</gtriple>
+        <gtriple>Israel | officialLanguage | Modern_Hebrew</gtriple>
+        <gtriple>Liselotte_Grschebina | birthPlace | German_Empire</gtriple>
+        <gtriple>Liselotte_Grschebina | deathPlace | Israel</gtriple>
+        <gtriple>Liselotte_Grschebina | nationality | Israel</gtriple>
+      </generatedtripleset>
+    </entry>
+    <entry eid="Id1934">
+      <generatedtripleset>
+        <gtriple>Nie_Haisheng | birthDate | 1964-10-13</gtriple>
+        <gtriple>Nie_Haisheng | birthPlace | Hubei</gtriple>
+        <gtriple>Nie_Haisheng | birthPlace | Zaoyang</gtriple>
+        <gtriple>Nie_Haisheng | mission | Shenzhou_10</gtriple>
+        <gtriple>Nie_Haisheng | mission | Shenzhou_6</gtriple>
+        <gtriple>Zaoyang | isPartOf | Hubei</gtriple>
+      </generatedtripleset>
+    </entry>
+    <entry eid="Id1942">
+      <generatedtripleset>
+        <gtriple>1147_Stavropolis | apoapsis | 418476000000.0</gtriple>
+        <gtriple>1147_Stavropolis | orbitalPeriod | 1249.6</gtriple>
+        <gtriple>1147_Stavropolis | rotationPeriod | 20378.5</gtriple>
+      </generatedtripleset>
+    </entry>
+    <entry eid="Id1945">
+      <generatedtripleset>
+        <gtriple>Pontiac_Rageous | bodyStyle | Coupe</gtriple>
+        <gtriple>Pontiac_Rageous | manufacturer | Pontiac</gtriple>
+        <gtriple>Pontiac_Rageous | productionEndYear | 1997</gtriple>
+        <gtriple>Pontiac_Rageous | productionStartYear | 1997</gtriple>
+      </generatedtripleset>
+    </entry>
+    <entry eid="Id1947">
+      <generatedtripleset>
+        <gtriple>1147_Stavropolis | apoapsis | 418476000000.0</gtriple>
+        <gtriple>1147_Stavropolis | orbitalPeriod | 1249.6</gtriple>
+        <gtriple>1147_Stavropolis | rotationPeriod | 20378.5</gtriple>
+      </generatedtripleset>
+    </entry>
+    <entry eid="Id1954">
+      <generatedtripleset>
+        <gtriple>German_Empire | foundingDate | 1871-01-01</gtriple>
+        <gtriple>Liselotte_Grschebina | birthPlace | German_Empire</gtriple>
+        <gtriple>Liselotte_Grschebina | deathPlace | Israel</gtriple>
+        <gtriple>Liselotte_Grschebina | nationality | Israel</gtriple>
+      </generatedtripleset>
+    </entry>
+    <entry eid="Id1958">
+      <generatedtripleset>
+        <gtriple>Gdynia,_Poland | foundingDate | 1926-02-10</gtriple>
+        <gtriple>Piotr_Hallmann | birthPlace | Gdynia,_Poland</gtriple>
+      </generatedtripleset>
+    </entry>
+    <entry eid="Id1960">
+      <generatedtripleset>
+        <gtriple>Karlsruhe | country | Germany</gtriple>
+        <gtriple>Liselotte_Grschebina | birthDate | 1908-05-02</gtriple>
+        <gtriple>Liselotte_Grschebina | birthPlace | German_Empire</gtriple>
+        <gtriple>Liselotte_Grschebina | birthPlace | Karlsruhe</gtriple>
+        <gtriple>Liselotte_Grschebina | deathDate | 1994-06-14</gtriple>
+        <gtriple>Liselotte_Grschebina | deathPlace | Israel</gtriple>
+        <gtriple>Liselotte_Grschebina | nationality | Israel</gtriple>
+        <gtriple>Liselotte_Grschebina | training | School_of_Applied_Arts_in_Stuttgart</gtriple>
+      </generatedtripleset>
+    </entry>
+    <entry eid="Id1961">
+      <generatedtripleset>
+        <gtriple>The_Fellowship_of_the_Ring | followedBy | The_Two_Towers</gtriple>
+        <gtriple>The_Fellowship_of_the_Ring | publisher | George_Allen_&amp;_Unwin</gtriple>
+        <gtriple>The_Two_Towers | precededBy | The_Fellowship_of_the_Ring</gtriple>
+        <gtriple>The_Two_Towers | publisher | George_Allen_&amp;_Unwin</gtriple>
+      </generatedtripleset>
+    </entry>
+    <entry eid="Id1962">
+      <generatedtripleset>
+        <gtriple>Ciudad_Ayala | isPartOf | Morelos</gtriple>
+        <gtriple>Ciudad_Ayala | leaderTitle | &quot;City Manager&quot;</gtriple>
+        <gtriple>Ciudad_Ayala | populationDensity | 1604.0</gtriple>
+        <gtriple>Ciudad_Ayala | populationMetro | 1777539</gtriple>
+        <gtriple>Ciudad_Ayala | type | City</gtriple>
+        <gtriple>Ciudad_Ayala | utcOffset | −6</gtriple>
+      </generatedtripleset>
+    </entry>
+    <entry eid="Id1964">
+      <generatedtripleset>
+        <gtriple>1147_Stavropolis | absoluteMagnitude | 11.5</gtriple>
+        <gtriple>1147_Stavropolis | apoapsis | 418476000000.0</gtriple>
+        <gtriple>1147_Stavropolis | discoverer | Grigory_Neujmin</gtriple>
+        <gtriple>1147_Stavropolis | orbitalPeriod | 1249.6</gtriple>
+      </generatedtripleset>
+    </entry>
+    <entry eid="Id1967">
+      <generatedtripleset>
+        <gtriple>Bedford_Aerodrome | location | Thurleigh</gtriple>
+        <gtriple>Bedford_Aerodrome | operatingOrganisation | MotorSport_Vision</gtriple>
+      </generatedtripleset>
+    </entry>
+    <entry eid="Id1971">
+      <generatedtripleset>
+        <gtriple>Liselotte_Grschebina | birthPlace | Karlsruhe</gtriple>
+      </generatedtripleset>
+    </entry>
+    <entry eid="Id1976">
+      <generatedtripleset>
+        <gtriple>Ciudad_Ayala | elevationAboveTheSeaLevel | 1147.0</gtriple>
+        <gtriple>Ciudad_Ayala | leaderTitle | Governator</gtriple>
+      </generatedtripleset>
+    </entry>
+    <entry eid="Id1978">
+      <generatedtripleset>
+        <gtriple>The_Fellowship_of_the_Ring | followedBy | The_Two_Towers</gtriple>
+        <gtriple>The_Fellowship_of_the_Ring | publisher | George_Allen_&amp;_Unwin</gtriple>
+        <gtriple>The_Two_Towers | precededBy | The_Fellowship_of_the_Ring</gtriple>
+        <gtriple>The_Two_Towers | publisher | George_Allen_&amp;_Unwin</gtriple>
+      </generatedtripleset>
+    </entry>
+    <entry eid="Id1980">
+      <generatedtripleset>
+        <gtriple>Dijon | country | France</gtriple>
+        <gtriple>University_of_Burgundy | campus | Dijon</gtriple>
+        <gtriple>University_of_Burgundy | city | Dijon</gtriple>
+        <gtriple>University_of_Burgundy | country | France</gtriple>
+        <gtriple>University_of_Burgundy | numberOfPostgraduateStudents | 9400</gtriple>
+        <gtriple>University_of_Burgundy | staff | 2900</gtriple>
+      </generatedtripleset>
+    </entry>
+    <entry eid="Id1983">
+      <generatedtripleset>
+        <gtriple>German_Empire | foundingDate | 1871-01-01</gtriple>
+        <gtriple>Liselotte_Grschebina | birthPlace | German_Empire</gtriple>
+        <gtriple>Liselotte_Grschebina | deathPlace | Israel</gtriple>
+        <gtriple>Liselotte_Grschebina | nationality | Israel</gtriple>
+      </generatedtripleset>
+    </entry>
+    <entry eid="Id1984">
+      <generatedtripleset>
+        <gtriple>University_of_Burgundy | campus | Dijon</gtriple>
+        <gtriple>University_of_Burgundy | city | Dijon</gtriple>
+        <gtriple>University_of_Burgundy | numberOfPostgraduateStudents | 9400</gtriple>
+      </generatedtripleset>
+    </entry>
+    <entry eid="Id1998">
+      <generatedtripleset>
+        <gtriple>The_Fellowship_of_the_Ring | literaryGenre | Fantasy_(genre)</gtriple>
+      </generatedtripleset>
+    </entry>
+    <entry eid="Id2000">
+      <generatedtripleset>
+        <gtriple>Bedford_Aerodrome | cityServed | Bedford_Autodrome</gtriple>
+        <gtriple>Bedford_Aerodrome | icaoLocationIdentifier | EGBF</gtriple>
+        <gtriple>Bedford_Aerodrome | location | Thurleigh</gtriple>
+      </generatedtripleset>
+    </entry>
+    <entry eid="Id2009">
+      <generatedtripleset>
+        <gtriple>Ciudad_Ayala | governmentType | Council-manager_government</gtriple>
+        <gtriple>Ciudad_Ayala | isPartOf | Morelos</gtriple>
+        <gtriple>Ciudad_Ayala | leaderTitle | &quot;City Manager&quot;</gtriple>
+        <gtriple>Ciudad_Ayala | populationDensity | 1604.0</gtriple>
+        <gtriple>Ciudad_Ayala | populationMetro | 1777539</gtriple>
+        <gtriple>Ciudad_Ayala | type | City</gtriple>
+        <gtriple>Ciudad_Ayala | utcOffset | −6</gtriple>
+      </generatedtripleset>
+    </entry>
+    <entry eid="Id2010">
+      <generatedtripleset>
+        <gtriple>Ciudad_Ayala | country | Mexico</gtriple>
+        <gtriple>Ciudad_Ayala | elevationAboveTheSeaLevel | 1147.0</gtriple>
+        <gtriple>Ciudad_Ayala | isPartOf | Morelos</gtriple>
+        <gtriple>Ciudad_Ayala | leaderTitle | &quot;City Manager&quot;</gtriple>
+        <gtriple>Ciudad_Ayala | populationDensity | 1604.0</gtriple>
+        <gtriple>Ciudad_Ayala | timeZone | Pacific_Daylight_Time</gtriple>
+        <gtriple>Ciudad_Ayala | timeZone | Pacific_Standard_Time_Zone</gtriple>
+        <gtriple>Ciudad_Ayala | type | City</gtriple>
+        <gtriple>Ciudad_Ayala | utcOffset | −6</gtriple>
+        <gtriple>Morelos | country | Mexico</gtriple>
+      </generatedtripleset>
+    </entry>
+    <entry eid="Id2012">
+      <generatedtripleset>
+        <gtriple>Nie_Haisheng | mission | Shenzhou_10</gtriple>
+        <gtriple>Nie_Haisheng | mission | Shenzhou_6</gtriple>
+      </generatedtripleset>
+    </entry>
+    <entry eid="Id2021">
+      <generatedtripleset>
+        <gtriple>1147_Stavropolis | discoverer | Grigory_Neujmin</gtriple>
+        <gtriple>1147_Stavropolis | orbitalPeriod | 1249.6</gtriple>
+        <gtriple>1147_Stavropolis | periapsis | 260855000000.0</gtriple>
+        <gtriple>Grigory_Neujmin | birthDate | 1886-01-01</gtriple>
+        <gtriple>Grigory_Neujmin | birthPlace | Tbilisi</gtriple>
+      </generatedtripleset>
+    </entry>
+    <entry eid="Id2025">
+      <generatedtripleset>
+        <gtriple>MotorSport_Vision | city | Fawkham</gtriple>
+      </generatedtripleset>
+    </entry>
+    <entry eid="Id2026">
+      <generatedtripleset>
+        <gtriple>Bedford_Aerodrome | cityServed | Bedford_Autodrome</gtriple>
+        <gtriple>Bedford_Aerodrome | location | Thurleigh</gtriple>
+        <gtriple>Bedford_Aerodrome | operatingOrganisation | MotorSport_Vision</gtriple>
+        <gtriple>Bedford_Aerodrome | runwayLength | 1095.0</gtriple>
+        <gtriple>Bedford_Aerodrome | runwayName | &quot;08/26&quot;</gtriple>
+      </generatedtripleset>
+    </entry>
+    <entry eid="Id2030">
+      <generatedtripleset>
+        <gtriple>Karlsruhe | elevationAboveTheSeaLevel | 115.0</gtriple>
+        <gtriple>Liselotte_Grschebina | birthPlace | Karlsruhe</gtriple>
+        <gtriple>Liselotte_Grschebina | deathPlace | Israel</gtriple>
+        <gtriple>Liselotte_Grschebina | nationality | Israel</gtriple>
+      </generatedtripleset>
+    </entry>
+    <entry eid="Id2031">
+      <generatedtripleset>
+        <gtriple>1147_Stavropolis | apoapsis | 418476000000.0</gtriple>
+        <gtriple>1147_Stavropolis | discoverer | Grigory_Neujmin</gtriple>
+        <gtriple>1147_Stavropolis | orbitalPeriod | 1249.6</gtriple>
+        <gtriple>1147_Stavropolis | rotationPeriod | 20378.5</gtriple>
+      </generatedtripleset>
+    </entry>
+    <entry eid="Id2032">
+      <generatedtripleset>
+        <gtriple>University_of_Burgundy | numberOfStudents | 27400</gtriple>
+        <gtriple>University_of_Burgundy | numberOfUndergraduateStudents | 16800</gtriple>
+      </generatedtripleset>
+    </entry>
+    <entry eid="Id2036">
+      <generatedtripleset>
+        <gtriple>Bedford_Aerodrome | cityServed | Bedford_Autodrome</gtriple>
+        <gtriple>Bedford_Aerodrome | runwayName | &quot;08/26&quot;</gtriple>
+        <gtriple>Bedford_Aerodrome | runwaySurfaceType | Concrete</gtriple>
+      </generatedtripleset>
+    </entry>
+    <entry eid="Id2042">
+      <generatedtripleset>
+        <gtriple>Gdynia,_Poland | leaderTitle | Mayor</gtriple>
+        <gtriple>Piotr_Hallmann | birthPlace | Gdynia,_Poland</gtriple>
+      </generatedtripleset>
+    </entry>
+    <entry eid="Id2044">
+      <generatedtripleset>
+        <gtriple>University_of_Burgundy | numberOfDoctoralStudents | 1299</gtriple>
+        <gtriple>University_of_Burgundy | numberOfStudents | 27400</gtriple>
+      </generatedtripleset>
+    </entry>
+    <entry eid="Id2045">
+      <generatedtripleset>
+        <gtriple>Pontiac_Rageous | manufacturer | Pontiac</gtriple>
+      </generatedtripleset>
+    </entry>
+    <entry eid="Id2050">
+      <generatedtripleset>
+        <gtriple>Liselotte_Grschebina | professionalField | Photographer</gtriple>
+        <gtriple>Liselotte_Grschebina | training | School_of_Applied_Arts_in_Stuttgart</gtriple>
+      </generatedtripleset>
+    </entry>
+    <entry eid="Id2062">
+      <generatedtripleset>
+        <gtriple>Nie_Haisheng | birthPlace | Zaoyang</gtriple>
+        <gtriple>Nie_Haisheng | mission | Shenzhou_10</gtriple>
+      </generatedtripleset>
+    </entry>
+    <entry eid="Id2077">
+      <generatedtripleset>
+        <gtriple>Nie_Haisheng | birthDate | 1964-10-13</gtriple>
+        <gtriple>Nie_Haisheng | mission | Shenzhou_10</gtriple>
+      </generatedtripleset>
+    </entry>
+    <entry eid="Id2082">
+      <generatedtripleset>
+        <gtriple>Ciudad_Ayala | country | Mexico</gtriple>
+        <gtriple>Ciudad_Ayala | isPartOf | Morelos</gtriple>
+        <gtriple>Ciudad_Ayala | leaderTitle | &quot;City Manager&quot;</gtriple>
+        <gtriple>Ciudad_Ayala | type | City</gtriple>
+        <gtriple>Ciudad_Ayala | utcOffset | −6</gtriple>
+        <gtriple>Morelos | country | Mexico</gtriple>
+      </generatedtripleset>
+    </entry>
+    <entry eid="Id2083">
+      <generatedtripleset>
+        <gtriple>1147_Stavropolis | orbitalPeriod | 1249.6</gtriple>
+        <gtriple>1147_Stavropolis | periapsis | 260855000000.0</gtriple>
+      </generatedtripleset>
+    </entry>
+    <entry eid="Id2085">
+      <generatedtripleset>
+        <gtriple>Dijon | postalCode | 21000</gtriple>
+        <gtriple>University_of_Burgundy | campus | Dijon</gtriple>
+        <gtriple>University_of_Burgundy | city | Dijon</gtriple>
+        <gtriple>University_of_Burgundy | numberOfPostgraduateStudents | 9400</gtriple>
+        <gtriple>University_of_Burgundy | numberOfUndergraduateStudents | 16800</gtriple>
+        <gtriple>University_of_Burgundy | staff | 2900</gtriple>
+      </generatedtripleset>
+    </entry>
+    <entry eid="Id2086">
+      <generatedtripleset>
+        <gtriple>University_of_Burgundy | campus | Dijon</gtriple>
+        <gtriple>University_of_Burgundy | city | Dijon</gtriple>
+        <gtriple>University_of_Burgundy | numberOfStudents | 27400</gtriple>
+        <gtriple>University_of_Burgundy | numberOfUndergraduateStudents | 16800</gtriple>
+        <gtriple>University_of_Burgundy | staff | 2900</gtriple>
+      </generatedtripleset>
+    </entry>
+    <entry eid="Id2089">
+      <generatedtripleset>
+        <gtriple>Ciudad_Ayala | isPartOf | Morelos</gtriple>
+        <gtriple>Ciudad_Ayala | leader | Juan_Nolasco</gtriple>
+        <gtriple>Ciudad_Ayala | timeZone | Pacific_Standard_Time_Zone</gtriple>
+        <gtriple>Morelos | leader | Graco_Ramírez</gtriple>
+      </generatedtripleset>
+    </entry>
+    <entry eid="Id2090">
+      <generatedtripleset>
+        <gtriple>1147_Stavropolis | orbitalPeriod | 1249.6</gtriple>
+        <gtriple>1147_Stavropolis | periapsis | 260855000000.0</gtriple>
+      </generatedtripleset>
+    </entry>
+    <entry eid="Id2105">
+      <generatedtripleset>
+        <gtriple>Nie_Haisheng | birthPlace | Hubei</gtriple>
+        <gtriple>Nie_Haisheng | birthPlace | Zaoyang</gtriple>
+        <gtriple>Nie_Haisheng | mission | Shenzhou_10</gtriple>
+        <gtriple>Nie_Haisheng | mission | Shenzhou_6</gtriple>
+        <gtriple>Nie_Haisheng | occupation | Fighter_pilot</gtriple>
+        <gtriple>Zaoyang | isPartOf | Hubei</gtriple>
+      </generatedtripleset>
+    </entry>
+    <entry eid="Id2106">
+      <generatedtripleset>
+        <gtriple>Ciudad_Ayala | elevationAboveTheSeaLevel | 1147.0</gtriple>
+        <gtriple>Ciudad_Ayala | leaderTitle | Governator</gtriple>
+      </generatedtripleset>
+    </entry>
+    <entry eid="Id2109">
+      <generatedtripleset>
+        <gtriple>Nie_Haisheng | mission | Shenzhou_10</gtriple>
+        <gtriple>Nie_Haisheng | mission | Shenzhou_6</gtriple>
+      </generatedtripleset>
+    </entry>
+    <entry eid="Id2110">
+      <generatedtripleset>
+        <gtriple>Ciudad_Ayala | country | Mexico</gtriple>
+        <gtriple>Ciudad_Ayala | timeZone | Pacific_Standard_Time_Zone</gtriple>
+        <gtriple>Ciudad_Ayala | type | City</gtriple>
+      </generatedtripleset>
+    </entry>
+    <entry eid="Id2114">
+      <generatedtripleset>
+        <gtriple>Pontiac_Rageous | assembly | Detroit</gtriple>
+        <gtriple>Pontiac_Rageous | bodyStyle | Coupe</gtriple>
+        <gtriple>Pontiac_Rageous | manufacturer | Pontiac</gtriple>
+        <gtriple>Pontiac_Rageous | productionEndYear | 1997</gtriple>
+        <gtriple>Pontiac_Rageous | productionStartYear | 1997</gtriple>
+      </generatedtripleset>
+    </entry>
+    <entry eid="Id2115">
+      <generatedtripleset>
+        <gtriple>Ciudad_Ayala | country | Mexico</gtriple>
+        <gtriple>Ciudad_Ayala | leaderTitle | Governator</gtriple>
+      </generatedtripleset>
+    </entry>
+    <entry eid="Id2119">
+      <generatedtripleset>
+        <gtriple>MotorSport_Vision | city | Fawkham</gtriple>
+      </generatedtripleset>
+    </entry>
+    <entry eid="Id2132">
+      <generatedtripleset>
+        <gtriple>University_of_Burgundy | numberOfStudents | 27400</gtriple>
+        <gtriple>University_of_Burgundy | numberOfUndergraduateStudents | 16800</gtriple>
+        <gtriple>University_of_Burgundy | staff | 2900</gtriple>
+      </generatedtripleset>
+    </entry>
+    <entry eid="Id2137">
+      <generatedtripleset>
+        <gtriple>Bedford_Aerodrome | cityServed | Bedford_Autodrome</gtriple>
+        <gtriple>Bedford_Aerodrome | operatingOrganisation | MotorSport_Vision</gtriple>
+      </generatedtripleset>
+    </entry>
+    <entry eid="Id2148">
+      <generatedtripleset>
+        <gtriple>Pontiac_Rageous | assembly | Michigan</gtriple>
+        <gtriple>Pontiac_Rageous | manufacturer | Pontiac</gtriple>
+        <gtriple>Pontiac_Rageous | productionEndYear | 1997</gtriple>
+        <gtriple>Pontiac_Rageous | productionStartYear | 1997</gtriple>
+      </generatedtripleset>
+    </entry>
+    <entry eid="Id2153">
+      <generatedtripleset>
+        <gtriple>1147_Stavropolis | absoluteMagnitude | 11.5</gtriple>
+        <gtriple>1147_Stavropolis | apoapsis | 418476000000.0</gtriple>
+        <gtriple>1147_Stavropolis | discoverer | Grigory_Neujmin</gtriple>
+        <gtriple>1147_Stavropolis | orbitalPeriod | 1249.6</gtriple>
+      </generatedtripleset>
+    </entry>
+  </entries>
+</benchmark>

@@ -1,0 +1,1 @@
+cp ../../../../raw_datasets/kasnerz/wikitabletext/train_data.json train_data.json

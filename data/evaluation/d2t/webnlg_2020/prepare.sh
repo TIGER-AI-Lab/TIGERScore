@@ -1,0 +1,1 @@
+cp ../../../real-world/d2t/webnlg/webnlg2020_gen_with_scores.json test_data_prepared.json

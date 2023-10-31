@@ -444,7 +444,7 @@ def process_fetaqa(ex:dict):
 def main(args):
     data_dir = args.data_dir
     if data_dir is None:
-        data_dir = Path(os.path.dirname(__file__)).parent.parent / "data"
+        data_dir = Path(os.path.dirname(__file__)).parent.parent / "raw_datasets"
     data_dir.mkdir(parents=True, exist_ok=True)
     datasets_config = DATASETS_CONFIG[args.task]
     for key in datasets_config.keys():

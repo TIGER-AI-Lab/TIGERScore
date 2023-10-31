@@ -1,0 +1,169 @@
+/* Задание на странице */
+.task {
+    border: 1px solid #ccc;
+    width: 1300px;
+    padding: 15px;
+    display: inline-block;
+}
+
+.tsk-block {
+    border-radius: 3px;
+    margin-bottom: 10px;
+}
+
+.obj-text {
+    border: 1px solid #ccc;
+    padding: 15px 15px 15px 71px;
+    position: relative;
+    background-color: #e6f7dc;
+}
+
+
+/* Значок кавычки */
+.quote-sign {
+    background-image: url('data:image/svg+xml;utf8,<svg width="36" height="36" viewBox="0 0 1792 1792" xmlns="http://www.w3.org/2000/svg"><path fill="silver" d="M832 960v384q0 80-56 136t-136 56h-384q-80 0-136-56t-56-136v-704q0-104 40.5-198.5t109.5-163.5 163.5-109.5 198.5-40.5h64q26 0 45 19t19 45v128q0 26-19 45t-45 19h-64q-106 0-181 75t-75 181v32q0 40 28 68t68 28h224q80 0 136 56t56 136zm896 0v384q0 80-56 136t-136 56h-384q-80 0-136-56t-56-136v-704q0-104 40.5-198.5t109.5-163.5 163.5-109.5 198.5-40.5h64q26 0 45 19t19 45v128q0 26-19 45t-45 19h-64q-106 0-181 75t-75 181v32q0 40 28 68t68 28h224q80 0 136 56t56 136z"/></svg>');
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    width: 36px;
+    height: 36px;
+    position: absolute;
+    top: 7px;
+    left: 15px;
+}
+
+.tsk-block fieldset {
+    padding: 10px 20px;
+    border-radius: 3px;
+    border: 1px solid #ccc;
+    margin: 0;
+}
+
+.tsk-block legend {
+    font-weight: bold;
+    padding: 0 6px;
+}
+
+.field_type_checkbox {
+    display: block;
+}
+
+.task__error {
+    border-radius: 3px;
+}
+
+.second_scale {
+    display: none;
+}
+
+/* Отображение задания на мобильных устройствах. */
+@media screen and (max-width: 600px) {
+    .task-suite {
+        padding: 0;
+    }
+
+    .task {
+        width: 100%;
+        margin: 0;
+    }
+
+    .task-suite div:not(:last-child) {
+        margin-bottom: 10px;
+    }
+
+    .hint_label,
+    .field__hotkey {
+        display: none;
+    }
+
+    .field_type_checkbox {
+        white-space: normal;
+    }
+
+    .quote-sign {
+        width: 20px;
+        height: 20px;
+        top: 13px;
+    }
+
+    .obj-text {
+        padding: 15px 10px 15px 41px;
+    }
+
+    .slidecontainer {
+  width: 100%;
+}
+
+.slider {
+  -webkit-appearance: none;
+  width: 100%;
+  height: 25px;
+  background: #d3d3d3;
+  outline: none;
+  opacity: 0.7;
+  -webkit-transition: .2s;
+  transition: opacity .2s;
+}
+
+.slider:hover {
+  opacity: 1;
+}
+
+.slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 25px;
+  height: 25px;
+  background: #4CAF50;
+  cursor: pointer;
+}
+
+.slider::-moz-range-thumb {
+  width: 25px;
+  height: 25px;
+  background: #4CAF50;
+  cursor: pointer;
+}
+
+.slidecontainer {
+  width: 100%;
+}
+
+.slider {
+  -webkit-appearance: none;
+  width: 100%;
+  height: 15px;
+  border-radius: 5px;
+  background: #d3d3d3;
+  outline: none;
+  opacity: 0.7;
+  -webkit-transition: .2s;
+  transition: opacity .2s;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.slider:hover {
+  opacity: 1;
+}
+
+.slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+  background: #4CAF50;
+  cursor: pointer;
+}
+
+.slider::-moz-range-thumb {
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+  background: #4CAF50;
+  cursor: pointer;
+}
+
+
+}
