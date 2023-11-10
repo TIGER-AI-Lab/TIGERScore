@@ -1,4 +1,7 @@
 # %%
+"""
+    From https://github.com/neulab/BARTScore
+"""
 from bs_utils import *
 from copy import deepcopy
 from tqdm import trange
@@ -12,9 +15,12 @@ class SUMStat:
         self.path = path
         self.data = read_pickle(path)
         self.sample_id = list(self.data.keys())[0]
-        self.sample_sys = list(self.data[self.sample_id]['sys_summs'].keys())[0]
-        self._metrics = list(self.data[self.sample_id]['sys_summs'][self.sample_sys]['scores'].keys())
-        self._auto_metrics = [x for x in self.metrics if x not in self.human_metrics]
+        self.sample_sys = list(
+            self.data[self.sample_id]['sys_summs'].keys())[0]
+        self._metrics = list(
+            self.data[self.sample_id]['sys_summs'][self.sample_sys]['scores'].keys())
+        self._auto_metrics = [
+            x for x in self.metrics if x not in self.human_metrics]
 
     def save_data(self, path=None):
         if path is None:
@@ -37,8 +43,10 @@ class SUMStat:
 
                 sys_summs = self.data[doc_id]['sys_summs']
                 for sys_name in sys_summs:
-                    prediction_scores.append(sys_summs[sys_name]['scores'][metric])
-                    target_scores.append(sys_summs[sys_name]['scores'][human_metric])
+                    prediction_scores.append(
+                        sys_summs[sys_name]['scores'][metric])
+                    target_scores.append(
+                        sys_summs[sys_name]['scores'][human_metric])
                 if len(set(prediction_scores)) == 1 or len(set(target_scores)) == 1:
                     continue
                 correlations.append([spearmanr(target_scores, prediction_scores)[0],
@@ -46,13 +54,15 @@ class SUMStat:
             corr_mat = np.array(correlations)
             spearman, ktau = np.mean(corr_mat[:, 0]), np.mean(corr_mat[:, 1])
             metric_with_corr.append([metric, spearman, ktau])
-        sorted_metric_with_corr = sorted(metric_with_corr, key=lambda x: x[1], reverse=True)
+        sorted_metric_with_corr = sorted(
+            metric_with_corr, key=lambda x: x[1], reverse=True)
         if table is not None:
             file = open(table, 'w')
             for each in sorted_metric_with_corr:
                 print(f'{each[0]}\t{each[1]}\t{each[2]}', file=file)
             file.flush()
-        print(tabulate(sorted_metric_with_corr, headers=headers, tablefmt='simple'))
+        print(tabulate(sorted_metric_with_corr,
+              headers=headers, tablefmt='simple'))
 
     def get_fact_pearson(self, auto_metrics=None):
         assert 'QAGS' in self.path
@@ -64,11 +74,14 @@ class SUMStat:
             human_scores = []
             metric_scores = []
             for doc_id in self.data:
-                human_scores.append(self.data[doc_id]['sys_summs'][0]['scores']['fact'])
-                metric_scores.append(self.data[doc_id]['sys_summs'][0]['scores'][metric])
+                human_scores.append(
+                    self.data[doc_id]['sys_summs'][0]['scores']['fact'])
+                metric_scores.append(
+                    self.data[doc_id]['sys_summs'][0]['scores'][metric])
             pearson, _ = pearsonr(human_scores, metric_scores)
             metric_with_corr.append([metric, pearson])
-        metric_with_corr = sorted(metric_with_corr, key=lambda x: x[1], reverse=True)
+        metric_with_corr = sorted(
+            metric_with_corr, key=lambda x: x[1], reverse=True)
         print(tabulate(metric_with_corr, headers=headers, tablefmt='simple'))
 
     def fact_pearson_sig_test(self, metric_list):
@@ -105,9 +118,12 @@ class SUMStat:
             m1_scores, m2_scores, human_scores = [], [], []
 
             for doc_id in sub_ids:
-                human_scores.append(self.data[doc_id]['sys_summs'][0]['scores']['fact'])
-                m1_scores.append(self.data[doc_id]['sys_summs'][0]['scores'][m1])
-                m2_scores.append(self.data[doc_id]['sys_summs'][0]['scores'][m2])
+                human_scores.append(
+                    self.data[doc_id]['sys_summs'][0]['scores']['fact'])
+                m1_scores.append(self.data[doc_id]
+                                 ['sys_summs'][0]['scores'][m1])
+                m2_scores.append(self.data[doc_id]
+                                 ['sys_summs'][0]['scores'][m2])
             pearson_m1, _ = pearsonr(human_scores, m1_scores)
             pearson_m2, _ = pearsonr(human_scores, m2_scores)
             if pearson_m1 > pearson_m2:
@@ -133,7 +149,8 @@ class SUMStat:
                         self.data[doc_id]['sys_summs']['incorrect']['scores'][metric]:
                     correct += 1
             metric_with_acc.append([metric, correct / len(self.data)])
-        metric_with_acc = sorted(metric_with_acc, key=lambda x: x[1], reverse=True)
+        metric_with_acc = sorted(
+            metric_with_acc, key=lambda x: x[1], reverse=True)
         print(tabulate(metric_with_acc, headers=headers, tablefmt='simple'))
 
     def fact_acc_sig_test(self, metric_list):
@@ -323,7 +340,8 @@ class SUMStat:
                             print(f'new_metric: {new_m}')
                             self._metrics.append(new_m)
                             self._auto_metrics.append(new_m)
-                        self.data[doc_id]['sys_summs'][sys_name]['scores'][new_m] = sum(vv) / len(vv)
+                        self.data[doc_id]['sys_summs'][sys_name]['scores'][new_m] = sum(
+                            vv) / len(vv)
 
     @property
     def auto_metrics(self):
@@ -354,7 +372,8 @@ class D2TStat:
         self.data = read_pickle(path)
         self.sample_id = list(self.data.keys())[0]
         self._metrics = list(self.data[self.sample_id]['scores'].keys())
-        self._auto_metrics = [x for x in self.metrics if x not in self.human_metrics]
+        self._auto_metrics = [
+            x for x in self.metrics if x not in self.human_metrics]
 
     def evaluate_text(self, human_metric, auto_metrics=None, table=None):
         print(f'Human metric: {human_metric}')
@@ -371,13 +390,15 @@ class D2TStat:
             spearman = spearmanr(human_scores, metric_scores)[0]
             ktau = kendalltau(human_scores, metric_scores)[0]
             metric_with_corr.append([metric, spearman, ktau])
-        sorted_metric_with_corr = sorted(metric_with_corr, key=lambda x: x[1], reverse=True)
+        sorted_metric_with_corr = sorted(
+            metric_with_corr, key=lambda x: x[1], reverse=True)
         if table is not None:
             file = open(table, 'w')
             for each in sorted_metric_with_corr:
                 print(f'{each[0]}\t{each[1]}\t{each[2]}', file=file)
             file.flush()
-        print(tabulate(sorted_metric_with_corr, headers=headers, tablefmt='simple'))
+        print(tabulate(sorted_metric_with_corr,
+              headers=headers, tablefmt='simple'))
 
     def sig_test_two(self, m1, m2, human_metric):
         human_scores = []
@@ -561,8 +582,10 @@ class WMTStat:
             better, worse = self.retrieve_scores(metric, doc_ids)
             ktau = self.kendall(better, worse)
             metric_with_ktau.append([metric, ktau])
-        sorted_metric_with_ktau = sorted(metric_with_ktau, key=lambda x: x[1], reverse=True)
-        print(tabulate(sorted_metric_with_ktau, headers=headers, tablefmt='simple'))
+        sorted_metric_with_ktau = sorted(
+            metric_with_ktau, key=lambda x: x[1], reverse=True)
+        print(tabulate(sorted_metric_with_ktau,
+              headers=headers, tablefmt='simple'))
 
     def print_ref_len(self):
         """ Get the length of reference texts """
@@ -593,8 +616,10 @@ class WMTStat:
             better, worse = self.retrieve_scores(metric, sub_ids)
             ktau = self.kendall(better, worse)
             metric_with_ktau.append([metric, ktau])
-        sorted_metric_with_ktau = sorted(metric_with_ktau, key=lambda x: x[1], reverse=True)
-        print(tabulate(sorted_metric_with_ktau, headers=headers, tablefmt='simple'))
+        sorted_metric_with_ktau = sorted(
+            metric_with_ktau, key=lambda x: x[1], reverse=True)
+        print(tabulate(sorted_metric_with_ktau,
+              headers=headers, tablefmt='simple'))
 
     def sig_test_two(self, m1, m2):
         random.seed(666)
@@ -605,10 +630,14 @@ class WMTStat:
             sub_ids = doc_ids[:int(0.8 * len(doc_ids))]
             better_m1, worse_m1, better_m2, worse_m2 = [], [], [], []
             for doc_id in sub_ids:
-                better_m1.append(float(self.data[doc_id]['better']['scores'][m1]))
-                worse_m1.append(float(self.data[doc_id]['worse']['scores'][m1]))
-                better_m2.append(float(self.data[doc_id]['better']['scores'][m2]))
-                worse_m2.append(float(self.data[doc_id]['worse']['scores'][m2]))
+                better_m1.append(
+                    float(self.data[doc_id]['better']['scores'][m1]))
+                worse_m1.append(
+                    float(self.data[doc_id]['worse']['scores'][m1]))
+                better_m2.append(
+                    float(self.data[doc_id]['better']['scores'][m2]))
+                worse_m2.append(
+                    float(self.data[doc_id]['worse']['scores'][m2]))
             m1_ktau = self.kendall(better_m1, worse_m1)
             m2_ktau = self.kendall(better_m2, worse_m2)
             if m1_ktau > m2_ktau:

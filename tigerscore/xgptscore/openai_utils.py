@@ -17,9 +17,10 @@ import tqdm
 
 __all__ = ["openai_completions"]
 tiktoken.model.MODEL_TO_ENCODING['ChatGPT'] = tiktoken.model.MODEL_TO_ENCODING['gpt-3.5-turbo']
-### API specific ###
+# API specific
 DEFAULT_OPENAI_API_BASE = openai.api_base
-OPENAI_API_KEYS = os.environ.get("OPENAI_API_KEYS", os.environ.get("OPENAI_API_KEY", None))
+OPENAI_API_KEYS = os.environ.get(
+    "OPENAI_API_KEYS", os.environ.get("OPENAI_API_KEY", None))
 if isinstance(OPENAI_API_KEYS, str):
     OPENAI_API_KEYS = OPENAI_API_KEYS.split(",")
 OPENAI_ORGANIZATION_IDS = os.environ.get("OPENAI_ORGANIZATION_IDS", None)
@@ -33,6 +34,7 @@ cache_base = None
 
 def get_prompt_uids(prompt: str) -> str:
     return hashlib.sha256(prompt.encode()).hexdigest()
+
 
 def openai_completions(
     prompts: Sequence[str],
@@ -71,7 +73,7 @@ def openai_completions(
 
     is_strip : bool, optional
         Whether to strip trailing and leading spaces from the prompts.
-    
+
     use_cache : bool, optional
         Whether to use cache to save the query results in case of multiple queries.
 
@@ -102,19 +104,21 @@ def openai_completions(
         if cache_base is None:
             if not cache_base_path.exists():
                 cache_base = {}
-                logging.warning(f"Cache file {cache_base_path} does not exist. Creating new cache.")
+                logging.warning(
+                    f"Cache file {cache_base_path} does not exist. Creating new cache.")
             else:
                 with open(cache_base_path, "r") as f:
                     cache_base = [json.loads(line) for line in f.readlines()]
                 cache_base = {item['uid']: item for item in cache_base}
                 logging.warning(f"Loaded cache base from {cache_base_path}.")
-    
+
     n_examples = len(prompts)
     if n_examples == 0:
         logging.warning("No samples to annotate.")
         return []
     else:
-        logging.warning(f"Using `openai_completions` on {n_examples} prompts using {model_name}.")
+        logging.warning(
+            f"Using `openai_completions` on {n_examples} prompts using {model_name}.")
 
     if tokens_to_avoid or tokens_to_favor:
         tokenizer = tiktoken.encoding_for_model(model_name)
@@ -124,7 +128,8 @@ def openai_completions(
             for t in tokens_to_avoid:
                 curr_tokens = tokenizer.encode(t)
                 if len(curr_tokens) != 1 and is_skip_multi_tokens_to_avoid:
-                    logging.warning(f"'{t}' has more than one token, skipping because `is_skip_multi_tokens_to_avoid`.")
+                    logging.warning(
+                        f"'{t}' has more than one token, skipping because `is_skip_multi_tokens_to_avoid`.")
                     continue
                 for tok_id in curr_tokens:
                     logit_bias[tok_id] = -100  # avoids certain tokens
@@ -133,21 +138,24 @@ def openai_completions(
             for t in tokens_to_favor:
                 curr_tokens = tokenizer.encode(t)
                 for tok_id in curr_tokens:
-                    logit_bias[tok_id] = 7  # increase log prob of tokens to match
+                    # increase log prob of tokens to match
+                    logit_bias[tok_id] = 7
 
         decoding_kwargs["logit_bias"] = logit_bias
 
     if is_strip:
         prompts = [p.strip() for p in prompts]
 
-    is_chat = decoding_kwargs.get("requires_chatml", _requires_chatml(model_name))
+    is_chat = decoding_kwargs.get(
+        "requires_chatml", _requires_chatml(model_name))
     if is_chat:
         # prompts = [_prompt_to_chatml(prompt) for prompt in prompts]
         num_procs = num_procs or 4
         batch_size = batch_size or 1
 
         if batch_size > 1:
-            logging.warning("batch_size > 1 is not supported yet for chat models. Setting to 1")
+            logging.warning(
+                "batch_size > 1 is not supported yet for chat models. Setting to 1")
             batch_size = 1
 
     else:
@@ -157,14 +165,17 @@ def openai_completions(
     logging.warning(f"Kwargs to completion: {decoding_kwargs}")
     n_batches = int(math.ceil(n_examples / batch_size))
 
-    prompt_batches = [prompts[batch_id * batch_size: (batch_id + 1) * batch_size] for batch_id in range(n_batches)]
+    prompt_batches = [
+        prompts[batch_id * batch_size: (batch_id + 1) * batch_size] for batch_id in range(n_batches)]
 
     if "azure" in openai.api_base:
         # Azure API uses engine instead of model
-        kwargs = dict(n=1, engine=model_name, is_chat=is_chat, use_cache=use_cache, **decoding_kwargs)
+        kwargs = dict(n=1, engine=model_name, is_chat=is_chat,
+                      use_cache=use_cache, **decoding_kwargs)
     else:
         # OpenAI API uses model instead of engine
-        kwargs = dict(n=1, model=model_name, is_chat=is_chat, use_cache=use_cache, **decoding_kwargs)
+        kwargs = dict(n=1, model=model_name, is_chat=is_chat,
+                      use_cache=use_cache, **decoding_kwargs)
     logging.warning(f"Kwargs to completion: {kwargs}")
 
     with Timer() as t:
@@ -175,7 +186,8 @@ def openai_completions(
             ]
         else:
             with multiprocessing.Pool(num_procs) as p:
-                partial_completion_helper = functools.partial(_openai_completion_helper, **kwargs)
+                partial_completion_helper = functools.partial(
+                    _openai_completion_helper, **kwargs)
                 completions = list(
                     tqdm.tqdm(
                         p.imap(partial_completion_helper, prompt_batches),
@@ -186,10 +198,11 @@ def openai_completions(
     logging.warning(f"Completed {n_examples} examples in {t}.")
 
     # flatten the list and select only the text
-    completions_text = [completion['text'] for completion_batch in completions for completion in completion_batch]
+    completions_text = [completion['text']
+                        for completion_batch in completions for completion in completion_batch]
 
     price = [
-        completion["total_tokens"] * _get_price_per_token(model_name) 
+        completion["total_tokens"] * _get_price_per_token(model_name)
         if completion["total_tokens"] is not None else 0
         for completion_batch in completions
         for completion in completion_batch
@@ -223,31 +236,37 @@ def _openai_completion_helper(
     openai.api_base = openai_api_base if openai_api_base is not None else DEFAULT_OPENAI_API_BASE
 
     # copy shared_kwargs to avoid modifying it
-    kwargs.update(dict(max_tokens=max_tokens, top_p=top_p, temperature=temperature))
+    kwargs.update(dict(max_tokens=max_tokens,
+                  top_p=top_p, temperature=temperature))
     curr_kwargs = copy.deepcopy(kwargs)
 
     if use_cache:
         prompt_uids = [get_prompt_uids(prompt) for prompt in prompt_batch]
-        cache_completions = [cache_base[prompt_uid]['completion'] if prompt_uid in cache_base else None for prompt_uid in prompt_uids]
-        to_query_prompt_batch = [prompt for prompt, cache_completion in zip(prompt_batch, cache_completions) if cache_completion is None]
+        cache_completions = [cache_base[prompt_uid]['completion']
+                             if prompt_uid in cache_base else None for prompt_uid in prompt_uids]
+        to_query_prompt_batch = [prompt for prompt, cache_completion in zip(
+            prompt_batch, cache_completions) if cache_completion is None]
     else:
         to_query_prompt_batch = prompt_batch
     if is_chat:
-        to_query_prompt_batch = [_prompt_to_chatml(prompt) for prompt in to_query_prompt_batch]
-    
+        to_query_prompt_batch = [_prompt_to_chatml(
+            prompt) for prompt in to_query_prompt_batch]
+
     # now_cand = ""
     # retry_times = 0
     if len(to_query_prompt_batch) != 0:
         while True:
             try:
                 if is_chat:
-                    completion_batch = openai.ChatCompletion.create(messages=to_query_prompt_batch[0], **curr_kwargs)
+                    completion_batch = openai.ChatCompletion.create(
+                        messages=to_query_prompt_batch[0], **curr_kwargs)
 
                     choices = completion_batch.choices
                     for choice in choices:
                         assert choice.message.role == "assistant"
                         if choice.message.content == "":
-                            choice["text"] = " "  # annoying doesn't allow empty string
+                            # annoying doesn't allow empty string
+                            choice["text"] = " "
                         else:
                             choice["text"] = choice.message.content
 
@@ -255,29 +274,35 @@ def _openai_completion_helper(
                             # currently we only use function calls to get a JSON object
                             # => overwrite text with the JSON object. In the future, we could
                             # allow actual function calls
-                            all_args = json.loads(choice.message.function_call.arguments)
+                            all_args = json.loads(
+                                choice.message.function_call.arguments)
                             assert len(all_args) == 1
                             choice["text"] = all_args[list(all_args.keys())[0]]
 
                 else:
-                    completion_batch = openai.Completion.create(prompt=to_query_prompt_batch, **curr_kwargs)
+                    completion_batch = openai.Completion.create(
+                        prompt=to_query_prompt_batch, **curr_kwargs)
                     choices = completion_batch.choices
 
                 for choice in choices:
-                    choice["total_tokens"] = completion_batch.usage.total_tokens / len(prompt_batch)
+                    choice["total_tokens"] = completion_batch.usage.total_tokens / \
+                        len(prompt_batch)
                 break
             except openai.error.OpenAIError as e:
                 if "Please reduce your prompt" in str(e):
                     kwargs["max_tokens"] = int(kwargs["max_tokens"] * 0.8)
-                    logging.warning(f"Reducing target length to {kwargs['max_tokens']}, Retrying...")
+                    logging.warning(
+                        f"Reducing target length to {kwargs['max_tokens']}, Retrying...")
                     if kwargs["max_tokens"] == 0:
-                        logging.exception("Prompt is already longer than max context length. Error:")
+                        logging.exception(
+                            "Prompt is already longer than max context length. Error:")
                         raise e
                 else:
                     if "rate limit" in str(e).lower():
                         logging.warning("Hit request rate limit; retrying...")
                     else:
-                        logging.warning(f"Unknown error {e}. \n It's likely a rate limit so we are retrying...")
+                        logging.warning(
+                            f"Unknown error {e}. \n It's likely a rate limit so we are retrying...")
                         logging.warning(prompt_batch)
                     # if now_cand == to_query_prompt_batch[0]:
                     #     retry_times += 1
@@ -290,14 +315,16 @@ def _openai_completion_helper(
                     #     retry_times = 0
                     if openai_organization_ids is not None and len(openai_organization_ids) > 1:
                         openai.organization = random.choice(
-                            [o for o in openai_organization_ids if o != openai.organization]
+                            [o for o in openai_organization_ids if o !=
+                                openai.organization]
                         )
-                        logging.warning(f"Switching OAI organization.")
+                        logging.warning("Switching OAI organization.")
                     if openai_api_keys is not None and len(openai_api_keys) > 1:
-                        openai.api_key = random.choice([o for o in openai_api_keys if o != openai.api_key])
-                        logging.warning(f"Switching OAI API key.")
+                        openai.api_key = random.choice(
+                            [o for o in openai_api_keys if o != openai.api_key])
+                        logging.warning("Switching OAI API key.")
                     time.sleep(sleep_time)  # Annoying rate limit on requests.
-    
+
     if use_cache:
         responses = []
         to_cache_items = []
@@ -305,14 +332,16 @@ def _openai_completion_helper(
         for i in range(len(prompt_batch)):
             prompt_uid = prompt_uids[i]
             if cache_completions[i] is None:
-                cache_base[prompt_uid] = dict(uid=prompt_uid, 
-                    prompt=prompt_batch[i], completion=choices[to_query_idx]['text'],
-                    top_p=top_p, temperature=temperature, max_tokens=max_tokens, total_tokens=choices[to_query_idx]['total_tokens'])
+                cache_base[prompt_uid] = dict(uid=prompt_uid,
+                                              prompt=prompt_batch[i], completion=choices[to_query_idx]['text'],
+                                              top_p=top_p, temperature=temperature, max_tokens=max_tokens, total_tokens=choices[to_query_idx]['total_tokens'])
                 to_cache_items.append(cache_base[prompt_uid])
-                responses.append(dict(text=choices[to_query_idx]['text'], total_tokens=choices[to_query_idx]['total_tokens']))
+                responses.append(dict(
+                    text=choices[to_query_idx]['text'], total_tokens=choices[to_query_idx]['total_tokens']))
                 to_query_idx += 1
             else:
-                responses.append(dict(text=cache_completions[i], total_tokens=None))
+                responses.append(
+                    dict(text=cache_completions[i], total_tokens=None))
         assert to_query_idx == len(to_query_prompt_batch)
         # save cache items
         with open(cache_base_path, "a+") as f:
@@ -383,6 +412,7 @@ def _prompt_to_chatml(prompt: str, start_token: str = "<|im_start|>", end_token:
 
     return message
 
+
 def _chatml_to_prompt(message: Sequence[dict], start_token: str = "<|im_start|>", end_token: str = "<|im_end|>"):
     r"""Convert a ChatML message to a text prompt
 
@@ -406,6 +436,7 @@ def _chatml_to_prompt(message: Sequence[dict], start_token: str = "<|im_start|>"
         prompt += f"<|im_start|>{role}\n{m['content']}\n<|im_end|>\n"
     return prompt
 
+
 def _string_to_dict(to_convert):
     r"""Converts a string with equal signs to dictionary. E.g.
     >>> _string_to_dict(" name=user university=stanford")
@@ -425,8 +456,10 @@ def _get_price_per_token(model):
     elif "text-davinci-003" in model:
         return 0.02 / 1000
     else:
-        logging.warning(f"Unknown model {model} for computing price per token.")
+        logging.warning(
+            f"Unknown model {model} for computing price per token.")
         return np.nan
+
 
 class Timer:
     """Timer context manager"""

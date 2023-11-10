@@ -9,15 +9,17 @@ import time
 from io import BytesIO
 from tqdm import tqdm
 from PIL import Image
-from typing import List, Dict
 from concurrent.futures import ThreadPoolExecutor
 from functools import partial
-from datasets import load_dataset
 from datasets.utils.file_utils import get_datasets_user_agent
 
 USER_AGENT = get_datasets_user_agent()
 
+
 def seed_everything(seed=42):
+    """
+        Seed everything for reproducibility
+    """
     random.seed(seed)
     os.environ['PYTHONHASHSEED'] = str(seed)
     np.random.seed(seed)
@@ -25,7 +27,11 @@ def seed_everything(seed=42):
     torch.cuda.manual_seed(seed)
     torch.backends.cudnn.deterministic = True
 
+
 def str2bool(v):
+    """
+        Convert string to boolean
+    """
     if isinstance(v, bool):
         return v
     if v.lower() in ('yes', 'true', 't', 'y', '1'):
@@ -35,6 +41,7 @@ def str2bool(v):
     else:
         raise argparse.ArgumentTypeError('Boolean value expected.')
 
+
 def empty2None(x):
     if x == '':
         return None
@@ -42,6 +49,7 @@ def empty2None(x):
         return x
     else:
         raise argparse.ArgumentTypeError('String value expected.')
+
 
 def empty2Noneint(x):
     if x == '':
@@ -53,6 +61,7 @@ def empty2Noneint(x):
     else:
         raise argparse.ArgumentTypeError('Integer value expected.')
 
+
 def empty2zero(x):
     if x == '':
         return 0
@@ -62,7 +71,6 @@ def empty2zero(x):
         return int(x)
     else:
         raise argparse.ArgumentTypeError('Integer value expected.')
-
 
 
 def generate_hash_code(text):
@@ -77,29 +85,36 @@ def generate_hash_code(text):
     # Return the first 16 digits of the hexadecimal code
     return hex_code[:16]
 
+
 def fetch_single_image(image_url, timeout=None, retries=2):
+    """
+    Fetch a single image from a URL.
+    """
     if os.path.exists(image_url):
         # fetch from local
         try:
             image = Image.open(image_url).convert("RGB")
-        except Exception as e:
+        except Exception:
             if retries > 0:
                 time.sleep(3)
                 return fetch_single_image(image_url, timeout=timeout, retries=retries - 1)
     else:
         # fetch from url
         try:
-            r = requests.get(image_url, timeout=timeout, stream=True, headers={"User-Agent": USER_AGENT})
+            r = requests.get(image_url, timeout=timeout,
+                             stream=True, headers={"User-Agent": USER_AGENT})
             r.raise_for_status()
             image = Image.open(BytesIO(r.content)).convert("RGB")
         except Exception as e:
             if retries > 0:
-                time.sleep(3) # Wait 3 seconds before retrying
+                time.sleep(3)  # Wait 3 seconds before retrying
                 return fetch_single_image(image_url, timeout=timeout, retries=retries - 1)
             else:
-                print(f"Failed to fetch image from {image_url} after {retries} retries")
+                print(
+                    f"Failed to fetch image from {image_url} after {retries} retries")
                 raise e
     return image
+
 
 def fetch_images(image_urls, num_threads, timeout=None, retries=2):
     """
@@ -112,13 +127,14 @@ def fetch_images(image_urls, num_threads, timeout=None, retries=2):
     Returns:
         list: List of PIL images.
     """
-    fetch_single_image_with_args = partial(fetch_single_image, timeout=timeout, retries=retries)
+    fetch_single_image_with_args = partial(
+        fetch_single_image, timeout=timeout, retries=retries)
     with ThreadPoolExecutor(max_workers=num_threads) as executor:
         images = list(
             tqdm(
-            executor.map(fetch_single_image_with_args, image_urls), 
-            total=len(image_urls),
-            desc="Fetching images")
+                executor.map(fetch_single_image_with_args, image_urls),
+                total=len(image_urls),
+                desc="Fetching images")
         )
     print("Fetched {} images".format(len(images)))
     return images

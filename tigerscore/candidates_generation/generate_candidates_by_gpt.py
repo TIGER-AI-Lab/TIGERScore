@@ -1,17 +1,18 @@
 """
 Usage:
-    python test_xgptscore_wmt.py
+    Gererate candidates by GPT-3.5 or GPT-4.
 """
+from xgptscore.process_utils import XPGTItem
+from xgptscore.xgptscore import xgptscore
 import json
 import random
 import logging
 import sys
+import fire
 from pathlib import Path
 sys.path.append(str(Path(__file__).parent.parent))
-from xgptscore.xgptscore import xgptscore
-from itertools import chain
-from xgptscore.process_utils import XPGTItem
 logging.basicConfig(level=logging.warning)
+
 
 def main(
     task: str,
@@ -29,14 +30,33 @@ def main(
     hypo_max_length: int = None,
     dataset_split: str = "test",
 ):
+    """Gererate candidates by GPT-3.5 or GPT-4.
+
+    Args:
+        task (str): Task name.
+        data_path (str): Path to the data.
+        dataset (str): Dataset name.
+        output_file (str, optional):  Defaults to None.
+        xgptscore_mode (str, optional):  Defaults to "instruction".
+        model_name (str, optional):  Defaults to "ChatGPT".
+        overwrite (bool, optional):  Defaults to False.
+        max_size (int, optional):  Defaults to None.
+        seed (int, optional):  Defaults to 42.
+        shuffle_file (bool, optional):  Defaults to False.
+        source_max_length (int, optional):  Defaults to None.
+        ref_max_length (int, optional):  Defaults to None.
+        hypo_max_length (int, optional):  Defaults to None.
+        dataset_split (str, optional):  Defaults to "test".
+    """
     logging.warning("Params: \n{}".format(json.dumps(locals(), indent=4)))
     # load data
     data_path = Path(data_path)
     input_file = data_path / dataset / (dataset_split + "_data.json")
-    
-    input_file=Path(input_file)
+
+    input_file = Path(input_file)
     if not output_file:
-        output_file = data_path / dataset / "candidates" / dataset_split / "top_p_sampling" / f"{model_name}.json"
+        output_file = data_path / dataset / "candidates" / \
+            dataset_split / "top_p_sampling" / f"{model_name}.json"
         if not output_file.parent.parent.exists():
             output_file.parent.parent.mkdir(parents=True)
         if not output_file.parent.exists():
@@ -45,10 +65,12 @@ def main(
         output_file = Path(output_file)
     with open(input_file, "r") as f:
         items = json.load(f)
-        logging.warning("Loaded {} items from {}".format(len(items), input_file))
+        logging.warning("Loaded {} items from {}".format(
+            len(items), input_file))
     logging.warning("Preparing writing to {}...".format(output_file))
-    
-    random.seed(seed); logging.warning("Set seed to {}".format(seed))
+
+    random.seed(seed)
+    logging.warning("Set seed to {}".format(seed))
     if shuffle_file:
         random.shuffle(items)
         logging.warning("Shuffled {} items".format(len(items)))
@@ -78,14 +100,15 @@ def main(
                 "ref_output": ref_max_length,
             },
         }
-        result = xgptscore(xgptitems, mode=xgptscore_mode, model_name=model_name, **xgptscore_params)
+        result = xgptscore(xgptitems, mode=xgptscore_mode,
+                           model_name=model_name, **xgptscore_params)
         for i, item in enumerate(items):
             item['responses'] = result['round_completions'][i]
             item['messages_records'] = result['messages_records'][i]
             item['candidates'] = [
-                {"text":result['round_completions'][i][0],
-                               "scores":{}
-            }]
+                {"text": result['round_completions'][i][0],
+                 "scores": {}
+                 }]
         # print(items)
         with open(output_file, "w") as f:
             json.dump(items, f, indent=4, ensure_ascii=False)
@@ -95,11 +118,6 @@ def main(
         with open(output_file, "r") as f:
             items = json.load(f)
 
+
 if __name__ == "__main__":
-    import argparse
-    parser = argparse.ArgumentParser()
-    parser.add_argument("--task", type=str)
-    parser.add_argument("--data_path", type=str)
-    parser.add_argument("--dataset", type=str)
-    args = parser.parse_args()
-    main(**vars(args))
+    fire.Fire(main)

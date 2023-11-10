@@ -4,25 +4,28 @@ import logging
 from .process import MODE_PROCESS_MAP
 from .process_utils import XPGTItem, truncate_items, get_query_messages
 from .openai_utils import openai_completions, _chatml_to_prompt
-from typing import List, Tuple, Dict, Any, Union
-from dataclasses import dataclass, asdict
+from typing import List, Union
 from dacite import from_dict
 from pathlib import Path
 from functools import partial
+
+
 def xgptscore(
     items: List[Union[XPGTItem, dict]],
     mode: str,
     model_name: str,
-    num_workers: int=None,
-    batch_size: int=None,
+    num_workers: int = None,
+    batch_size: int = None,
     **kwargs,
 ):
-    config_path = os.path.join(os.path.dirname(__file__), f"mode_configs/{mode}.json")
+    config_path = os.path.join(os.path.dirname(
+        __file__), f"mode_configs/{mode}.json")
     config_path = Path(config_path)
     if not config_path.exists():
-        logging.warning(f"Config file {config_path} does not exist. Use default config.")
+        logging.warning(
+            f"Config file {config_path} does not exist. Use default config.")
         config_path = config_path.with_name("default.json")
-    
+
     with open(config_path, "r") as f:
         config = json.load(f)
     config.update(kwargs)
@@ -48,7 +51,8 @@ def xgptscore(
     while True:
         round += 1
         logging.warning(f"Processing chat round {round}/{total_round}")
-        query_messages = list(map(get_query_messages, process_results, queried_messages))
+        query_messages = list(
+            map(get_query_messages, process_results, queried_messages))
         query_messages, postprocess_funcs = list(zip(*query_messages))
         chatml_prompts = list(map(_chatml_to_prompt, query_messages))
         openai_results = openai_completions(
@@ -63,14 +67,18 @@ def xgptscore(
         total_time += sum(openai_results['time_per_example'])
         logging.warning(f"Round {round} price: {total_price}$")
         logging.warning(f"Round {round} time: {total_time}")
-        postprocess_completions = [postprocess_funcs[idx](completion) for idx, completion in enumerate(completions)]
+        postprocess_completions = [postprocess_funcs[idx](
+            completion) for idx, completion in enumerate(completions)]
         round_completions.append(postprocess_completions)
         for idx, completion in enumerate(completions):
             queried_messages[idx] = query_messages[idx] + \
-                [{"role": "assistant", "content": completion}] # add the assistant response
+                [{"role": "assistant", "content": completion}
+                 ]  # add the assistant response
         if round == total_round:
-            _query_messages = list(map(get_query_messages, process_results, queried_messages))
-            assert all([x is None for x in _query_messages]), "All messages should be queried"
+            _query_messages = list(
+                map(get_query_messages, process_results, queried_messages))
+            assert all([x is None for x in _query_messages]
+                       ), "All messages should be queried"
             break
     logging.warning(f"Total price: {total_price}$")
     logging.warning(f"Total time: {total_time}")
@@ -80,9 +88,8 @@ def xgptscore(
         round_completions=round_completions,
         messages_records=queried_messages,
     )
-    
 
-        
+
 """
 Example Usage:
 task = "translation"

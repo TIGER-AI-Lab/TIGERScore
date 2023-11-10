@@ -1,3 +1,6 @@
+"""
+    From https://github.com/xu1998hz/SEScore3
+"""
 import torch
 from typing import Dict, TypeVar, Iterable, List
 import transformers
@@ -55,7 +58,8 @@ class InstructScore:
         self.model.eval()
 
     def score(self, ref_ls, out_ls):
-        assert len(ref_ls) == len(out_ls), "The number of references and outputs should be the same."
+        assert len(ref_ls) == len(
+            out_ls), "The number of references and outputs should be the same."
         if len(ref_ls) == 0 or len(out_ls) == 0:
             return [], []
 
@@ -115,11 +119,12 @@ def batchify(data: Iterable[T], batch_size: int) -> Iterable[List[T]]:
 
     # Yield last un-filled batch
     if len(batch) != 0:
-        yield batch  
+        yield batch
 
 
 def main():
-    device_id = torch.device("cuda") if torch.cuda.is_available() else torch.device("cpu")
+    device_id = torch.device(
+        "cuda") if torch.cuda.is_available() else torch.device("cpu")
 
     refs = [
         "SEScore is a simple but effective next generation text generation evaluation metric",

@@ -71,7 +71,8 @@ class Prism:
 
         self.use_cuda = torch.cuda.is_available()
 
-        self.generator = SequenceScorer(self.task.target_dictionary, temperature=temperature)
+        self.generator = SequenceScorer(
+            self.task.target_dictionary, temperature=temperature)
 
         for model in self.models:
             if self.use_cuda:
@@ -90,8 +91,10 @@ class Prism:
             model_langs = MODELS[self.model_hash]['langs']
             if lang not in model_langs:
                 model_name = MODELS[self.model_hash]['name']
-                logger.warning(f'Language "{lang}" is unsupported for model "{model_name}"')
-                logger.warning(f'Supported languages for {model_name}: {", ".join(model_langs)}')
+                logger.warning(
+                    f'Language "{lang}" is unsupported for model "{model_name}"')
+                logger.warning(
+                    f'Supported languages for {model_name}: {", ".join(model_langs)}')
                 sys.exit(1)
         else:
             logger.warning('unrecognized model, so cannot check language')
@@ -150,11 +153,13 @@ class Prism:
                 batch['net_input']['prev_output_tokens'] = batch['net_input']['prev_output_tokens'].cuda()
                 batch['target'] = batch['target'].cuda()
 
-            translations = self.task.inference_step(self.generator, self.models, batch)
+            translations = self.task.inference_step(
+                self.generator, self.models, batch)
 
             ids = batch['id'].cpu().numpy()
 
-            tok_scores = [x[0]['positional_scores'].cpu().numpy() for x in translations]
+            tok_scores = [x[0]['positional_scores'].cpu().numpy()
+                          for x in translations]
 
             # [1:] to skip language tag log prob
             sent_scores = [np.mean(x[1:]) for x in tok_scores]
@@ -165,11 +170,13 @@ class Prism:
 
         if logger.level == logging.DEBUG:
             for ii, (sent_in, scores_out, sent_out) in enumerate(zip(tok_sents_in, tok_level_scores, tok_sents_out)):
-                sent_in_str = ' '.join([self.task.source_dictionary[x] for x in sent_in])
+                sent_in_str = ' '.join(
+                    [self.task.source_dictionary[x] for x in sent_in])
                 logger.debug(f'Input[{ii}] = ' + sent_in_str)
-                sent_out_tok = [self.task.source_dictionary[x] for x in sent_out]
-                logger.debug(f'Output[{ii}] = ' + \
-                             f' '.join([f'{a}[{b:.02f}]' for a, b in zip(sent_out_tok, scores_out)]))
+                sent_out_tok = [self.task.source_dictionary[x]
+                                for x in sent_out]
+                logger.debug(f'Output[{ii}] = ' +
+                             ' '.join([f'{a}[{b:.02f}]' for a, b in zip(sent_out_tok, scores_out)]))
 
         if None in results:
             raise Exception('Missing one or more sentence scores')
@@ -181,14 +188,18 @@ class Prism:
         if not (ref is None) ^ (src is None):
             raise Exception('Must provide exactly one of "ref" or "src"')
 
-        tokenized_cand = [self._encode(sentence, prepend=False) for sentence in cand]
-        tokenized_cand_prep = [self._encode(sentence, prepend=True) for sentence in cand]
+        tokenized_cand = [self._encode(sentence, prepend=False)
+                          for sentence in cand]
+        tokenized_cand_prep = [self._encode(
+            sentence, prepend=True) for sentence in cand]
 
         if src is not None:
             # Prism-src: score candidate given on source
             if len(cand) != len(src):
-                raise Exception(f'Length of cand ({len(cand)}) does not match length of src ({len(src)})')
-            tokenized_src = [self._encode(sentence, prepend=False) for sentence in src]
+                raise Exception(
+                    f'Length of cand ({len(cand)}) does not match length of src ({len(src)})')
+            tokenized_src = [self._encode(
+                sentence, prepend=False) for sentence in src]
             scores = self._score_forward(tokenized_src, tokenized_cand_prep)
             if not segment_scores:
                 scores = np.mean(scores)
@@ -196,11 +207,16 @@ class Prism:
         else:
             # Prism-ref: average candidate given reference and reference given candidate
             if len(cand) != len(ref):
-                raise Exception(f'Length of cand ({len(cand)}) does not match length of ref ({len(ref)})')
-            tokenized_ref = [self._encode(sentence, prepend=False) for sentence in ref]
-            tokenized_ref_prep = [self._encode(sentence, prepend=True) for sentence in ref]
-            forward_scores = self._score_forward(tok_sents_in=tokenized_ref, tok_sents_out=tokenized_cand_prep)
-            reverse_scores = self._score_forward(tok_sents_in=tokenized_cand, tok_sents_out=tokenized_ref_prep)
+                raise Exception(
+                    f'Length of cand ({len(cand)}) does not match length of ref ({len(ref)})')
+            tokenized_ref = [self._encode(
+                sentence, prepend=False) for sentence in ref]
+            tokenized_ref_prep = [self._encode(
+                sentence, prepend=True) for sentence in ref]
+            forward_scores = self._score_forward(
+                tok_sents_in=tokenized_ref, tok_sents_out=tokenized_cand_prep)
+            reverse_scores = self._score_forward(
+                tok_sents_in=tokenized_cand, tok_sents_out=tokenized_ref_prep)
             scores = 0.5 * forward_scores + 0.5 * reverse_scores
             if not segment_scores:
                 scores = np.mean(scores)
@@ -218,14 +234,17 @@ def parse_sacrebleu_uri(uri: str) -> Tuple[str]:
     try:
         _, testset, langpair = uri.split(":")
     except ValueError:
-        logger.error('sacrebleu:* flags must take the form "sacrebleu:testset:langpair"')
+        logger.error(
+            'sacrebleu:* flags must take the form "sacrebleu:testset:langpair"')
         sys.exit(1)
 
     testsets = sorted(DATASETS, reverse=True)
     if testset not in testsets:
-        logger.error(f"Test set '{testset}' was not found. Available sacrebleu test sets are:")
+        logger.error(
+            f"Test set '{testset}' was not found. Available sacrebleu test sets are:")
         for key in testsets:
-            logger.error(f"  {key:20s}: {DATASETS[key].get('description', '')}")
+            logger.error(
+                f"  {key:20s}: {DATASETS[key].get('description', '')}")
         sys.exit(1)
 
     lang_pairs = get_langpairs_for_testset(testset)
@@ -251,13 +270,16 @@ def main():
                         help='Source text file. If provided, source-based Prism-src scores are returned. '
                              'A value of "sacrebleu:{testset}:{langpair}" will use sacrebleu datasets. '
                              'You must provide exactly one of --ref or --src.')
-    parser.add_argument('--model-dir', required=True, type=str, help='Model Directory')
-    parser.add_argument('--lang', type=str, help='2-character language code (ISO 639-1)')
+    parser.add_argument('--model-dir', required=True,
+                        type=str, help='Model Directory')
+    parser.add_argument('--lang', type=str,
+                        help='2-character language code (ISO 639-1)')
     parser.add_argument('--temperature', type=float, default=1.0, help='Softmax temperature: '
                                                                        'values >1.0 produce more uniform samples and values <1.0 produce sharper samples')
     parser.add_argument('--segment-scores', action='store_true',
                         help='Print per-sentence scores instead of corpus level score')
-    parser.add_argument('--debug', action='store_true', help='Print debug info')
+    parser.add_argument('--debug', action='store_true',
+                        help='Print debug info')
 
     args = parser.parse_args()
 
@@ -291,7 +313,8 @@ def main():
             args.src = open(args.src, 'rt').readlines()
 
     if args.lang is None:
-        logger.error("The language must be specified (--lang XX), XX the ISO 639-1 code")
+        logger.error(
+            "The language must be specified (--lang XX), XX the ISO 639-1 code")
         sys.exit(1)
 
     if args.temperature <= 0:
@@ -304,8 +327,10 @@ def main():
     if len(args.cand) > 50 and n_gpus == 0:
         logging.warning('Running on CPU is slow...')
 
-    prism = Prism(model_dir=args.model_dir, lang=args.lang, temperature=args.temperature)
-    scores = prism.score(cand=args.cand, ref=args.ref, src=args.src, segment_scores=args.segment_scores)
+    prism = Prism(model_dir=args.model_dir, lang=args.lang,
+                  temperature=args.temperature)
+    scores = prism.score(cand=args.cand, ref=args.ref,
+                         src=args.src, segment_scores=args.segment_scores)
 
     logger.info(f'Prism identifier: {prism.identifier()}')
 
@@ -319,10 +344,10 @@ def main():
 class SequenceScorer(object):
     """
     Copy of https://github.com/pytorch/fairseq/blob/master/fairseq/sequence_scorer.py
-    with softmax temperature control added 
+    with softmax temperature control added
 
     MIT License
-    
+
     Copyright (c) Facebook, Inc. and its affiliates.
 
     Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -331,10 +356,10 @@ class SequenceScorer(object):
     to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
     copies of the Software, and to permit persons to whom the Software is
     furnished to do so, subject to the following conditions:
-    
+
     The above copyright notice and this permission notice shall be included in all
     copies or substantial portions of the Software.
-    
+
     THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
     IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
     FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
@@ -400,7 +425,8 @@ class SequenceScorer(object):
                 #   decoder_out[0][:, -1:, :].div_(temperature)
                 bd[0].div_(self.temperature)
 
-                curr_prob = model.get_normalized_probs(bd, log_probs=len(models) == 1, sample=sample).data
+                curr_prob = model.get_normalized_probs(
+                    bd, log_probs=len(models) == 1, sample=sample).data
                 if is_single:
                     probs = gather_target_probs(curr_prob, orig_target)
                 else:
@@ -408,7 +434,8 @@ class SequenceScorer(object):
                         probs = curr_prob.new(orig_target.numel())
                     step = curr_prob.size(0) * curr_prob.size(1)
                     end = step + idx
-                    tgt_probs = gather_target_probs(curr_prob.view(tgt.shape + (curr_prob.size(-1),)), tgt)
+                    tgt_probs = gather_target_probs(curr_prob.view(
+                        tgt.shape + (curr_prob.size(-1),)), tgt)
                     probs[idx:end] = tgt_probs.view(-1)
                     idx = end
                 sample['target'] = orig_target
@@ -433,7 +460,8 @@ class SequenceScorer(object):
 
         bsz = avg_probs.size(0)
         hypos = []
-        start_idxs = sample['start_indices'] if 'start_indices' in sample else [0] * bsz
+        start_idxs = sample['start_indices'] if 'start_indices' in sample else [
+            0] * bsz
         for i in range(bsz):
             # remove padding from ref
             ref = utils.strip_pad(sample['target'][i, start_idxs[i]:], self.pad) \

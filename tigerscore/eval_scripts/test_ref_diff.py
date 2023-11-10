@@ -1,6 +1,7 @@
 """
-Usage:
-    python test_xgptscore_sum.py
+This file isn't used in our final version.
+Calculate the distance between our score and the reference score.
+Maybe Pearson is better. Or we can draw a QQ plot.
 """
 import json
 import random

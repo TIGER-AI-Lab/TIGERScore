@@ -1,5 +1,7 @@
 import numpy as np
 import scipy
+
+
 def cor_pearson(hypo_scores, ref_scores):
     """
     Args:
@@ -21,6 +23,7 @@ def cor_pearson(hypo_scores, ref_scores):
         cor += np.corrcoef(hypo_scores[i], ref_scores[i])[0, 1]
     cor /= c
     return cor
+
 
 def cor_spearman(hypo_scores, ref_scores):
     """
@@ -44,7 +47,7 @@ def cor_spearman(hypo_scores, ref_scores):
     cor /= c
     return cor
 
-            
+
 def cor_spearman_footrule(hypo_scores, ref_scores):
     """
     Args:

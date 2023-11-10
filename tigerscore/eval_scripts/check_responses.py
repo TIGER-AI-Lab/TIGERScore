@@ -1,22 +1,23 @@
+"""
+    This script is used to generate the check prompts for the responses of the candidates.
+    We use GPT-4 to check the responses of the candidates.
+"""
 import sys
+sys.path.append("..")
+from xgptscore.openai_utils import openai_completions, _chatml_to_prompt
 import fire
 import json
 import logging
-import regex as re
-import copy
 import random
-sys.path.append("..")
-from xgptscore.openai_utils import openai_completions, _chatml_to_prompt
-from typing import List, Dict
 from string import Template
-from collections import Counter
+
 logging.basicConfig(level=logging.INFO)
 
 # check_template = """
 # Instruction: ${instruction}
 # Source: ${source}
 # Model-generated output: ${model_generated}
-# Identified errors in the model-generated output: 
+# Identified errors in the model-generated output:
 # ${identified_errors}
 
 # For each error, answer the following questions:
@@ -27,14 +28,14 @@ logging.basicConfig(level=logging.INFO)
 # Q3: If A1 contains both the error phrase and the correction phrase, is the correction actually fixing the error considering the instruction and source input? (Answer Yes/No)
 # A3:
 # Q4: Is the reduction score appropriate considering the severity and the sentence context? (Answer Yes/No)
-# A4: 
+# A4:
 # Q5: Does the explanation provide a helpful content for understanding the error and how to fix it? (Answer Yes/No)
 # A5:
 # Q6: Does the explanation contain some hallucinated content outside the provided instruction, source input, and model-generated output? (Answer Yes/No)
 # A6:
 # The output format will be in JSON
 # {
-# error_1: {Q1: A1, Q2: A2, Q3: A3, Q4: A4, Q5: A5, Q6: A6}, 
+# error_1: {Q1: A1, Q2: A2, Q3: A3, Q4: A4, Q5: A5, Q6: A6},
 # ...
 # }
 # """
@@ -43,7 +44,7 @@ check_template = """
 Instruction: ${instruction}
 Source: ${source}
 Model-generated output: ${model_generated}
-Identified errors in the model-generated output: 
+Identified errors in the model-generated output:
 ${identified_errors}
 
 For each error, answer the following questions:
@@ -54,14 +55,14 @@ A2:
 Q3: If A1 contains both the error phrase and the correction phrase, is the correction actually fixing the error considering the instruction and source input? (Answer Yes/No)
 A3:
 Q4: Is the reduction score appropriate considering the severity and the sentence context? (Answer Yes/No)
-A4: 
+A4:
 Q5: Does the explanation provide a helpful content for understanding the error and how to fix it? (Answer Yes/No)
 A5:
 Q6: Does the explanation contain some hallucinated content outside the provided instruction, source input, and model-generated output? (Answer Yes/No)
 A6:
 The output format will be in JSON
 {
-error_1: {Q1: A1, Q2: A2, Q3: A3, Q4: A4, Q5: A5, Q6: A6}, 
+error_1: {Q1: A1, Q2: A2, Q3: A3, Q4: A4, Q5: A5, Q6: A6},
 ...
 }
 """
@@ -70,7 +71,7 @@ error_1: {Q1: A1, Q2: A2, Q3: A3, Q4: A4, Q5: A5, Q6: A6},
 # Instruction: ${instruction}
 # Source: ${source}
 # Model-generated output: ${model_generated}
-# Identified errors along with their explanations in the model-generated output are as follows: 
+# Identified errors along with their explanations in the model-generated output are as follows:
 # ${identified_errors}
 
 # However, some of the identified errors might contain some problems. Some problems types includes:
@@ -78,10 +79,10 @@ error_1: {Q1: A1, Q2: A2, Q3: A3, Q4: A4, Q5: A5, Q6: A6},
 # - The pointed error location contains an error, but the correction is actually same as the model-generated output.
 # - The pointed error location contains an error, but the correction does not fix the error.
 
-# For each identified error, considering the instruction and source text, answer whether the identified error contains any problem mentioned above. 
+# For each identified error, considering the instruction and source text, answer whether the identified error contains any problem mentioned above.
 # Output choices are as follows:
 # - true: for the identified error contains any problem mentioned above
-# - false: for the identified error does not contain any problem mentioned above. That is, the identified error is indeed an error; the explanation is correct and makes sense; the correction does fix the error 
+# - false: for the identified error does not contain any problem mentioned above. That is, the identified error is indeed an error; the explanation is correct and makes sense; the correction does fix the error
 # Output format:
 # {"error_1": true/false, ...}
 # """
@@ -95,6 +96,7 @@ However, the annotator might miss some errors. Please check if there is any erro
 Output format:
 T/F (T: true for there is an error in the model-generated output; F: false for there is no error in the model-generated output)
 """
+
 
 def get_check_prompts(
     item: dict
@@ -114,18 +116,21 @@ def get_check_prompts(
             # shuffle errors
             shuffled_errors = list(cand['responses'][1]['errors'].values())
             random.shuffle(shuffled_errors)
-            cand['responses'][1]["errors"] = {f"error_{i+1}": v for i, v in enumerate(shuffled_errors)}
+            cand['responses'][1]["errors"] = {
+                f"error_{i+1}": v for i, v in enumerate(shuffled_errors)}
             check_prompt = Template(check_template).substitute(
                 instruction=item['instruction'],
                 source=item['input'],
                 reference=item.get('output') or item.get("refs")[0],
                 model_generated=cand['text'],
-                identified_errors=json.dumps(cand['responses'][1], ensure_ascii=False, indent=0),   
+                identified_errors=json.dumps(
+                    cand['responses'][1], ensure_ascii=False, indent=0),
             )
         check_prompt = check_prompt.strip(" \n\t")
         check_prompts.append(check_prompt)
-    
+
     return check_prompts
+
 
 def main(
     input_file: str,
@@ -137,12 +142,13 @@ def main(
     with open(input_file, "r") as f:
         data = json.load(f)[:10]
     check_prompts = list(map(get_check_prompts, data))
-    full_check_prompts = [item for sublist in check_prompts for item in sublist]
+    full_check_prompts = [
+        item for sublist in check_prompts for item in sublist]
     check_prompts = [x for x in full_check_prompts if x is not None]
     print(len(check_prompts))
     print(len(full_check_prompts))
-    chatmls = [[{"role":"system","content":"You are an AI assistant that helps people find information."},
-            {"role":"user","content": prompt}] for prompt in check_prompts]
+    chatmls = [[{"role": "system", "content": "You are an AI assistant that helps people find information."},
+                {"role": "user", "content": prompt}] for prompt in check_prompts]
     chatml_prompts = [_chatml_to_prompt(chatml) for chatml in chatmls]
 
     decoding_kwargs = {
@@ -152,14 +158,16 @@ def main(
         "timeout": 30,
         "request_timeout": 30
     }
-    results = openai_completions(chatml_prompts, model_name=model_name, **decoding_kwargs)
-    logging.info("Total price: {:.4f}$".format(sum(results['price_per_example'])))
+    results = openai_completions(
+        chatml_prompts, model_name=model_name, **decoding_kwargs)
+    logging.info("Total price: {:.4f}$".format(
+        sum(results['price_per_example'])))
     completions = results['completions']
-    
+
     def loads_json(json_str: str):
         try:
             return json.loads(json_str)
-        except:
+        except Exception:
             return json_str
     idx = 0
     full_idx = 0
@@ -254,6 +262,7 @@ def main(
     # with open(output_file.replace(".json", "_filtered.json"), "w") as f:
     #     json.dump(filtered_data, f, indent=4, ensure_ascii=False)
     # logging.info(f"Saved to {output_file.replace('.json', '_filtered.json')}")
-    
+
+
 if __name__ == "__main__":
     fire.Fire(main)

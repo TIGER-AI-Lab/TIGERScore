@@ -1,5 +1,6 @@
 import hashlib
-import argparse 
+import argparse
+
 
 def generate_hash_code(text):
     # Convert the text to bytes and create a hash object
@@ -11,6 +12,7 @@ def generate_hash_code(text):
     # Return the first 16 digits of the hexadecimal code
     return hex_code[:16]
 
+
 def str2bool(v):
     if isinstance(v, bool):
         return v
@@ -21,11 +23,13 @@ def str2bool(v):
     else:
         raise argparse.ArgumentTypeError('Boolean value expected.')
 
+
 def empty2None(x):
     if x == '':
         return None
     else:
         return x
+
 
 def empty2zero(x):
     if x == '':

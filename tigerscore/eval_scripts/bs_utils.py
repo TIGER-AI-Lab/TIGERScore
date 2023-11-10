@@ -1,3 +1,6 @@
+"""
+    From https://github.com/neulab/BARTScore
+"""
 import pickle
 import jsonlines
 import nltk
@@ -19,13 +22,16 @@ import logging
 # nltk.download('stopwords')
 detokenizer = MosesDetokenizer('en')
 
+
 def save_json(file_name, data):
     with open(file_name, 'w') as f:
         json.dump(data, f, indent=4, ensure_ascii=False)
 
+
 def load_json(file_name):
     with open(file_name, 'r') as f:
         return json.load(f)
+
 
 def read_pickle(file):
     with open(file, 'rb') as f:
@@ -33,7 +39,7 @@ def read_pickle(file):
     return data
 
 
-def save_pickle(file,data):
+def save_pickle(file, data):
     with open(file, 'wb') as f:
         pickle.dump(data, f)
     print(f'Saved to {file}.')
@@ -173,7 +179,8 @@ def print_score_ranges(sd):
     print_list = []
     headers = ["min", "25-perc", "median", "75-perc", "max", "mean"]
     for m in metrics_list:
-        scores = [s['scores'][m] for d in sd.values() for s in d['sys_summs'].values() if s['sys_summ'] != 'EMPTY']
+        scores = [s['scores'][m] for d in sd.values()
+                  for s in d['sys_summs'].values() if s['sys_summ'] != 'EMPTY']
         print_list.append([m,
                            np.min(scores),
                            np.percentile(scores, 25),
@@ -282,7 +289,8 @@ def get_predictions_br(system_pairs, systems, metric):
             preds[pair] = 2  # can't say
     return preds
 
-def reformat_sum_for_bartscore(data_path,our_score_name):
+
+def reformat_sum_for_bartscore(data_path, our_score_name):
     logging.info(f"Reformatting {data_path} to bartscore format")
     data = load_json(data_path)
     new_data = {}
@@ -312,13 +320,14 @@ def reformat_sum_for_bartscore(data_path,our_score_name):
             }
         if good:
             new_data[id] = new_data_item
-    
+
     logging.info("Total good data: {}/{}".format(len(new_data), len(data)))
     new_data_path = data_path.with_name(data_path.stem + "_bs_format.pkl")
     save_pickle(new_data_path, new_data)
     save_json(new_data_path.with_suffix(".json"), new_data)
     logging.info("Saved data in bartscore format to {}".format(new_data_path))
-    
+
+
 def reformat_d2t_for_bartscore(data_path, our_score_name):
     logging.info(f"Reformatting {data_path} to bartscore format")
     data = load_json(data_path)
@@ -343,4 +352,3 @@ def reformat_d2t_for_bartscore(data_path, our_score_name):
     new_data_path = data_path.with_name(data_path.stem + "_bs_format.pkl")
     save_pickle(new_data_path, new_data)
     logging.info("Saved data in bartscore format to {}".format(new_data_path))
-    

@@ -28,7 +28,8 @@ For each error you give in the response, please also elaborate the following inf
 Your evaluation output:
 """
 
-class TIGERScorer(object):  
+
+class TIGERScorer(object):
     def __init__(self, model_size, quantized=False):
         """Initialize the TIGERScore model.
 
@@ -38,7 +39,7 @@ class TIGERScorer(object):
             quantized:
                 If true, load the 4-bit quantized version of the model.
                 quantized version occupies 2-3 times less memory but will running slower.
-        
+
         """
         assert model_size in TIGERScore_model_map
         model_name = TIGERScore_model_map[model_size]
@@ -60,7 +61,7 @@ class TIGERScorer(object):
             use_fast=True,
             padding_side="left",
         )
-    
+
     def decode_tigerscore_output(self, output):
         """Decode the output of TIGERScore model into structured error explanations.
 
@@ -79,16 +80,21 @@ class TIGERScorer(object):
                 There can be multiple errors in each input.
         """
         result = {}
-        result['num_errors'] = re.search(r"(?<=The model-generated output contains )\d+(?= errors)", output).group(0)
-        result['score'] = re.search(r"(?<=, with a total score reduction of )\d+", output).group(0)
+        result['num_errors'] = re.search(
+            r"(?<=The model-generated output contains )\d+(?= errors)", output).group(0)
+        result['score'] = re.search(
+            r"(?<=, with a total score reduction of )\d+", output).group(0)
         result['num_errors'] = int(result['num_errors'])
         result['score'] = -float(result['score'])
         result['errors'] = {}
-        error_locations = re.findall(r"(?<=Error location \d+: ).*?(?=\n)", output)
+        error_locations = re.findall(
+            r"(?<=Error location \d+: ).*?(?=\n)", output)
         error_aspects = re.findall(r"(?<=Error aspect \d+: ).*?(?=\n)", output)
-        error_explanations = re.findall(r"(?<=Explanation \d+: ).*?(?=\n)", output)
+        error_explanations = re.findall(
+            r"(?<=Explanation \d+: ).*?(?=\n)", output)
         error_severities = re.findall(r"(?<=Severity \d+: ).*?(?=\n)", output)
-        score_reductions = re.findall(r"(?<=\nScore reduction \d+: )(\d+\.\d+|\d+)", output)
+        score_reductions = re.findall(
+            r"(?<=\nScore reduction \d+: )(\d+\.\d+|\d+)", output)
         assert len(error_locations) == len(error_aspects) == len(error_explanations) == len(error_severities) == len(score_reductions), \
             "The number of errors does not match."
         for i in range(len(error_locations)):
@@ -100,7 +106,7 @@ class TIGERScorer(object):
             error['score_reduction'] = score_reductions[i]
             result['errors'][f"error_{i}"] = error
         return result
-    
+
     def _score_batch(
         self,
         tasks: List[str],
@@ -115,7 +121,8 @@ class TIGERScorer(object):
         Returns:
             (See score() function)
         """
-        assert len(tasks) == len(insts) == len(input_contexts) == len(hypo_outputs)
+        assert len(tasks) == len(insts) == len(
+            input_contexts) == len(hypo_outputs)
         inst_template = Template(FINETUNE_INST)
         input_template = Template(FINETUNE_INPUT)
 
@@ -128,9 +135,11 @@ class TIGERScorer(object):
             )
             for inst, input_context, hypo_output in zip(insts, input_contexts, hypo_outputs)
         ]
-        prompts = [(inst + "\n" + input_part).strip("\n ") + "\n" for inst, input_part in zip(insts, inputs)]
-        
-        encodings = self.tokenizer(prompts, return_tensors="pt", padding=True, truncation=True, max_length=self.tokenizer.model_max_length)
+        prompts = [(inst + "\n" + input_part).strip("\n ") +
+                   "\n" for inst, input_part in zip(insts, inputs)]
+
+        encodings = self.tokenizer(prompts, return_tensors="pt", padding=True,
+                                   truncation=True, max_length=self.tokenizer.model_max_length)
         input_ids = encodings["input_ids"].to(self.model.device)
         attention_mask = encodings["attention_mask"].to(self.model.device)
         gen_params = {
@@ -143,11 +152,12 @@ class TIGERScorer(object):
         }
         gen_params.update(generate_kwargs)
         outputs = self.model.generate(**gen_params)
-        
-        input_len = input_ids.shape[1]
+
+        # input_len = input_ids.shape[1]
         # completion_ids = [output[input_len:] for output in outputs]
         completion_ids = outputs
-        completions = [self.tokenizer.decode(completion, skip_special_tokens=True) for completion in completion_ids]
+        completions = [self.tokenizer.decode(
+            completion, skip_special_tokens=True) for completion in completion_ids]
         tigerscore_results = []
         for completion in completions:
             try:
@@ -155,7 +165,7 @@ class TIGERScorer(object):
                 result['score'] = result['score']
                 result['num_errors'] = result['num_errors']
                 result['errors'] = result['errors']
-            except:
+            except Exception:
                 result = {}
                 result['score'] = None
                 result['num_errors'] = None
@@ -164,7 +174,6 @@ class TIGERScorer(object):
             tigerscore_results.append(result)
         return tigerscore_results
 
-    
     def score(
         self,
         tasks: List[str],
@@ -232,17 +241,18 @@ class TIGERScorer(object):
                     - reduction (float): reduction of score (between 0.5 and 5 given the severity of the error)
                 - raw_output (str): the raw output of the TIGERScore model.
         """
-        assert len(tasks) == len(insts) == len(input_contexts) == len(hypo_outputs)
+        assert len(tasks) == len(insts) == len(
+            input_contexts) == len(hypo_outputs)
         results = []
         for i in tqdm(
-            range(0, len(tasks), batch_size), 
+            range(0, len(tasks), batch_size),
             desc="TIGERScore Batch Scoring",
-            total=len(tasks)//batch_size + 1
-            ):
-            batch_tasks = tasks[i:i+batch_size]
-            batch_insts = insts[i:i+batch_size]
-            batch_input_contexts = input_contexts[i:i+batch_size]
-            batch_hypo_outputs = hypo_outputs[i:i+batch_size]
+            total=len(tasks) // batch_size + 1
+        ):
+            batch_tasks = tasks[i:i + batch_size]
+            batch_insts = insts[i:i + batch_size]
+            batch_input_contexts = input_contexts[i:i + batch_size]
+            batch_hypo_outputs = hypo_outputs[i:i + batch_size]
             batch_results = self._score_batch(
                 batch_tasks, batch_insts, batch_input_contexts, batch_hypo_outputs, **generate_kwargs
             )

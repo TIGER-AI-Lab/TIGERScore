@@ -6,6 +6,8 @@
 #SBATCH --qos=normal
 #SBATCH -n 1
 
+# This script is used to generate candidates via GPT-3.5 and local models.
+
 CMD="sbatch"
 
 # models=("google/flan-t5-small" "google/flan-t5-base" "google/flan-t5-large" "google/flan-t5-xl" "google/flan-t5-xxl")

@@ -1,4 +1,7 @@
 # Example usage
+"""
+This file isn't used in final version.
+"""
 import os
 import sys
 import fire
@@ -31,8 +34,10 @@ def main(
         aspects_descriptions="\n".join([f"- {aspect}: {description}" for aspect, description in task_aspects.items()])
     )
     prompts = [prompt]
-    chatmls = [[{"role":"system","content":"You are an AI assistant that helps people find information."},
-                {"role":"user","content": prompt}] for prompt in prompts[:1]]
+    chatmls = [[{"role": "system",
+                 "content": " You are an AI assistant that helps people find information."},
+                {"role": "user",
+                 "content": prompt}] for prompt in prompts[:1]]
 
     chatml_prompts = [_chatml_to_prompt(chatml) for chatml in chatmls]
     results = openai_completions(chatml_prompts, model_name="gpt-4")
@@ -41,6 +46,7 @@ def main(
     results['propmts'] = prompts
     with open(output_file, "w") as f:
         json.dump(results, f, indent=4, ensure_ascii=False)
+
 
 if __name__ == "__main__":
     fire.Fire(main)

@@ -1,3 +1,6 @@
+"""
+This file isn't used in our final version.
+"""
 import sys
 import fire
 import json

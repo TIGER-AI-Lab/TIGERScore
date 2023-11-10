@@ -6,19 +6,16 @@ import argparse
 import time
 import logging
 import numpy as np
-import sys
 from typing import List
 from pathlib import Path
 from datasets import load_dataset
-from pathlib import Path
 from collections import Counter
 from itertools import chain
 from transformers import AutoTokenizer
-from mt_metrics_eval.data import EvalSet
-from tigerscore.common.evaluation import overall_eval
 logging.basicConfig(level=logging.INFO)
 # log current time
-logging.info("\nRunning time: {}".format(time.strftime("%Y-%m-%d %H:%M:%S", time.localtime())))
+logging.info("\nRunning time: {}".format(
+    time.strftime("%Y-%m-%d %H:%M:%S", time.localtime())))
 
 lang_map = {
     'zh': 'Chinese',
@@ -33,6 +30,7 @@ lang_map = {
     'fi': 'Finnish',
     'fr': 'French',
 }
+
 
 def format_train_data(dataset, lang_pair, human_score_name):
     src_lang, tgt_lang = lang_pair.split("-")
@@ -69,17 +67,22 @@ def format_train_data(dataset, lang_pair, human_score_name):
     train_data = list(formated_data.values())
     logging.info("Train data statistics:")
     logging.info("# Examples: {}".format(len(train_data)))
-    logging.info("# Avg. Unique outputs: {}".format(sum([len(x['candidates']) for x in train_data]) / len(train_data)))
-    logging.info("# Unique src: {}".format(len(set([x['input'] for x in train_data]))))
+    logging.info("# Avg. Unique outputs: {}".format(
+        sum([len(x['candidates']) for x in train_data]) / len(train_data)))
+    logging.info("# Unique src: {}".format(
+        len(set([x['input'] for x in train_data]))))
     logging.info("Domain distribution:")
-    domain_counter = Counter([x['data_source'].split("_")[-1] for x in train_data])
+    domain_counter = Counter(
+        [x['data_source'].split("_")[-1] for x in train_data])
     for domain in domain_counter:
         logging.info("  {}: {}".format(domain, domain_counter[domain]))
     logging.info("Year distribution:")
-    year_counter = Counter([x['data_source'].split("_")[0] for x in train_data])
+    year_counter = Counter([x['data_source'].split("_")[0]
+                           for x in train_data])
     for year in year_counter:
         logging.info("  {}: {}".format(year, year_counter[year]))
     return train_data
+
 
 def down_sample_train_data(train_data: List[dict], max_ex_size: int):
     """
@@ -114,26 +117,32 @@ def down_sample_train_data(train_data: List[dict], max_ex_size: int):
         if len(sampled_ex['candidates']) > 0:
             sampled_train_data.append(sampled_ex)
     # report statistics
-    tokenizer = AutoTokenizer.from_pretrained("meta-llama/Llama-2-7b-hf") 
-    cand_token_ids = [[tokenizer.encode(x['text'], add_special_tokens=False) for x in ex['candidates']] for ex in sampled_train_data]
-    cand_token_lens = [[len(x) for x in cand_token_id] for cand_token_id in cand_token_ids]
+    tokenizer = AutoTokenizer.from_pretrained("meta-llama/Llama-2-7b-hf")
+    cand_token_ids = [[tokenizer.encode(x['text'], add_special_tokens=False)
+                       for x in ex['candidates']] for ex in sampled_train_data]
+    cand_token_lens = [[len(x) for x in cand_token_id]
+                       for cand_token_id in cand_token_ids]
     cand_token_lens = list(chain(*cand_token_lens))
-    
+
     logging.info("Downsampled train data statistics:")
     logging.info("# Examples: {}".format(len(sampled_train_data)))
-    logging.info("# Avg. Unique outputs: {}".format(sum([len(x['candidates']) for x in sampled_train_data]) / len(sampled_train_data)))
-    logging.info("# Avg. Candidates Min/Mean/Max Length: {}".format(
+    logging.info("# Avg. Unique outputs: {}".format(sum(
+        [len(x['candidates']) for x in sampled_train_data]) / len(sampled_train_data)))
+    logging.info("# Avg. Candidates Min/Mean/Max Length: {},{},{}".format(
         np.min(cand_token_lens), np.mean(cand_token_lens), np.max(cand_token_lens)))
     logging.info("Domain distribution:")
-    domain_counter = Counter([x['data_source'].split("_")[-1] for x in sampled_train_data])
+    domain_counter = Counter([x['data_source'].split("_")[-1]
+                             for x in sampled_train_data])
     for domain in domain_counter:
         logging.info("  {}: {}".format(domain, domain_counter[domain]))
     logging.info("Year distribution:")
-    year_counter = Counter([x['data_source'].split("_")[0] for x in sampled_train_data])
+    year_counter = Counter([x['data_source'].split("_")[0]
+                           for x in sampled_train_data])
     for year in year_counter:
         logging.info("  {}: {}".format(year, year_counter[year]))
 
     return sampled_train_data
+
 
 def str2bool(v):
     if isinstance(v, bool):
@@ -145,36 +154,42 @@ def str2bool(v):
     else:
         raise argparse.ArgumentTypeError('Boolean value expected.')
 
+
 if __name__ == "__main__":
     parser = argparse.ArgumentParser()
     parser.add_argument('--lang_pair', type=str, default='zh-en')
-    parser.add_argument('--human_score_name', type=str, default='mqm', choices=['mqm', 'da'])
+    parser.add_argument('--human_score_name', type=str,
+                        default='mqm', choices=['mqm', 'da'])
     parser.add_argument('--data_dir', type=str, default='./')
     parser.add_argument('--max_ex_size', type=int, default=1000)
     parser.add_argument('--overwrite', type=str2bool, default=False)
     args = parser.parse_args()
-    
+
     dataset_name = f"RicardoRei/wmt-{args.human_score_name}-human-evaluation"
     lang_pair = args.lang_pair
 
     # Load the training data
     logging.info("Loading data from {}".format(dataset_name))
     dataset = load_dataset(dataset_name, split='train')
-    dataset = dataset.filter(lambda x: x['lp'] == lang_pair) # filter by lang_pair
-    dataset = dataset.filter(lambda x: x['year'] < 2022) # only use data before WMT22
+    dataset = dataset.filter(
+        lambda x: x['lp'] == lang_pair)  # filter by lang_pair
+    # only use data before WMT22
+    dataset = dataset.filter(lambda x: x['year'] < 2022)
 
     if len(dataset) == 0:
         logging.error("No data found for lang_pair={}".format(lang_pair))
         exit(0)
     else:
-        logging.info("Loaded {} examples for lang_pair={}".format(len(dataset), lang_pair))
+        logging.info("Loaded {} examples for lang_pair={}".format(
+            len(dataset), lang_pair))
     # Save the data
     args.data_dir = Path(args.data_dir)
     args.data_dir.mkdir(parents=True, exist_ok=True)
     train_file = args.data_dir / f"wmt/{args.lang_pair}/train_data.json"
     train_file.parent.mkdir(parents=True, exist_ok=True)
     if not train_file.exists() or args.overwrite:
-        train_data = format_train_data(dataset, lang_pair, args.human_score_name)
+        train_data = format_train_data(
+            dataset, lang_pair, args.human_score_name)
         train_data = down_sample_train_data(train_data, args.max_ex_size)
         with open(train_file, "w") as f:
             json.dump(train_data, f, indent=4, ensure_ascii=False)

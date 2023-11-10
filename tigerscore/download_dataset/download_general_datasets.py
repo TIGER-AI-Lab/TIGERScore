@@ -5,27 +5,25 @@
     We thank the authors for sharing their code.
 """
 
+
 import os
 import argparse
 import sys
+sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 import datasets
 import json
 import PIL
 import numpy as np
 from tqdm import tqdm
 from pathlib import Path
-from typing import List, Tuple, Union
-from datasets import load_dataset_builder
-sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
+from typing import List, Union
+from common.datasets_config import DATASETS_CONFIG
 from common.utils import (
     generate_hash_code,
     str2bool,
-    empty2None,
     fetch_single_image
 )
-from common.datasets_config import DATASETS_CONFIG
-from pathlib import Path
-from typing import List, Tuple, Union
+
 
 def preprocess_example(
     ex: dict,
@@ -34,8 +32,8 @@ def preprocess_example(
     dataset_version: str,
     input_key: str,
     output_key: str,
-    id_key: str=None,
-    dataset_cache_dir: str=None,
+    id_key: str = None,
+    dataset_cache_dir: str = None,
 ):
     """
     This function preprocesses the batch data according to the task and datasets
@@ -53,7 +51,8 @@ def preprocess_example(
     if dataset_cache_dir is not None:
         dataset_cache_dir = Path(dataset_cache_dir)
     else:
-        dataset_cache_dir = Path.cwd() / "../../data" / dataset / dataset_version / "cache"
+        dataset_cache_dir = Path.cwd() / "../../data" / dataset / \
+            dataset_version / "cache"
     inst = None
     # task and dataset specific processing
     if task == "translation":
@@ -63,20 +62,22 @@ def preprocess_example(
         if "dart" in dataset:
             input = tub2str_dart(ex[input_key])
             output = ex[output_key]["text"][-1]
-        elif "totto" in dataset: 
+        elif "totto" in dataset:
             from preprocess_utils_totto import get_highlighted_subtable
-            subtable = get_highlighted_subtable(table=ex['table'], cell_indices=ex['highlighted_cells'], with_heuristic_headers=True)
-            input = process_totto(subtable,ex)
+            subtable = get_highlighted_subtable(
+                table=ex['table'], cell_indices=ex['highlighted_cells'], with_heuristic_headers=True)
+            input = process_totto(subtable, ex)
             output = ex[output_key]["final_sentence"][-1]
         elif "logicnlg" in dataset:
             input = process_logicnlg(ex)
-            output = ex[output_key]                   
+            output = ex[output_key]
         elif "wikitabletext" in dataset:
             input = process_wikitabletext(ex)
             output = ex[output_key]
         elif "web_nlg" in dataset:
-            input = "\n".join([f"({s})" for s in ex[input_key]["mtriple_set"][0]]).strip()
-            
+            input = "\n".join(
+                [f"({s})" for s in ex[input_key]["mtriple_set"][0]]).strip()
+
             output = ex[output_key]["text"][-1]
         else:
             input = ex[input_key]
@@ -90,13 +91,14 @@ def preprocess_example(
             # filter out urls that are invalid
             try:
                 image = fetch_single_image(input, retries=0, timeout=3)
-            except Exception as e:
+            except Exception:
                 return None, None, None
         elif isinstance(input, PIL.Image.Image):
             # input is PIL image
             image = input.convert("RGB")
-            # save image 
-            image_path = Path(dataset_cache_dir) / f"{generate_hash_code(output)}.jpg"
+            # save image
+            image_path = Path(dataset_cache_dir) / \
+                f"{generate_hash_code(output)}.jpg"
             image.save(image_path)
             input = image_path.absolute().as_posix()
         else:
@@ -104,18 +106,20 @@ def preprocess_example(
     elif task == "long-form QA":
         if "asqa" in dataset:
             input = ex['ambiguous_question']
-            knowledges = [x['content'] for x in ex['annotations'][0]["knowledge"] if x['content'] is not None]
+            # knowledges = [x['content'] for x in ex['annotations']
+            #               [0]["knowledge"] if x['content'] is not None]
             output = ex['annotations'][0]['long_answer']
         elif "natural_questions" in dataset:
             input = ex[input_key]
             output = ex[output_key]
             if len(output) <= 100:
-                output = None # skip this example, we want long answer
+                output = None  # skip this example, we want long answer
         elif "cosmos_qa" in dataset:
-            input = "Context: " + ex['context'] + "\n" + "Question: " + ex['question'] + "\n" + "Answer: "
+            input = "Context: " + ex['context'] + "\n" + \
+                "Question: " + ex['question'] + "\n" + "Answer: "
             output = ex[f"answer{ex['label']}"]
             if "None of the above choices ." in output or len(output) <= 50:
-                output = None # skip this example, we want long answer
+                output = None  # skip this example, we want long answer
         elif "eli5" in dataset:
             input = ex[input_key]
             if len(ex[output_key]) > 0:
@@ -137,7 +141,8 @@ def preprocess_example(
         if "roc" in dataset:
             input = "Title: " + ex['storytitle'] + "\n" + "Story: \n"
             for i in range(1, 5):
-                input += "Sentence " + str(i) + ": " + ex['sentence' + str(i)] + "\n"
+                input += "Sentence " + \
+                    str(i) + ": " + ex['sentence' + str(i)] + "\n"
             input += "Sentence 5 (Ending): "
             output = ex['sentence5']
         elif "hellaswag" in dataset:
@@ -161,7 +166,7 @@ def preprocess_example(
             output = ex[output_key]
     elif task == "mathQA":
         if "math_qa" in dataset:
-            input = ex[input_key] #+ "\n Options: " + ex['options']
+            input = ex[input_key]  # + "\n Options: " + ex['options']
             output = ex[output_key]
         else:
             input = ex[input_key]
@@ -171,7 +176,7 @@ def preprocess_example(
         if "code_contests" in dataset:
             input = ex[input_key]
             solution = ex[output_key]["solution"]
-            solution = sorted(solution, key=lambda x:len(x))
+            solution = sorted(solution, key=lambda x: len(x))
             output = solution[0] if len(solution) > 0 else None
         else:
             input = ex[input_key]
@@ -214,6 +219,7 @@ def preprocess_example(
 
     return id, inst, input, output
 
+
 def download_dataset(
     task: str,
     dataset: str,
@@ -222,8 +228,8 @@ def download_dataset(
     input_key: str,
     output_key: str,
     set_name: str,
-    instruction: str=None,
-    save_dir: Union[str, Path]=None,
+    instruction: str = None,
+    save_dir: Union[str, Path] = None,
     use_auth_token: dict = None,
     streaming: bool = False,
     shuffle: bool = False,
@@ -233,7 +239,7 @@ def download_dataset(
 ) -> None:
     data_dir = save_dir
     if data_dir is None:
-        data_dir = Path(os.path.dirname(__file__)).parent.parent / "data" 
+        data_dir = Path(os.path.dirname(__file__)).parent.parent / "data"
     dataset_dir = data_dir / dataset / (dataset_version or "")
     dataset_dir.mkdir(parents=True, exist_ok=True)
     save_file = dataset_dir / f"{set_name}_data.json"
@@ -255,10 +261,10 @@ def download_dataset(
     examples = []
 
     for _split in splits:
-        start_idx = _split[_split.find("[")+1:_split.find(":")]
-        end_idx = _split[_split.find(":")+1:_split.find("]")]
+        start_idx = _split[_split.find("[") + 1:_split.find(":")]
+        end_idx = _split[_split.find(":") + 1:_split.find("]")]
         __split = _split[:_split.find("[")]
-                                  
+
         if start_idx == "":
             start_idx = 0
         else:
@@ -270,8 +276,9 @@ def download_dataset(
             end_idx = int(end_idx)
             num_examples = end_idx - start_idx
             if num_examples < 0:
-                raise ValueError("0 examples selected. Please check your split: {}".format(_split))
-        
+                raise ValueError(
+                    "0 examples selected. Please check your split: {}".format(_split))
+
         # load dataset
         try:
             # Try Streaming
@@ -292,7 +299,7 @@ def download_dataset(
         print("Dataset loaded.")
         if shuffle:
             DS = DS.shuffle(seed=seed)
-        
+
         if _streaming:
             iter_DS = DS.skip(start_idx)
         else:
@@ -302,26 +309,25 @@ def download_dataset(
                 iter_DS = DS
         # Process the examples
         unique_ids = set()
-        with tqdm(desc="Processing {}:{}:{}".format(dataset, dataset_version, _split), 
-            total=num_examples,
-        ) as pbar:
+        with tqdm(desc="Processing {}:{}:{}".format(dataset, dataset_version, _split),
+                  total=num_examples,
+                  ) as pbar:
             for i, ex in enumerate(iter_DS):
                 # task and dataset specific processing
                 dataset_cache_dir = dataset_dir / "cache"
                 _id, _inst, _input, _output = preprocess_example(
                     ex, task, dataset, dataset_version, input_key, output_key, id_key, str(dataset_cache_dir))
 
-               
                 if _input is None or _output is None:
                     continue
                 _datasource = dataset
                 _datasource += f":{dataset_version}" if dataset_version else ""
-                               
+
                 if _id not in unique_ids:
                     examples.append({
                         "id": _id,
                         "instruction": _inst or instruction,
-                        "input": _input, # input after applying the template
+                        "input": _input,  # input after applying the template
                         "output": _output,
                         "data_source": _datasource,
                         "task": task,
@@ -330,12 +336,13 @@ def download_dataset(
                     pbar.update(1)
                 if num_examples is not None and len(unique_ids) >= num_examples:
                     break
-    
+
     # Save the dataset
     with open(save_file, "w") as f:
-        json.dump(examples, f, indent=4, ensure_ascii=False)    
+        json.dump(examples, f, indent=4, ensure_ascii=False)
     print(f"Saved {len(examples)} examples to {save_file}")
-    
+
+
 def tub2str_dart(tub: List[List[str]]):
     tub_str = ""
     for row in tub:
@@ -344,13 +351,14 @@ def tub2str_dart(tub: List[List[str]]):
             tub_str += col + ", "
         tub_str += row[-1]
         tub_str += ")\n"
-    return tub_str #+ '\n Start describing : '
+    return tub_str  # + '\n Start describing : '
 
-def process_logicnlg(ex:dict):
+
+def process_logicnlg(ex: dict):
     d = eval(ex['table'])
     tmp = ''
-    
-    for i in range(1,len(d)):
+
+    for i in range(1, len(d)):
         tmp += 'In row {} , '.format(i)
         for j, s in enumerate(d[i]):
             entity = str(s)
@@ -358,26 +366,29 @@ def process_logicnlg(ex:dict):
         tmp = tmp[:-3] + ' . '
 
     tmp_prefix = 'Given the table title of "{}" . '.format(ex['title'])
-    return tmp_prefix + tmp #+ '\n Start describing : '
+    return tmp_prefix + tmp  # + '\n Start describing : '
 
-def process_wikitabletext(ex:dict):
+
+def process_wikitabletext(ex: dict):
     d = eval(ex['content'])
     header = eval(ex['headers'])
     tmp = ''
-    
-    for i,s in enumerate(header):
+
+    for i, s in enumerate(header):
         tmp += 'the {} is {} , '.format(s, d[i])
     tmp = tmp[:-3] + ' . '
-    return tmp #+ '\n Start describing : '
+    return tmp  # + '\n Start describing : '
 
-def process_totto(subtable:list,ex:dict):
+
+def process_totto(subtable: list, ex: dict):
     table_str = ""
-    
-    if ex['table_page_title']:
-        table_str += "Given the table title of {} . ".format(ex['table_page_title'])
-    if ex['table_section_title']:
-        table_str += "Given the table section title of {} . ".format(ex['table_section_title'])
 
+    if ex['table_page_title']:
+        table_str += "Given the table title of {} . ".format(
+            ex['table_page_title'])
+    if ex['table_section_title']:
+        table_str += "Given the table section title of {} . ".format(
+            ex['table_section_title'])
 
     for item in subtable:
         cell = item["cell"]
@@ -389,54 +400,55 @@ def process_totto(subtable:list,ex:dict):
 
         # All the column headers associated with this cell.
         if col_headers:
-            item_str += "The column header : "           
+            item_str += "The column header : "
             col_headers_set = set()
-            
+
             for col_header in col_headers:
                 col_headers_set.add(col_header["value"])
-            
+
             for col_header in col_headers_set:
-              item_str += " {} , ".format(col_header)
+                item_str += " {} , ".format(col_header)
 
             item_str = item_str[:-3] + " . "
         if row_headers:
             item_str += "The row header : "
             row_headers_set = set()
-            
+
             for row_header in row_headers:
                 row_headers_set.add(row_header["value"])
             for row_header in row_headers_set:
                 item_str += " {} , ".format(row_header)
-                
+
             item_str = item_str[:-3] + " . "
-        
-        
+
         # All the row headers associated with this cell.
         for row_header in row_headers:
-          item_str += "The row header is {} . ".format(row_header["value"])
+            item_str += "The row header is {} . ".format(row_header["value"])
         table_str += item_str
 
-    return table_str #+ '\n Start describing : '
+    return table_str  # + '\n Start describing : '
 
-def process_fetaqa(ex:dict):
+
+def process_fetaqa(ex: dict):
     d = ex['table_array']
     highlights = ex['highlighted_cell_ids']
     highlights.sort()
     tmp = ''
     old_row = -1
-    
-    for row,col in highlights:
+
+    for row, col in highlights:
         if row != old_row:
-            tmp = tmp[:-3] + ' . ' 
+            tmp = tmp[:-3] + ' . '
             tmp += 'In row {} , '.format(row)
             old_row = row
 
         tmp += 'the {} is {} , '.format(d[0][col], d[row][col])
-        
+
     tmp = tmp[3:]
     tmp = tmp[:-3] + ' . '
 
-    tmp_prefix = 'Given the table title of "{}" . '.format(ex['table_section_title'])
+    tmp_prefix = 'Given the table title of "{}" . '.format(
+        ex['table_section_title'])
     question = ex['question']
     return tmp_prefix + tmp + question
 
@@ -444,7 +456,8 @@ def process_fetaqa(ex:dict):
 def main(args):
     data_dir = args.data_dir
     if data_dir is None:
-        data_dir = Path(os.path.dirname(__file__)).parent.parent / "raw_datasets"
+        data_dir = Path(os.path.dirname(__file__)
+                        ).parent.parent / "raw_datasets"
     data_dir.mkdir(parents=True, exist_ok=True)
     datasets_config = DATASETS_CONFIG[args.task]
     for key in datasets_config.keys():
@@ -479,21 +492,21 @@ def main(args):
                 overwrite=args.overwrite,
             )
 
-if __name__ == "__main__":
 
+if __name__ == "__main__":
 
     parser = argparse.ArgumentParser()
 
-    parser.add_argument('--seed', type = int, default = 42)
+    parser.add_argument('--seed', type=int, default=42)
     # data
-    parser.add_argument('--overwrite', type = str2bool, default = False)
-    parser.add_argument('--streaming', type = str2bool, default = True)
+    parser.add_argument('--overwrite', type=str2bool, default=False)
+    parser.add_argument('--streaming', type=str2bool, default=True)
     parser.add_argument('--data_dir', type=str, default=None)
-    parser.add_argument('--shuffle', type = str2bool, default = True)
-    parser.add_argument('--task', type = str, default = None)
-    parser.add_argument('--hf_use_auth_token', type = str, default = None,
-                        help = "Huggingface auth token for downloading datasets; Load from env var if not provided.")
-    
+    parser.add_argument('--shuffle', type=str2bool, default=True)
+    parser.add_argument('--task', type=str, default=None)
+    parser.add_argument('--hf_use_auth_token', type=str, default=None,
+                        help="Huggingface auth token for downloading datasets; Load from env var if not provided.")
+
     args = parser.parse_args()
     if args.hf_use_auth_token is None:
         args.hf_use_auth_token = os.environ.get("HF_USE_AUTH_TOKEN", None)

@@ -1,5 +1,7 @@
+"""
+  Unzip the data files and convert them to json format.
+"""
 import os
-import sys
 import json
 import argparse
 import pickle
@@ -10,7 +12,7 @@ if __name__ == '__main__':
     parser.add_argument('--data_dir', type=str, required=True)
     parser.add_argument('--task', type=str, required=True)
     parser.add_argument('--rm_old', action='store_true')
-    
+
     args = parser.parse_args()
     data_dir = args.data_dir
 

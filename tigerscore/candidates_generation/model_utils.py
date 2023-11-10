@@ -1,12 +1,15 @@
 from transformers import (
-    AutoTokenizer, 
+    AutoTokenizer,
     AutoModelForSeq2SeqLM,
     AutoModelForCausalLM,
     AutoModel,
     VisionEncoderDecoderModel,
     ViTImageProcessor,
 )
-decoder_only_models = ["alpaca", "llama", "opt", "bloom", "gpt", "vicuna","koala","Wizard","stablelm"]
+decoder_only_models = ["alpaca", "llama", "opt", "bloom",
+                       "gpt", "vicuna", "koala", "Wizard", "stablelm"]
+
+
 def build_model(model_type, model_name, **kwargs):
     """
         Build the model from the model name
@@ -22,24 +25,29 @@ def build_model(model_type, model_name, **kwargs):
 
     return model
 
+
 def build_tokenizer(model_name, **kwargs):
     """
         Build the tokenizer from the model name
     """
 
     if "vicuna" in model_name:
-        tokenizer = AutoTokenizer.from_pretrained(model_name, padding_side="left", use_fast=False, **kwargs)
+        tokenizer = AutoTokenizer.from_pretrained(
+            model_name, padding_side="left", use_fast=False, **kwargs)
     # elif "Wizard" in model_name:
     #     tokenizer = AutoTokenizer.from_pretrained(model_name, padding_side="left", return_token_type_ids=False, **kwargs)
     elif any([x in model_name for x in decoder_only_models]):
         # padding left
-        tokenizer = AutoTokenizer.from_pretrained(model_name, padding_side="left", **kwargs)
+        tokenizer = AutoTokenizer.from_pretrained(
+            model_name, padding_side="left", **kwargs)
     else:
-        tokenizer = AutoTokenizer.from_pretrained(model_name, **kwargs)#, use_fast=False)
+        tokenizer = AutoTokenizer.from_pretrained(
+            model_name, **kwargs)  # , use_fast=False)
     if tokenizer.pad_token is None:
         tokenizer.pad_token = tokenizer.eos_token
         tokenizer.pad_token_id = tokenizer.eos_token_id
     return tokenizer
+
 
 def build_processor(model_type, model_name, **kwargs):
     """

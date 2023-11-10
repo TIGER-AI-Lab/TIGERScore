@@ -18,7 +18,8 @@ StrOrOpenAIObject = Union[str, openai_object.OpenAIObject]
 openai_org = os.getenv("OPENAI_ORG")
 if openai_org is not None:
     openai.organization = openai_org
-    logging.warning(f"Switching to organization: {openai_org} for OAI API key.")
+    logging.warning(
+        f"Switching to organization: {openai_org} for OAI API key.")
 
 
 @dataclasses.dataclass
@@ -46,7 +47,7 @@ def openai_completion(
     max_batches=sys.maxsize,
     return_text=False,
     **decoding_kwargs,
-) -> Union[Union[StrOrOpenAIObject], Sequence[StrOrOpenAIObject], Sequence[Sequence[StrOrOpenAIObject]],]:
+) -> Union[Union[StrOrOpenAIObject, StrOrOpenAIObject], Sequence[StrOrOpenAIObject], Sequence[Sequence[StrOrOpenAIObject]],]:
     """Decode with OpenAI API.
 
     Args:
@@ -84,7 +85,7 @@ def openai_completion(
     prompts = prompts[:max_instances]
     num_prompts = len(prompts)
     prompt_batches = [
-        prompts[batch_id * batch_size : (batch_id + 1) * batch_size]
+        prompts[batch_id * batch_size: (batch_id + 1) * batch_size]
         for batch_id in range(int(math.ceil(num_prompts / batch_size)))
     ]
 
@@ -94,7 +95,8 @@ def openai_completion(
         desc="prompt_batches",
         total=len(prompt_batches),
     ):
-        batch_decoding_args = copy.deepcopy(decoding_args)  # cloning the decoding_args
+        batch_decoding_args = copy.deepcopy(
+            decoding_args)  # cloning the decoding_args
 
         while True:
             try:
@@ -103,7 +105,8 @@ def openai_completion(
                     **batch_decoding_args.__dict__,
                     **decoding_kwargs,
                 )
-                completion_batch = openai.Completion.create(prompt=prompt_batch, **shared_kwargs)
+                completion_batch = openai.Completion.create(
+                    prompt=prompt_batch, **shared_kwargs)
                 choices = completion_batch.choices
 
                 for choice in choices:
@@ -113,8 +116,10 @@ def openai_completion(
             except openai.error.OpenAIError as e:
                 logging.warning(f"OpenAIError: {e}.")
                 if "Please reduce your prompt" in str(e):
-                    batch_decoding_args.max_tokens = int(batch_decoding_args.max_tokens * 0.8)
-                    logging.warning(f"Reducing target length to {batch_decoding_args.max_tokens}, Retrying...")
+                    batch_decoding_args.max_tokens = int(
+                        batch_decoding_args.max_tokens * 0.8)
+                    logging.warning(
+                        f"Reducing target length to {batch_decoding_args.max_tokens}, Retrying...")
                 else:
                     logging.warning("Hit request rate limit; retrying...")
                     time.sleep(sleep_time)  # Annoying rate limit on requests.
@@ -123,7 +128,8 @@ def openai_completion(
         completions = [completion.text for completion in completions]
     if decoding_args.n > 1:
         # make completions a nested list, where each entry is a consecutive decoding_args.n of original entries.
-        completions = [completions[i : i + decoding_args.n] for i in range(0, len(completions), decoding_args.n)]
+        completions = [completions[i: i + decoding_args.n]
+                       for i in range(0, len(completions), decoding_args.n)]
     if is_single_prompt:
         # Return non-tuple if only 1 input and 1 generation.
         (completions,) = completions

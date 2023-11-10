@@ -41,7 +41,7 @@ To directly use tigerscore pipeline, you first need to install it as python pack
 ```bash
 # create enronments
 conda create -n tigerscore python=3.9
-conda activate tigerscore package
+conda activate tigerscore
 # install torch cuda toolkits
 conda install pytorch pytorch-cuda=11.8 -c pytorch -c nvidia
 # install tigerscore python package

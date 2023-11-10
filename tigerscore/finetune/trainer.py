@@ -2,6 +2,8 @@ from typing import Optional
 import os
 from transformers.trainer import *
 from peft import PeftModel
+
+
 class CustomLoraTrainer(Trainer):
     def _save(self, output_dir: Optional[str] = None, state_dict=None):
         # If we are executing this function, we are the process zero, so we don't check for that.
@@ -19,11 +21,14 @@ class CustomLoraTrainer(Trainer):
                     output_dir, state_dict=state_dict, safe_serialization=self.args.save_safetensors
                 )
             else:
-                logger.info("Trainer.model is not a `PreTrainedModel`, only saving its state dict.")
+                logger.info(
+                    "Trainer.model is not a `PreTrainedModel`, only saving its state dict.")
                 if self.args.save_safetensors:
-                    safetensors.torch.save_file(state_dict, os.path.join(output_dir, SAFE_WEIGHTS_NAME))
+                    safetensors.torch.save_file(
+                        state_dict, os.path.join(output_dir, SAFE_WEIGHTS_NAME))
                 else:
-                    torch.save(state_dict, os.path.join(output_dir, WEIGHTS_NAME))
+                    torch.save(state_dict, os.path.join(
+                        output_dir, WEIGHTS_NAME))
         else:
             print("Saving LoRA model...")
             self.model.save_pretrained(
