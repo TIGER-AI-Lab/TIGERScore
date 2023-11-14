@@ -68,16 +68,29 @@ class InstructScore:
         if isinstance(out_ls, str):
             out_ls = [out_ls]
 
+        # translation
         prompt_ls = [
             f'You are evaluating Chinese-to-English Machine translation task. The correct translation is "{ref}". The model generated translation is "{out}". Please identify all errors within each model output, up to a maximum of five. For each error, please give me the corresponding error type, major/minor label, error location of the model generated translation and explanation for the error. Major errors can confuse or mislead the reader due to significant change in meaning, while minor\
          errors don\'t lead to loss of meaning but will be noticed.'
             for ref, out in zip(ref_ls, out_ls)
         ]
+        # # story-gen
+        # prompt_ls = [
+        #     f'You are evaluating story-generation task. The correct story is "{ref}". The model generated story is "{out}". Please identify all errors within each model output, up to a maximum of five. For each error, please give me the corresponding error type, major/minor label, error location of the model generated story and explanation for the error. Major errors can confuse or mislead the reader due to significant change in meaning, while minor\
+        #  errors don\'t lead to loss of meaning but will be noticed.'
+        #     for ref, out in zip(ref_ls, out_ls)
+        # ]
+        # # mathqa
+        # prompt_ls = [
+        #     f'You are evaluating MathQA task. The correct solution is "{ref}". The model generated solution is "{out}". Please identify all errors within each model output, up to a maximum of five. For each error, please give me the corresponding error type, major/minor label, error location of the model generated solution and explanation for the error. Major errors can confuse or mislead the reader due to significant change in meaning, while minor\
+        #  errors don\'t lead to loss of meaning but will be noticed.'
+        #     for ref, out in zip(ref_ls, out_ls)
+        # ]
 
         with torch.no_grad():
             batch_outputs_all = []
             scores_ls_all = []
-            for prompt_batch in tqdm(batchify(prompt_ls, self.batch_size)):
+            for prompt_batch in tqdm(batchify(prompt_ls, self.batch_size), total=(len(prompt_ls) + 1) // self.batch_size):
                 inputs = self.tokenizer(
                     prompt_batch,
                     return_tensors="pt",
