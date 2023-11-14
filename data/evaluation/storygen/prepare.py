@@ -6,7 +6,7 @@ import fire
 
 def main(input_file_path, output_file_path):
 
-    roc_input_file_path = input_file_path + "/benchmark/data/mans_roc.json"
+    roc_input_file_path = input_file_path + "mans_roc.json"
     with open(roc_input_file_path, 'r') as f:
         data = json.load(f)
 
@@ -18,7 +18,7 @@ def main(input_file_path, output_file_path):
                 "model": _k,
                 "decoding_method": "greedy",
                 "text": _v["text"],
-                "score": {"human": np.mean(_v["score"])},
+                "scores": {"human": np.mean(_v["score"])},
             })
         new_data.append({
             "id": key,
@@ -29,7 +29,7 @@ def main(input_file_path, output_file_path):
             "data_source": "roc",
         })
 
-    # wp_input_file_path = input_file_path + "/benchmark/data/mans_wp.json"
+    # wp_input_file_path = input_file_path + "mans_wp.json"
     # with open(wp_input_file_path, 'r') as f:
     #     data = json.load(f)
     # for key, value in data.items():
