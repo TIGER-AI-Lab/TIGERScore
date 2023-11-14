@@ -20,7 +20,7 @@ ${error_analysis}
 Is the error analysis reasonable? Answer me "yes" or "no" only.\
 """
 
-def main(input_file, output_file, model_name="gpt-4", num_samples=None):
+def main(input_file, output_file, model_name="gpt-4", num_samples=None, num_procs=5):
     with open(input_file, "r") as f:
         if input_file.endswith(".jsonl"):
             input_data = [json.loads(line) for line in f]
@@ -47,7 +47,7 @@ def main(input_file, output_file, model_name="gpt-4", num_samples=None):
         
     prompts = list(map(process_data, input_data))
     print(prompts[0])
-    completions = openai_completions(prompts, model_name=model_name)
+    completions = openai_completions(prompts, model_name=model_name, num_procs=num_procs, use_cache=False)
     print(f"Finished generating {len(completions['completions'])} completions.")
     print(f"Total prices: {sum(completions['price_per_example'])}")
     for i, completion in enumerate(completions['completions']):
