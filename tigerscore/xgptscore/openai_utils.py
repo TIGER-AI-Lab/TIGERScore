@@ -252,7 +252,9 @@ def _openai_completion_helper(
         to_query_prompt_batch = [_prompt_to_chatml(
             prompt) for prompt in to_query_prompt_batch]
 
+    # global now_cand
     # now_cand = ""
+    # global retry_times 
     # retry_times = 0
     if len(to_query_prompt_batch) != 0:
         while True:
@@ -306,7 +308,7 @@ def _openai_completion_helper(
                         logging.warning(prompt_batch)
                     # if now_cand == to_query_prompt_batch[0]:
                     #     retry_times += 1
-                    #     if retry_times > 5:
+                    #     if retry_times > 10:
                     #         logging.exception("Too many retries. Error:")
                     #         to_query_prompt_batch = to_query_prompt_batch[1:]
                     #         retry_times = 0

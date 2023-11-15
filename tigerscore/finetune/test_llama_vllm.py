@@ -44,7 +44,7 @@ For each error you give in the response, please also elaborate the following inf
 - error aspect it belongs to.
 - explanation why it's an error, and the correction suggestions.
 - severity of the error ("Major" or "Minor"). 
-- reduction of score (an interger between 1 and 5 given the severity of the error)
+- reduction of score (between 0.5 and 5 given the severity of the error)
 
 Your evaluation output:
 """
