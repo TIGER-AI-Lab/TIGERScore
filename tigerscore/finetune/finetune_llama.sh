@@ -10,13 +10,11 @@
 nvidia-smi
 MASTER_PORT=4637
 MODEL_DIR="meta-llama/Llama-2-7b-hf" # 13b
-run_name="" # change this every time you run a new experiment
+run_name="llama.train_mix.check_ChatGPT.clean" # change this every time you run a new experiment
 
 output_dir="../../outputs/${MODEL_DIR}/${run_name}"
 
-
-
-train_data_path="../../data/synthesis/all_synthesis_0919.json" # 
+train_data_path="../../data/train_mix.check_ChatGPT.clean.format_v2.json" # 
 
 mkdir -p ${output_dir}
 
@@ -63,7 +61,7 @@ export CXX=g++;
 #     --seed 42 \
 #     --is_lora False \
 
-deepspeed \
+CUDA_VISIBLE_DEVICES=0,1,2,3 deepspeed \
     --num_gpus 4 \
     --num_nodes 1 \
     --master_port ${MASTER_PORT} \
@@ -73,9 +71,9 @@ deepspeed \
     --bf16 True \
     --output_dir ${output_dir} \
     --num_train_epochs 3 \
-    --per_device_train_batch_size 2 \
+    --per_device_train_batch_size 1 \
     --per_device_eval_batch_size 2 \
-    --gradient_accumulation_steps 16 \
+    --gradient_accumulation_steps 32 \
     --model_max_length 1024 \
     --evaluation_strategy "no" \
     --save_strategy "epoch" \
