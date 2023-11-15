@@ -302,7 +302,7 @@ def _openai_completion_helper(
                 else:
                     if "rate limit" in str(e).lower():
                         pass
-                        print(e)
+                        # print(e)
                     else:
                         logging.warning(
                             f"Unknown error {e}. \n It's likely a rate limit so we are retrying...")

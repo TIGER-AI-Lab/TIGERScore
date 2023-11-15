@@ -233,7 +233,6 @@ def _openai_completion_helper(
     rpm: int = 10,
     **kwargs,
 ):
-    start_time = time.time()
     client_kwargs = dict()
 
     # randomly select orgs
@@ -287,8 +286,15 @@ def _openai_completion_helper(
                         "messages": to_query_prompt_batch[0],
                         **curr_kwargs
                     }
-
+    
+                    start_time = time.time()
                     response = requests.post(url, headers=headers, data=json.dumps(data))
+                    end_time = time.time()
+                    total_time = end_time - start_time
+                    sleep_time = max(0, 60 / rpm - total_time)
+                    print(f"Sleeping {sleep_time} seconds...")
+                    time.sleep(sleep_time)
+                    
                     completion_batch = json.loads(response.text)
                     if "choices" not in completion_batch:
                         raise Exception(response.text)
@@ -365,11 +371,6 @@ def _openai_completion_helper(
     else:
         responses = [dict(content=choice['message']['content'], total_tokens=batch_avg_tokens) for choice in choices]
     
-    end_time = time.time()
-    total_time = end_time - start_time
-    sleep_time = max(0, 60 / rpm - total_time)
-    print(f"Sleeping {sleep_time} seconds...")
-    time.sleep(sleep_time)
     return responses
 
 

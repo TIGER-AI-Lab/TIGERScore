@@ -47,7 +47,7 @@ def main(input_file, output_file, model_name="gpt-4", num_samples=None, num_proc
         
     prompts = list(map(process_data, input_data))
     print(prompts[0])
-    completions = openai_completions(prompts, model_name=model_name, num_procs=num_procs)
+    completions = openai_completions(prompts, model_name=model_name, num_procs=num_procs, use_cache=True)
     print(f"Finished generating {len(completions['completions'])} completions.")
     print(f"Total prices: {sum(completions['price_per_example'])}")
     for i, completion in enumerate(completions['completions']):
