@@ -9,13 +9,14 @@ model_name="meta-llama/Llama-2-7b-hf"
 outputs_dir=""
 
 # outputs_dir="../../outputs"
-checkpoint_name="model_len_1024_mix_real_world"
-checkpoint_path="${outputs_dir}/${model_name}/${checkpoint_name}/checkpoint-532"
+checkpoint_name="ref"
+# checkpoint_path="${outputs_dir}/${model_name}/${checkpoint_name}/checkpoint-532"
+checkpoint_path="TIGER-Lab/TIGERScore-13B-V1.0"
 
-human_score_names="rank"
-data_path="../../data/evaluation/lfqa/test.json"
-output_path="${data_path}.llama_2_7b_${checkpoint_name}_vanilla.output"
-python test_llama_vllm.py \
+human_score_names="gpt_rank_score"
+data_path="../../data/evaluation/lfqa/test_data_prepared.json"
+output_path="${data_path}.llama_2_7b_${checkpoint_name}_test.output"
+python test_llama_vllm_ref.py \
     --model_name_or_path ${checkpoint_path} \
     --task "long-form QA" \
     --data_path ${data_path} \
@@ -26,9 +27,9 @@ python test_llama_vllm.py \
 
 task="instruction-following"
 human_score_names="gpt_rank_score"
-data_path="../../data_bak/llm-blender/mix-instruct/test_data_prepared_300.json"
-output_path="${data_path}.llama_2_7b_${checkpoint_name}_vanilla.output"
-python test_llama_vllm.py \
+data_path="../../data/evaluation/instruct/just-eval-instruct/test_data_prepared.json"
+output_path="${data_path}.llama_2_7b_${checkpoint_name}_test.output"
+python test_llama_vllm_ref.py \
     --model_name_or_path ${checkpoint_path} \
     --task ${task} \
     --data_path ${data_path} \
@@ -39,9 +40,9 @@ python test_llama_vllm.py \
 
 task="mathQA"
 human_score_names="accuracy"
-data_path="../../data_bak/mathqa/gsm8k_vanilla_output_prepared.json"
-output_path="${data_path}.llama_2_7b_${checkpoint_name}_vanilla.output"
-python test_llama_vllm.py \
+data_path="../../data/evaluation/mathqa/gsm8k/test_data_prepared.json"
+output_path="${data_path}.llama_2_7b_${checkpoint_name}_test.output"
+python test_llama_vllm_ref.py \
     --model_name_or_path ${checkpoint_path} \
     --task ${task} \
     --data_path ${data_path} \
@@ -54,9 +55,9 @@ python test_llama_vllm.py \
 # mtme test mqm
 task="translation"
 human_score_names="mqm"
-data_path="../../data/wmt22/zh-en/eval_data.random_2.json"
-output_path="${data_path}.llama_2_7b_${checkpoint_name}_vanilla.output"
-python test_llama_vllm.py \
+data_path="../../data/evaluation/translation/wmt22/zh-en/eval_data.json"
+output_path="${data_path}.llama_2_7b_${checkpoint_name}_test.output"
+python test_llama_vllm_ref.py \
     --model_name_or_path ${checkpoint_path} \
     --task ${task} \
     --data_path ${data_path} \
@@ -68,8 +69,9 @@ python test_llama_vllm.py \
 # sum test relevance
 task="summarization"
 human_score_names="coherence,consistency,fluency,relevance"
-output_path="${data_path}.llama_2_7b_${checkpoint_name}_vanilla.output"
-python test_llama_vllm.py \
+data_path="../../data/evaluation/summarization/summeval/test_data_prepared.json"
+output_path="${data_path}.llama_2_7b_${checkpoint_name}_test.output"
+python test_llama_vllm_ref.py \
     --model_name_or_path ${checkpoint_path} \
     --task ${task} \
     --data_path ${data_path} \
@@ -81,9 +83,9 @@ python test_llama_vllm.py \
 # d2t test Correctness
 task="data2text"
 human_score_names="Correctness,DataCoverage,Fluency,Relevance,TextStructure"
-data_path="../../data_bak/webnlg/webnlg2020_gen_with_scores.json"
-output_path="${data_path}.llama_2_7b_${checkpoint_name}_vanilla.output"
-python test_llama_vllm.py \
+data_path="../../data/evaluation/d2t/webnlg_2020/test_data_prepared.json"
+output_path="${data_path}.llama_2_7b_${checkpoint_name}_test.output"
+python test_llama_vllm_ref.py \
     --model_name_or_path ${checkpoint_path} \
     --task ${task} \
     --data_path ${data_path} \

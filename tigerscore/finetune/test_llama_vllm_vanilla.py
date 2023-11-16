@@ -172,7 +172,10 @@ def main(args):
                 cand['eval_output'] = eval_outputs[cand_idx]
                 score_reductions = re.findall(
                     r"(?<=with a total score reduction of )(\d+\.\d+|\d+)", eval_outputs[cand_idx])
-                cand['vanilla_xgptscore'] = -float(score_reductions[0])
+                if len(score_reductions) > 0:
+                    cand['vanilla_xgptscore'] = -float(score_reductions[0])
+                else:
+                    cand['vanilla_xgptscore'] = None
                 cand_idx += 1
 
         with open(output_file, 'w') as f:

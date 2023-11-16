@@ -136,18 +136,37 @@ def main(args):
         formatted_data = []
         for item in input_data:
             inst = Template(FINETUNE_INST).substitute(task=args.task)
-            input_ = Template(FINETUNE_INPUT).substitute(
-                task=args.task,
-                generation_instruction=item['instruction'],
-                input_context=item['input'],
-                hypothesis_output=item['output'],
-            )
-            if "candidates" in item:
-                del item["candidates"]
-            formatted_data.append({
-                "instruction": inst,
-                "input": input_,
-            })
+            refs = item['output'] if "output" in item else item["refs"]
+            if isinstance(refs,list):
+                item["candidates"] = []
+                for ref in refs:
+                    item["candidates"].append(
+                        {
+                            "text":ref,
+                            "source":"unknown",
+                            "scores":{}
+                        }
+                    )
+            else:
+                item["candidates"].append(
+                        {
+                            "text":refs,
+                            "source":"unknown",
+                            "scores":{}
+                        }
+                    )
+            for cand in item['candidates']:
+                inst = Template(FINETUNE_INST).substitute(task=args.task)
+                input_ = Template(FINETUNE_INPUT).substitute(
+                    task=args.task,
+                    generation_instruction=item['instruction'],
+                    input_context=item['input'],
+                    hypothesis_output=cand['text'],
+                )
+                formatted_data.append({
+                    "instruction": inst,
+                    "input": input_,
+                })
             prompt_sources = [example['instruction'] + '\n' +
                               example['input'] for example in formatted_data]
             prompt_sources = [x.strip(' \n') + "\n" for x in prompt_sources]
@@ -165,11 +184,14 @@ def main(args):
                 generated_text = output.outputs[0].text
                 eval_outputs.append(generated_text)
 
+        cand_idx = 0
         for idx, (item, eval_output) in enumerate(zip(input_data, eval_outputs)):
-            item['eval_output'] = eval_outputs[idx]
-            score_reductions = re.findall(
-                r"(?<=\nScore reduction \d+: )(\d+\.\d+|\d+)", eval_outputs[idx])
-            item['xgptscore'] = -sum(map(float, score_reductions))
+            for cand in item['candidates']:
+                cand['eval_output'] = eval_outputs[cand_idx]
+                score_reductions = re.findall(
+                    r"(?<=\nScore reduction \d+: )(\d+\.\d+|\d+)", eval_outputs[cand_idx])
+                cand['xgptscore'] = -sum(map(float, score_reductions))
+                cand_idx += 1
 
         with open(output_file, 'w') as f:
             json.dump(input_data, f, indent=4, ensure_ascii=False)
@@ -178,19 +200,21 @@ def main(args):
         with open(output_file, 'r') as f:
             input_data = json.load(f)
         for ex in input_data:
-            score_reductions = re.findall(
-                r"(?<=\nScore reduction \d+: )(\d+\.\d+|\d+)", ex['eval_output'])
-            ex['xgptscore'] = -sum(map(float, score_reductions))
+            for cand in ex['candidates']:
+                score_reductions = re.findall(
+                    r"(?<=\nScore reduction \d+: )(\d+\.\d+|\d+)", cand['eval_output'])
+                cand['xgptscore'] = -sum(map(float, score_reductions))
         with open(output_file, 'w') as f:
             json.dump(input_data, f, indent=4, ensure_ascii=False)
         logging.info("Loaded eval results from {}".format(output_file))
     # Compute correlation
+    xgptscores = []
     for item in input_data:
         xgptscores.append(item['xgptscore'])
-    logging.info("Absolute score sum: {}".format(abs(sum(xgptscores))))
-    logging.info("Average score: {}".format(sum(xgptscores) / len(xgptscores)))
-    logging.info("Median score: {}".format(np.median(xgptscores)))
-    logging.info("Standard deviation: {}".format(np.std(list(map(abs, xgptscores)))))
+    print("Absolute score sum: {}".format(abs(sum(xgptscores))))
+    print("Average score: {}".format(sum(xgptscores) / len(xgptscores)))
+    print("Median score: {}".format(np.median(xgptscores)))
+    print("Standard deviation: {}".format(np.std(list(map(abs, xgptscores)))))
 
 
 

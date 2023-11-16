@@ -4,8 +4,8 @@ import os
 
 input_file1 = "./test_freq.json"
 input_file2 = "./test_rare.json"
-input_file3 = "./valid_freq.json"
-input_file4 = "./valid_rare.json"
+# input_file3 = "./valid_freq.json"
+# input_file4 = "./valid_rare.json"
 
 score_func = {
     "Poor": 1,
@@ -52,7 +52,7 @@ def get_data(input_file):
 
 get_data(input_file1)
 get_data(input_file2)
-get_data(input_file3)
-get_data(input_file4)
+# get_data(input_file3)
+# get_data(input_file4)
 with open("test.json", "w") as f:
     json.dump(datas, f, indent=4, ensure_ascii=False)
