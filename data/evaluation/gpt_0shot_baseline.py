@@ -3,9 +3,9 @@ import random
 import logging
 import sys
 from pathlib import Path
-sys.path.append(str(Path(__file__).parent.parent))
-from xgptscore.xgptscore import xgptscore
-from xgptscore.process_utils import XPGTItem
+sys.path.append(str(Path(__file__).parent.parent.parent))
+from tigerscore.xgptscore.xgptscore import xgptscore
+from tigerscore.xgptscore.process_utils import XPGTItem
 logging.basicConfig(level=logging.warning)
 import fire
 import re
@@ -19,7 +19,7 @@ def main(
     data_path: str,
     output_file: str = None,
     xgptscore_mode: str = "zero_shot_baseline",
-    model_name: str = "ChatGPT",
+    model_name: str = "gpt-4",
     overwrite: bool = False,
     max_size: int = None,
     seed: int = 42,
@@ -36,7 +36,7 @@ def main(
     
     input_file=Path(input_file)
     if not output_file:
-        output_file = Path(data_path.stem + "_0shot_{}.json".format(model_name))
+        output_file = Path(str(data_path.parent/data_path.stem) + "_0shot_{}.json".format(model_name))
         if not output_file.parent.parent.exists():
             output_file.parent.parent.mkdir(parents=True)
         if not output_file.parent.exists():
@@ -64,7 +64,7 @@ def main(
                 instruction=item['instruction'],
                 input=item['input'],
                 hypo_output=cand['text'],
-                ref_output=item["output"]
+                ref_output="a"
             ))
 
     if not output_file.exists() or overwrite:

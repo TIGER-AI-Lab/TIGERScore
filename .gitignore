@@ -161,3 +161,4 @@ cython_debug/
 #.idea/
 tigerscore/xgptscore/cache/
 jobs/
+test_data_prepared_0shot_gpt-4.json
