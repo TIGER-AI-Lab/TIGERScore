@@ -371,6 +371,7 @@ def _openai_completion_helper(
     else:
         responses = [dict(content=choice['message']['content'], total_tokens=batch_avg_tokens) for choice in choices]
     
+
     return responses
 
 

@@ -87,7 +87,7 @@ def main(
             "input": input_,
             "output": output_,
         })
-
+        
     with open(output_file, 'w') as f:
         json.dump(formatted_data, f, indent=4, ensure_ascii=False)
     logging.info(f"Saved to {output_file}")
