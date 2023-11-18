@@ -187,3 +187,4 @@ jobs/
 /data/additional
 /tigerscore/eval_scripts/eval_inst_baseline.sh
 /data/evaluation/translation
+/data/evaluation
