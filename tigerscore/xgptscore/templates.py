@@ -684,3 +684,15 @@ JSON Format for Output:
 }}
 """
 ]
+
+ZERO_SHOT_BASELINE_TEMPLATE = [
+"""\
+${generation_instruction}
+${input_context}
+
+Model-generated Output:
+${hypothesis_output}
+
+
+You should rate Model-generated Output on a scale from 0.5 (worst) to 10 (best).
+"""]

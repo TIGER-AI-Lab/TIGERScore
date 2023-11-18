@@ -25,5 +25,7 @@ python format_data_v2.py --input_file "${INPUT_FILE}" --output_file "${OUTPUT_FI
 
 INPUT_FILE="../../data/additional/alpaca_cleaned/alpaca_cleaned.v2.story.1k.gen.extracted.jsonl"
 OUTPUT_FILE="../../data/additional/alpaca_cleaned/alpaca_cleaned.v2.story.1k.gen.extracted.format_v2.jsonl"
+# INPUT_FILE="TIGERScore/data/32k_final.json"
+# OUTPUT_FILE="TIGERScore/data/32k_final_distill.json"
 python format_data_v2.py --input_file "${INPUT_FILE}" --output_file "${OUTPUT_FILE}" \
         --max_eval_input_length 600 --max_eval_hyp_length 400 --max_eval_output_length 400

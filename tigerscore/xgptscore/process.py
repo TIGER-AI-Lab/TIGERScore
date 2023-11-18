@@ -847,3 +847,36 @@ def mathqa_process(item: XPGTItem):
     messages[1]['postprocess'] = default_postprocess
     messages[2]['postprocess'] = json_postprocess
     return messages
+
+
+@process_register()
+def zero_shot_baseline_process(item:XPGTItem):
+    """
+    A prompt template for Multi Aspects Quality Estimation 
+    Args:
+        task: a task dict
+        inst (str): the instruction
+        input (str): the input context
+        ref_output (str): the reference output
+        hypo_output (str): the hypothesis output
+    Returns:
+        results (List[dict]):
+            List of prompt messages, each message contains the role and content, map_func and do_query.
+                map_func: the function that map the current message content and the previous messages to the next message content
+                do_query: whether to query the model for the current message
+    """
+    sys_prompt = Template(CHATGPT_SYSTEM_MESSAGE).substitute(task=item.task)
+    io_prompt = Template(ZERO_SHOT_BASELINE_TEMPLATE[0]).substitute(
+        input_context=item.input,
+        generation_instruction=item.instruction,
+        hypothesis_output=item.hypo_output,
+    )
+    messages = [
+        {"role": "system", "content": sys_prompt, "do_query": False},
+        {"role": "user", "content": io_prompt, "do_query": True},
+    ]
+    for msg in messages:
+        msg['map_func'] = default_msg_map
+    messages[0]['postprocess'] = None
+    messages[1]['postprocess'] = default_postprocess
+    return messages

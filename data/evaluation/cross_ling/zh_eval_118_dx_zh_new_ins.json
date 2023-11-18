@@ -1,0 +1,872 @@
+[
+    {
+        "id": "test_0",
+        "instruction": "Generate a summary for the following dialogue. Then translate the summary from English to Chinese.",
+        "output": "Dawson女士为#Person1#做了一份关于禁止在办公室使用即时消息程序的口述记录。他们争论了这道命令的合理性，但#Person1#仍然坚持这样。",
+        "task": "cross-lingual summarization",
+        "candidates": [
+            {
+                "model": "2Step",
+                "text": "#person1#让donson夫人发了一份备忘录。#person1#告诉donson夫人,所有办公室的通讯只限于电子邮件和官方备忘录,这适用于内部和外部的通讯。",
+                "scores": {
+                    "Fluency": 4.0,
+                    "Coherence": 4,
+                    "Consistency": 5.0,
+                    "Relevance": 5.0
+                }
+            },
+            {
+                "model": "S-T",
+                "text": "#person1#让donson小姐下台。#person1#告诉donson小姐,所有办公室的通讯只限于电子邮件和官方备忘录,这适用于内部和外部的通讯。",
+                "scores": {
+                    "Fluency": 4.0,
+                    "Coherence": 4.0,
+                    "Consistency": 2.0,
+                    "Relevance": 5.0
+                }
+            }
+        ],
+        "input": "#Person1#: Ms. Dawson, I need you to take a dictation for me.\n#Person2#: Yes, sir...\n#Person1#: This should go out as an intra-office memorandum to all employees by this afternoon. Are you ready?\n#Person2#: Yes, sir. Go ahead.\n#Person1#: Attention all staff... Effective immediately, all office communications are restricted to email correspondence and official memos. The use of Instant Message programs by employees during working hours is strictly prohibited.\n#Person2#: Sir, does this apply to intra-office communications only? Or will it also restrict external communications?\n#Person1#: It should apply to all communications, not only in this office between employees, but also any outside communications.\n#Person2#: But sir, many employees use Instant Messaging to communicate with their clients.\n#Person1#: They will just have to change their communication methods. I don't want any - one using Instant Messaging in this office. It wastes too much time! Now, please continue with the memo. Where were we?\n#Person2#: This applies to internal and external communications.\n#Person1#: Yes. Any employee who persists in using Instant Messaging will first receive a warning and be placed on probation. At second offense, the employee will face termination. Any questions regarding this new policy may be directed to department heads.\n#Person2#: Is that all?\n#Person1#: Yes. Please get this memo typed up and distributed to all employees before 4 pm."
+    },
+    {
+        "id": "test_1",
+        "instruction": "Generate a summary for the following dialogue. Then translate the summary from English to Chinese.",
+        "output": "#Person2#向#Person1#抱怨交通拥堵，#Person1#建议放弃开车，改乘公共交通工具。",
+        "task": "cross-lingual summarization",
+        "candidates": [
+            {
+                "model": "2Step",
+                "text": "#person2#又一次堵车了。#person1#建议#person2#使用公共交通系统去上班。#person2#认为这对#person2#和环境不有益。",
+                "scores": {
+                    "Fluency": 3.0,
+                    "Coherence": 4,
+                    "Consistency": 5.0,
+                    "Relevance": 5.0
+                }
+            },
+            {
+                "model": "S-T",
+                "text": "#person2#又堵车了。#person1#建议#person2#去上班。#person2#认为这对#person2#和环境无好处。",
+                "scores": {
+                    "Fluency": 3.0,
+                    "Coherence": 4.0,
+                    "Consistency": 2.0,
+                    "Relevance": 5.0
+                }
+            }
+        ],
+        "input": "#Person1#: You're finally here! What took so long?\n#Person2#: I got stuck in traffic again. There was a terrible traffic jam near the Carrefour intersection.\n#Person1#: It's always rather congested down there during rush hour. Maybe you should try to find a different route to get home.\n#Person2#: I don't think it can be avoided, to be honest.\n#Person1#: perhaps it would be better if you started taking public transport system to work.\n#Person2#: I think it's something that I'll have to consider. The public transport system is pretty good.\n#Person1#: It would be better for the environment, too.\n#Person2#: I know. I feel bad about how much my car is adding to the pollution problem in this city.\n#Person1#: Taking the subway would be a lot less stressful than driving as well.\n#Person2#: The only problem is that I'm going to really miss having the freedom that you have with a car.\n#Person1#: Well, when it's nicer outside, you can start biking to work. That will give you just as much freedom as your car usually provides.\n#Person2#: That's true. I could certainly use the exercise!\n#Person1#: So, are you going to quit driving to work then?\n#Person2#: Yes, it's not good for me or for the environment."
+    },
+    {
+        "id": "test_2",
+        "instruction": "Generate a summary for the following dialogue. Then translate the summary from English to Chinese.",
+        "output": "#Person1#和Kate聊到Masha和Hero已经离婚。Kate对此感到很惊讶，因为她觉得他们很般配。",
+        "task": "cross-lingual summarization",
+        "candidates": [
+            {
+                "model": "2Step",
+                "text": "#person1#告诉kate,masha和hero正在离婚。kate觉得这令人惊讶。",
+                "scores": {
+                    "Fluency": 4.0,
+                    "Coherence": 4,
+                    "Consistency": 3.0,
+                    "Relevance": 4.0
+                }
+            },
+            {
+                "model": "S-T",
+                "text": "#person1#告诉kate,masha和Hero正在离婚。kate觉得这很惊讶。",
+                "scores": {
+                    "Fluency": 3.0,
+                    "Coherence": 4.0,
+                    "Consistency": 3.0,
+                    "Relevance": 4.0
+                }
+            }
+        ],
+        "input": "#Person1#: Kate, you never believe what's happened.\n#Person2#: What do you mean?\n#Person1#: Masha and Hero are getting divorced.\n#Person2#: You are kidding. What happened?\n#Person1#: Well, I don't really know, but I heard that they are having a separation for 2 months, and filed for divorce.\n#Person2#: That's really surprising. I always thought they are well matched. What about the kids? Who get custody?\n#Person1#: Masha, it seems quiet and makable, no quarrelling about who get the house and stock and then contesting the divorce with other details worked out.\n#Person2#: That's the change from all the back stepping we usually hear about. Well, I still can't believe it, Masha and Hero, the perfect couple. When would they divorce be final?\n#Person1#: Early in the New Year I guess."
+    },
+    {
+        "id": "test_3",
+        "instruction": "Generate a summary for the following dialogue. Then translate the summary from English to Chinese.",
+        "output": "#Person1#参加Brian的生日派对。Brian认为#Person1#美丽迷人。",
+        "task": "cross-lingual summarization",
+        "candidates": [
+            {
+                "model": "2Step",
+                "text": "#person1#来到brian的生日派对。#person1#和brian跳舞,并赞扬#person1#的裙子和项链。",
+                "scores": {
+                    "Fluency": 3.0,
+                    "Coherence": 4,
+                    "Consistency": 2.0,
+                    "Relevance": 5.0
+                }
+            },
+            {
+                "model": "S-T",
+                "text": "#person1#来到brian的生日派对。#person1#和brian跳舞,并赞扬#person1#的裙子和项链。",
+                "scores": {
+                    "Fluency": 3.0,
+                    "Coherence": 4.0,
+                    "Consistency": 2.0,
+                    "Relevance": 5.0
+                }
+            }
+        ],
+        "input": "#Person1#: Happy Birthday, this is for you, Brian.\n#Person2#: I'm so happy you remember, please come in and enjoy the party. Everyone's here, I'm sure you have a good time.\n#Person1#: Brian, may I have a pleasure to have a dance with you?\n#Person2#: Ok.\n#Person1#: This is really wonderful party.\n#Person2#: Yes, you are always popular with everyone. and you look very pretty today.\n#Person1#: Thanks, that's very kind of you to say. I hope my necklace goes with my dress, and they both make me look good I feel.\n#Person2#: You look great, you are absolutely glowing.\n#Person1#: Thanks, this is a fine party. We should have a drink together to celebrate your birthday"
+    },
+    {
+        "id": "test_4",
+        "instruction": "Generate a summary for the following dialogue. Then translate the summary from English to Chinese.",
+        "output": "#Person1#对奥林匹克体育场的规模、可容纳人数和室内设计感到惊讶。",
+        "task": "cross-lingual summarization",
+        "candidates": [
+            {
+                "model": "2Step",
+                "text": "#person2#向#person1#介绍了大奥林匹克公园。",
+                "scores": {
+                    "Fluency": 5.0,
+                    "Coherence": 5,
+                    "Consistency": 4.0,
+                    "Relevance": 5.0
+                }
+            },
+            {
+                "model": "S-T",
+                "text": "#person2#向#person1#介绍了大奥林匹克公园。",
+                "scores": {
+                    "Fluency": 5.0,
+                    "Coherence": 5.0,
+                    "Consistency": 4.0,
+                    "Relevance": 5.0
+                }
+            }
+        ],
+        "input": "#Person1#: This Olympic park is so big!\n#Person2#: Yes. Now we are in the Olympic stadium, the center of this park.\n#Person1#: Splendid! When is it gonna be finished?\n#Person2#: The whole stadium is to be finished this June.\n#Person1#: How many seats are there in the stand?\n#Person2#: Oh, there are 5000 seats in total.\n#Person1#: I didn ' t know it would be so big!\n#Person2#: It is! Look there, those are the tracks. And the jumping pit is over there.\n#Person1#: Ah... I see. Hey, look the sign here, No climbing.\n#Person2#: We put many signs with English translations for foreign visitors."
+    },
+    {
+        "id": "test_5",
+        "instruction": "Generate a summary for the following dialogue. Then translate the summary from English to Chinese.",
+        "output": "#Person1#想创业，但#Person2#提醒#Person1#创业非常麻烦。#Person2#把商业计划书所需的要点一一告诉了#Person1#，#Person1#决定暂时还是继续原来的工作。",
+        "task": "cross-lingual summarization",
+        "candidates": [
+            {
+                "model": "2Step",
+                "text": "#person1#想建立#person1#的公司。#person2#建议#person1#起草一份业务计划,找一些投资者,并开始为#person1#工作。#person1#觉得这很难,想坚持#person1#的旧工作。",
+                "scores": {
+                    "Fluency": 3.0,
+                    "Coherence": 2,
+                    "Consistency": 2.0,
+                    "Relevance": 5.0
+                }
+            },
+            {
+                "model": "S-T",
+                "text": "#person1#想建立#person1#的公司。#person2#建议#person1#起起一份业务计划,找一些投资者,并开始为#person1#工作。#person1#认为这很艰难,想坚持#person1#的工作。",
+                "scores": {
+                    "Fluency": 2.0,
+                    "Coherence": 2.0,
+                    "Consistency": 2.0,
+                    "Relevance": 5.0
+                }
+            }
+        ],
+        "input": "#Person1#: I've had it! I am done working for a company that is taking me nowhere!\n#Person2#: So what are you gonna do? Just quit?\n#Person1#: That's exactly what I am going to do! I have decided to create my own company! I am going to write up a business plan, get some investors and start working for myself!\n#Person2#: Have you ever written up a business plan before?\n#Person1#: Well, no, it can't be that hard! I mean, all you have to do is explain your business, how you are going to do things and that's it, right?\n#Person2#: You couldn't be more wrong! A well written business plan will include an executive summary which highlights the idea of the business in two pages or less. Then you need to describe your company with information such as what type of legal structure it has, history, etc.\n#Person1#: Well, that seems easy enough.\n#Person2#: Wait, there is more! Then you need to introduce and describe your goods or services. What they are and how they are different from competitors? Then comes the hard part, a market analysis. You need to investigate and analyze hundreds of variables! You need to take into consideration socioeconomic factors from GDP per capita to how many children on average the population has! All this information is useful so that you can move on to your strategy and implementation stage, where you will describe in detail how you will actually execute your idea.\n#Person1#: Geez. Is that all?\n#Person2#: Almost, the most important piece of information for your investors will be the financial analysis. Here you will calculate and estimate sales, cash flow and profits. After all, people will want to know when they will begin to see a return on their investment!\n#Person1#: Umm. I think I ' ll just stick to my old job and save myself all the hassle of trying to start up a business!"
+    },
+    {
+        "id": "test_6",
+        "instruction": "Generate a summary for the following dialogue. Then translate the summary from English to Chinese.",
+        "output": "#Person1#怀疑#Person2#患了水痘，想要和#Person2#保持距离。#Person2#认为#Person1#的反应过于夸张。",
+        "task": "cross-lingual summarization",
+        "candidates": [
+            {
+                "model": "2Step",
+                "text": "#person2#感觉痒,结果是 chickenpox了。#person1#认为#person2#是生物危害。",
+                "scores": {
+                    "Fluency": 2.0,
+                    "Coherence": 2,
+                    "Consistency": 2.0,
+                    "Relevance": 3.0
+                }
+            },
+            {
+                "model": "S-T",
+                "text": "#person2#感觉不舒服,结果是 chickenpox。#person1#认为#person2#是生物危害。",
+                "scores": {
+                    "Fluency": 2.0,
+                    "Coherence": 2.0,
+                    "Consistency": 2.0,
+                    "Relevance": 3.0
+                }
+            }
+        ],
+        "input": "#Person1#: What's wrong with you? Why are you scratching so much?\n#Person2#: I feel itchy! I can't stand it anymore! I think I may be coming down with something. I feel lightheaded and weak.\n#Person1#: Let me have a look. Whoa! Get away from me!\n#Person2#: What's wrong?\n#Person1#: I think you have chicken pox! You are contagious! Get away! Don't breathe on me!\n#Person2#: Maybe it's just a rash or an allergy! We can't be sure until I see a doctor.\n#Person1#: Well in the meantime you are a biohazard! I didn't get it when I was a kid and I've heard that you can even die if you get it as an adult!\n#Person2#: Are you serious? You always blow things out of proportion. In any case, I think I'll go take an oatmeal bath."
+    },
+    {
+        "id": "test_7",
+        "instruction": "Generate a summary for the following dialogue. Then translate the summary from English to Chinese.",
+        "output": "#Person2#正在办理退房手续，向#Person1#索要账单。#Person1#一开始给了#Person2#一张错误的账单，但随后将其改正了过来。",
+        "task": "cross-lingual summarization",
+        "candidates": [
+            {
+                "model": "2Step",
+                "text": "#person2#检查账单,发现账单有误。#person1#道歉。",
+                "scores": {
+                    "Fluency": 5.0,
+                    "Coherence": 5,
+                    "Consistency": 3.0,
+                    "Relevance": 3.0
+                }
+            },
+            {
+                "model": "S-T",
+                "text": "#person2#检查账单,发现账单上的错误。#person1#道歉。",
+                "scores": {
+                    "Fluency": 4.0,
+                    "Coherence": 4.0,
+                    "Consistency": 3.0,
+                    "Relevance": 3.0
+                }
+            }
+        ],
+        "input": "#Person1#: Good coming. What can I do for you?\n#Person2#: I'm in Room 309. I'm checking out today. Can I have my bill now?\n#Person1#: Certainly. Please wait a moment. Here you are.\n#Person2#: Thanks. Wait... What's this? The 30 dollar for?\n#Person1#: Excuse me... The charge for your laundry service on Nov. 20th.\n#Person2#: But I did't take any laundry service during my stay here. I think you have added someone else's.\n#Person1#: Ummmm...Sorry, would you mind waiting a moment? We check it with the department concerned.\n#Person2#: No. As long as we get this straightened out.\n#Person1#: I'm very sorry. There has been a mistake. We'll correct the bill. Please take a look.\n#Person2#: Okay, here you are.\n#Person1#: Goodbye."
+    },
+    {
+        "id": "test_8",
+        "instruction": "Generate a summary for the following dialogue. Then translate the summary from English to Chinese.",
+        "output": "#Person1#请求Steven说服他的妻子不要和他离婚。Steven同意了。",
+        "task": "cross-lingual summarization",
+        "candidates": [
+            {
+                "model": "2Step",
+                "text": "#person1#和#person1#的秘书订婚了,他的妻子打算离婚。steven会试图说服她再考虑。",
+                "scores": {
+                    "Fluency": 3.0,
+                    "Coherence": 4,
+                    "Consistency": 2.0,
+                    "Relevance": 4.0
+                }
+            },
+            {
+                "model": "S-T",
+                "text": "#person1#和#person1#的秘书订婚了,他的妻子打算离婚他。steven会试图说服她再考虑一下。",
+                "scores": {
+                    "Fluency": 2.0,
+                    "Coherence": 3.0,
+                    "Consistency": 2.0,
+                    "Relevance": 4.0
+                }
+            }
+        ],
+        "input": "#Person1#: Steven, I need badly your help.\n#Person2#: What's the matter?\n#Person1#: My wife has found that I have an affair with my secretary, and now she is going to divorce me.\n#Person2#: How could you cheat on your wife? You have been married for ten years.\n#Person1#: Yes, I know I'm wrong. But I swear that the affair lasts only for two months. And I still love my wife. I couldn't live without her.\n#Person2#: I will try my best to persuade her to reconsider the divorce. But are you sure that from now on you will be faithful to her forever?\n#Person1#: Yes, I swear."
+    },
+    {
+        "id": "test_9",
+        "instruction": "Generate a summary for the following dialogue. Then translate the summary from English to Chinese.",
+        "output": "#Person1#和#Person2#谈论Abraham Lincoln和他光辉的一生。他们都很钦佩他。",
+        "task": "cross-lingual summarization",
+        "candidates": [
+            {
+                "model": "2Step",
+                "text": "#person1#和#person2#谈论了一个有声称的男人或女性。",
+                "scores": {
+                    "Fluency": 2.0,
+                    "Coherence": 2,
+                    "Consistency": 2.0,
+                    "Relevance": 2.0
+                }
+            },
+            {
+                "model": "S-T",
+                "text": "#person1#和#person2#在谈论一个有声称的男人或女性。",
+                "scores": {
+                    "Fluency": 2.0,
+                    "Coherence": 2.0,
+                    "Consistency": 2.0,
+                    "Relevance": 2.0
+                }
+            }
+        ],
+        "input": "#Person1#: Who stands out in your mind as a man or woman of sound character?\n#Person2#: If I think of famous people, I think of Abraham Lincoln.\n#Person1#: He's the US president, who walked five miles just to give a lady her change, isn't he?\n#Person2#: That's the one. He also was famous for never giving up on his goals.\n#Person1#: That's right. He ran for office quite a few times before he was finally elected.\n#Person2#: And I also admire him for his courage in fighting for equal rights.\n#Person1#: He had great vision, didn't he?\n#Person2#: And humility. I would have liked to meet him personally."
+    },
+    {
+        "id": "test_10",
+        "instruction": "Generate a summary for the following dialogue. Then translate the summary from English to Chinese.",
+        "output": "#Person2#计划去河北旅游，但#Person1#说那里有沙尘暴。",
+        "task": "cross-lingual summarization",
+        "candidates": [
+            {
+                "model": "2Step",
+                "text": "#person1#告诉#person2#,中国北部正经历严重沙尘暴雨。",
+                "scores": {
+                    "Fluency": 3.0,
+                    "Coherence": 3,
+                    "Consistency": 3.0,
+                    "Relevance": 3.0
+                }
+            },
+            {
+                "model": "S-T",
+                "text": "#person1#告诉#person2#中国北部正经历严重沙尘暴雨。",
+                "scores": {
+                    "Fluency": 3.0,
+                    "Coherence": 3.0,
+                    "Consistency": 3.0,
+                    "Relevance": 3.0
+                }
+            }
+        ],
+        "input": "#Person1#: Where are you going for your trip?\n#Person2#: I think Hebei is a good place.\n#Person1#: But I heard the north of China are experiencing severe sandstorms!\n#Person2#: Really?\n#Person1#: Yes, it's said that Hebes was experiencing six degree strong winds.\n#Person2#: How do these storms affect the people who live in these areas?\n#Person1#: The report said the number of people with respiratory tract infections tended to rise after sandstorms. The sand gets into people's noses and throats and creates irritation.\n#Person2#: It sounds that sandstorms are trouble for everybody!\n#Person1#: You are quite right."
+    },
+    {
+        "id": "test_11",
+        "instruction": "Generate a summary for the following dialogue. Then translate the summary from English to Chinese.",
+        "output": "#Person2#来参加Francis的生日派对，并送给他一个遥控汽车模型。",
+        "task": "cross-lingual summarization",
+        "candidates": [
+            {
+                "model": "2Step",
+                "text": "francis邀请#person2#参加他的生日派对。#person2#给了#person2#一个远程汽车模型作为生日礼物。",
+                "scores": {
+                    "Fluency": 2.0,
+                    "Coherence": 2,
+                    "Consistency": 2.0,
+                    "Relevance": 4.0
+                }
+            },
+            {
+                "model": "S-T",
+                "text": "francis邀请#person2#参加生日派对。#person2#送给#person2#一个远程汽车模型作为生日礼物。",
+                "scores": {
+                    "Fluency": 2.0,
+                    "Coherence": 2.0,
+                    "Consistency": 2.0,
+                    "Relevance": 4.0
+                }
+            }
+        ],
+        "input": "#Person1#: Welcome to my birthday party, I am so happy you can come.\n#Person2#: Thanks for inviting me. Here is the gift for you. Happy birthday, Francis! Many more happy and healthy years for you!\n#Person1#: Thank you, shall I open it now?\n#Person2#: Yes, please do.\n#Person1#: Wow, a remote car model and my favorite brand. I really like it. That is so nice of you.\n#Person2#: Yeah, I was really struggling whether I should give you this nice little car. It was the last one they had and I really like it so much myself.\n#Person1#: Typical you, always wanting to keep the best things for yourself. The more I appreciate the gift now."
+    },
+    {
+        "id": "test_12",
+        "instruction": "Generate a summary for the following dialogue. Then translate the summary from English to Chinese.",
+        "output": "Tony因作弊被发现而感到羞愧。Steven告诫他要从中吸取教训，努力学习。",
+        "task": "cross-lingual summarization",
+        "candidates": [
+            {
+                "model": "2Step",
+                "text": "tony因被欺骗而感到不开心。steven鼓励他努力学习。",
+                "scores": {
+                    "Fluency": 3.0,
+                    "Coherence": 3,
+                    "Consistency": 1.0,
+                    "Relevance": 3.0
+                }
+            },
+            {
+                "model": "S-T",
+                "text": "tony感觉不开心,因为被欺骗了。steven鼓励他努力学习。",
+                "scores": {
+                    "Fluency": 3.0,
+                    "Coherence": 3.0,
+                    "Consistency": 1.0,
+                    "Relevance": 3.0
+                }
+            }
+        ],
+        "input": "#Person1#: Hi, Tony. You look unhappy. What's wrong?\n#Person2#: Oh, Steven, I made a big mistake.\n#Person1#: What happened?\n#Person2#: I really wish I hadn't done it.\n#Person1#: What on earth are you talking about?\n#Person2#: I got caught cheating. I feel so ashamed. The teacher saw me and told me I failed.\n#Person1#: What were you thinking?\n#Person2#: You know my father. If I fail, he'll kill me. I have to do well.\n#Person1#: But what you should do is study hard.\n#Person2#: I know. . . I know. . . it's all my fault. I feel awful that I didn't study, and I cheated, and I got caught.\n#Person1#: So long as you learn from your mistakes."
+    },
+    {
+        "id": "test_13",
+        "instruction": "Generate a summary for the following dialogue. Then translate the summary from English to Chinese.",
+        "output": "#Person1#在赶火车。Tom告诉#Person1#不要着急。",
+        "task": "cross-lingual summarization",
+        "candidates": [
+            {
+                "model": "2Step",
+                "text": "#person1#要赶九三十号火车。tom将在火车站碰见#person1#。",
+                "scores": {
+                    "Fluency": 3.0,
+                    "Coherence": 3,
+                    "Consistency": 1.0,
+                    "Relevance": 2.0
+                }
+            },
+            {
+                "model": "S-T",
+                "text": "#person1#必须赶九三十号火车。tom会在火车站碰上#person1#。",
+                "scores": {
+                    "Fluency": 2.0,
+                    "Coherence": 2.0,
+                    "Consistency": 1.0,
+                    "Relevance": 2.0
+                }
+            }
+        ],
+        "input": "#Person1#: What time is it, Tom?\n#Person2#: Just a minute. It's ten to nine by my watch.\n#Person1#: Is it? I had no idea it was so late. I must be off now.\n#Person2#: What's the hurry?\n#Person1#: I must catch the nine-thirty train.\n#Person2#: You've plenty of time yet. The railway station is very close. It won't take more than twenty minutes to get there."
+    },
+    {
+        "id": "test_14",
+        "instruction": "Generate a summary for the following dialogue. Then translate the summary from English to Chinese.",
+        "output": "#Person1#想要调整生活状态，#Person2#建议#Person1#保持乐观和健康。",
+        "task": "cross-lingual summarization",
+        "candidates": [
+            {
+                "model": "2Step",
+                "text": "#person1#向#person2#寻求建议。#person2#建议#person1#多睡,锻炼一下,不要喝太多了。",
+                "scores": {
+                    "Fluency": 2.0,
+                    "Coherence": 3,
+                    "Consistency": 3.0,
+                    "Relevance": 4.0
+                }
+            },
+            {
+                "model": "S-T",
+                "text": "#person1#向#person2#寻求咨询。#person2#建议#person1#多睡,锻炼一下,不要多喝。",
+                "scores": {
+                    "Fluency": 1.0,
+                    "Coherence": 3.0,
+                    "Consistency": 3.0,
+                    "Relevance": 4.0
+                }
+            }
+        ],
+        "input": "#Person1#: I don't know how to adjust my life. Would you give me a piece of advice?\n#Person2#: You look a bit pale, don't you?\n#Person1#: Yes, I can't sleep well every night.\n#Person2#: You should get plenty of sleep.\n#Person1#: I drink a lot of wine.\n#Person2#: If I were you, I wouldn't drink too much.\n#Person1#: I often feel so tired.\n#Person2#: You better do some exercise every morning.\n#Person1#: I sometimes find the shadow of death in front of me.\n#Person2#: Why do you worry about your future? You're very young, and you'll make great contribution to the world. I hope you take my advice."
+    },
+    {
+        "id": "test_15",
+        "instruction": "Generate a summary for the following dialogue. Then translate the summary from English to Chinese.",
+        "output": "#Person1#告诉#Person2# Ruojia结婚了，今晚还要举行派对。#Person2#非常惊讶。他们会一起参加派对并带礼物来祝福她。",
+        "task": "cross-lingual summarization",
+        "candidates": [
+            {
+                "model": "2Step",
+                "text": "#person1#邀请#person2#参加rojia的派对,因为rojia昨天结婚了。#person2#会带一副酒杯和一张贺卡。",
+                "scores": {
+                    "Fluency": 3.0,
+                    "Coherence": 3,
+                    "Consistency": 2.0,
+                    "Relevance": 4.0
+                }
+            },
+            {
+                "model": "S-T",
+                "text": "#person1#邀请#person2#参加[lsep]ia的派对,因为[lsep]ia昨天结婚了。#person2#会带上一副玻璃杯和一张张卡。",
+                "scores": {
+                    "Fluency": 3.0,
+                    "Coherence": 3.0,
+                    "Consistency": 2.0,
+                    "Relevance": 4.0
+                }
+            }
+        ],
+        "input": "#Person1#: Would you like to go to the party tonight?\n#Person2#: Whose party?\n#Person1#: Ruojia's. Don't you know that? Ruojia has got married.\n#Person2#: What! Is she really? I can't believe it!\n#Person1#: Yes. Yesterday.\n#Person2#: Good gracious. That's incredible! I feel so happy for her!\n#Person1#: Yes, me too.\n#Person2#: But how do you know that?\n#Person1#: I saw the news from her twitter. And she sent an email about it.\n#Person2#: What? I didn't receive it!\n#Person1#: Maybe you should check your email.\n#Person2#: Oh yes, I find it. Tonight at her home. Will you bring something?\n#Person1#: Yes, a pair of wineglasses and a card to wish her happy marriage.\n#Person2#: I will buy a tea set."
+    },
+    {
+        "id": "test_16",
+        "instruction": "Generate a summary for the following dialogue. Then translate the summary from English to Chinese.",
+        "output": "#Person1#想要搞个恶作剧。#Person2#一开始觉得很残忍，但后来还是加入了。",
+        "task": "cross-lingual summarization",
+        "candidates": [
+            {
+                "model": "2Step",
+                "text": "#person1#和#person2#正在制造敌人。#person2#觉得这很残酷,但同意了。",
+                "scores": {
+                    "Fluency": 1.0,
+                    "Coherence": 2,
+                    "Consistency": 2.0,
+                    "Relevance": 2.0
+                }
+            },
+            {
+                "model": "S-T",
+                "text": "#person1#和#person2#正在成为敌人。#person2#觉得这很残酷,但同意了。",
+                "scores": {
+                    "Fluency": 1.0,
+                    "Coherence": 2.0,
+                    "Consistency": 2.0,
+                    "Relevance": 2.0
+                }
+            }
+        ],
+        "input": "#Person1#: Yeah. Just pull on this strip. Then peel off the back.\n#Person2#: You might make a few enemies this way.\n#Person1#: If they don't think this is fun, they're not meant to be our friends.\n#Person2#: You mean your friends. I think it's cruel.\n#Person1#: Yeah. But it's fun. Look at those two ugly old ladies. . . or are they men?\n#Person2#: Hurry! Get a shot!. . . Hand it over!\n#Person1#: I knew you'd come around. . ."
+    },
+    {
+        "id": "test_17",
+        "instruction": "Generate a summary for the following dialogue. Then translate the summary from English to Chinese.",
+        "output": "Mike正在向#Person1#介绍他的妹妹。",
+        "task": "cross-lingual summarization",
+        "candidates": [
+            {
+                "model": "2Step",
+                "text": "mike和#person1#谈论mike的妹妹。",
+                "scores": {
+                    "Fluency": 4.0,
+                    "Coherence": 3,
+                    "Consistency": 3.0,
+                    "Relevance": 4.0
+                }
+            },
+            {
+                "model": "S-T",
+                "text": "mike和#person1#谈论mike的妹妹。",
+                "scores": {
+                    "Fluency": 4.0,
+                    "Coherence": 3.0,
+                    "Consistency": 3.0,
+                    "Relevance": 4.0
+                }
+            }
+        ],
+        "input": "#Person1#: What does your sister look like, Mike?\n#Person2#: Well, she's tall and pretty.\n#Person1#: Is she like you?\n#Person2#: I suppose so. We're both friendly and easy-going.\n#Person1#: Is she as clever as you?\n#Person2#: No, she's not as clever as me.\n#Person1#: Big head!"
+    },
+    {
+        "id": "test_18",
+        "instruction": "Generate a summary for the following dialogue. Then translate the summary from English to Chinese.",
+        "output": "#Person2#发现#Person1#发烧了，说#Person1#应该早点打电话请病假。",
+        "task": "cross-lingual summarization",
+        "candidates": [
+            {
+                "model": "2Step",
+                "text": "#person2#取了#person1#的温度,认为#person1#有点发烧。",
+                "scores": {
+                    "Fluency": 2.0,
+                    "Coherence": 2,
+                    "Consistency": 3.0,
+                    "Relevance": 4.0
+                }
+            },
+            {
+                "model": "S-T",
+                "text": "#person2#取了#person1#的温度,认为#person1#有点发烧。",
+                "scores": {
+                    "Fluency": 2.0,
+                    "Coherence": 2.0,
+                    "Consistency": 3.0,
+                    "Relevance": 4.0
+                }
+            }
+        ],
+        "input": "#Person1#: Is anybody in?\n#Person2#: How can I help you?\n#Person1#: I have a headache.\n#Person2#: Let me take your temperature with a thermometer.\n#Person1#: OK.\n#Person2#: I think you have a small fever.\n#Person1#: I thought so. I felt dizzy this morning.\n#Person2#: You should've called in sick! Next time, have either of your parents call the school office."
+    },
+    {
+        "id": "test_19",
+        "instruction": "Generate a summary for the following dialogue. Then translate the summary from English to Chinese.",
+        "output": "#Person2#想在#Person1#那买一部新手机。",
+        "task": "cross-lingual summarization",
+        "candidates": [
+            {
+                "model": "2Step",
+                "text": "#person1#帮#person2#买一部新手机。",
+                "scores": {
+                    "Fluency": 3.0,
+                    "Coherence": 3,
+                    "Consistency": 2.0,
+                    "Relevance": 3.0
+                }
+            },
+            {
+                "model": "S-T",
+                "text": "#person1#帮助#person2#买一部新手机。",
+                "scores": {
+                    "Fluency": 3.0,
+                    "Coherence": 3.0,
+                    "Consistency": 2.0,
+                    "Relevance": 3.0
+                }
+            }
+        ],
+        "input": "#Person1#: Can I help you?\n#Person2#: I'd like to buy a new mobile phone please.\n#Person1#: Ok, would you like a phone with camera and MP3 player?\n#Person2#: Yes please. And I'd like to be able to make video calls too."
+    },
+    {
+        "id": "test_20",
+        "instruction": "Generate a summary for the following dialogue. Then translate the summary from English to Chinese.",
+        "output": "Frank向Judy解释说，他之所以找了一份在邮局的工作，是因为政府为员工提供了极好的医疗保险福利。",
+        "task": "cross-lingual summarization",
+        "candidates": [
+            {
+                "model": "2Step",
+                "text": "frank因为政府提供的健康保险福利,他找到了一份高要求的工作。",
+                "scores": {
+                    "Fluency": 2.0,
+                    "Coherence": 2,
+                    "Consistency": 1.0,
+                    "Relevance": 2.0
+                }
+            },
+            {
+                "model": "S-T",
+                "text": "frank因为政府提供的 excellent健康保险待遇而得到一份一份高要求的工作。",
+                "scores": {
+                    "Fluency": 2.0,
+                    "Coherence": 1.0,
+                    "Consistency": 1.0,
+                    "Relevance": 2.0
+                }
+            }
+        ],
+        "input": "#Person1#: Hey, Frank. I heard you got a new job.\n#Person2#: Yeah, Judy. I will be working for the Post Office. It's not a bad job.\n#Person1#: Is it true that you have a heavy work schedule?\n#Person2#: That's right. I am supposed to work at 5am everyday, and I only get 45 minutes for lunch.\n#Person1#: So, why did you apply for such a demanding job?\n#Person2#: Well, the government offers its employees excellent health insurance benefits.\n#Person1#: Oh, I see. And can your family members utilize the health insurance, too?\n#Person2#: Yeah, that's the best part. All of my children can get free medical care.\n#Person1#: That's a great employment benefit!\n#Person2#: Now you know why I wanted to work for the Post Office!"
+    },
+    {
+        "id": "test_21",
+        "instruction": "Generate a summary for the following dialogue. Then translate the summary from English to Chinese.",
+        "output": "#Person2#在求职面试中向#Person1#介绍了教育背景和工作经历。",
+        "task": "cross-lingual summarization",
+        "candidates": [
+            {
+                "model": "2Step",
+                "text": "#person1#采访#person2#,了解#person2#的特殊技能、资格和办公经历。",
+                "scores": {
+                    "Fluency": 3.0,
+                    "Coherence": 3,
+                    "Consistency": 2.0,
+                    "Relevance": 2.0
+                }
+            },
+            {
+                "model": "S-T",
+                "text": "#person1#采访了#person2#,询问了#person2#的特殊技能、资历和办公经历。",
+                "scores": {
+                    "Fluency": 3.0,
+                    "Coherence": 3.0,
+                    "Consistency": 2.0,
+                    "Relevance": 2.0
+                }
+            }
+        ],
+        "input": "#Person1#: Do you have any special skills?\n#Person2#: I can write computer programs, I have a good command of secretarial skills.\n#Person1#: What qualifications have you got?\n#Person2#: I have a doctor license and a driving license.\n#Person1#: Do you get special training in office skills?\n#Person2#: I passed both the Cambridge Examinations, First Certificate and the Certificate of Proficiency in English. And studied for a year in London at the Lucas Secretarial College, ending with speeds of 120 words per minute in English shorthand and 50 words per minute in typing. I was also trained in office procedure.\n#Person1#: Please tell me about work you have done, which qualifies you for this job.\n#Person2#: I'Ve received some special training in typing, shorthand and operating a fax machine, etc. . I'm experienced in IBM-PC. I can operate familiarly a word-processor, a fax machine, a photo and other office equipment."
+    },
+    {
+        "id": "test_22",
+        "instruction": "Generate a summary for the following dialogue. Then translate the summary from English to Chinese.",
+        "output": "#Person1#对牛排不满意，#Person2#会为#Person1#重做一份。",
+        "task": "cross-lingual summarization",
+        "candidates": [
+            {
+                "model": "2Step",
+                "text": "#person1#点了一份中 rare牛排,但觉得牛排做的不太好。#person2#会再点一份。",
+                "scores": {
+                    "Fluency": 2.0,
+                    "Coherence": 2,
+                    "Consistency": 1.0,
+                    "Relevance": 2.0
+                }
+            },
+            {
+                "model": "S-T",
+                "text": "#person1#点了一份中 rare牛排,但觉得牛排做的不太好。#person2#会再来一份。",
+                "scores": {
+                    "Fluency": 2.0,
+                    "Coherence": 2.0,
+                    "Consistency": 1.0,
+                    "Relevance": 2.0
+                }
+            }
+        ],
+        "input": "#Person1#: Excuse me.\n#Person2#: Yes, sir. Can I help you?\n#Person1#: Um, this steak, I asked for to be medium rare.\n#Person2#: Medium rare, that's right, sir. I remember your order.\n#Person1#: Well, I'm afraid it isn't. It's a bit too well done and rather tough. Would you mind changing?\n#Person2#: If it is not to your satisfaction, I'll certainly bring you another. But I'm afraid you may have to wait for a few minutes.\n#Person1#: Yes, that's all right. Thank you very much."
+    },
+    {
+        "id": "test_23",
+        "instruction": "Generate a summary for the following dialogue. Then translate the summary from English to Chinese.",
+        "output": "#Person1#祝贺Tom获得诺贝尔奖。",
+        "task": "cross-lingual summarization",
+        "candidates": [
+            {
+                "model": "2Step",
+                "text": "#person1#祝贺tom赢得诺贝尔奖。",
+                "scores": {
+                    "Fluency": 5.0,
+                    "Coherence": 4,
+                    "Consistency": 5.0,
+                    "Relevance": 5.0
+                }
+            },
+            {
+                "model": "S-T",
+                "text": "#person1#祝汤姆赢得诺贝尔奖。",
+                "scores": {
+                    "Fluency": 4.0,
+                    "Coherence": 5.0,
+                    "Consistency": 5.0,
+                    "Relevance": 5.0
+                }
+            }
+        ],
+        "input": "#Person1#: Tom, I've got good news for you.\n#Person2#: What is it?\n#Person1#: Haven't you heard that your novel has won The Nobel Prize?\n#Person2#: Really? I can't believe it. It's like a dream come true. I never expected that I would win The Nobel Prize!\n#Person1#: You did a good job. I'm extremely proud of you.\n#Person2#: Thanks for the compliment.\n#Person1#: You certainly deserve it. Let's celebrate!"
+    },
+    {
+        "id": "test_24",
+        "instruction": "Generate a summary for the following dialogue. Then translate the summary from English to Chinese.",
+        "output": "#Person1#在面试中询问#Person2#的工作能力和过往工作经验。",
+        "task": "cross-lingual summarization",
+        "candidates": [
+            {
+                "model": "2Step",
+                "text": "#person2#回答#person1#关于#person2#的能力和过去的工作的问题。",
+                "scores": {
+                    "Fluency": 3.0,
+                    "Coherence": 3,
+                    "Consistency": 3.0,
+                    "Relevance": 4.0
+                }
+            },
+            {
+                "model": "S-T",
+                "text": "#person2#回答了#person1#关于#person2#的能力和过去的工作的问题。",
+                "scores": {
+                    "Fluency": 3.0,
+                    "Coherence": 3.0,
+                    "Consistency": 3.0,
+                    "Relevance": 4.0
+                }
+            }
+        ],
+        "input": "#Person1#: What makes you think you are able to do the job?\n#Person2#: My major is Automobile Designing and I have received my master's degree in science. I think I can do it well.\n#Person1#: What kind of work were you responsible for in the past employment?\n#Person2#: I am a student engineer who mainly took charge of understanding of the mechanical strength and corrosion resistance of various materials."
+    },
+    {
+        "id": "test_25",
+        "instruction": "Generate a summary for the following dialogue. Then translate the summary from English to Chinese.",
+        "output": "重度饮酒爱好者#Person2#邀请轻度饮酒爱好者#Person1#明晚一起出去玩。他们决定去一个有优惠罐装酒的地方。",
+        "task": "cross-lingual summarization",
+        "candidates": [
+            {
+                "model": "2Step",
+                "text": "#person1#和#person2#在外出时谈论他们喝的量。#person2#一般喝了一整晚,#person1#外出时喝了。",
+                "scores": {
+                    "Fluency": 1.0,
+                    "Coherence": 2,
+                    "Consistency": 2.0,
+                    "Relevance": 2.0
+                }
+            },
+            {
+                "model": "S-T",
+                "text": "#person1#和#person2#在外出时谈论他们喝的酒量。#person2#通常喝了一整晚,而#person1#只喝外出时。",
+                "scores": {
+                    "Fluency": 2.0,
+                    "Coherence": 2.0,
+                    "Consistency": 2.0,
+                    "Relevance": 2.0
+                }
+            }
+        ],
+        "input": "#Person1#: Do you drink much?\n#Person2#: Depending on what you consider a lot.\n#Person1#: How frequently do you drink?\n#Person2#: Couple times a week. How about you?\n#Person1#: Only when I go out. I'm not a big drinker.\n#Person2#: How much can you drink?\n#Person1#: I usually only have 2 beers.\n#Person2#: You're a light weight.\n#Person1#: How much can you drink?\n#Person2#: I'm usually drinking all night long. At least 10 drinks.\n#Person1#: Don't you spend a lot of money then?\n#Person2#: No. We usually go to places that have specials. Dante's over on the Ave has $ 5. 00 pitchers on Mondays. So for ten, fifteen bucks, I can get a lot of drinks.\n#Person1#: That's true.\n#Person2#: If you don't like beer, have you tried mixed drinks? Some of them are pretty good.\n#Person1#: I like beer, it's just that I get a headache when I drink more than 3.\n#Person2#: You just have to build up a tolerance. I used to be like that. But your body gets used to it.\n#Person1#: It'll take awhile, but I'm working on it.\n#Person2#: Hey let's go out tomorrow night. The Ram Bar and Grill is having a special on pitchers.\n#Person1#: Alright."
+    },
+    {
+        "id": "test_26",
+        "instruction": "Generate a summary for the following dialogue. Then translate the summary from English to Chinese.",
+        "output": "May在帮妈妈准备野餐所需的材料。",
+        "task": "cross-lingual summarization",
+        "candidates": [
+            {
+                "model": "2Step",
+                "text": "mom要may帮她准备野餐。may拒绝了,因为她自己可以做这件事。",
+                "scores": {
+                    "Fluency": 3.0,
+                    "Coherence": 3,
+                    "Consistency": 1.0,
+                    "Relevance": 2.0
+                }
+            },
+            {
+                "model": "S-T",
+                "text": "mom请求May帮她准备派对。 may拒绝,因为她自己可以办事。",
+                "scores": {
+                    "Fluency": 2.0,
+                    "Coherence": 2.0,
+                    "Consistency": 1.0,
+                    "Relevance": 2.0
+                }
+            }
+        ],
+        "input": "#Person1#: May, do you mind helping me prepare for the picnic?\n#Person2#: Sure. Have you checked the weather report?\n#Person1#: Yes. It says it will be sunny all day. No sign of rain at all. This is your father's favorite sausage. Sandwiches for you and Daniel.\n#Person2#: No, thanks Mom. I'd like some toast and chicken wings.\n#Person1#: Okay. Please take some fruit salad and crackers for me.\n#Person2#: Done. Oh, don't forget to take napkins disposable plates, cups and picnic blanket.\n#Person1#: All set. May, can you help me take all these things to the living room?\n#Person2#: Yes, madam.\n#Person1#: Ask Daniel to give you a hand?\n#Person2#: No, mom, I can manage it by myself. His help just causes more trouble."
+    },
+    {
+        "id": "test_27",
+        "instruction": "Generate a summary for the following dialogue. Then translate the summary from English to Chinese.",
+        "output": "Muriel Douglas和James偶遇，他们谈论了一下彼此的假期。",
+        "task": "cross-lingual summarization",
+        "candidates": [
+            {
+                "model": "2Step",
+                "text": "james和muriel douglas都过了一个愉快的假期。james去了tahoe滑雪,muriel douglas呆在洛杉矶。",
+                "scores": {
+                    "Fluency": 3.0,
+                    "Coherence": 3,
+                    "Consistency": 4.0,
+                    "Relevance": 3.0
+                }
+            },
+            {
+                "model": "S-T",
+                "text": "james和muriel douglas都过得很开心。james去塔胡滑雪,muriel douglas呆在洛杉矶。",
+                "scores": {
+                    "Fluency": 2.0,
+                    "Coherence": 3.0,
+                    "Consistency": 4.0,
+                    "Relevance": 3.0
+                }
+            }
+        ],
+        "input": "#Person1#: Hello, are you Muriel Douglas?\n#Person2#: Yes, and you must be James. It's nice to meet you at long last.\n#Person1#: Yes, you too. Thanks for agreeing to meet with us about the new account. My associate, Susan Kim, should be here any minute. Would you like something to drink while we're waiting?\n#Person2#: No, thanks. I'm fine. Did you have a nice holiday?\n#Person1#: Yes, I did. My family and I went to Tahoe to ski and the weather was great. How about you?\n#Person2#: I stayed in L. A. and it was sunny the entire weekend. We spent most of the time at home but we did go see King Kong on Christmas day.\n#Person1#: How did you like it?\n#Person2#: It was better than I expected. But, you know, I think I would have enjoyed skiing in Tahoe even better. Do you go there often?\n#Person1#: No, not much. My wife doesn't like to ski. She prefers vacationing where it's warmer, like Hawaii.\n#Person2#: I don't blame her. I really enjoyed it there when we went a few years ago. I'd like to go back sometime soon.\n#Person1#: Yes, me too. Oh, here's Susan now. Let me introduce you."
+    },
+    {
+        "id": "test_28",
+        "instruction": "Generate a summary for the following dialogue. Then translate the summary from English to Chinese.",
+        "output": "#Person1#正在自动取款机上取钱。但是自动取款机误将#Person1#的钱转给了世界野生动物基金会。#Person1#快疯掉了。",
+        "task": "cross-lingual summarization",
+        "candidates": [
+            {
+                "model": "2Step",
+                "text": "#person2#帮助#person1#从银行取出10,000美元。#person1#很生气,因为这女孩让#person1#花那么多钱。",
+                "scores": {
+                    "Fluency": 2.0,
+                    "Coherence": 2,
+                    "Consistency": 1.0,
+                    "Relevance": 1.0
+                }
+            },
+            {
+                "model": "S-T",
+                "text": "#person2#帮助#person1#从银行取出10,000美元。#person1#很生气,因为这女孩让#person1#花那么多钱。",
+                "scores": {
+                    "Fluency": 2.0,
+                    "Coherence": 2.0,
+                    "Consistency": 1.0,
+                    "Relevance": 1.0
+                }
+            }
+        ],
+        "input": "#Person1#: Stupid girl, making me spend so much money, now I have to get it from the ATM...\n#Person2#: Hello, welcome to Universal Bank. Please insert your card into the slot.\n#Person1#: I know where to put my card! Stupid machine, talking to me like I ' m an idiot...\n#Person2#: Please input your 6 digit PIN code followed by the pound key. Thank you. Please select an option. Thank you. You have selected withdrawal.\n#Person1#: Yeah, yeah, I know what I selected. Just gimme my money!\n#Person2#: Please type the amount you would like to withdraw. Thank you, you want to transfer 10000 USD to the World Wildlife Foundation. If this is correct please press 1.\n#Person1#: No, no! Stupid machine, what are you doing! No!\n#Person2#: Confirmed. Thank you for using our bank! Please remove your card from the slot. Goodbye!\n#Person1#: No, no way! What happened? Give me my money!\n#Person2#: Danger, danger! The exits have been sealed and the doors will remain locked in until the local authorities arrive. Thank you for using our bank. Have a nice day."
+    },
+    {
+        "id": "test_29",
+        "instruction": "Generate a summary for the following dialogue. Then translate the summary from English to Chinese.",
+        "output": "#Person2#与#Person1#分享沟通策略。",
+        "task": "cross-lingual summarization",
+        "candidates": [
+            {
+                "model": "2Step",
+                "text": "#person2#是一个喜欢和朋友在一起外出的人。",
+                "scores": {
+                    "Fluency": 3.0,
+                    "Coherence": 3,
+                    "Consistency": 3.0,
+                    "Relevance": 2.0
+                }
+            },
+            {
+                "model": "S-T",
+                "text": "#person2#是一位外出先的人,喜欢和朋友在一起。",
+                "scores": {
+                    "Fluency": 2.0,
+                    "Coherence": 3.0,
+                    "Consistency": 2.0,
+                    "Relevance": 2.0
+                }
+            }
+        ],
+        "input": "#Person1#: Are you a social person?\n#Person2#: Yes, I am an outgoing person who likes to be with a lot of friends.\n#Person1#: What is your strategy in communicating with colleagues?\n#Person2#: Well, the most important thing in communication is your sincerity."
+    }
+]
