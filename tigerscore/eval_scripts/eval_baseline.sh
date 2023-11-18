@@ -78,10 +78,24 @@
 
 
 # # # story_gen
-# input_file="../../data/evaluation/storygen/test_data_prepared.json"
-# output_file="../../data/evaluation/storygen/test_data_prepared_eval.json"
+input_file="../../data/evaluation/storygen/test_data_prepared.json"
+output_file="../../data/evaluation/storygen/test_data_prepared_eval.json"
+metrics=("chatgpt_zero_shot")
+human_score_names="human"
+cp -u $input_file $output_file
+# for metric in "${metrics[@]}"; do
+#     echo "Evaluating $metric"
+#     python eval_baseline.py --input_file $output_file --output_file $output_file --metrics "$metric" \
+#         --human_score_names "$human_score_names"
+# done
+python eval_baseline.py --input_file $output_file --output_file $output_file --metrics "$metrics" \
+    --human_score_names "$human_score_names" --print_results True
+
+# translation 
+# input_file="../../data/evaluation/translation/wmt22/zh-en/eval_data.json"
+# output_file="../../data/evaluation/translation/wmt22/zh-en/eval_data.eval.json"
+# human_score_names="mqm"
 # metrics=("instructscore")
-# human_score_names="human"
 # cp -u $input_file $output_file
 # for metric in "${metrics[@]}"; do
 #     echo "Evaluating $metric"
@@ -90,17 +104,3 @@
 # done
 # python eval_baseline.py --input_file $output_file --output_file $output_file --metrics "$metrics" \
 #     --human_score_names "$human_score_names" --print_results True
-
-# translation 
-input_file="../../data/evaluation/translation/wmt22/zh-en/eval_data.json"
-output_file="../../data/evaluation/translation/wmt22/zh-en/eval_data.eval.json"
-human_score_names="mqm"
-metrics=("instructscore")
-cp -u $input_file $output_file
-for metric in "${metrics[@]}"; do
-    echo "Evaluating $metric"
-    python eval_baseline.py --input_file $output_file --output_file $output_file --metrics "$metric" \
-        --human_score_names "$human_score_names"
-done
-python eval_baseline.py --input_file $output_file --output_file $output_file --metrics "$metrics" \
-    --human_score_names "$human_score_names" --print_results True

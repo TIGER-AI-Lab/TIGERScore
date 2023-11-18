@@ -23,7 +23,8 @@ logging.set_verbosity(logging.WARNING)
 
 
 SUPPORTED_METRICS = ['rouge1', 'rouge2', 'rougeL', 'rougeLsum', 'bleu', 'bleurt', "cider", "spice",
-                     "bleu4", "bertscore", "prism", "comet", "bart_score", "bart_score_cnn", "bart_score_para", "chrf"]
+                     "bleu4", "bertscore", "prism", "comet", "bart_score", "bart_score_cnn", "bart_score_para", "chrf",
+                     "chatgpt_zero_shot", "gpt4_zero_shot"]
 METRIC_WEIGHTS = {
     "rouge1": 1.0,
     "rouge2": 1.0,
@@ -47,6 +48,8 @@ METRIC_WEIGHTS = {
     "bart_score": 1.0,
     "bart_score_cnn": 1.0,
     "bart_score_para": 1.0,
+    "chatgpt_zero_shot": 1.0,
+    "gpt4_zero_shot": 1.0,
 }  # scale to 0-1
 
 
@@ -760,6 +763,34 @@ def eval_gptscore_ref_ist(
     final_gpt_scores["avg_all_asps"] = avg_scores
     return final_gpt_scores
 
+def eval_GPT_zero_shot(
+    hypotheses: List[List[str]],
+    references: List[List[str]],
+    sources: List[str],
+    model_name="ChatGPT",
+):
+    from xgptscore.openai_utils import openai_completions, _chatml_to_prompt
+    def get_zero_shot_prompt(source, hypo):
+        _prompt = "Instruction: \n{}\n".format(source)
+        _prompt += "Model-generated Output: \n{}\n".format(hypo)
+        _prompt += "Rate the quality of the above output on a scale of 1-5 (Answer me the score only):\n"
+        message = [{"role": "user", "content": _prompt}]
+        _prompt = _chatml_to_prompt(message)
+        return _prompt
+    assert len(hypotheses) == len(references) == len(sources), "length of hypotheses, references and sources should be the same"
+    scores = []
+    prompts = [get_zero_shot_prompt(source, hypo) for hypo_group, source in zip(hypotheses, sources) for hypo in hypo_group]
+    completions = openai_completions(prompts, model_name=model_name)
+    scores = [float(c) for c in completions['completions']]
+    if isinstance(hypotheses[0], list):
+        # wrap scores to the original shape
+        idx = 0
+        new_scores = []
+        for hypo_group in hypotheses:
+            new_scores.append(scores[idx:idx+len(hypo_group)])
+            idx += len(hypo_group)
+        scores = new_scores
+    return scores
 
 def eval_gptscore_src_ist(
     hypotheses: List[List[str]],
@@ -1226,6 +1257,14 @@ def _overall_eval(candidates, targets, metrics: List[str], sources=None):
         for aspect in gpt_scores:
             scores.update(
                 {f'gptscore_flan_mt_src_hypo_{aspect}': gpt_scores[aspect]})
+    if "chatgpt_zero_shot" in metrics:
+        _candidates, _targets = deepcopy(candidates), deepcopy(targets)
+        chatgpt_scores = eval_GPT_zero_shot(_candidates, _targets, sources, model_name="ChatGPT")
+        scores.update({'chatgpt_zero_shot': chatgpt_scores})
+    if "gpt4_zero_shot" in metrics:
+        _candidates, _targets = deepcopy(candidates), deepcopy(targets)
+        chatgpt_scores = eval_GPT_zero_shot(_candidates, _targets, sources, model_name="gpt-4")
+        scores.update({'gpt4_zero_shot': chatgpt_scores})
 
     if len(scores) == 0:
         logging.warning(

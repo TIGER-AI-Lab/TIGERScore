@@ -151,7 +151,6 @@ dmypy.json
 
 # Cython debug symbols
 cython_debug/
-.vscode/
 
 # PyCharm
 #  JetBrains specific template is maintained in a separate JetBrains.gitignore that can
@@ -161,3 +160,30 @@ cython_debug/
 #.idea/
 tigerscore/xgptscore/cache/
 jobs/
+
+
+/TigerScore.zip
+/hf_space
+!/hf_space/TIGERScore
+/hf_evaluate
+/raw_datasets
+
+/data/real-world/summarization/summeval/cnndm
+/data/real-world/summarization/summeval/M*
+/data/**/train_data.json
+/data/**/**/train_data.json
+/data/**/**/**/train_data.json
+/data/clean_real_world_data
+/data/clean_real_world
+/test.ipynb
+/data/synthesis/synthesis
+/data/*.json
+/data/*.jsonl
+/data/*.ipynb
+/tigerscore/xgptscore/cache
+/test.sh
+/tigerscore/eval_scripts/check_data_private.sh
+/tigerscore/finetune/wandb/
+/data/additional
+/tigerscore/eval_scripts/eval_inst_baseline.sh
+/data/evaluation/translation
