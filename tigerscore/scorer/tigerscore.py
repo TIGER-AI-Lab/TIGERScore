@@ -6,10 +6,10 @@ from typing import List
 from tqdm import tqdm
 
 
-TIGERScore_model_map = {
-    "7b": "TIGER-Lab/TIGERScore-7B-V1.0",
-    "13b": "TIGER-Lab/TIGERScore-13B-V1.0",
-}
+# TIGERScore_model_map = {
+#     "7b": "TIGER-Lab/TIGERScore-7B-V1.0",
+#     "13b": "TIGER-Lab/TIGERScore-13B-V1.0",
+# }
 
 FINETUNE_INST = "You are evaluating errors in a model-generated output for a(an) ${task} task."
 FINETUNE_INPUT = """\
@@ -30,19 +30,18 @@ Your evaluation output:
 
 
 class TIGERScorer(object):
-    def __init__(self, model_size, quantized=False):
+    def __init__(self, model_name, quantized=False):
         """Initialize the TIGERScore model.
 
         Args:
-            model_size:
-                either "7b" or "13b"
+            model_name:
+                - "TIGER-Lab/TIGERScore-7B-V1.0",
+                - "TIGER-Lab/TIGERScore-13B-V1.0",
             quantized:
                 If true, load the 4-bit quantized version of the model.
                 quantized version occupies 2-3 times less memory but will running slower.
 
         """
-        assert model_size in TIGERScore_model_map
-        model_name = TIGERScore_model_map[model_size]
         if quantized:
             self.model = AutoModelForCausalLM.from_pretrained(
                 model_name,

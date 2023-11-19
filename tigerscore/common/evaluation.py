@@ -1067,9 +1067,10 @@ def _overall_eval(candidates, targets, metrics: List[str], sources=None):
     targets = deepcopy(targets)
     assert len(candidates) == len(
         targets), f"candidates and targets should have the same length, but got {len(candidates)} and {len(targets)}"
-    # if there are no available targets, return None
-    if all([target == '' for target in targets]) or \
-            all([target == [] for target in targets]):
+    # if there are no available targets or sources, return None
+    if (all([target == '' for target in targets]) or \
+            all([target == [] for target in targets])) and \
+        (not sources or all([source == '' for source in sources])):
         return {
             metric: [
                 [0 for _ in range(len(candidates[i]))]

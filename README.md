@@ -56,8 +56,9 @@ import os
 os.environ["CUDA_VISIBLE_DEVICES"] = "0"
 # set up scorer
 from tigerscore import TIGERScorer
-scorer = TIGERScorer(model_size="7b", quantized=False) # set quantized=False to use bfloat16 version on gpu deviced
-# scorer = TIGERScorer(model_size="7b", quantized=True) # set quantized=True to use 4-bit version on either gpu or cpu.
+scorer = TIGERScorer(model_name="TIGER-Lab/TIGERScore-13B-V1.0"
+, quantized=False) # set quantized=False to use bfloat16 version on gpu deviced
+# scorer = TIGERScorer(model_name="TIGER-Lab/TIGERScore-13B-V1.0", quantized=True) # set quantized=True to use 4-bit version on either gpu or cpu.
 # load the dataset
 from datasets import load_dataset
 dataset = load_dataset("TIGER-Lab/MetricInstruct")

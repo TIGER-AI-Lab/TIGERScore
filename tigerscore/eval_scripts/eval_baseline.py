@@ -7,6 +7,7 @@ import os
 import json
 import scipy
 import numpy as np
+import itertools
 sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 from typing import List
 from mt_metrics_eval.stats import Correlation
@@ -92,6 +93,7 @@ def main(
     print_results: bool = False,
     average_by: str = "none",
     as_rank: bool = False,
+    add_aggrement: bool = False,
 ):
     if isinstance(metrics, str):
         metrics = metrics.split(" ")
@@ -135,7 +137,8 @@ def main(
     print("To eval metrics: {}".format(to_eval_metrics))
     if len(to_eval_metrics) > 0:
         sources = [d["input"] for d in data]
-        references = [d.get("output") or d['refs'][0] for d in data]
+        references = [d.get("output") or d.get('refs') or "" for d in data]
+        references = [ref[0] if isinstance(ref, list) else ref for ref in references]
         hypotheses = [[cand['text'] for cand in d['candidates']] for d in data]
         scores = overall_eval(hypotheses, references, to_eval_metrics,
                               sources=sources, num_workers=num_workers)
@@ -217,9 +220,37 @@ def main(
                 ])
             if h_name != human_score_names[-1]:
                 table.add_row(["-", "-", "-", "-", "-"])
+        if add_aggrement:
+            # add aggrement column, pairwise agreement
+            aggrement_columns = []
+            for h_name in human_score_names:
+                other_scores_pearson = [human_score_corr_dict[h_name]
+                    [o_name]['Pearson'][0] for o_name in other_scores_names]
+                sorted_other_scores_names = [x for _, x in sorted(
+                    zip(other_scores_pearson, other_scores_names), reverse=True)]
+                for o_name in sorted_other_scores_names:
+                    h_scores = [[cand['scores'][h_name]
+                        for cand in item['candidates']] for item in data]
+                    o_scores = [[cand['scores'][o_name]
+                        for cand in item['candidates']] for item in data]
+                    aggreement = 0
+                    total = 0
+                    for _h_scores, _o_scores in zip(h_scores, o_scores):
+                        num_cands = len(_h_scores)
+                        for i, j in itertools.combinations(range(num_cands), 2):
+                            total += 1
+                            if (_h_scores[i] - _h_scores[j]) * (_o_scores[i] - _o_scores[j]) > 0:
+                                aggreement += 1
+                    aggreement_ratio = aggreement / total
+                    aggrement_columns.append(aggreement_ratio)
+                if h_name != human_score_names[-1]:
+                    aggrement_columns.append("-")
+            table.add_column("Aggrement", aggrement_columns)
+        
         print("File: {}".format(output_file))
         print("Correlations (Sorted by Pearson):")
         print(table)
+        
 
 
 if __name__ == "__main__":

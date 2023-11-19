@@ -78,18 +78,18 @@
 
 
 # # # story_gen
-input_file="../../data/evaluation/storygen/test_data_prepared.json"
-output_file="../../data/evaluation/storygen/test_data_prepared_eval.json"
-metrics=("chatgpt_zero_shot")
-human_score_names="human"
-cp -u $input_file $output_file
-# for metric in "${metrics[@]}"; do
-#     echo "Evaluating $metric"
-#     python eval_baseline.py --input_file $output_file --output_file $output_file --metrics "$metric" \
-#         --human_score_names "$human_score_names"
-# done
-python eval_baseline.py --input_file $output_file --output_file $output_file --metrics "$metrics" \
-    --human_score_names "$human_score_names" --print_results True
+# input_file="../../data/evaluation/storygen/test_data_prepared.json"
+# output_file="../../data/evaluation/storygen/test_data_prepared_eval.json"
+# metrics=("chatgpt_zero_shot")
+# human_score_names="human"
+# cp -u $input_file $output_file
+# # for metric in "${metrics[@]}"; do
+# #     echo "Evaluating $metric"
+# #     python eval_baseline.py --input_file $output_file --output_file $output_file --metrics "$metric" \
+# #         --human_score_names "$human_score_names"
+# # done
+# python eval_baseline.py --input_file $output_file --output_file $output_file --metrics "$metrics" \
+#     --human_score_names "$human_score_names" --print_results True
 
 # translation 
 # input_file="../../data/evaluation/translation/wmt22/zh-en/eval_data.json"
@@ -104,3 +104,29 @@ python eval_baseline.py --input_file $output_file --output_file $output_file --m
 # done
 # python eval_baseline.py --input_file $output_file --output_file $output_file --metrics "$metrics" \
 #     --human_score_names "$human_score_names" --print_results True
+
+# input_file="../../data/evaluation/hhh_alignment/hhh_alignment.json"
+# output_file="../../data/evaluation/hhh_alignment/hhh_alignment.eval.json"
+# human_score_names="human_preference"
+# metrics=("bart_score_para_src_hypo")
+# cp -u $input_file $output_file
+# for metric in "${metrics[@]}"; do
+#     echo "Evaluating $metric"
+#     python eval_baseline.py --input_file $output_file --output_file $output_file --metrics "$metric" \
+#         --human_score_names "$human_score_names"
+# done
+# python eval_baseline.py --input_file $output_file --output_file $output_file --metrics "$metrics" \
+#     --human_score_names "$human_score_names" --add_aggrement True --print_results True
+
+input_file="../../data/evaluation/mtbench/mt_bench_human_judgments.json"
+output_file="../../data/evaluation/mtbench/mt_bench_human_judgments.eval.json"
+human_score_names="human_preference"
+metrics=("bart_score_para_src_hypo")
+cp -u $input_file $output_file
+for metric in "${metrics[@]}"; do
+    echo "Evaluating $metric"
+    python eval_baseline.py --input_file $output_file --output_file $output_file --metrics "$metric" \
+        --human_score_names "$human_score_names"
+done
+python eval_baseline.py --input_file $output_file --output_file $output_file --metrics "$metrics" \
+    --human_score_names "$human_score_names" --add_aggrement True --print_results True
