@@ -633,6 +633,9 @@ def eval_instructscore(
                 "references should be a list of list of str or a list of str")
     batch_outputs, scores_ls = scorer.score(
         flatten_references, flatten_hypotheses)
+    # with open("instructscore_outputs.jsonl", "w") as f:
+    #     for output in batch_outputs:
+    #         f.write(output + "\n")
     idx = 0
     instruct_scores = []
     for i in range(len(hypotheses)):
