@@ -10,11 +10,11 @@
 nvidia-smi
 MASTER_PORT=4637
 MODEL_DIR="meta-llama/Llama-2-7b-hf" # 13b
-run_name="llama.train_mix.check_ChatGPT.clean" # change this every time you run a new experiment
+run_name="llama.train_mix.check.clean.mathQA" # change this every time you run a new experiment
 
 output_dir="../../outputs/${MODEL_DIR}/${run_name}"
 
-train_data_path="../../data/train_mix.check_ChatGPT.clean.format_v2.json" # 
+train_data_path="../../data/train_mix.check.clean.mathQA.format_v2.json" # 
 
 mkdir -p ${output_dir}
 

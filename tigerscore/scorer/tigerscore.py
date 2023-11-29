@@ -11,8 +11,7 @@ from tqdm import tqdm
 #     "13b": "TIGER-Lab/TIGERScore-13B-V1.0",
 # }
 
-FINETUNE_INST = "You are evaluating errors in a model-generated output for a(an) ${task} task."
-FINETUNE_INPUT = """\
+V1_TEMPLATE = """You are evaluating errors in a model-generated output for a(an) ${task} task.
 Task instruction: ${generation_instruction}
 Source: ${input_context}
 Model-generated Output: ${hypothesis_output}
@@ -28,6 +27,58 @@ For each error you give in the response, please also elaborate the following inf
 Your evaluation output:
 """
 
+
+V1_TEMPLATE = """You are evaluating errors in a model-generated output for a(an) ${task} task.
+Task instruction: ${generation_instruction}
+Source: ${input_context}
+Model-generated Output: ${hypothesis_output}
+
+Based on the given task instruction and source, identify errors in this model-generated output.
+For each error you give in the response, please also elaborate the following information:
+- error location (the words that are wrong in the output)
+- error aspect it belongs to.
+- explanation why it's an error, and the correction suggestions.
+- severity of the error ("Major" or "Minor"). 
+- reduction of score (between 0.5 and 5 given the severity of the error)
+
+Your evaluation output:
+"""
+
+V2_TEMPLATE = """You are evaluating errors in a model-generated output for a given instruction.
+Instruction: 
+${generation_instruction}
+${input_context}
+
+Model-generated Output: 
+${hypothesis_output}
+
+For each error you give in the response, please also elaborate the following information:
+- error location (the words that are wrong in the output)
+- error aspect it belongs to.
+- explanation why it's an error, and the correction suggestions.
+- severity of the error ("Major" or "Minor"). 
+- reduction of score (between 0.5 and 5 given the severity of the error)
+
+Your evaluation output:
+"""
+
+V2_TEMPLATE = """You are evaluating errors in a model-generated output for a given instruction.
+Instruction: 
+${generation_instruction}
+${input_context}
+
+Model-generated Output: 
+${hypothesis_output}
+
+For each error you give in the response, please also elaborate the following information:
+- error location (the words that are wrong in the output)
+- error aspect it belongs to.
+- explanation why it's an error, and the correction suggestions.
+- severity of the error ("Major" or "Minor"). 
+- reduction of score (between 0.5 and 5 given the severity of the error)
+
+Your evaluation output:
+"""
 
 class TIGERScorer(object):
     def __init__(self, model_name, quantized=False):
@@ -60,6 +111,12 @@ class TIGERScorer(object):
             use_fast=True,
             padding_side="left",
         )
+        if any([x in model_name for x in ["TIGER-Lab/TIGERScore-7B-V1.0", "TIGER-Lab/TIGERScore-13B-V1.0"]]):
+            self.template = Template(V1_TEMPLATE)
+        elif any([x in model_name for x in ["TIGER-Lab/TIGERScore-7B-V1.2", "TIGER-Lab/TIGERScore-13B-V1.2"]]):
+            self.template = Template(V2_TEMPLATE)
+        else:
+            raise ValueError("Unsupported model name.")
 
     def decode_tigerscore_output(self, output):
         """Decode the output of TIGERScore model into structured error explanations.
@@ -122,20 +179,17 @@ class TIGERScorer(object):
         """
         assert len(tasks) == len(insts) == len(
             input_contexts) == len(hypo_outputs)
-        inst_template = Template(FINETUNE_INST)
-        input_template = Template(FINETUNE_INPUT)
+        prompt_template = self.template
 
-        insts = [inst_template.substitute(task=task) for task in tasks]
-        inputs = [
-            input_template.substitute(
+        prompts = [
+            prompt_template.substitute(
+                task=task,
                 generation_instruction=inst,
                 input_context=input_context,
                 hypothesis_output=hypo_output
-            )
-            for inst, input_context, hypo_output in zip(insts, input_contexts, hypo_outputs)
+            ).strip("\n ")
+            for task, inst, input_context, hypo_output in zip(tasks, insts, input_contexts, hypo_outputs)
         ]
-        prompts = [(inst + "\n" + input_part).strip("\n ") +
-                   "\n" for inst, input_part in zip(insts, inputs)]
 
         encodings = self.tokenizer(prompts, return_tensors="pt", padding=True,
                                    truncation=True, max_length=self.tokenizer.model_max_length)

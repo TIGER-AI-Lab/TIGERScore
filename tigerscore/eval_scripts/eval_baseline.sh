@@ -50,15 +50,18 @@
 # # instruction-following
 # input_file="../../data_bak/llm-blender/mix-instruct/test_data_prepared_300.json"
 # output_file="../../data_bak/llm-blender/mix-instruct/test_data_prepared_300.eval.json"
+# input_file="../../data/evaluation/instruct/mixinstruct/test_data_prepared.json"
+# output_file="../../data/evaluation/instruct/mixinstruct/test_data_prepared.eval.json"
 # human_score_names="gpt_rank_score"
-# cp -u $input_file $output_file
-# for metric in "${metrics[@]}"; do
-#     echo "Evaluating $metric"
-#     python eval_baseline.py --input_file $output_file --output_file $output_file --metrics "$metric" \
-#         --human_score_names "$human_score_names"
-# done
+# # cp -u $input_file $output_file
+# metrics=("tigerscore")
+# # for metric in "${metrics[@]}"; do
+# #     echo "Evaluating $metric"
+# #     python eval_baseline.py --input_file $output_file --output_file $output_file --metrics "$metric" \
+# #         --human_score_names "$human_score_names"
+# # done
 # python eval_baseline.py --input_file $output_file --output_file $output_file --metrics "$metrics" \
-#     --human_score_names "$human_score_names" --print_results True
+#     --human_score_names "$human_score_names" --print_results True --average_by "sys" --as_rank "True"
 
 # mathqa
 # input_file="../../data_bak/mathqa/gsm8k_test_output_prepared.json"
@@ -80,7 +83,7 @@
 # # # story_gen
 # input_file="../../data/evaluation/storygen/test_data_prepared.json"
 # output_file="../../data/evaluation/storygen/test_data_prepared_eval.json"
-# metrics=("chatgpt_zero_shot")
+# metrics=("instructscore")
 # human_score_names="human"
 # cp -u $input_file $output_file
 # # for metric in "${metrics[@]}"; do
@@ -118,15 +121,30 @@
 # python eval_baseline.py --input_file $output_file --output_file $output_file --metrics "$metrics" \
 #     --human_score_names "$human_score_names" --add_aggrement True --print_results True
 
-input_file="../../data/evaluation/mtbench/mt_bench_human_judgments.json"
-output_file="../../data/evaluation/mtbench/mt_bench_human_judgments.eval.json"
-human_score_names="human_preference"
-metrics=("bart_score_para_src_hypo")
+# input_file="../../data/evaluation/mtbench/mt_bench_human_judgments.json"
+# output_file="../../data/evaluation/mtbench/mt_bench_human_judgments.eval.json"
+# human_score_names="human_preference"
+# metrics=("bart_score_para_src_hypo")
+# cp -u $input_file $output_file
+# for metric in "${metrics[@]}"; do
+#     echo "Evaluating $metric"
+#     python eval_baseline.py --input_file $output_file --output_file $output_file --metrics "$metric" \
+#         --human_score_names "$human_score_names"
+# done
+# python eval_baseline.py --input_file $output_file --output_file $output_file --metrics "$metrics" \
+#     --human_score_names "$human_score_names" --add_aggrement True --print_results True
+
+
+input_file="../../data/evaluation/pair_cmp/test_data_prepared.json"
+output_file="../../data/evaluation/pair_cmp/test_data_prepared.eval.json"
+human_score_names="gpt_rank_score"
 cp -u $input_file $output_file
+# metrics=("bleu" "rouge" "bertscore" "bleurt" "comet_da" "bart_score_cnn" "unieval_sum" "cometkiwi_da")
+metrics=("unieval_sum")
 for metric in "${metrics[@]}"; do
     echo "Evaluating $metric"
     python eval_baseline.py --input_file $output_file --output_file $output_file --metrics "$metric" \
         --human_score_names "$human_score_names"
 done
-python eval_baseline.py --input_file $output_file --output_file $output_file --metrics "$metrics" \
-    --human_score_names "$human_score_names" --add_aggrement True --print_results True
+# python eval_baseline.py --input_file $output_file --output_file $output_file --metrics "$metrics" \
+#     --human_score_names "$human_score_names" --print_results True --average_by "sys" --as_rank "True"
