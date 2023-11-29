@@ -694,5 +694,6 @@ Model-generated Output:
 ${hypothesis_output}
 
 
-You should rate Model-generated Output on a scale from 0.5 (worst) to 10 (best).
+You should rate Model-generated Output on a scale from 0.5 (worst) to 10 (best).\
+Rating:\
 """]

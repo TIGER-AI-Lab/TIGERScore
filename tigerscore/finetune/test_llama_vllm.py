@@ -32,13 +32,15 @@ PROMPT_DICT = {
         "### Instruction:\n{instruction}\n\n### Response:"
     ),
 }
-FINETUNE_INST = "You are evaluating errors in a model-generated output for a(an) ${task} task."
+FINETUNE_INST = "You are evaluating errors in a model-generated output for a given instruction."
 FINETUNE_INPUT = """\
-Task instruction: ${generation_instruction}
-Source: ${input_context}
-Model-generated Output: ${hypothesis_output}
+Instruction: 
+${generation_instruction}
+${input_context}
 
-Based on the given task instruction and source, identify errors in this model-generated output.
+Model-generated Output: 
+${hypothesis_output}
+
 For each error you give in the response, please also elaborate the following information:
 - error location (the words that are wrong in the output)
 - error aspect it belongs to.
@@ -46,7 +48,7 @@ For each error you give in the response, please also elaborate the following inf
 - severity of the error ("Major" or "Minor"). 
 - reduction of score (between 0.5 and 5 given the severity of the error)
 
-Your evaluation output:
+Your evaluation output:\
 """
 
 

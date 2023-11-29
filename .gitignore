@@ -188,3 +188,7 @@ jobs/
 /tigerscore/eval_scripts/eval_inst_baseline.sh
 /data/evaluation/translation
 /data/evaluation
+/instructscore
+*.output
+*.human
+tigerscore/gpt-4.ipynb

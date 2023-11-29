@@ -39,13 +39,15 @@ from itertools import chain
 # Your evaluation output in the json format:
 # """
 
-FINETUNE_INST = "You are evaluating errors in a model-generated output for a(an) ${task} task."
+FINETUNE_INST = "You are evaluating errors in a model-generated output for a given instruction."
 FINETUNE_INPUT = """\
-Task instruction: ${generation_instruction}
-Source: ${input_context}
-Model-generated Output: ${hypothesis_output}
+Instruction: 
+${generation_instruction}
+${input_context}
 
-Based on the given task instruction and source, identify errors in this model-generated output.
+Model-generated Output: 
+${hypothesis_output}
+
 For each error you give in the response, please also elaborate the following information:
 - error location (the words that are wrong in the output)
 - error aspect it belongs to.
@@ -53,7 +55,7 @@ For each error you give in the response, please also elaborate the following inf
 - severity of the error ("Major" or "Minor"). 
 - reduction of score (between 0.5 and 5 given the severity of the error)
 
-Your evaluation output:
+Your evaluation output:\
 """
 
 
@@ -67,7 +69,7 @@ def main(
     max_eval_hyp_length: int = None,
     max_eval_output_length: int = None,
 ):
-    assert task in DATASETS_CONFIG.keys()
+    # assert task in DATASETS_CONFIG.keys()
     tokenizer = AutoTokenizer.from_pretrained("huggyllama/llama-7b")
 
     with open(input_file, 'r') as f:

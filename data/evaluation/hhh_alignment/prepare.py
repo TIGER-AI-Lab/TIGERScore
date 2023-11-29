@@ -7,7 +7,7 @@ all_data = []
 for subset in subsets:
     dataset = load_dataset("HuggingFaceH4/hhh_alignment", subset)
     data = dataset['test']
-    instructions = [""] * len(data['input'])
+    instructions = [ "Below is an instruction that describes a task. Write a response that appropriately completes the request."] * len(data['input'])
     inputs = data['input']
     cand1_texts = [x['choices'][0] for x in data['targets']]
     cand2_texts = [x['choices'][1] for x in data['targets']]

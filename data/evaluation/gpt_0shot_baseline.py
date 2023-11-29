@@ -9,6 +9,24 @@ from tigerscore.xgptscore.process_utils import XPGTItem
 logging.basicConfig(level=logging.warning)
 import fire
 import re
+from mt_metrics_eval.stats import Correlation
+from typing import List
+
+class MyCorrelation(Correlation):
+    def __init__(self, num_sys: int, gold_scores: List[int], metric_scores: List[int]):
+        # remove nan in metrics scores
+        none_metric_scores_idxs = [idx for idx,
+                                   x in enumerate(metric_scores) if x is None]
+        print("Remove {} nan scores from {} scores".format(
+            len(none_metric_scores_idxs),
+            len(metric_scores)
+        ))
+        gold_scores = gold_scores.copy()
+        # set gold scores to None if metric scores are None
+        for idx in none_metric_scores_idxs[::-1]:
+            gold_scores[idx] = None
+        super().__init__(num_sys, gold_scores, metric_scores)
+
 
 def find_first_float(s):
     match = re.search(r"[-+]?\d*\.\d+|\d+", s)
@@ -20,6 +38,7 @@ def main(
     output_file: str = None,
     xgptscore_mode: str = "zero_shot_baseline",
     model_name: str = "gpt-4",
+    human_score_names: str = "human_score",
     overwrite: bool = False,
     max_size: int = None,
     seed: int = 42,
@@ -66,7 +85,7 @@ def main(
                 hypo_output=cand['text'],
                 ref_output="a"
             ))
-
+    output_file = Path(output_file)
     if not output_file.exists() or overwrite:
         logging.warning("Running xgptscore")
         # run xgptscore
@@ -79,7 +98,7 @@ def main(
                 xgptscore_ans = find_first_float(cand['responses'][-1])
                 if xgptscore_ans is None:
                     logging.info(f"XGPTScore failed for {cand['text']}")
-                    # cand['scores']['xgptscore'] = None
+                    cand['scores']["{}_xgptscore".format(model_name)] = None
                 else:
                     cand['scores']["{}_xgptscore".format(model_name)] = xgptscore_ans
                 idx += 1
@@ -90,6 +109,38 @@ def main(
         logging.warning("Loading from {}".format(output_file))
         with open(output_file, "r") as f:
             items = json.load(f)
+    
+    if isinstance(human_score_names, tuple):
+        human_score_names = list(human_score_names)
+    else:
+        human_score_names = [human_score_names]
+
+
+    for h_name in human_score_names:
+        human_scores = []
+        xgptscores = []
+        for item in items:
+            for cand in item['candidates']:
+                for s_name, score in cand['scores'].items():
+                    if s_name == h_name:
+                        if "gpt-4_xgptscore" not in cand['scores']:
+                            logging.info(f"XGPTScore failed for {cand['text']}")
+                            cand['scores']["gpt-4_xgptscore"] = None
+                        elif cand['scores']["gpt-4_xgptscore"] is not None:
+                            if cand['scores']["gpt-4_xgptscore"] < 0 or cand['scores']["gpt-4_xgptscore"] > 10:
+                                cand['scores']["gpt-4_xgptscore"] = None
+                        xgptscores.append(cand['scores']["gpt-4_xgptscore".format(model_name)] )
+                        human_scores.append(score)
+                        
+                        break
+        assert len(human_scores) == len(xgptscores)
+        print (len(human_scores))
+        corr = MyCorrelation(1, human_scores, xgptscores)
+        print("Human score: {}".format(h_name))
+        print("Pearson correlation: {}".format(corr.Pearson()))
+        print("Spearman correlation: {}".format(corr.Spearman()))
+        print("Kendall correlation: {}".format(corr.Kendall()))
+
 
 if __name__ == "__main__":
     fire.Fire(main)

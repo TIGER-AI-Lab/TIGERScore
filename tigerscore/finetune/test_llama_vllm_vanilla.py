@@ -32,26 +32,51 @@ PROMPT_DICT = {
         "### Instruction:\n{instruction}\n\n### Response:"
     ),
 }
-FINETUNE_INST = "You are evaluating errors in a model-generated output for a(an) ${task} task."
+# FINETUNE_INST = """"""
+# FINETUNE_INPUT = """\
+# ${generation_instruction}
+# ${input_context}
+
+# Model-generated Output:
+# ${hypothesis_output}
+
+
+# You should rate Model-generated Output on a scale from 0.5 (worst) to 10 (best).
+# Rating: \
+# """
+FINETUNE_INST = """[INST] <<SYS>>\nYou are a helpful, respectful and honest assistant.\n<</SYS>>\n"""
 FINETUNE_INPUT = """\
-Task instruction: ${generation_instruction}
-Source: ${input_context}
-Model-generated Output: ${hypothesis_output}
+${generation_instruction}
+${input_context}
 
-Based on the given task instruction and source, identify errors in this model-generated output.
-For each error you give in the response, please also elaborate the following information:
-- error location (the words that are wrong in the output)
-- error aspect it belongs to.
-- explanation why it's an error, and the correction suggestions.
-- severity of the error ("Major" or "Minor"). 
-- reduction of score (between 0.5 and 5 given the severity of the error)
+Model-generated Output:
+${hypothesis_output}
 
-Please give a summary of the errors you found in the output, and the total score reduction.
-The model-generated output contains {num_errors} errors, with a total score reduction of {total_score_reduction}.
 
-Your evaluation output:
+You should rate Model-generated Output on a scale from 0.5 (worst) to 10 (best).  [/INST] Rating: \
 """
+# FINETUNE_INPUT = """\
+# USER:You are evaluating errors in a model-generated output for a(an) ${task} task.
+# Task instruction: ${generation_instruction}
+# Source: ${input_context}
+# Model-generated Output: ${hypothesis_output}
 
+# Based on the given task instruction and source, identify errors in this model-generated output.
+# For each error you give in the response, please also elaborate the following information:
+# - error location (the words that are wrong in the output)
+# - error aspect it belongs to.
+# - explanation why it's an error, and the correction suggestions.
+# - severity of the error ("Major" or "Minor"). 
+# - reduction of score (between 0.5 and 5 given the severity of the error)
+
+# Please give a summary of the errors you found in the output, and the total score reduction.
+# The model-generated output contains {num_errors} errors, with a total score reduction of {total_score_reduction}.
+
+# Your evaluation output: ASSISTANT:\
+# """
+def find_first_float(s):
+    match = re.search(r"[-+]?\d*\.\d+|\d+", s)
+    return float(match.group()) if match else None
 
 def get_sum_penalties(eval_output: dict):
     """
@@ -170,10 +195,9 @@ def main(args):
         for idx, (item, eval_output) in enumerate(zip(input_data, eval_outputs)):
             for cand in item['candidates']:
                 cand['eval_output'] = eval_outputs[cand_idx]
-                score_reductions = re.findall(
-                    r"(?<=with a total score reduction of )(\d+\.\d+|\d+)", eval_outputs[cand_idx])
-                if len(score_reductions) > 0:
-                    cand['vanilla_xgptscore'] = -float(score_reductions[0])
+                score_reduction = find_first_float(eval_outputs[cand_idx])
+                if score_reduction is None:
+                    cand['vanilla_xgptscore'] = -float(score_reduction)
                 else:
                     cand['vanilla_xgptscore'] = None
                 cand_idx += 1
@@ -186,9 +210,11 @@ def main(args):
             input_data = json.load(f)
         for ex in input_data:
             for cand in ex['candidates']:
-                score_reductions = re.findall(
-                    r"(?<=with a total score reduction of )(\d+\.\d+|\d+)", eval_outputs[cand_idx])
-                cand['vanilla_xgptscore'] = -float(score_reductions[0])
+                score_reduction = find_first_float(cand["eval_output"])
+                if score_reduction is None:
+                    cand['vanilla_xgptscore'] = -float(score_reduction)
+                else:
+                    cand['vanilla_xgptscore'] = None
         with open(output_file, 'w') as f:
             json.dump(input_data, f, indent=4, ensure_ascii=False)
         logging.info("Loaded eval results from {}".format(output_file))
@@ -206,10 +232,10 @@ def main(args):
                         human_scores.append(score)
                         break
         corr = MyCorrelation(1, human_scores, xgptscores)
-        logging.info("Human score: {}".format(h_name))
-        logging.info("Pearson correlation: {}".format(corr.Pearson()))
-        logging.info("Spearman correlation: {}".format(corr.Spearman()))
-        logging.info("Kendall correlation: {}".format(corr.Kendall()))
+        print("Human score: {}".format(h_name))
+        print("Pearson correlation: {}".format(corr.Pearson()))
+        print("Spearman correlation: {}".format(corr.Spearman()))
+        print("Kendall correlation: {}".format(corr.Kendall()))
 
 
 if __name__ == "__main__":
