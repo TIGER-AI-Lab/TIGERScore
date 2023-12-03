@@ -49,6 +49,7 @@ setup(
         'gdown',
         'accelerate',
         'bitsandbytes',
+        'llama-cpp-python'
         'mt-metrics-eval @ git+https://github.com/google-research/mt-metrics-eval.git',
     ],
 )
