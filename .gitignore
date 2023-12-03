@@ -192,3 +192,4 @@ jobs/
 *.output
 *.human
 tigerscore/gpt-4.ipynb
+hf_models/

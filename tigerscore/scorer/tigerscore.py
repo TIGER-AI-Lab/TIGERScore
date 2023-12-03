@@ -81,31 +81,43 @@ Your evaluation output:
 """
 
 class TIGERScorer(object):
-    def __init__(self, model_name, quantized=False):
+    def __init__(self, model_name, quantized=False,use_vllm=False):
         """Initialize the TIGERScore model.
 
         Args:
             model_name:
-                - "TIGER-Lab/TIGERScore-7B-V1.0",
-                - "TIGER-Lab/TIGERScore-13B-V1.0",
+                - "TIGER-Lab/TIGERScore-7B-V1.2",
+                - "TIGER-Lab/TIGERScore-13B-V1.2",
             quantized:
                 If true, load the 4-bit quantized version of the model.
                 quantized version occupies 2-3 times less memory but will running slower.
-
+            use_vllm:
+                If true, use VLLM to inference.
         """
-        if quantized:
-            self.model = AutoModelForCausalLM.from_pretrained(
-                model_name,
-                torch_dtype=torch.bfloat16,
-                device_map="auto",
-                load_in_4bit=True,
-            )
+        self.use_vllm = use_vllm
+        if use_vllm:
+            if quantized:
+                raise ValueError("VLLM does not support quantized model.")
+            try:
+                from vllm import LLM
+            except ImportError:
+                raise ImportError(
+                    "Please install vllm: pip install vllm")
+            self.model = LLM(model=model_name,tensor_parallel_size=1)
         else:
-            self.model = AutoModelForCausalLM.from_pretrained(
-                model_name,
-                torch_dtype=torch.bfloat16,
-                device_map="auto"
-            )
+            if quantized:
+                self.model = AutoModelForCausalLM.from_pretrained(
+                    model_name,
+                    torch_dtype=torch.bfloat16,
+                    device_map="auto",
+                    load_in_4bit=True,
+                )
+            else:
+                self.model = AutoModelForCausalLM.from_pretrained(
+                    model_name,
+                    torch_dtype=torch.bfloat16,
+                    device_map="auto"
+                )
         self.tokenizer = AutoTokenizer.from_pretrained(
             model_name,
             use_fast=True,
@@ -117,7 +129,7 @@ class TIGERScorer(object):
             self.template = Template(V2_TEMPLATE)
         else:
             raise ValueError("Unsupported model name.")
-
+                
     def decode_tigerscore_output(self, output):
         """Decode the output of TIGERScore model into structured error explanations.
 
@@ -162,7 +174,7 @@ class TIGERScorer(object):
             error['score_reduction'] = score_reductions[i]
             result['errors'][f"error_{i}"] = error
         return result
-
+    
     def _score_batch(
         self,
         tasks: List[str],
@@ -177,6 +189,9 @@ class TIGERScorer(object):
         Returns:
             (See score() function)
         """
+        
+
+            
         assert len(tasks) == len(insts) == len(
             input_contexts) == len(hypo_outputs)
         prompt_template = self.template
@@ -190,27 +205,40 @@ class TIGERScorer(object):
             ).strip("\n ")
             for task, inst, input_context, hypo_output in zip(tasks, insts, input_contexts, hypo_outputs)
         ]
+        if self.use_vllm:
+            from vllm import SamplingParams
+            settings = {}
+            settings['temperature'] = generate_kwargs.get('temperature', 0)
+            settings['top_p'] = generate_kwargs.get('top_p', 1)
+            settings['max_tokens'] = generate_kwargs.get('max_tokens', 1024)
+            sampling_params = SamplingParams(
+                temperature=settings['temperature'],
+                top_p=settings['top_p'],
+                max_tokens=settings['max_tokens']
+            )
+            outputs = self.model.generate(prompts, sampling_params)
+            completions = [output.outputs[0].text for output in outputs]
+        else:
+            encodings = self.tokenizer(prompts, return_tensors="pt", padding=True,
+                                       truncation=True, max_length=self.tokenizer.model_max_length)
+            input_ids = encodings["input_ids"].to(self.model.device)
+            attention_mask = encodings["attention_mask"].to(self.model.device)
+            gen_params = {
+                "input_ids": input_ids,
+                "attention_mask": attention_mask,
+                "max_new_tokens": 512,
+                "do_sample": True,
+                "top_k": 1,
+                "num_return_sequences": 1,
+            }
+            gen_params.update(generate_kwargs)
+            outputs = self.model.generate(**gen_params)
 
-        encodings = self.tokenizer(prompts, return_tensors="pt", padding=True,
-                                   truncation=True, max_length=self.tokenizer.model_max_length)
-        input_ids = encodings["input_ids"].to(self.model.device)
-        attention_mask = encodings["attention_mask"].to(self.model.device)
-        gen_params = {
-            "input_ids": input_ids,
-            "attention_mask": attention_mask,
-            "max_new_tokens": 512,
-            "do_sample": True,
-            "top_k": 1,
-            "num_return_sequences": 1,
-        }
-        gen_params.update(generate_kwargs)
-        outputs = self.model.generate(**gen_params)
-
-        # input_len = input_ids.shape[1]
-        # completion_ids = [output[input_len:] for output in outputs]
-        completion_ids = outputs
-        completions = [self.tokenizer.decode(
-            completion, skip_special_tokens=True) for completion in completion_ids]
+            # input_len = input_ids.shape[1]
+            # completion_ids = [output[input_len:] for output in outputs]
+            completion_ids = outputs
+            completions = [self.tokenizer.decode(
+                completion, skip_special_tokens=True) for completion in completion_ids]
         tigerscore_results = []
         for completion in completions:
             try:
@@ -278,6 +306,8 @@ class TIGERScorer(object):
                 a list of hypothesis outputs; One hypothesis output example is the model-generated English translation.
             batch_size:
                 batch size for scoring. 
+            use_vllm:
+                if True, use VLLM to inference.
             generate_kwargs:
                 keyword arguments for the model.generate() method. 
                 See https://huggingface.co/transformers/main_classes/model.html
