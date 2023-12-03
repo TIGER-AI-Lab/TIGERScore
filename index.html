@@ -215,8 +215,8 @@
                     <div class="column is-four-fifths">
                         <div class="item">
                             <!-- Your image here -->
-                            <img src="static/images/metric_overview2.png" alt="The perfermance of TIGERScore" />
-                            <h2 class="subtitle;columns is-centered">
+                            <img src="static/images/tigerscore.png" alt="The perfermance of TIGERScore" />
+                            <h2 class="subtitle">
                                 Figure 1: The upper part shows the input and output format of our metric. The lower part
                                 shows te spearman's correlation of different metrics w.r.t human ratings.
                             </h2>
@@ -289,18 +289,18 @@
                                 <thead>
                                     <tr>
                                         <td>Task</td>
-                                        <td style="border-left: 1px solid #ddd;"> Real-World <br />Dataset</td>
-                                        <td> <br />Output Source</td>
-                                        <td> <br /># Sample</td>
-                                        <td style="border-left: 1px solid #ddd;"> Synthetic <br />Dataset</td>
-                                        <td> <br />Output Source</td>
-                                        <td> <br /># Sample</td>
+                                        <td> Real-World Dataset</td>
+                                        <td> Output Source</td>
+                                        <td> # Sample</td>
+                                        <td> Synthetic Dataset</td>
+                                        <td> Output Source</td>
+                                        <td> # Sample</td>
                                     </tr>
                                 </thead>
                                 <tbody>
                                     <tr>
-                                        <td>Summ</td>
-                                        <td style="border-left: 1px solid #ddd;">SummEval‡, XSum,<br />Newsroom,SAMSum
+                                        <td>Summarization</td>
+                                        <td style="border-left: 1px solid #ddd;">SummEval, XSum,<br />Newsroom,SAMSum
                                         </td>
                                         <td>27 Systems</td>
                                         <td>4867</td>
@@ -309,8 +309,8 @@
                                         <td>400</td>
                                     </tr>
                                     <tr>
-                                        <td>Trans</td>
-                                        <td style="border-left: 1px solid #ddd;">WMT‡</td>
+                                        <td>Translation</td>
+                                        <td style="border-left: 1px solid #ddd;">WMT</td>
                                         <td>18 Systems</td>
                                         <td>5708</td>
                                         <td style="border-left: 1px solid #ddd;">WMT</td>
@@ -318,8 +318,8 @@
                                         <td>400</td>
                                     </tr>
                                     <tr>
-                                        <td>D2T</td>
-                                        <td style="border-left: 1px solid #ddd;">WebNLG-2020‡,<br />WikiTableText,ToTTo
+                                        <td>Data-to-Text</td>
+                                        <td style="border-left: 1px solid #ddd;">WebNLG-2020,<br />WikiTableText,ToTTo
                                         </td>
                                         <td>17 Systems</td>
                                         <td>56147</td>
@@ -328,7 +328,7 @@
                                         <td>400</td>
                                     </tr>
                                     <tr>
-                                        <td>LF-QA</td>
+                                        <td>Long-Form-QA</td>
                                         <td style="border-left: 1px solid #ddd;">ASQA,FeTaQA,<br />CosmosQA,ELI5</td>
                                         <td>5 Systems</td>
                                         <td>3352</td>
@@ -346,8 +346,8 @@
                                         <td>200</td>
                                     </tr>
                                     <tr>
-                                        <td>Instruct</td>
-                                        <td style="border-left: 1px solid #ddd;">MixInstruct‡</td>
+                                        <td>Instruction-Follow</td>
+                                        <td style="border-left: 1px solid #ddd;">MixInstruct</td>
                                         <td>11 Systems</td>
                                         <td>2248</td>
                                         <td style="border-left: 1px solid #ddd;">
@@ -651,8 +651,7 @@
                                 </thead>
                                 <tbody>
                                     <tr>
-                                        <td colspan="5" style="text-align:center"> Held-in Evaluation Dataset (test set)
-                                        </td>
+                                        <td colspan="5" style="text-align:center" > <strong>Held-in Evaluation Dataset</strong> (test set) </td>
                                     </tr>
                                     <tr>
                                         <td>Summarization</td>
@@ -669,7 +668,7 @@
                                         <td>33750</td>
                                     </tr>
                                     <tr>
-                                        <td>Data to Text</td>
+                                        <td>Data-to-Text</td>
                                         <td>WebNLG-2020</td>
                                         <td>18 Systems</td>
                                         <td>179</td>
@@ -690,11 +689,10 @@
                                         <td>2638</td>
                                     </tr>
                                     <tr>
-                                        <td colspan="5" style="text-align:center"> Held-out Evaluation Dataset (test
-                                            set)</td>
+                                        <td colspan="5" style="text-align:center"> <strong>Held-out Evaluation Dataset</strong> (test set) </td>
                                     </tr>
                                     <tr>
-                                        <td>Instruct</td>
+                                        <td>Instruction-Follow</td>
                                         <td>LIMA,AlpacaEval</td>
                                         <td>9 Systems</td>
                                         <td>500</td>
