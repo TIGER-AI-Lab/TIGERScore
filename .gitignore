@@ -160,7 +160,7 @@ cython_debug/
 #.idea/
 tigerscore/xgptscore/cache/
 jobs/
-
+/tigerscore/common/models
 
 /TigerScore.zip
 /hf_space
@@ -188,3 +188,6 @@ jobs/
 /tigerscore/eval_scripts/eval_inst_baseline.sh
 /data/evaluation/translation
 /data/evaluation
+/data/data_dist
+/data/evaluation/pair_cmp
+/test*
