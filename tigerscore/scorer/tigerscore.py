@@ -209,6 +209,8 @@ class TIGERScorer(object):
                 a list of input contexts; One input context example is the source German text.
             batch_size:
                 batch size for scoring. 
+            use_vllm:
+                if True, use VLLM to inference.
             generate_kwargs:
                 keyword arguments for the model.generate() method. 
                 See https://huggingface.co/transformers/main_classes/model.html

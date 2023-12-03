@@ -69,7 +69,7 @@ def main(
     max_eval_hyp_length: int = None,
     max_eval_output_length: int = None,
 ):
-    assert task in DATASETS_CONFIG.keys()
+    # assert task in DATASETS_CONFIG.keys()
     tokenizer = AutoTokenizer.from_pretrained("huggyllama/llama-7b")
 
     with open(input_file, 'r') as f:

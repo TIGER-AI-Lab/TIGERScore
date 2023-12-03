@@ -137,8 +137,8 @@ def main(args):
         for item in input_data:
             inst = Template(FINETUNE_INST).substitute(task=args.task)
             refs = item['output'] if "output" in item else item["refs"]
+            item["candidates"] = []
             if isinstance(refs,list):
-                item["candidates"] = []
                 for ref in refs:
                     item["candidates"].append(
                         {
