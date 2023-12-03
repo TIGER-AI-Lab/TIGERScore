@@ -44,11 +44,11 @@ Experiments show that TIGERScore surpass existing baseline metrics in correlatio
 
 | Models 🐯                                           	 | 
 |---------------------------------------------------------------	 |
-|  [🦙 TIGERScore-7B](https://huggingface.co/TIGER-Lab/TIGERScore-7B)   	| 
-|  [🦙 TIGERScore-13B](https://huggingface.co/TIGER-Lab/TIGERScore-13B) 	| 
-|  [🦙 TIGERScore-7B-GGUF](https://huggingface.co/TIGER-Lab/TIGERScore-7B-GGUF)   	| 
-|  [🦙 TIGERScore-13B-GGUF](https://huggingface.co/TIGER-Lab/TIGERScore-13B-GGUF) 	| 
-|  [<img src="https://raw.githubusercontent.com/01-ai/Yi/main/assets/img/Yi.svg" style="height: 1em; vertical-align: middle;" title="Yi"> TIGERScore-Yi-6B](https://huggingface.co/TIGER-Lab/TIGERScore-Yi-6B) |
+|  🦙 [TIGERScore-7B](https://huggingface.co/TIGER-Lab/TIGERScore-7B)   	| 
+|  🦙 [TIGERScore-13B](https://huggingface.co/TIGER-Lab/TIGERScore-13B) 	| 
+|  🦙 [TIGERScore-7B-GGUF](https://huggingface.co/TIGER-Lab/TIGERScore-7B-GGUF)   	| 
+|  🦙 [TIGERScore-13B-GGUF](https://huggingface.co/TIGER-Lab/TIGERScore-13B-GGUF) 	| 
+|  <img src="https://raw.githubusercontent.com/01-ai/Yi/main/assets/img/Yi.svg" style="height: 1em; vertical-align: middle;" title="Yi"> [TIGERScore-Yi-6B](https://huggingface.co/TIGER-Lab/TIGERScore-Yi-6B) |
 
 
 
