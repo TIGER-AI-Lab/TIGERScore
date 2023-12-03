@@ -40,7 +40,7 @@ Experiments show that TIGERScore surpass existing baseline metrics in correlatio
 
 | Datasets |
 | ----- |
-| [📏 MetricInstruct](https://huggingface.co/datasets/TIGER-Lab/MetricInstruct) |
+| 📏 [MetricInstruct](https://huggingface.co/datasets/TIGER-Lab/MetricInstruct) |
 
 | Models 🐯                                           	 | 
 |---------------------------------------------------------------	 |
