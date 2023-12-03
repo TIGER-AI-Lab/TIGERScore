@@ -116,7 +116,7 @@
 
                                 <!-- Supplementary PDF link -->
                                 <span class="link-block">
-                                    <a href="https://huggingface.co/TIGER-Lab/TIGERScore-13B-V1.0" target="_blank"
+                                    <a href="https://huggingface.co/TIGER-Lab/TIGERScore-13B-V1.2" target="_blank"
                                         class="external-link button is-normal is-rounded is-dark">
                                         <span class="icon">
                                             🤗
@@ -182,7 +182,7 @@
                                 TIGERScore is guided by the natural language instruction to provide error analysis to
                                 pinpoint the mistakes in the generated text. Our metric is based on LLaMA,
                                 trained on our meticulously curated instruction-tuning dataset MetricInstruct which
-                                covers 6 text generation tasks and 23 text generation datasets. The dataset consists of
+                                covers 6 text generation tasks and 22 text generation datasets. The dataset consists of
                                 48K quadruple in the form of (instruction, input, system output, error analysis).
                                 We collected the `system outputs' through diverse channels to cover different types of
                                 errors. To quantitatively assess our metric, we evaluate its correlation with human
@@ -283,7 +283,7 @@
                                 error distribution is aligned with real-world ones.
                             </p>
                         </div>
-                        <br /><br />
+                        <!-- <br /><br />
                         <div class="content has-text-justified">
                             <table>
                                 <thead>
@@ -351,7 +351,7 @@
                                         <td>11 Systems</td>
                                         <td>2248</td>
                                         <td style="border-left: 1px solid #ddd;">
-                                            LIMA,AlpacaFarm<br />OASST1,Guanaco,Dolly</td>
+                                            AlpacaFarm,OASST1<br />Guanaco,Dolly</td>
                                         <td>GPT-4</td>
                                         <td>3750</td>
                                     </tr>
@@ -365,7 +365,7 @@
                                 we take their released system outputs. For the others, we collect the system outputs on
                                 our own.
                             </p>
-                        </div>
+                        </div> -->
                     </div>
                 </div>
             </div>
@@ -383,210 +383,255 @@
                             <p style="margin-left: 2em;margin-right: 2em;">
                                 Nota bene that TIGERScore significantly surpasses traditional metrics, i.e. BLUE, ROUGE,
                                 BARTScore, and BLEURT, and emerging LLM-based metrics as reference-free metrics.
-                                Though our dataset was originally sourced from ChatGPT, our distilled model actually
+                                Though our dataset was originally sourced from GPT-4, our distilled model actually
                                 outperforms ChatGPT itself, which proves the effectiveness of our filtering strategy.
                                 On the unseen task of story generation, TIGERScore also demonstrates reasonable
                                 generalization capability.
                             </p>
                             <br /><br />
                             <table>
-                                <thead>
-                                    <tr>
-                                        <td>Metrics↓Tasks→</td>
-                                        <td>Summ</td>
-                                        <td>Trans</td>
-                                        <td>D2T</td>
-                                        <td>LF-QA</td>
-                                        <td>MathQA</td>
-                                        <td>Instruct</td>
-                                        <td>StoryGen</td>
-                                        <td>AVG</td>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    <tr>
-                                        <td colspan="9" style="text-align:center">Reference-based Metrics</td>
-                                    </tr>
-                                    <tr>
-                                        <td>BLEU</td>
-                                        <td>11.98</td>
-                                        <td>19.73</td>
-                                        <td>33.29</td>
-                                        <td>11.38</td>
-                                        <td>21.12</td>
-                                        <td><b>46.61</b></td>
-                                        <td>-1.17</td>
-                                        <td>20.42</td>
-                                    </tr>
-                                    <tr>
-                                        <td>ROUGE-2f</td>
-                                        <td>14.53</td>
-                                        <td>17.83</td>
-                                        <td>35.49</td>
-                                        <td>16.83</td>
-                                        <td>22.12</td>
-                                        <td>44.56</td>
-                                        <td>2.34</td>
-                                        <td>21.96</td>
-                                    </tr>
-                                    <tr>
-                                        <td>BERTScore</td>
-                                        <td>23.67</td>
-                                        <td>42.41</td>
-                                        <td>43.75</td>
-                                        <td>25.60</td>
-                                        <td>11.53</td>
-                                        <td>45.77</td>
-                                        <td>2.88</td>
-                                        <td>27.95</td>
-                                    </tr>
-                                    <tr>
-                                        <td>BLEURT</td>
-                                        <td>17.30</td>
-                                        <td>48.41</td>
-                                        <td>48.76</td>
-                                        <td>33.26</td>
-                                        <td>3.53</td>
-                                        <td>36.46</td>
-                                        <td>27.52</td>
-                                        <td>30.75</td>
-                                    </tr>
-                                    <tr>
-                                        <td>COMET-22</td>
-                                        <td>33.75</td>
-                                        <td><b>56.35</b></td>
-                                        <td>33.92</td>
-                                        <td>35.28</td>
-                                        <td>-5.53</td>
-                                        <td>46.13</td>
-                                        <td>39.20</td>
-                                        <td>34.16</td>
-                                    </tr>
-                                    <tr>
-                                        <td>BARTScore-CNN-ref</td>
-                                        <td>13.64</td>
-                                        <td>28.53</td>
-                                        <td>36.12</td>
-                                        <td>29.57</td>
-                                        <td>23.35</td>
-                                        <td>32.49</td>
-                                        <td>26.64</td>
-                                        <td>27.19</td>
-                                    </tr>
-                                    <tr>
-                                        <td>BARTScore-PARA-ref</td>
-                                        <td>17.18</td>
-                                        <td>33.72</td>
-                                        <td>40.79</td>
-                                        <td>28.94</td>
-                                        <td>17.27</td>
-                                        <td>34.47</td>
-                                        <td>17.43</td>
-                                        <td>27.11</td>
-                                    </tr>
-                                    <tr>
-                                        <td>GPTScore-ref</td>
-                                        <td>14.73</td>
-                                        <td>24.95</td>
-                                        <td>39.42</td>
-                                        <td>31.60</td>
-                                        <td>18.20</td>
-                                        <td>33.13</td>
-                                        <td>18.24</td>
-                                        <td>25.75</td>
-                                    </tr>
-                                    <tr>
-                                        <td>UniEval(sum)</td>
-                                        <td><b>47.52</b></td>
-                                        <td>21.90</td>
-                                        <td>38.38</td>
-                                        <td><b>41.83</b></td>
-                                        <td>19.78</td>
-                                        <td>16.02</td>
-                                        <td><b>44.46</b></td>
-                                        <td>32.84</td>
-                                    </tr>
-                                    <tr>
-                                        <td>ChatGPT</td>
-                                        <td>38.50</td>
-                                        <td>40.53</td>
-                                        <td>40.20</td>
-                                        <td>29.33</td>
-                                        <td><b>66.45</b></td>
-                                        <td>23.20</td>
-                                        <td>4.77</td>
-                                        <td><b>34.71</b></td>
-                                    </tr>
-                                    <tr>
-                                        <td colspan="9" style="text-align:center">Reference-free Metrics</td>
-                                    </tr>
-                                    <tr>
-                                        <td>BARTScore-CNN-src</td>
-                                        <td>35.50</td>
-                                        <td>12.83</td>
-                                        <td>34.33</td>
-                                        <td>40.96</td>
-                                        <td>1.50</td>
-                                        <td>25.43</td>
-                                        <td><b>33.48</b></td>
-                                        <td>26.29</td>
-                                    </tr>
-                                    <tr>
-                                        <td>BARTScore-PARA-src</td>
-                                        <td>38.68</td>
-                                        <td>9.60</td>
-                                        <td>32.26</td>
-                                        <td>26.86</td>
-                                        <td>-2.70</td>
-                                        <td>5.92</td>
-                                        <td>20.55</td>
-                                        <td>18.74</td>
-                                    </tr>
-                                    <tr>
-                                        <td>GPTScore-src</td>
-                                        <td>37.41</td>
-                                        <td>8.90</td>
-                                        <td>28.82</td>
-                                        <td>39.48</td>
-                                        <td>14.25</td>
-                                        <td>26.46</td>
-                                        <td>29.31</td>
-                                        <td>26.38</td>
-                                    </tr>
-                                    <tr>
-                                        <td>COMETKiwi</td>
-                                        <td>16.27</td>
-                                        <td><b>48.48</b></td>
-                                        <td>27.90</td>
-                                        <td>18.05</td>
-                                        <td>-11.48</td>
-                                        <td>34.86</td>
-                                        <td>18.47</td>
-                                        <td>21.79</td>
-                                    </tr>
-                                    <tr>
-                                        <td>TIGERScore-7b</td>
-                                        <td>39.32</td>
-                                        <td>42.27</td>
-                                        <td>38.42</td>
-                                        <td>42.04</td>
-                                        <td><b>32.07</b></td>
-                                        <td>25.53</td>
-                                        <td>32.33</td>
-                                        <td>36.00</td>
-                                    </tr>
-                                    <tr>
-                                        <td>TIGERScore-13b</td>
-                                        <td><b>41.98</b></td>
-                                        <td>45.20</td>
-                                        <td><b>39.05</b></td>
-                                        <td><b>45.84</b></td>
-                                        <td>31.04</td>
-                                        <td><b>43.69</b></td>
-                                        <td>17.40</td>
-                                        <td><b>37.74</b></td>
-                                    </tr>
-                                </tbody>
+                                <tr>
+                                    <td>Tasks→</td>
+                                    <td>Summarization</td>
+                                    <td>Translation</td>
+                                    <td>Data2Text</td>
+                                    <td>Long-form QA</td>
+                                    <td>MathQA</td>
+                                    <td>Inst-Fol</td>
+                                    <td>Story-Gen</td>
+                                    <td>Average</td>
+                                </tr>
+                                <tr>
+                                    <td>Metrics↓ Datasets→</td>
+                                    <td>SummaEval</td>
+                                    <td>WMT22-zh-en</td>
+                                    <td>WebNLG2020</td>
+                                    <td>ASQA+</td>
+                                    <td>gsm8k</td>
+                                    <td>LIMA+</td>
+                                    <td>ROC</td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td>GPT-3.5-turbo (few-shot)</td>
+                                    <td><b>38.50</b></td>
+                                    <td>40.53</td>
+                                    <td>40.20</td>
+                                    <td>29.33</td>
+                                    <td><b>66.46</b></td>
+                                    <td>23.20</td>
+                                    <td>4.77</td>
+                                    <td>34.71</td>
+                                </tr>
+                                <tr>
+                                    <td>GPT-4 (zero-shot)</td>
+                                    <td>36.46</td>
+                                    <td><b>43.87</b></td>
+                                    <td><b>44.04</b></td>
+                                    <td><b>48.95</b></td>
+                                    <td>51.71</td>
+                                    <td><b>58.53</b></td>
+                                    <td><b>32.48</b></td>
+                                    <td><b>45.15</b></td>
+                                </tr>
+                                <tr>
+                                    <td>BLEU</td>
+                                    <td>11.98</td>
+                                    <td>19.73</td>
+                                    <td>33.29</td>
+                                    <td>11.38</td>
+                                    <td>21.12</td>
+                                    <td><b>46.61</b></td>
+                                    <td>-1.17</td>
+                                    <td>20.42</td>
+                                </tr>
+                                <tr>
+                                    <td>ROUGE-2f</td>
+                                    <td>14.53</td>
+                                    <td>17.83</td>
+                                    <td>35.49</td>
+                                    <td>16.83</td>
+                                    <td>22.12</td>
+                                    <td>44.56</td>
+                                    <td>2.34</td>
+                                    <td>21.96</td>
+                                </tr>
+                                <tr>
+                                    <td>InstructScore</td>
+                                    <td>26.33</td>
+                                    <td>47.30</td>
+                                    <td>43.93</td>
+                                    <td>21.62</td>
+                                    <td>-4.15</td>
+                                    <td>16.19</td>
+                                    <td>16.13</td>
+                                    <td>23.91</td>
+                                </tr>
+                                <tr>
+                                    <td>GPTScore-ref</td>
+                                    <td>14.73</td>
+                                    <td>24.95</td>
+                                    <td>39.42</td>
+                                    <td>31.60</td>
+                                    <td>18.20</td>
+                                    <td>33.14</td>
+                                    <td>18.24</td>
+                                    <td>25.75</td>
+                                </tr>
+                                <tr>
+                                    <td>BARTScore-cnn(hypo-ref)</td>
+                                    <td>13.64</td>
+                                    <td>28.53</td>
+                                    <td>36.12</td>
+                                    <td>29.57</td>
+                                    <td><b>23.35</b></td>
+                                    <td>32.49</td>
+                                    <td>26.64</td>
+                                    <td>27.19</td>
+                                </tr>
+                                <tr>
+                                    <td>BARTScore-para (hypo-ref)</td>
+                                    <td>17.18</td>
+                                    <td>33.72</td>
+                                    <td>40.79</td>
+                                    <td>28.94</td>
+                                    <td>17.27</td>
+                                    <td>34.47</td>
+                                    <td>17.43</td>
+                                    <td>27.11</td>
+                                </tr>
+                                <tr>
+                                    <td>BERTScore</td>
+                                    <td>23.67</td>
+                                    <td>42.41</td>
+                                    <td>43.75</td>
+                                    <td>25.60</td>
+                                    <td>11.53</td>
+                                    <td>45.77</td>
+                                    <td>2.88</td>
+                                    <td>27.95</td>
+                                </tr>
+                                <tr>
+                                    <td>BLEURT</td>
+                                    <td>17.30</td>
+                                    <td>48.41</td>
+                                    <td><b>48.76</b></td>
+                                    <td>33.26</td>
+                                    <td>3.53</td>
+                                    <td>36.46</td>
+                                    <td>27.52</td>
+                                    <td>30.75</td>
+                                </tr>
+                                <tr>
+                                    <td>UniEval(summ)</td>
+                                    <td><b>47.52</b></td>
+                                    <td>21.90</td>
+                                    <td>38.38</td>
+                                    <td><b>41.83</b></td>
+                                    <td>19.78</td>
+                                    <td>16.02</td>
+                                    <td><b>44.46</b></td>
+                                    <td>32.84</td>
+                                </tr>
+                                <tr>
+                                    <td>COMET-22</td>
+                                    <td>33.75</td>
+                                    <td><b>56.35</b></td>
+                                    <td>33.92</td>
+                                    <td>35.28</td>
+                                    <td>-5.53</td>
+                                    <td>46.13</td>
+                                    <td>39.20</td>
+                                    <td><b>34.16</b></td>
+                                </tr>
+                                <tr>
+                                    <td>BARTScore-para (src-hypo)</td>
+                                    <td><b>38.68</b></td>
+                                    <td>9.60</td>
+                                    <td>32.26</td>
+                                    <td>26.86</td>
+                                    <td>-2.70</td>
+                                    <td>5.92</td>
+                                    <td>20.55</td>
+                                    <td>18.74</td>
+                                </tr>
+                                <tr>
+                                    <td>BARTScore-cnn (src-hypo)</td>
+                                    <td>35.50</td>
+                                    <td>12.83</td>
+                                    <td>34.33</td>
+                                    <td>40.96</td>
+                                    <td>1.50</td>
+                                    <td>25.43</td>
+                                    <td>33.48</td>
+                                    <td>26.29</td>
+                                </tr>
+                                <tr>
+                                    <td>Llama-2-13b-chat-0-shot</td>
+                                    <td>28.53</td>
+                                    <td>14.38</td>
+                                    <td>29.24</td>
+                                    <td>19.91</td>
+                                    <td>1.08</td>
+                                    <td>21.37</td>
+                                    <td>26.78</td>
+                                    <td>20.18</td>
+                                </tr>
+                                <tr>
+                                    <td>COMETKiwi</td>
+                                    <td>16.27</td>
+                                    <td><b>48.48</b></td>
+                                    <td>27.90</td>
+                                    <td>18.05</td>
+                                    <td>-11.48</td>
+                                    <td>34.86</td>
+                                    <td>18.47</td>
+                                    <td>21.79</td>
+                                </tr>
+                                <tr>
+                                    <td>GPTScore-src</td>
+                                    <td>37.41</td>
+                                    <td>8.90</td>
+                                    <td>28.82</td>
+                                    <td>39.48</td>
+                                    <td>14.25</td>
+                                    <td>26.46</td>
+                                    <td>23.91</td>
+                                    <td>25.61</td>
+                                </tr>
+                                <tr>
+                                    <td>TIGERScore-7B (ours)</td>
+                                    <td>35.11</td>
+                                    <td>41.50</td>
+                                    <td>42.39</td>
+                                    <td><b>47.11</b></td>
+                                    <td>21.23</td>
+                                    <td>43.57</td>
+                                    <td>39.26</td>
+                                    <td>38.60</td>
+                                </tr>
+                                <tr>
+                                    <td>TIGERScore-13B (ours)</td>
+                                    <td>36.81</td>
+                                    <td>44.99</td>
+                                    <td><b>45.88</b></td>
+                                    <td>46.22</td>
+                                    <td><b>23.32</b></td>
+                                    <td><b>47.03</b></td>
+                                    <td><b>46.36</b></td>
+                                    <td><b>41.52</b></td>
+                                </tr>
+                                <tr>
+                                    <td>Δ (ours - best reference-free)</td>
+                                    <td>-2</td>
+                                    <td>-3</td>
+                                    <td>+12</td>
+                                    <td>+5</td>
+                                    <td>+9</td>
+                                    <td>+14</td>
+                                    <td>+13</td>
+                                    <td>+16</td>
+                                </tr>
                             </table>
                             <p>
                                 Table 2:The Spearman correlation results of all the baseline metrics and TIGERScore on
@@ -594,7 +639,7 @@
                                 correlation to average performance is highlighted in bold.
                             </p>
                             <br /><br />
-                            <table>
+                            <!-- <table>
                                 <thead>
                                     <tr>
                                         <td>Task</td>
@@ -668,7 +713,7 @@
                                 Table 3:Overview of our main evaluation datasets. "# Samples" is computed by multipling
                                 "# Inputs" with the number of outputs systems, representing the total instances that a
                                 metric need to compute.
-                            </p>
+                            </p> -->
                         </div>
                     </div>
                 </div>
