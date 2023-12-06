@@ -614,14 +614,17 @@ def eval_unieval(
 
 
 def eval_instructscore(
+    task_type: str,
     hypotheses: List[List[str]],
     references: List[List[str]],
+    sources=None,
 ):
     from InstructScore import InstructScore
-    scorer = InstructScore()
+    scorer = InstructScore(device_id=0, task_type=task_type, batch_size=2)
     assert len(hypotheses) == len(references)
     flatten_hypotheses = []
     flatten_references = []
+    flatten_sources = [] if sources is not None else None
     for i in range(len(hypotheses)):
         flatten_hypotheses.extend(hypotheses[i])
         if isinstance(references[i], list):
@@ -631,11 +634,12 @@ def eval_instructscore(
         else:
             raise ValueError(
                 "references should be a list of list of str or a list of str")
-    batch_outputs, scores_ls = scorer.score(
-        flatten_references, flatten_hypotheses)
-    # with open("instructscore_outputs.jsonl", "w") as f:
-    #     for output in batch_outputs:
-    #         f.write(output + "\n")
+        if sources is not None:
+            flatten_sources.extend([sources[i]] * len(hypotheses[i]))
+    if task_type=="commonsense" or task_type=="d2t" or task_type == "key-to-text":
+        batch_outputs, scores_ls = scorer.score(ref_ls=flatten_references, out_ls=flatten_hypotheses, src_ls=flatten_sources)
+    else:
+        batch_outputs, scores_ls = scorer.score(ref_ls=flatten_references, out_ls=flatten_hypotheses)
     idx = 0
     instruct_scores = []
     for i in range(len(hypotheses)):
@@ -1203,10 +1207,14 @@ def _overall_eval(candidates, targets, metrics: List[str], sources=None):
             scores.update(
                 {f'unieval_d2t_{aspect}': unieval_intermediate_scores[aspect]})
 
-    if "instructscore" in metrics:
-        _candidates, _targets = deepcopy(candidates), deepcopy(targets)
-        instruct_scores = eval_instructscore(_candidates, _targets)
-        scores.update({'instructscore': instruct_scores})
+    for metric in metrics:
+        if metric.startswith('instructscore'):
+            task_type = metric[len('instructscore_'):]
+            if task_type == "":
+                task_type = 'mt_zh-en'
+            _candidates, _targets = deepcopy(candidates), deepcopy(targets)
+            instruct_scores = eval_instructscore(task_type, _candidates, _targets, sources)
+            scores.update({metric: instruct_scores})
 
     if "gptscore_flan_sum" in metrics:
         _candidates, _targets = deepcopy(candidates), deepcopy(targets)

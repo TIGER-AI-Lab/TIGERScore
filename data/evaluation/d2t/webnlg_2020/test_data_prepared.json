@@ -21737,7 +21737,13 @@
                 "model": "Baseline-FORGE2020",
                 "decoding_method": "greedy",
                 "text": "Train, who is Pop rock, composed Mermaid, which is Reggae.",
-                "scores": {}
+                "scores": {
+                    "Correctness": 90.33333333333333,
+                    "DataCoverage": 92.66666666666667,
+                    "Fluency": 91.33333333333333,
+                    "Relevance": 91.33333333333333,
+                    "TextStructure": 88.0
+                }
             },
             {
                 "model": "OSU_Neural_NLG",

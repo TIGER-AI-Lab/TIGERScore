@@ -24,15 +24,18 @@
 # # data2text
 # input_file="../../data_bak/webnlg/webnlg2020_gen_with_scores.json"
 # output_file="../../data_bak/webnlg/webnlg2020_gen_with_scores.eval.json"
-# human_score_names="Correctness,DataCoverage,Fluency,Relevance,TextStructure"
-# cp -u $input_file $output_file
-# for metric in "${metrics[@]}"; do
-#     echo "Evaluating $metric"
-#     python eval_baseline.py --input_file $output_file --output_file $output_file --metrics "$metric" \
-#         --human_score_names "$human_score_names"
-# done
-# python eval_baseline.py --input_file $output_file --output_file $output_file --metrics "$metrics" \
-#     --human_score_names "$human_score_names" --print_results True
+input_file="../../data/evaluation/d2t/webnlg_2020/test_data_prepared.json"
+output_file="../../data/evaluation/d2t/webnlg_2020/test_data_prepared.eval.json"
+human_score_names="Correctness,DataCoverage,Fluency,Relevance,TextStructure"
+cp -u $input_file $output_file
+metrics=("instructscore_d2t")
+for metric in "${metrics[@]}"; do
+    echo "Evaluating $metric"
+    python eval_baseline.py --input_file $output_file --output_file $output_file --metrics "$metric" \
+        --human_score_names "$human_score_names"
+done
+python eval_baseline.py --input_file $output_file --output_file $output_file --metrics "$metrics" \
+    --human_score_names "$human_score_names" --print_results True
 
 # # long_form_QA
 # input_file="../../data_bak/lfqa/test.gpt-4.rank.json"
@@ -98,13 +101,13 @@
 # input_file="../../data/evaluation/translation/wmt22/zh-en/eval_data.json"
 # output_file="../../data/evaluation/translation/wmt22/zh-en/eval_data.eval.json"
 # human_score_names="mqm"
-# metrics=("instructscore")
+# metrics=("instructscore_mt_zh-en")
 # cp -u $input_file $output_file
-# for metric in "${metrics[@]}"; do
-#     echo "Evaluating $metric"
-#     python eval_baseline.py --input_file $output_file --output_file $output_file --metrics "$metric" \
-#         --human_score_names "$human_score_names"
-# done
+# # for metric in "${metrics[@]}"; do
+# #     echo "Evaluating $metric"
+# #     python eval_baseline.py --input_file $output_file --output_file $output_file --metrics "$metric" \
+# #         --human_score_names "$human_score_names"
+# # done
 # python eval_baseline.py --input_file $output_file --output_file $output_file --metrics "$metrics" \
 #     --human_score_names "$human_score_names" --print_results True
 
@@ -135,16 +138,16 @@
 #     --human_score_names "$human_score_names" --add_aggrement True --print_results True
 
 
-input_file="../../data/evaluation/pair_cmp/test_data_prepared.json"
-output_file="../../data/evaluation/pair_cmp/test_data_prepared.eval.json"
-human_score_names="gpt_rank_score"
-cp -u $input_file $output_file
-# metrics=("bleu" "rouge" "bertscore" "bleurt" "comet_da" "bart_score_cnn" "unieval_sum" "cometkiwi_da")
-metrics=("unieval_sum")
-for metric in "${metrics[@]}"; do
-    echo "Evaluating $metric"
-    python eval_baseline.py --input_file $output_file --output_file $output_file --metrics "$metric" \
-        --human_score_names "$human_score_names"
-done
+# input_file="../../data/evaluation/pair_cmp/test_data_prepared.json"
+# output_file="../../data/evaluation/pair_cmp/test_data_prepared.eval.json"
+# human_score_names="gpt_rank_score"
+# cp -u $input_file $output_file
+# # metrics=("bleu" "rouge" "bertscore" "bleurt" "comet_da" "bart_score_cnn" "unieval_sum" "cometkiwi_da")
+# metrics=("unieval_sum")
+# for metric in "${metrics[@]}"; do
+#     echo "Evaluating $metric"
+#     python eval_baseline.py --input_file $output_file --output_file $output_file --metrics "$metric" \
+#         --human_score_names "$human_score_names"
+# done
 # python eval_baseline.py --input_file $output_file --output_file $output_file --metrics "$metrics" \
 #     --human_score_names "$human_score_names" --print_results True --average_by "sys" --as_rank "True"
