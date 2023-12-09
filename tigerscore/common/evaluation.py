@@ -382,6 +382,7 @@ def eval_cometkiwi_da(
                 "src": source,
                 "mt": hypo,
             })
+    print(samples[0])
     batch_size = 8
     res = model.predict(samples, gpus=1, batch_size=batch_size)
     comets = res[0]

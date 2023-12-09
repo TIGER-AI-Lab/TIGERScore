@@ -7,13 +7,8 @@ pycocoevalcap
 spacy
 evaluate
 prettytable
-fairscale
-bert_score
 gdcm 
 pydicom
-sacremoses
-apache_beam
-deepspeed
 bitsandbytes
 openai
 nltk
@@ -26,11 +21,7 @@ sentencepiece
 tiktoken
 dacite
 wandb
-rouge_score
 bs4
 py7zr
-sacrebleu
 gdown
 accelerate
-bitsandbytes
-git+https://github.com/google-research/mt-metrics-eval.git

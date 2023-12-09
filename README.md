@@ -56,12 +56,24 @@ Experiments show that TIGERScore surpass existing baseline metrics in correlatio
 
 To directly use tigerscore pipeline, you first need to install it as python package. 
 ```bash
+# create a new environment
 pip install git+https://github.com/TIGER-AI-Lab/TIGERScore.git
 ```
 Please do check if your `torch.cuda.is_available()` is `True` for your local machine.
 
-Besides, to use TIGERScore with vllm detailed [here](#vllm-support-recommended), you need to mannually install vllm following [vllm document](https://docs.vllm.ai/en/latest/getting_started/installation.html). For example, if your CUDA is 12.1, you can simply install with `pip install vllm`
+Besides, to use TIGERScore with vllm detailed [here](#vllm-support-recommended), you need to mannually install vllm following [vllm document](https://docs.vllm.ai/en/latest/getting_started/installation.html). 
 
+- if your CUDA is 12.1
+```bash
+pip install vllm
+pip3 install -U xformers --index-url https://download.pytorch.org/whl/cu121
+```
+- if your CUDA is 11.8
+```bash
+# Replace `cp39` with your Python version (e.g., `cp38`, `cp39`, `cp311`).
+pip install https://github.com/vllm-project/vllm/releases/download/v0.2.2/vllm-0.2.2+cu118-cp39-cp39-manylinux1_x86_64.whl
+pip3 install -U xformers --index-url https://download.pytorch.org/whl/cu118
+```
 ## Usage
 
 ### Basic Usage
@@ -179,6 +191,7 @@ We provide our training and testing scripts in folder [`finetune`](./tigerscore/
 - [`format_distill_data.sh`](./tigerscore/finetune/format_distill_data.sh) to transform the data into the format for finetuning, that is, a sinlge instruction and input context with an output.
 - [`test_llama_vllm.sh`](./tigerscore/finetune/test_llama_vllm.sh) to test and compute the correlation as the performance of our finetuned model. 
 Please check these scripts to know more details of our training and testing process.
+- ['eval_baseline.sh](./tigerscore/eval_scripts/eval_baseline.sh) to restore baseline experiments results. See [`./tigerscore/common/README.md`](./tigerscore/common/README.md) to install the env.
 
 ## **Citation**
 

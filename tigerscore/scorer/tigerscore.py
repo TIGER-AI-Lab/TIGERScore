@@ -116,22 +116,22 @@ class TIGERScorer(object):
         result['score'] = -float(result['score'])
         result['errors'] = {}
         error_locations = re.findall(
-            r"(?<=Error location \d+: ).*?(?=\n)", output)
-        error_aspects = re.findall(r"(?<=Error aspect \d+: ).*?(?=\n)", output)
+            r"(?<=Error location \d+:[ \n]*).*?(?=\n)", output)
+        error_aspects = re.findall(r"(?<=Error aspect \d+:[ \n]*).*?(?=\n)", output)
         error_explanations = re.findall(
-            r"(?<=Explanation \d+: ).*?(?=\n)", output)
-        error_severities = re.findall(r"(?<=Severity \d+: ).*?(?=\n)", output)
+            r"(?<=Explanation \d+:[ \n]*).*?(?=\n)", output)
+        error_severities = re.findall(r"(?<=Severity \d+:[ \n]*).*?(?=\n)", output)
         score_reductions = re.findall(
-            r"(?<=\nScore reduction \d+: )(\d+\.\d+|\d+)", output)
+            r"(?<=\nScore reduction \d+:[ \n]*)(\d+\.\d+|\d+)", output)
         assert len(error_locations) == len(error_aspects) == len(error_explanations) == len(error_severities) == len(score_reductions), \
             "The number of errors does not match."
         for i in range(len(error_locations)):
             error = {}
-            error['location'] = error_locations[i]
-            error['aspect'] = error_aspects[i]
-            error['explanation'] = error_explanations[i]
-            error['severity'] = error_severities[i]
-            error['score_reduction'] = score_reductions[i]
+            error['location'] = error_locations[i].strip("\n ")
+            error['aspect'] = error_aspects[i].strip("\n ")
+            error['explanation'] = error_explanations[i].strip("\n ")
+            error['severity'] = error_severities[i].strip("\n ")
+            error['score_reduction'] = score_reductions[i].strip("\n ")
             result['errors'][f"error_{i}"] = error
         return result
 
@@ -154,7 +154,7 @@ class TIGERScorer(object):
             "input_ids": input_ids,
             "attention_mask": attention_mask,
             "max_new_tokens": 1024,
-            "do_sample": True,
+            "do_sample": False,
             "top_p": 1.0,
             "temperature": 0.7,
             "num_return_sequences": 1,

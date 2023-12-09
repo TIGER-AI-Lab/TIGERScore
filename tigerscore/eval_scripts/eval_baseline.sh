@@ -6,7 +6,7 @@
 #SBATCH --time=24:00:00
 #SBATCH --mem=50G
 #SBATCH --output=../../jobs/%x/%j.out
-# metrics=("bleu" "rouge" "bertscore" "bleurt" "comet_da" "bart_score_cnn" "bart_score_para" "bart_score_cnn_src_hypo" "bart_score_para_src_hypo" "unieval_sum" "cometkiwi_da")
+metrics=("bleu" "rouge" "bertscore" "bleurt" "comet_da" "bart_score_cnn" "bart_score_para" "bart_score_cnn_src_hypo" "bart_score_para_src_hypo" "unieval_sum" "cometkiwi_da")
 
 # # summarization
 # input_file="../../BARTScore/SUM/SummEval/final_p_with_xgptscore.json"
@@ -24,20 +24,20 @@
 # # data2text
 # input_file="../../data_bak/webnlg/webnlg2020_gen_with_scores.json"
 # output_file="../../data_bak/webnlg/webnlg2020_gen_with_scores.eval.json"
-input_file="../../data/evaluation/d2t/webnlg_2020/test_data_prepared.json"
-output_file="../../data/evaluation/d2t/webnlg_2020/test_data_prepared.eval.json"
-human_score_names="Correctness,DataCoverage,Fluency,Relevance,TextStructure"
-cp -u $input_file $output_file
-metrics=("instructscore_d2t")
-for metric in "${metrics[@]}"; do
-    echo "Evaluating $metric"
-    python eval_baseline.py --input_file $output_file --output_file $output_file --metrics "$metric" \
-        --human_score_names "$human_score_names"
-done
-python eval_baseline.py --input_file $output_file --output_file $output_file --metrics "$metrics" \
-    --human_score_names "$human_score_names" --print_results True
+# input_file="../../data/evaluation/d2t/webnlg_2020/test_data_prepared.json"
+# output_file="../../data/evaluation/d2t/webnlg_2020/test_data_prepared.eval.json"
+# human_score_names="Correctness,DataCoverage,Fluency,Relevance,TextStructure"
+# cp -u $input_file $output_file
+# metrics=("${metrics[@]}" "instructscore_d2t" "gptscore_flan_d2t" "gptscore_flan_d2t_src_hypo")
+# for metric in "${metrics[@]}"; do
+#     echo "Evaluating $metric"
+#     python eval_baseline.py --input_file $output_file --output_file $output_file --metrics "$metric" \
+#         --human_score_names "$human_score_names"
+# done
+# python eval_baseline.py --input_file $output_file --output_file $output_file --metrics "$metrics" \
+#     --human_score_names "$human_score_names" --print_results True
 
-# # long_form_QA
+# # # long_form_QA
 # input_file="../../data_bak/lfqa/test.gpt-4.rank.json"
 # output_file="../../data_bak/lfqa/test.gpt-4.rank.eval.json"
 # human_score_names="rank"
