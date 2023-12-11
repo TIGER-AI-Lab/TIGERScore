@@ -248,6 +248,7 @@ class TIGERScorer(object):
                 "frequency_penalty": generate_kwargs.get("frequency_penalty", 0.0),
                 "presence_penalty": generate_kwargs.get("presence_penalty", 0.0),
                 "echo": False,
+                "stream": generate_kwargs.get("stream", False),
             }
             unused_params = [key for key in generate_kwargs.keys() if key not in gen_params]
             if len(unused_params) > 0:

@@ -198,10 +198,12 @@ Please check these scripts to know more details of our training and testing proc
 Please cite our paper if you fine our data, model or code useful. 
 
 ```
-@article{jiang2023TIGERScore,
+@article{Jiang2023TIGERScoreTB,
   title={TIGERScore: Towards Building Explainable Metric for All Text Generation Tasks},
-  author={Dongfu Jiang, Yishan Li, Ge Zhang, Wenhao Huang, Bill Yuchen Lin, Wenhu Chen},
-  journal={arXiv preprint arXiv:2310.00752},
-  year={2023}
+  author={Dongfu Jiang and Yishan Li and Ge Zhang and Wenhao Huang and Bill Yuchen Lin and Wenhu Chen},
+  journal={ArXiv},
+  year={2023},
+  volume={abs/2310.00752},
+  url={https://api.semanticscholar.org/CorpusID:263334281}
 }
 ```
