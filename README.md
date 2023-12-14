@@ -124,33 +124,24 @@ The results is a list of dicts consisting of structured error analysis.
 ```
 
 ### VLLM Support (**Recommended**)
-<details>
-  <summary>use_vllm=True</summary>
-    ```python
-    scorer = TIGERScorer(model_name="TIGER-Lab/TIGERScore-7B", use_vllm=True) # VLLM on GPU
-    ```
-    TIGERScore supports VLLM fast inference. On a single A6000 (48GB) GPU, it only takes **0.2s - 0.3s** for TIGERScore-13b to score each instance.
-</details>
+```python
+scorer = TIGERScorer(model_name="TIGER-Lab/TIGERScore-7B", use_vllm=True) # VLLM on GPU
+```
+TIGERScore supports VLLM fast inference. On a single A6000 (48GB) GPU, it only takes **0.2s - 0.3s** for TIGERScore-13b to score each instance.
 
 ### Quantization Support (GPU)
-<details>
-  <summary>quantized=True</summary>
-    ```python
-    scorer = TIGERScorer(model_name="TIGER-Lab/TIGERScore-7B", quantized=True) # 4 bit quantization on GPU
-    ```
-    By setting the initialization parameter `quanitzed=True`, the model is set to be load in 4-bit version with hugging face `load_in_4bit=True` option. 
+```python
+scorer = TIGERScorer(model_name="TIGER-Lab/TIGERScore-7B", quantized=True) # 4 bit quantization on GPU
+```
+By setting the initialization parameter `quanitzed=True`, the model is set to be load in 4-bit version with hugging face `load_in_4bit=True` option. 
 
-    Please note that though using quantization would decrease the memory requirement by a large margin. You can run TIGERScore on about a 20+GB memory GPU. However, the inference speed might be slower than using the original bfloat16 version. It depends on you to make an trade-off.
-</details>
+Please note that though using quantization would decrease the memory requirement by a large margin. You can run TIGERScore on about a 20+GB memory GPU. However, the inference speed might be slower than using the original bfloat16 version. It depends on you to make an trade-off.
 
-### Quantization Support (CPU)
-<details>
-  <summary>use_llamacpp=True</summary>
-    ```python
-    scorer = TIGERScorer(model_name="TIGER-Lab/TIGERScore-7B-GGUF", use_llamacpp=True)
-    ```
-    We also provide the Llamacpp version of TIGERScore-7B/13B. By using the GGUF version we provided, you can run TIGERScore on pure CPU devices. It generally takes **20s** for TIGERScore-13b to score each instance.
-</details>
+### LlamaCPP Support (CPU)
+```python
+scorer = TIGERScorer(model_name="TIGER-Lab/TIGERScore-7B-GGUF", use_llamacpp=True)
+```
+We also provide the Llamacpp version of TIGERScore-7B/13B. By using the GGUF version we provided, you can run TIGERScore on pure CPU devices. It generally takes **20s** for TIGERScore-13b to score each instance.
 
 ## Data Preparation
 
