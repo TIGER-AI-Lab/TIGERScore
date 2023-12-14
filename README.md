@@ -50,6 +50,13 @@ Experiments show that TIGERScore surpass existing baseline metrics in correlatio
 |  🦙 [TIGERScore-13B-GGUF](https://huggingface.co/TIGER-Lab/TIGERScore-13B-GGUF) 	| 
 |  <img src="https://raw.githubusercontent.com/01-ai/Yi/main/assets/img/Yi_logo_icon_light.svg" style="height: 1em; vertical-align: middle;" title="Yi"> [TIGERScore-Yi-6B](https://huggingface.co/TIGER-Lab/TIGERScore-Yi-6B) |
 
+| Other Resources                                           	 | 
+|---------------------------------------------------------------	 |
+| [🤗 TIGERScore Collections](https://huggingface.co/collections/TIGER-Lab/tigerscore-657020bfae61260b6131f1ca)|
+| [🤗 Huggingface Demo](https://huggingface.co/spaces/TIGER-Lab/TIGERScore) |
+
+
+
 
 
 ## Installation
@@ -82,43 +89,52 @@ After installation, you are good to score the text generations with the followin
 # gpu device setup
 import os
 os.environ["CUDA_VISIBLE_DEVICES"] = "0"
-# set up scorer
+# example  
+instruction = "Write an apology letter."
+input_context = "Reason: You canceled a plan at the last minute due to illness."
+hypo_output = "Hey [Recipient],\n\nI'm really sorry for ditching our plan. I suddenly got an opportunity for a vacation so I took it. I know this might have messed up your plans and I regret that.\n\nDespite being under the weather, I would rather go for an adventure. I hope you can understand my perspective and I hope this incident doesn't change anything between us.\n\nWe can reschedule our plan for another time. Sorry again for the trouble.\n\nPeace out,\n[Your Name]\n\n---"
+
+# Load and evaluate examples in all options in 3 lines of code
 from tigerscore import TIGERScorer
 scorer = TIGERScorer(model_name="TIGER-Lab/TIGERScore-7B") # on GPU
 # scorer = TIGERScorer(model_name="TIGER-Lab/TIGERScore-7B", quantized=True) # 4 bit quantization on GPU
 # scorer = TIGERScorer(model_name="TIGER-Lab/TIGERScore-7B", use_vllm=True) # VLLM on GPU
 # scorer = TIGERScorer(model_name="TIGER-Lab/TIGERScore-7B-GGUF", use_llamacpp=True) # 4 bit quantization on CPU
-
-# example  
-instruction = "Write an apology letter."
-input_context = "Reason: You canceled a plan at the last minute due to illness."
-hypo_output = "Hey [Recipient],\n\nI'm really sorry for ditching our plan. I suddenly got an opportunity for a vacation so I took it. I know this might have messed up your plans and I regret that.\n\nDespite being under the weather, I would rather go for an adventure. I hope you can understand my perspective and I hope this incident doesn't change anything between us.\n\nWe can reschedule our plan for another time. Sorry again for the trouble.\n\nPeace out,\n[Your Name]\n\n---"
 results = scorer.score([instruction], [hypo_output], [input_context])
+
+# print the results, which is a list of json output containging the automatically parsed results!
 print(results)
 ``` 
 The results is a list of dicts consisting of structured error analysis.
 ```json
 [
     {
-        "num_errors": 2,
-        "score": -7.0,
+        "num_errors": 3,
+        "score": -12.0,
         "errors": {
             "error_0": {
-                "location": " \"I suddenly got an opportunity for a vacation so I took it.\"",
-                "aspect": " Misunderstanding context",
-                "explanation": " The error lies in the context of the reason for cancelling the plan. The original reason was due to illness, but in the incorrect output, it is stated that the cancellation was due to a vacation opportunity, which is a misunderstanding of the context. The correction would be to stick to the original reason for cancelling.",
+                "location": "\"I'm really glad for ditching our plan.\"",
+                "aspect": "Inappropriate language or tone",
+                "explanation": "The phrase \"ditching our plan\" is informal and disrespectful. It should be replaced with a more respectful and apologetic phrase like \"cancelling our plan\".",
                 "severity": "Major",
-                "score_reduction": "5.0"
+                "score_reduction": "4.0"
             },
             "error_1": {
-                "location": " \"I hope you can understand my perspective and I hope this incident doesn't change anything between us.\"",
-                "aspect": " Inappropriate tone",
-                "explanation": " The tone of this sentence is too casual and lacks regret or apology. It's important to maintain a formal and regretful tone in an apology letter. The sentence could be corrected to something like \"I hope you can find it in your heart to forgive me and let this incident not strain our relationship.\"",
-                "severity": "Minor",
-                "score_reduction": "2.0"
+                "location": "\"I suddenly got an opportunity for a vacation so I took it.\"",
+                "aspect": "Lack of apology or remorse",
+                "explanation": "This sentence shows no remorse for cancelling the plan at the last minute. It should be replaced with a sentence that expresses regret for the inconvenience caused.",
+                "severity": "Major",
+                "score_reduction": "4.0"
+            },
+            "error_2": {
+                "location": "\"I would rather go for an adventure.\"",
+                "aspect": "Incorrect reason for cancellation",
+                "explanation": "This sentence implies that the reason for cancelling the plan was to go on an adventure, which is incorrect. The correct reason was illness. This sentence should be replaced with a sentence that correctly states the reason for cancellation.",
+                "severity": "Major",
+                "score_reduction": "4.0"
             }
         },
-        "raw_output": " The model-generated output contains 2 errors, with a total score reduction of 7.0.\nError location 1: ..."
+        "raw_output": "..."
     }
 ]
 ```
