@@ -61,9 +61,8 @@ Experiments show that TIGERScore surpass existing baseline metrics in correlatio
 
 ## Installation
 
-To directly use tigerscore pipeline, you first need to install it as python package. 
+To directly use tigerscore pipeline, you first need to install it as a python package. 
 ```bash
-# create a new environment
 pip install git+https://github.com/TIGER-AI-Lab/TIGERScore.git
 ```
 Please do check if your `torch.cuda.is_available()` is `True` for your local machine.
