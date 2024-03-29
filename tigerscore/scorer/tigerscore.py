@@ -85,7 +85,6 @@ class TIGERScorer(object):
                 )
             self.tokenizer = AutoTokenizer.from_pretrained(
                 model_name,
-                use_fast=True,
                 padding_side="left",
             )
         self.template = Template(TEMPLATE)

@@ -36,5 +36,6 @@ setup(
         'py7zr',
         'gdown',
         'llama-cpp-python',
+        'sentencepiece'
     ],
 )
