@@ -168,7 +168,62 @@ class TIGERScorer(object):
         completions = [self.tokenizer.decode(
             completion, skip_special_tokens=True) for completion in completion_ids]
         return completions
-
+    
+    def generate_stream(self, instruction, hypo_output, input_context=None, **generate_kwargs):
+        prompt_template = self.template
+        prompt = prompt_template.substitute(
+            generation_instruction=instruction,
+            input_context=input_context,
+            hypothesis_output=hypo_output
+        ).strip("\n ")
+        
+        if self.use_llamacpp:
+            gen_params = {
+                "max_tokens": generate_kwargs.get("max_new_tokens", 1024),
+                "top_p": generate_kwargs.get("top_p", 1.0),
+                "top_k": generate_kwargs.get("top_k", 40),
+                "temperature": generate_kwargs.get("temperature", 0.7),
+                "frequency_penalty": generate_kwargs.get("frequency_penalty", 0.0),
+                "presence_penalty": generate_kwargs.get("presence_penalty", 0.0),
+                "echo": False,
+                "stream": True
+            }
+            unused_params = [key for key in generate_kwargs.keys() if key not in gen_params]
+            if len(unused_params) > 0:
+                print(f"Warning: the following parameters are not used in llamacpp inference: {unused_params}")
+            output = ""
+            for _output in self.model(prompt, **gen_params):
+                output += _output["choices"][0]["text"]
+                yield output
+        elif self.use_vllm:
+            raise NotImplementedError("VLLM does not support streaming generation.")
+        else:
+            from transformers import TextIteratorStreamer, pipeline
+            from threading import Thread
+            streamer = TextIteratorStreamer(self.tokenizer, skip_prompt=True, skip_special_tokens=True)
+            encodings = self.tokenizer(prompt, return_tensors="pt", padding=True,
+                                    truncation=True, max_length=self.tokenizer.model_max_length)
+            input_ids = encodings["input_ids"].to(self.model.device)
+            attention_mask = encodings["attention_mask"].to(self.model.device)
+            gen_params = {
+                "input_ids": input_ids,
+                "attention_mask": attention_mask,
+                "max_new_tokens": 1024,
+                "do_sample": False,
+                "top_p": 1.0,
+                "temperature": 0.7,
+                "num_return_sequences": 1,
+                "streamer": streamer,
+            }
+            gen_params.update(generate_kwargs)
+            thread = Thread(target=self.model.generate, kwargs=gen_params)
+            thread.start()
+            output = ""
+            for _output in streamer:
+                output += _output
+                yield output
+                
+        # return output
     def score(
         self,
         insts: List[str],
