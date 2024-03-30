@@ -80,6 +80,11 @@ pip3 install -U xformers --index-url https://download.pytorch.org/whl/cu121
 pip install https://github.com/vllm-project/vllm/releases/download/v0.2.2/vllm-0.2.2+cu118-cp39-cp39-manylinux1_x86_64.whl
 pip3 install -U xformers --index-url https://download.pytorch.org/whl/cu118
 ```
+
+If you want to use the training scripts, install the dependencies by running the following command:
+```bash
+pip install -r requirements.txt
+```
 ## Usage
 
 ### Basic Usage
