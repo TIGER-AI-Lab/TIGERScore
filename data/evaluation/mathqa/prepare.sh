@@ -1,1 +1,0 @@
-cd gsm8k && bash prepare.sh && cd ..

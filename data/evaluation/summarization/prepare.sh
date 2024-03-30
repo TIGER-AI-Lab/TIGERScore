@@ -1,1 +1,0 @@
-cd summaeval && bash prepare.sh && cd ..

@@ -159,7 +159,7 @@ scorer = TIGERScorer(model_name="TIGER-Lab/TIGERScore-7B-GGUF", use_llamacpp=Tru
 We also provide the Llamacpp version of TIGERScore-7B/13B. By using the GGUF version we provided, you can run TIGERScore on pure CPU devices. It generally takes **20s** for TIGERScore-13b to score each instance.
 
 ## Data Preparation
-
+dataset preprocessing scripts and intermediate results can be found [here](https://drive.google.com/file/d/1DAjvig-A_57CuBvENLg8A2PycOaz9ZkT/view?usp=sharing)
 ### Propmting template
 folder [`xgptscore`](./tigerscore/xgptscore/) contains all the templates that we used to query ChatGPT or GPT-4 to get the identified errors in the hypothesis output for different tasks that TIGERScore involved. We call these API query methods as XGPTScore for a e**X**planainable **Scoring** method by querying **GPT** Models.
 

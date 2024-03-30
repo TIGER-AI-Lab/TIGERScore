@@ -1,1 +1,0 @@
-cp ../../../../raw_datasets/eli5/train_data.json train_data.json

@@ -1,5 +1,5 @@
-transformers>=4.33.2
-datasets>=2.16.0
+transformers
+datasets
 torch
 accelerate
 wget

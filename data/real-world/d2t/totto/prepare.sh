@@ -1,1 +1,0 @@
-cp ../../../../raw_datasets/totto/train_data.json train_data.json
