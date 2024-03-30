@@ -14,9 +14,9 @@ setup(
     packages=find_packages(),
     url='https://tiger-ai-lab.github.io/TIGERScore/',
     install_requires=[
-        'transformers>=4.33.2',
-        'datasets>=2.10.0',
         'torch',
+        'transformers',
+        'datasets',
         'accelerate',
         'wget',
         'gdcm',
