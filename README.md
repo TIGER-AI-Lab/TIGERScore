@@ -1,5 +1,5 @@
 # **TIGERScore**
-This repo contains the code, data, and models for "[TIGERScore: Towards Building Explainable Metric for All Text Generation Tasks](https://arxiv.org/abs/2310.00752)"
+This repo contains the code, data, and models for TMLR 2024 paper "[TIGERScore: Towards Building Explainable Metric for All Text Generation Tasks](https://arxiv.org/abs/2310.00752)"
 
 
 <div align="center">
