@@ -16,7 +16,7 @@ checkpoint_path="TIGER-Lab/TIGERScore-13B-V1.0"
 human_score_names="gpt_rank_score"
 data_path="../../data/evaluation/lfqa/test_data_prepared.json"
 output_path="${data_path}.llama_2_7b_${checkpoint_name}_test.output"
-python test_llama_vllm_ref.py \
+python test_llama_vllm.py \
     --model_name_or_path ${checkpoint_path} \
     --task "long-form QA" \
     --data_path ${data_path} \
@@ -29,7 +29,7 @@ task="instruction-following"
 human_score_names="gpt_rank_score"
 data_path="../../data/evaluation/instruct/just-eval-instruct/test_data_prepared.json"
 output_path="${data_path}.llama_2_7b_${checkpoint_name}_test.output"
-python test_llama_vllm_ref.py \
+python test_llama_vllm.py \
     --model_name_or_path ${checkpoint_path} \
     --task ${task} \
     --data_path ${data_path} \
@@ -42,7 +42,7 @@ task="mathQA"
 human_score_names="accuracy"
 data_path="../../data/evaluation/mathqa/gsm8k/test_data_prepared.json"
 output_path="${data_path}.llama_2_7b_${checkpoint_name}_test.output"
-python test_llama_vllm_ref.py \
+python test_llama_vllm.py \
     --model_name_or_path ${checkpoint_path} \
     --task ${task} \
     --data_path ${data_path} \
@@ -57,7 +57,7 @@ task="translation"
 human_score_names="mqm"
 data_path="../../data/evaluation/translation/wmt22/zh-en/eval_data.json"
 output_path="${data_path}.llama_2_7b_${checkpoint_name}_test.output"
-python test_llama_vllm_ref.py \
+python test_llama_vllm.py \
     --model_name_or_path ${checkpoint_path} \
     --task ${task} \
     --data_path ${data_path} \
@@ -71,7 +71,7 @@ task="summarization"
 human_score_names="coherence,consistency,fluency,relevance"
 data_path="../../data/evaluation/summarization/summeval/test_data_prepared.json"
 output_path="${data_path}.llama_2_7b_${checkpoint_name}_test.output"
-python test_llama_vllm_ref.py \
+python test_llama_vllm.py \
     --model_name_or_path ${checkpoint_path} \
     --task ${task} \
     --data_path ${data_path} \
@@ -85,7 +85,7 @@ task="data2text"
 human_score_names="Correctness,DataCoverage,Fluency,Relevance,TextStructure"
 data_path="../../data/evaluation/d2t/webnlg_2020/test_data_prepared.json"
 output_path="${data_path}.llama_2_7b_${checkpoint_name}_test.output"
-python test_llama_vllm_ref.py \
+python test_llama_vllm.py \
     --model_name_or_path ${checkpoint_path} \
     --task ${task} \
     --data_path ${data_path} \
